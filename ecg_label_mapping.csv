@@ -1,0 +1,106 @@
+ecgcode_label,tasks_label,match_type,notes,tasks_label_index
+Normal ECG,NORMAL ECG,Exact,,2.0
+Otherwise normal ECG,otherwise normal ecg,Exact,,7.0
+Sinus tachycardia,SINUS TACHYCARDIA,Exact,,6.0
+Sinus bradycardia,SINUS BRADYCARDIA,Exact,,4.0
+Sinus arrhythmia,WITH SINUS ARRHYTHMIA,Close,tasks.txt uses modifier form,34.0
+"Sinoatrial block, type II",WITH 2ND DEGREE SA BLOCK MOBITZ II,Close,SA block type II = Mobitz II,134.0
+Sinus pause or arrest,WITH SINUS PAUSE,Close,Pause mapped; arrest not distinct in tasks,142.0
+Atrial premature complex(es),PREMATURE ATRIAL COMPLEXES,Exact,,16.0
+"Atrial premature complexes, nonconducted",BLOCKED,Partial,Blocked PACs; tasks has no dedicated label,115.0
+Atrial reciprocal beats,,Unmapped,No equivalent in tasks.txt,
+Sinoatrial node to atrial internal migratory rhythm,,Unmapped,No equivalent in tasks.txt,
+Junctional premature complex(es),PREMATURE SUPRAVENTRICULAR COMPLEXES,Close,Best available; no distinct junctional PAC label,19.0
+Junctional escape complex(es),WITH JUNCTIONAL ESCAPE COMPLEXES,Exact,,129.0
+Accelerated junctional rhythm,JUNCTIONAL RHYTHM,Close,Accelerated variant; tasks has general label,49.0
+Atrial escape complex(es),PREMATURE SUPRAVENTRICULAR COMPLEXES,Partial,No dedicated atrial escape label in tasks,19.0
+Accelerated atrial autonomous rhythm,ECTOPIC ATRIAL RHYTHM,Close,Functionally equivalent,38.0
+Atrial fibrillation,ATRIAL FIBRILLATION,Exact,,5.0
+Atrial flutter,ATRIAL FLUTTER,Exact,,32.0
+"Ectopic atrial tachycardia, unifocal",ECTOPIC ATRIAL RHYTHM,Close,Closest; no unifocal tachycardia label,38.0
+Junctional tachycardia,SUPRAVENTRICULAR TACHYCARDIA,Close,Subtype of SVT,93.0
+Supraventricular tachycardia,SUPRAVENTRICULAR TACHYCARDIA,Exact,,93.0
+Ventricular premature complex(es),PREMATURE VENTRICULAR COMPLEXES,Exact,,9.0
+Fusion complex(es),FUSION COMPLEXES,Exact,,31.0
+Ventricular escape complex(es),WITH VENTRICULAR ESCAPE COMPLEXES,Exact,,108.0
+Ventricular tachycardia,VENTRICULAR TACHYCARDIA,Exact,,98.0
+"Ventricular tachycardia, polymorphous",VENTRICULAR TACHYCARDIA,Close,No polymorphic-specific label in tasks,98.0
+Ventricular fibrillation,,Unmapped,No equivalent in tasks.txt,
+Short PR interval,WITH SHORT PR,Exact,,43.0
+AV conduction ratio N:D,WITH 2:1 AV CONDUCTION,Partial,Only 2:1 ratio covered; general N:D not present,147.0
+First-degree AV block,WITH 1ST DEGREE AV BLOCK,Exact,,79.0
+Prolonged PR interval,WITH PROLONGED AV CONDUCTION,Close,Clinically equivalent,81.0
+"Second-degree AV block, Mobitz type I",WITH 2ND DEGREE AV BLOCK MOBITZ I,Exact,,146.0
+"Second-degree AV block, Mobitz type II",,Unmapped,tasks.txt has Mobitz I but NOT Mobitz II AV block,
+2:1 AV block,WITH 2:1 AV CONDUCTION,Exact,,147.0
+"AV block, varying conduction",WITH VARIABLE AV BLOCK,Exact,,127.0
+"AV block, advanced (high-grade)",,Unmapped,No high-grade AV block label in tasks.txt,
+"AV block, complete (third-degree)",WITH COMPLETE HEART BLOCK,Exact,,121.0
+AV dissociation,WITH AV DISSOCIATION,Exact,,148.0
+Left anterior fascicular block,LEFT ANTERIOR FASCICULAR BLOCK,Exact,,36.0
+Left posterior fascicular block,LEFT POSTERIOR FASCICULAR BLOCK,Exact,,70.0
+Left bundle-branch block,LEFT BUNDLE BRANCH BLOCK,Exact,Hyphen difference only,20.0
+Incomplete right bundle-branch block,INCOMPLETE RIGHT BUNDLE BRANCH BLOCK,Exact,,18.0
+Right bundle-branch block,RIGHT BUNDLE BRANCH BLOCK,Exact,Hyphen difference only,11.0
+Nonspecific intraventricular block,NONSPECIFIC INTRAVENTRICULAR CONDUCTION DELAY,Close,"Same concept, slightly different wording",89.0
+Preexcitation syndrome,WOLFF-PARKINSON-WHITE,Close,WPW is main preexcitation in tasks,107.0
+Intraventricular conduction delay,NONSPECIFIC INTRAVENTRICULAR CONDUCTION DELAY,Close,,89.0
+Ventricular preexcitation,WOLFF-PARKINSON-WHITE,Close,Best available label,107.0
+Osborn wave,,Unmapped,No Osborn wave label in tasks.txt,
+Right-axis deviation,RIGHT AXIS DEVIATION,Exact,Hyphen difference only,37.0
+Left-axis deviation,LEFT AXIS DEVIATION,Exact,Hyphen difference only,8.0
+Electrical alternans,,Unmapped,No equivalent in tasks.txt,
+Left ventricular high voltage,VOLTAGE CRITERIA FOR LEFT VENTRICULAR HYPERTROPHY,Close,Voltage criteria = high voltage,63.0
+Right ventricular high voltage,,Unmapped,No RV high voltage label in tasks.txt,
+Abnormal precordial R-wave progression,,Unmapped,No equivalent in tasks.txt,
+Low voltage,LOW VOLTAGE QRS,Exact,,15.0
+Left atrial enlargement,LEFT ATRIAL ENLARGEMENT,Exact,,13.0
+Right atrial enlargement,RIGHT ATRIAL ENLARGEMENT,Exact,,60.0
+Left ventricular hypertrophy,LEFT VENTRICULAR HYPERTROPHY,Exact,,26.0
+Right ventricular hypertrophy,RIGHT VENTRICULAR HYPERTROPHY,Exact,,82.0
+ST deviation,NONSPECIFIC ST ABNORMALITY,Close,General ST change,25.0
+ST deviation with T-wave change,NONSPECIFIC ST AND T WAVE ABNORMALITY,Close,,35.0
+T-wave abnormality,NONSPECIFIC T WAVE ABNORMALITY,Exact,,14.0
+Prolonged QT interval,PROLONGED QT,Exact,,80.0
+Prolonged QTc interval,PROLONGED QT,Close,QTc is rate-corrected; tasks has no distinct label,80.0
+Short QT interval,QT HAS SHORTENED,Partial,Shortened is change; no absolute short QT label,29.0
+Short QTc interval,QT HAS SHORTENED,Partial,Same caveat as QTc above,29.0
+Prominent U waves,,Unmapped,No U wave label in tasks.txt,
+Inverted U waves,,Unmapped,No U wave label in tasks.txt,
+TU fusion,,Unmapped,No TU fusion label in tasks.txt,
+Early repolarization,EARLY REPOLARIZATION,Exact,,99.0
+Abnormal Q wave,,Unmapped,No dedicated abnormal Q wave label in tasks.txt,
+Anterior MI,ANTERIOR INFARCT,Exact,,17.0
+Inferior MI,INFERIOR INFARCT,Exact,,61.0
+Posterior MI,POSTERIOR INFARCT,Exact,,132.0
+Lateral MI,LATERAL INFARCT,Exact,,24.0
+Anteroseptal MI,ANTEROSEPTAL INFARCT,Exact,,40.0
+Extensive anterior MI,ANTERIOR INFARCT,Partial,No 'extensive' qualifier in tasks.txt,17.0
+Pacing rhythm,VENTRICULAR-PACED RHYTHM,Partial,Generic; tasks has multiple pacing labels,75.0
+Occasional,,Unmapped,No frequency modifier in tasks.txt,
+Frequent,,Unmapped,No frequency modifier in tasks.txt,
+Acute,ACUTE,Exact,,119.0
+Recent,,Unmapped,No 'recent' temporal modifier in tasks.txt,
+Old,,Unmapped,No 'old' temporal modifier in tasks.txt,
+Couplets,,Unmapped,No couplet modifier in tasks.txt,
+In a bigeminal pattern,IN A PATTERN OF BIGEMINY,Exact,,91.0
+In a trigeminal pattern,,Unmapped,No trigeminal pattern in tasks.txt,
+With a rapid ventricular response,WITH RAPID VENTRICULAR RESPONSE,Exact,,28.0
+With aberrancy,ABERRANT CONDUCTION,Close,,51.0
+Polymorphic,,Unmapped,No standalone polymorphic modifier in tasks.txt,
+Depression,ST NOW DEPRESSED IN,Partial,Context-specific in tasks.txt,42.0
+Elevation,ST ELEVATION NOW PRESENT IN,Partial,Context-specific in tasks.txt,68.0
+Inversion,T WAVE INVERSION NOW EVIDENT IN,Partial,Context-specific in tasks.txt,23.0
+Acute pericarditis,ACUTE PERICARDITIS,Exact,,131.0
+Brugada abnormality,,Unmapped,No Brugada label in tasks.txt,
+Digitalis effect,OR DIGITALIS EFFECT,Close,tasks uses conjunctive phrasing,64.0
+Hypercalcemia,,Unmapped,No electrolyte labels in tasks.txt,
+Hyperkalemia,,Unmapped,No electrolyte labels in tasks.txt,
+Hypocalcemia,,Unmapped,No electrolyte labels in tasks.txt,
+Hypokalemia or drug effect,,Unmapped,No electrolyte labels in tasks.txt,
+Ostium primum ASD,,Unmapped,No ASD label in tasks.txt,
+Acute ischemia,ACUTE MI / STEMI,Partial,Ischemia broader than STEMI; closest available,87.0
+AV nodal reentry,SUPRAVENTRICULAR TACHYCARDIA,Close,AVNRT is a type of SVT,93.0
+Ischemia,NONSPECIFIC ST ABNORMALITY,Partial,No dedicated ischemia label; ST abnormality closest,25.0
+Pulmonary disease,PULMONARY DISEASE PATTERN,Exact,,86.0
+Dextrocardia,,Unmapped,No dextrocardia label in tasks.txt,

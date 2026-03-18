@@ -1,0 +1,436 @@
+2026-03-14 16:01:26,310 - INFO - Using device: cuda:0
+2026-03-14 16:01:26,311 - INFO - Number of classes: 150
+2026-03-14 16:01:26,311 - INFO - Loading ecg_df ...
+2026-03-14 16:01:26,680 - INFO - Samples with at least one active label: 10957
+2026-03-14 16:01:26,682 - INFO - Total samples: 10957 | Batches: 343
+2026-03-14 16:01:26,952 - INFO - 
+============================================================
+2026-03-14 16:01:26,953 - INFO - BASELINE — unpruned model
+2026-03-14 16:01:26,953 - INFO - ============================================================
+2026-03-14 16:01:27,688 - INFO -   Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-03-14 16:01:28,318 - INFO - Baseline MACs  : 1.1727 G
+2026-03-14 16:01:28,318 - INFO - Baseline Params: 30.8190 M
+2026-03-14 16:03:36,858 - INFO - 
+Computing full evaluation: baseline
+2026-03-14 16:06:24,255 - INFO - [baseline] Valid labels : 52/150
+2026-03-14 16:06:24,255 - INFO - [baseline] Macro AUROC  : 0.5985
+2026-03-14 16:06:24,255 - INFO - [baseline] Results saved: ./res/zeroshot_pruning/baseline_results.csv
+2026-03-14 16:06:24,266 - INFO - 
+                                            Label  n_pos  AUROC    F1  Sensitivity  Specificity   PPV   NPV
+                              LEFT AXIS DEVIATION     54  0.928 0.101        0.444        0.963 0.057 0.997
+                        RIGHT BUNDLE BRANCH BLOCK    290  0.919 0.349        0.503        0.963 0.267 0.986
+                       PREMATURE ATRIAL COMPLEXES      1  0.912 0.002        1.000        0.910 0.001 1.000
+                   LEFT ANTERIOR FASCICULAR BLOCK    323  0.897 0.278        0.378        0.959 0.220 0.981
+                             RIGHT AXIS DEVIATION    335  0.889 0.265        0.436        0.942 0.191 0.981
+                             ANTEROSEPTAL INFARCT     14  0.861 0.071        0.071        0.999 0.071 0.999
+                    RIGHT VENTRICULAR HYPERTROPHY    693  0.842 0.443        0.455        0.960 0.432 0.963
+                                 ANTERIOR INFARCT      5  0.803 0.286        0.200        1.000 0.500 1.000
+                                   ATRIAL FLUTTER     31  0.763 0.016        0.548        0.813 0.008 0.998
+                              OR DIGITALIS EFFECT      9  0.759 0.007        0.333        0.927 0.004 0.999
+             INCOMPLETE RIGHT BUNDLE BRANCH BLOCK    336  0.718 0.171        0.274        0.939 0.125 0.976
+                              ATRIAL FIBRILLATION     25  0.711 0.040        0.160        0.984 0.023 0.998
+                  PREMATURE VENTRICULAR COMPLEXES      6  0.708 0.014        0.167        0.988 0.007 1.000
+                                  LOW VOLTAGE QRS    277  0.679 0.130        0.242        0.936 0.089 0.979
+                  LEFT POSTERIOR FASCICULAR BLOCK     19  0.674 0.075        0.211        0.992 0.045 0.999
+VOLTAGE CRITERIA FOR LEFT VENTRICULAR HYPERTROPHY    805  0.669 0.214        0.327        0.863 0.159 0.942
+                     LEFT VENTRICULAR HYPERTROPHY    348  0.667 0.158        0.175        0.966 0.145 0.973
+    NONSPECIFIC INTRAVENTRICULAR CONDUCTION DELAY     55  0.661 0.074        0.055        0.998 0.115 0.995
+                                SINUS BRADYCARDIA    935  0.632 0.214        0.394        0.786 0.146 0.933
+            NONSPECIFIC ST AND T WAVE ABNORMALITY    884  0.621 0.213        0.284        0.879 0.171 0.933
+                          VENTRICULAR TACHYCARDIA     84  0.620 0.136        0.155        0.991 0.121 0.993
+             PREMATURE SUPRAVENTRICULAR COMPLEXES     16  0.619 0.102        0.188        0.996 0.070 0.999
+                        PULMONARY DISEASE PATTERN      3  0.619 0.002        0.667        0.811 0.001 1.000
+                             EARLY REPOLARIZATION    249  0.615 0.067        0.169        0.911 0.042 0.979
+                        WITH COMPLETE HEART BLOCK     67  0.602 0.016        0.821        0.397 0.008 0.997
+                                 FUSION COMPLEXES     27  0.597 0.036        0.111        0.988 0.022 0.998
+                   NONSPECIFIC T WAVE ABNORMALITY   2544  0.591 0.381        0.663        0.450 0.267 0.815
+                WITH VENTRICULAR ESCAPE COMPLEXES     32  0.590 0.020        0.031        0.994 0.015 0.997
+                            WITH SINUS ARRHYTHMIA   1975  0.568 0.307        0.601        0.491 0.206 0.848
+                     SUPRAVENTRICULAR TACHYCARDIA     66  0.558 0.039        0.136        0.965 0.023 0.995
+                       NONSPECIFIC ST ABNORMALITY    326  0.553 0.084        0.077        0.977 0.094 0.972
+                                       NORMAL ECG   1759  0.548 0.280        0.940        0.085 0.164 0.881
+                                 INFERIOR INFARCT      8  0.545 0.007        0.125        0.973 0.003 0.999
+                             otherwise normal ecg    621  0.532 0.112        0.808        0.238 0.060 0.954
+               WITH 2ND DEGREE SA BLOCK MOBITZ II      9  0.519 0.002        1.000        0.000 0.001 0.000
+                          LEFT ATRIAL ENLARGEMENT    184  0.519 0.037        0.815        0.281 0.019 0.989
+                                  LATERAL INFARCT      3  0.518 0.001        1.000        0.408 0.000 1.000
+                         LEFT BUNDLE BRANCH BLOCK     18  0.513 0.004        0.389        0.683 0.002 0.999
+                                     PROLONGED QT    778  0.497 0.133        1.000        0.000 0.071 0.000
+                 WITH JUNCTIONAL ESCAPE COMPLEXES    184  0.495 0.034        0.940        0.102 0.018 0.990
+                            WOLFF-PARKINSON-WHITE    150  0.488 0.075        0.040        1.000 0.667 0.987
+                            ECTOPIC ATRIAL RHYTHM    156  0.484 0.029        0.981        0.045 0.015 0.994
+                         RIGHT ATRIAL ENLARGEMENT    201  0.442 0.037        0.965        0.056 0.019 0.988
+                                 WITH SINUS PAUSE     15  0.424 0.005        0.067        0.965 0.003 0.999
+                                SINUS TACHYCARDIA   2210  0.415 0.336        1.000        0.000 0.202 0.000
+                     WITH PROLONGED AV CONDUCTION     12  0.389 0.004        0.083        0.959 0.002 0.999
+                         WITH 1ST DEGREE AV BLOCK    123  0.383 0.022        1.000        0.000 0.011 0.000
+                             WITH AV DISSOCIATION     70  0.378 0.019        0.057        0.968 0.011 0.994
+                           WITH 2:1 AV CONDUCTION     40  0.336 0.007        1.000        0.000 0.004 0.000
+                           WITH VARIABLE AV BLOCK     67  0.329 0.012        1.000        0.000 0.006 0.000
+                                JUNCTIONAL RHYTHM      4  0.287 0.001        1.000        0.025 0.000 1.000
+                               ACUTE PERICARDITIS      1  0.234 0.000        1.000        0.000 0.000 0.000
+2026-03-14 16:06:24,271 - INFO - 
+============================================================
+2026-03-14 16:06:24,271 - INFO - PRUNING RATIO 0.1  |  method: magnitude
+2026-03-14 16:06:24,272 - INFO - ============================================================
+2026-03-14 16:06:25,198 - INFO -   Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-03-14 16:06:25,436 - INFO -   Ignoring 1 final classifier layer(s)
+2026-03-14 16:06:25,628 - INFO - Applying pruning step (zero-shot — no training data) ...
+2026-03-14 16:06:26,606 - INFO -   MACs  : 1.1727 G → 1.1498 G  (1.96% reduced)
+2026-03-14 16:06:26,607 - INFO -   Params: 30.8190 M → 30.5433 M  (0.89% reduced)
+2026-03-14 16:09:33,848 - INFO - 
+Computing full evaluation: pruned_magnitude_ratio10
+2026-03-14 16:13:10,325 - INFO - [pruned_magnitude_ratio10] Valid labels : 52/150
+2026-03-14 16:13:10,325 - INFO - [pruned_magnitude_ratio10] Macro AUROC  : 0.5599
+2026-03-14 16:13:10,326 - INFO - [pruned_magnitude_ratio10] Results saved: ./res/zeroshot_pruning/pruned_magnitude_ratio10_results.csv
+2026-03-14 16:13:10,337 - INFO - 
+                                            Label  n_pos  AUROC    F1  Sensitivity  Specificity   PPV   NPV
+                       PREMATURE ATRIAL COMPLEXES      1  1.000 0.286        1.000        1.000 0.167 1.000
+                    RIGHT VENTRICULAR HYPERTROPHY    693  0.847 0.349        0.541        0.895 0.258 0.967
+                        RIGHT BUNDLE BRANCH BLOCK    290  0.774 0.159        0.459        0.883 0.096 0.984
+                         LEFT BUNDLE BRANCH BLOCK     18  0.752 0.035        0.111        0.991 0.021 0.999
+                                  LOW VOLTAGE QRS    277  0.737 0.140        0.217        0.951 0.103 0.979
+                             RIGHT AXIS DEVIATION    335  0.722 0.136        0.284        0.909 0.090 0.976
+                              OR DIGITALIS EFFECT      9  0.697 0.006        0.444        0.888 0.003 0.999
+                                 FUSION COMPLEXES     27  0.689 0.030        0.074        0.990 0.019 0.998
+                           WITH VARIABLE AV BLOCK     67  0.689 0.042        0.119        0.972 0.026 0.994
+                               ACUTE PERICARDITIS      1  0.687 0.000        1.000        0.593 0.000 1.000
+    NONSPECIFIC INTRAVENTRICULAR CONDUCTION DELAY     55  0.684 0.052        0.182        0.971 0.030 0.996
+                     LEFT VENTRICULAR HYPERTROPHY    348  0.662 0.127        0.132        0.969 0.122 0.971
+             INCOMPLETE RIGHT BUNDLE BRANCH BLOCK    336  0.660 0.168        0.217        0.957 0.137 0.975
+                        PULMONARY DISEASE PATTERN      3  0.643 0.001        1.000        0.457 0.001 1.000
+             PREMATURE SUPRAVENTRICULAR COMPLEXES     16  0.630 0.009        0.062        0.982 0.005 0.999
+                  PREMATURE VENTRICULAR COMPLEXES      6  0.629 0.006        0.333        0.944 0.003 1.000
+                WITH VENTRICULAR ESCAPE COMPLEXES     32  0.610 0.012        0.062        0.973 0.007 0.997
+                                 INFERIOR INFARCT      8  0.594 0.007        0.125        0.973 0.003 0.999
+               WITH 2ND DEGREE SA BLOCK MOBITZ II      9  0.593 0.004        0.222        0.903 0.002 0.999
+                                  LATERAL INFARCT      3  0.590 0.001        0.333        0.830 0.001 1.000
+                             WITH AV DISSOCIATION     70  0.587 0.013        1.000        0.000 0.006 0.000
+                 WITH JUNCTIONAL ESCAPE COMPLEXES    184  0.586 0.045        0.413        0.712 0.024 0.986
+                              ATRIAL FIBRILLATION     25  0.581 0.011        0.120        0.953 0.006 0.998
+                     WITH PROLONGED AV CONDUCTION     12  0.579 0.002        0.333        0.699 0.001 0.999
+                                 ANTERIOR INFARCT      5  0.575 0.006        0.400        0.941 0.003 1.000
+                         RIGHT ATRIAL ENLARGEMENT    201  0.565 0.047        0.234        0.837 0.026 0.983
+                             ANTEROSEPTAL INFARCT     14  0.559 0.010        0.143        0.965 0.005 0.999
+VOLTAGE CRITERIA FOR LEFT VENTRICULAR HYPERTROPHY    805  0.546 0.140        0.206        0.862 0.106 0.932
+                            WITH SINUS ARRHYTHMIA   1975  0.542 0.305        1.000        0.000 0.180 0.000
+                             otherwise normal ecg    621  0.536 0.114        0.351        0.711 0.068 0.948
+                             EARLY REPOLARIZATION    249  0.530 0.044        1.000        0.000 0.023 0.000
+                                     PROLONGED QT    778  0.519 0.133        1.000        0.000 0.071 0.000
+                            ECTOPIC ATRIAL RHYTHM    156  0.517 0.031        0.763        0.324 0.016 0.990
+            NONSPECIFIC ST AND T WAVE ABNORMALITY    884  0.512 0.149        1.000        0.000 0.081 0.000
+                                       NORMAL ECG   1759  0.507 0.277        1.000        0.000 0.161 0.000
+                          LEFT ATRIAL ENLARGEMENT    184  0.502 0.044        0.076        0.959 0.031 0.984
+                              LEFT AXIS DEVIATION     54  0.499 0.011        0.852        0.261 0.006 0.997
+                                   ATRIAL FLUTTER     31  0.496 0.007        0.935        0.211 0.003 0.999
+                           WITH 2:1 AV CONDUCTION     40  0.488 0.007        1.000        0.000 0.004 0.000
+                   LEFT ANTERIOR FASCICULAR BLOCK    323  0.485 0.058        0.217        0.811 0.034 0.971
+                       NONSPECIFIC ST ABNORMALITY    326  0.483 0.060        0.957        0.078 0.031 0.983
+                                 WITH SINUS PAUSE     15  0.478 0.008        0.200        0.934 0.004 0.999
+                         WITH 1ST DEGREE AV BLOCK    123  0.475 0.022        1.000        0.000 0.011 0.000
+                   NONSPECIFIC T WAVE ABNORMALITY   2544  0.472 0.377        1.000        0.000 0.232 0.000
+                        WITH COMPLETE HEART BLOCK     67  0.458 0.012        1.000        0.000 0.006 0.000
+                                SINUS TACHYCARDIA   2210  0.445 0.337        0.999        0.007 0.203 0.967
+                     SUPRAVENTRICULAR TACHYCARDIA     66  0.431 0.026        0.030        0.992 0.024 0.994
+                            WOLFF-PARKINSON-WHITE    150  0.406 0.027        1.000        0.000 0.014 0.000
+                                SINUS BRADYCARDIA    935  0.309 0.157        1.000        0.000 0.085 0.000
+                          VENTRICULAR TACHYCARDIA     84  0.256 0.015        1.000        0.004 0.008 1.000
+                  LEFT POSTERIOR FASCICULAR BLOCK     19  0.157 0.004        1.000        0.012 0.002 1.000
+                                JUNCTIONAL RHYTHM      4  0.147 0.001        1.000        0.020 0.000 1.000
+2026-03-14 16:13:10,339 - INFO -   Macro AUROC: 0.5985 → 0.5599  (Δ -0.0385)
+2026-03-14 16:13:10,575 - INFO -   Saved: ./res/zeroshot_pruning/pruned_magnitude_ratio0.1_auroc0.5599.pth
+2026-03-14 16:13:10,576 - INFO - 
+============================================================
+2026-03-14 16:13:10,576 - INFO - PRUNING RATIO 0.2  |  method: magnitude
+2026-03-14 16:13:10,576 - INFO - ============================================================
+2026-03-14 16:13:11,435 - INFO -   Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-03-14 16:13:11,622 - INFO -   Ignoring 1 final classifier layer(s)
+2026-03-14 16:13:11,696 - INFO - Applying pruning step (zero-shot — no training data) ...
+2026-03-14 16:13:12,064 - INFO -   MACs  : 1.1727 G → 1.1268 G  (3.91% reduced)
+2026-03-14 16:13:12,064 - INFO -   Params: 30.8190 M → 30.2676 M  (1.79% reduced)
+2026-03-14 16:15:19,305 - INFO - 
+Computing full evaluation: pruned_magnitude_ratio20
+2026-03-14 16:18:01,429 - INFO - [pruned_magnitude_ratio20] Valid labels : 52/150
+2026-03-14 16:18:01,430 - INFO - [pruned_magnitude_ratio20] Macro AUROC  : 0.5382
+2026-03-14 16:18:01,430 - INFO - [pruned_magnitude_ratio20] Results saved: ./res/zeroshot_pruning/pruned_magnitude_ratio20_results.csv
+2026-03-14 16:18:01,440 - INFO - 
+                                            Label  n_pos  AUROC    F1  Sensitivity  Specificity   PPV   NPV
+                       PREMATURE ATRIAL COMPLEXES      1  0.984 0.009        1.000        0.980 0.005 1.000
+                         LEFT BUNDLE BRANCH BLOCK     18  0.822 0.056        0.167        0.992 0.034 0.999
+                    RIGHT VENTRICULAR HYPERTROPHY    693  0.786 0.271        0.307        0.935 0.243 0.952
+                             RIGHT AXIS DEVIATION    335  0.779 0.173        0.191        0.968 0.159 0.974
+                              LEFT AXIS DEVIATION     54  0.768 0.074        0.056        0.998 0.111 0.995
+                  LEFT POSTERIOR FASCICULAR BLOCK     19  0.721 0.082        0.105        0.997 0.067 0.998
+                                 ANTERIOR INFARCT      5  0.719 0.047        0.200        0.997 0.026 1.000
+                                 FUSION COMPLEXES     27  0.694 0.021        0.111        0.977 0.012 0.998
+                             ANTEROSEPTAL INFARCT     14  0.686 0.019        0.286        0.962 0.010 0.999
+                                  LOW VOLTAGE QRS    277  0.674 0.101        0.181        0.938 0.070 0.978
+                             WITH AV DISSOCIATION     70  0.667 0.033        0.029        0.996 0.040 0.994
+                              ATRIAL FIBRILLATION     25  0.661 0.011        0.320        0.864 0.005 0.998
+                            WITH SINUS ARRHYTHMIA   1975  0.625 0.336        0.550        0.621 0.242 0.863
+                         RIGHT ATRIAL ENLARGEMENT    201  0.613 0.096        0.134        0.969 0.075 0.984
+             PREMATURE SUPRAVENTRICULAR COMPLEXES     16  0.606 0.023        0.062        0.994 0.014 0.999
+                        WITH COMPLETE HEART BLOCK     67  0.586 0.018        0.403        0.727 0.009 0.995
+               WITH 2ND DEGREE SA BLOCK MOBITZ II      9  0.571 0.002        1.000        0.197 0.001 1.000
+VOLTAGE CRITERIA FOR LEFT VENTRICULAR HYPERTROPHY    805  0.567 0.152        0.409        0.687 0.094 0.936
+                 WITH JUNCTIONAL ESCAPE COMPLEXES    184  0.560 0.040        0.386        0.692 0.021 0.985
+                        PULMONARY DISEASE PATTERN      3  0.559 0.002        0.333        0.918 0.001 1.000
+                  PREMATURE VENTRICULAR COMPLEXES      6  0.556 0.003        0.167        0.935 0.001 1.000
+                   NONSPECIFIC T WAVE ABNORMALITY   2544  0.548 0.380        0.925        0.111 0.239 0.830
+                             otherwise normal ecg    621  0.533 0.113        0.552        0.505 0.063 0.949
+                                   ATRIAL FLUTTER     31  0.532 0.009        0.129        0.921 0.005 0.997
+    NONSPECIFIC INTRAVENTRICULAR CONDUCTION DELAY     55  0.532 0.044        0.073        0.989 0.032 0.995
+                     SUPRAVENTRICULAR TACHYCARDIA     66  0.529 0.058        0.045        0.997 0.081 0.994
+                                     PROLONGED QT    778  0.527 0.139        0.452        0.614 0.082 0.936
+                                JUNCTIONAL RHYTHM      4  0.525 0.001        0.750        0.505 0.001 1.000
+                   LEFT ANTERIOR FASCICULAR BLOCK    323  0.499 0.065        0.307        0.753 0.036 0.973
+                             EARLY REPOLARIZATION    249  0.489 0.044        1.000        0.000 0.023 0.000
+                WITH VENTRICULAR ESCAPE COMPLEXES     32  0.484 0.006        0.094        0.917 0.003 0.997
+                          LEFT ATRIAL ENLARGEMENT    184  0.482 0.034        0.978        0.043 0.017 0.992
+                     LEFT VENTRICULAR HYPERTROPHY    348  0.481 0.062        0.968        0.034 0.032 0.971
+                              OR DIGITALIS EFFECT      9  0.475 0.002        0.889        0.203 0.001 1.000
+                         WITH 1ST DEGREE AV BLOCK    123  0.475 0.023        0.260        0.761 0.012 0.989
+                                SINUS TACHYCARDIA   2210  0.471 0.337        0.998        0.006 0.202 0.932
+                                       NORMAL ECG   1759  0.467 0.277        1.000        0.000 0.161 0.000
+                       NONSPECIFIC ST ABNORMALITY    326  0.465 0.058        1.000        0.000 0.030 0.000
+                            ECTOPIC ATRIAL RHYTHM    156  0.461 0.029        0.923        0.101 0.015 0.989
+            NONSPECIFIC ST AND T WAVE ABNORMALITY    884  0.438 0.149        1.000        0.000 0.081 0.000
+                          VENTRICULAR TACHYCARDIA     84  0.435 0.067        0.048        0.997 0.114 0.993
+                     WITH PROLONGED AV CONDUCTION     12  0.424 0.002        0.583        0.460 0.001 0.999
+                           WITH VARIABLE AV BLOCK     67  0.424 0.012        1.000        0.000 0.006 0.000
+                                SINUS BRADYCARDIA    935  0.421 0.157        1.000        0.000 0.085 0.000
+                           WITH 2:1 AV CONDUCTION     40  0.411 0.008        0.050        0.958 0.004 0.996
+                                  LATERAL INFARCT      3  0.392 0.001        1.000        0.166 0.000 1.000
+                                 INFERIOR INFARCT      8  0.384 0.001        1.000        0.000 0.001 0.000
+                               ACUTE PERICARDITIS      1  0.344 0.000        1.000        0.000 0.000 0.000
+             INCOMPLETE RIGHT BUNDLE BRANCH BLOCK    336  0.340 0.060        1.000        0.000 0.031 0.000
+                                 WITH SINUS PAUSE     15  0.321 0.003        1.000        0.000 0.001 0.000
+                            WOLFF-PARKINSON-WHITE    150  0.259 0.027        1.000        0.000 0.014 0.000
+                        RIGHT BUNDLE BRANCH BLOCK    290  0.213 0.052        1.000        0.000 0.026 1.000
+2026-03-14 16:18:01,443 - INFO -   Macro AUROC: 0.5985 → 0.5382  (Δ -0.0603)
+2026-03-14 16:18:01,626 - INFO -   Saved: ./res/zeroshot_pruning/pruned_magnitude_ratio0.2_auroc0.5382.pth
+2026-03-14 16:18:01,626 - INFO - 
+============================================================
+2026-03-14 16:18:01,627 - INFO - PRUNING RATIO 0.3  |  method: magnitude
+2026-03-14 16:18:01,627 - INFO - ============================================================
+2026-03-14 16:18:02,274 - INFO -   Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-03-14 16:18:02,329 - INFO -   Ignoring 1 final classifier layer(s)
+2026-03-14 16:18:02,505 - INFO - Applying pruning step (zero-shot — no training data) ...
+2026-03-14 16:18:02,837 - INFO -   MACs  : 1.1727 G → 1.1039 G  (5.87% reduced)
+2026-03-14 16:18:02,837 - INFO -   Params: 30.8190 M → 29.9919 M  (2.68% reduced)
+2026-03-14 16:20:02,881 - INFO - 
+Computing full evaluation: pruned_magnitude_ratio30
+2026-03-14 16:22:46,325 - INFO - [pruned_magnitude_ratio30] Valid labels : 52/150
+2026-03-14 16:22:46,326 - INFO - [pruned_magnitude_ratio30] Macro AUROC  : 0.5210
+2026-03-14 16:22:46,326 - INFO - [pruned_magnitude_ratio30] Results saved: ./res/zeroshot_pruning/pruned_magnitude_ratio30_results.csv
+2026-03-14 16:22:46,333 - INFO - 
+                                            Label  n_pos  AUROC    F1  Sensitivity  Specificity   PPV   NPV
+                       PREMATURE ATRIAL COMPLEXES      1  0.796 0.001        1.000        0.776 0.000 1.000
+                    RIGHT VENTRICULAR HYPERTROPHY    693  0.769 0.267        0.312        0.931 0.234 0.952
+                                  LATERAL INFARCT      3  0.717 0.002        0.667        0.769 0.001 1.000
+                  LEFT POSTERIOR FASCICULAR BLOCK     19  0.676 0.008        0.421        0.829 0.004 0.999
+                              OR DIGITALIS EFFECT      9  0.676 0.008        0.111        0.978 0.004 0.999
+                   LEFT ANTERIOR FASCICULAR BLOCK    323  0.675 0.145        0.269        0.926 0.099 0.977
+                                 ANTERIOR INFARCT      5  0.669 0.003        0.200        0.935 0.001 1.000
+                                   ATRIAL FLUTTER     31  0.669 0.024        0.290        0.935 0.013 0.998
+                                 FUSION COMPLEXES     27  0.663 0.013        0.037        0.988 0.008 0.998
+                               ACUTE PERICARDITIS      1  0.659 0.000        1.000        0.000 0.000 0.000
+                              ATRIAL FIBRILLATION     25  0.641 0.012        0.320        0.880 0.006 0.998
+VOLTAGE CRITERIA FOR LEFT VENTRICULAR HYPERTROPHY    805  0.620 0.182        0.523        0.666 0.111 0.946
+                            WITH SINUS ARRHYTHMIA   1975  0.614 0.340        0.825        0.334 0.214 0.897
+             PREMATURE SUPRAVENTRICULAR COMPLEXES     16  0.614 0.011        0.125        0.969 0.006 0.999
+                           WITH 2:1 AV CONDUCTION     40  0.585 0.050        0.075        0.993 0.037 0.997
+                             otherwise normal ecg    621  0.574 0.120        0.683        0.415 0.066 0.956
+                             WITH AV DISSOCIATION     70  0.570 0.013        1.000        0.000 0.006 0.000
+                        WITH COMPLETE HEART BLOCK     67  0.566 0.016        0.776        0.413 0.008 0.997
+                             RIGHT AXIS DEVIATION    335  0.564 0.078        0.185        0.887 0.049 0.972
+                             EARLY REPOLARIZATION    249  0.560 0.044        1.000        0.000 0.023 0.000
+                   NONSPECIFIC T WAVE ABNORMALITY   2544  0.556 0.379        0.929        0.100 0.238 0.823
+                                     PROLONGED QT    778  0.547 0.143        0.397        0.681 0.087 0.937
+                                  LOW VOLTAGE QRS    277  0.543 0.055        0.527        0.546 0.029 0.978
+                WITH VENTRICULAR ESCAPE COMPLEXES     32  0.532 0.008        0.062        0.955 0.004 0.997
+                         LEFT BUNDLE BRANCH BLOCK     18  0.516 0.004        0.167        0.865 0.002 0.998
+                  PREMATURE VENTRICULAR COMPLEXES      6  0.515 0.001        0.667        0.504 0.001 1.000
+                                       NORMAL ECG   1759  0.500 0.277        1.000        0.000 0.161 0.000
+                 WITH JUNCTIONAL ESCAPE COMPLEXES    184  0.497 0.033        0.288        0.726 0.018 0.984
+                     SUPRAVENTRICULAR TACHYCARDIA     66  0.491 0.101        0.076        0.997 0.152 0.994
+                             ANTEROSEPTAL INFARCT     14  0.488 0.003        0.643        0.475 0.002 0.999
+                                SINUS BRADYCARDIA    935  0.488 0.157        1.000        0.000 0.085 0.000
+                     WITH PROLONGED AV CONDUCTION     12  0.482 0.003        0.417        0.707 0.002 0.999
+            NONSPECIFIC ST AND T WAVE ABNORMALITY    884  0.476 0.149        1.000        0.000 0.081 0.000
+                              LEFT AXIS DEVIATION     54  0.473 0.022        0.056        0.981 0.014 0.995
+                         WITH 1ST DEGREE AV BLOCK    123  0.465 0.022        1.000        0.000 0.011 0.000
+                       NONSPECIFIC ST ABNORMALITY    326  0.463 0.058        1.000        0.000 0.030 0.000
+                         RIGHT ATRIAL ENLARGEMENT    201  0.458 0.036        1.000        0.000 0.018 0.000
+                           WITH VARIABLE AV BLOCK     67  0.450 0.012        1.000        0.000 0.006 0.000
+                            WOLFF-PARKINSON-WHITE    150  0.442 0.027        1.000        0.000 0.014 0.000
+                          LEFT ATRIAL ENLARGEMENT    184  0.438 0.033        1.000        0.000 0.017 0.000
+               WITH 2ND DEGREE SA BLOCK MOBITZ II      9  0.436 0.002        0.111        0.906 0.001 0.999
+                     LEFT VENTRICULAR HYPERTROPHY    348  0.432 0.062        1.000        0.000 0.032 0.000
+                          VENTRICULAR TACHYCARDIA     84  0.418 0.049        0.060        0.989 0.041 0.993
+                                SINUS TACHYCARDIA   2210  0.413 0.336        1.000        0.000 0.202 0.000
+                            ECTOPIC ATRIAL RHYTHM    156  0.405 0.028        1.000        0.000 0.014 0.000
+                                 INFERIOR INFARCT      8  0.385 0.100        0.125        0.999 0.083 0.999
+             INCOMPLETE RIGHT BUNDLE BRANCH BLOCK    336  0.381 0.060        1.000        0.000 0.031 0.000
+                                 WITH SINUS PAUSE     15  0.380 0.005        0.133        0.926 0.002 0.999
+    NONSPECIFIC INTRAVENTRICULAR CONDUCTION DELAY     55  0.374 0.010        0.818        0.192 0.005 0.995
+                        PULMONARY DISEASE PATTERN      3  0.314 0.001        1.000        0.035 0.000 1.000
+                        RIGHT BUNDLE BRANCH BLOCK    290  0.237 0.052        1.000        0.000 0.026 0.000
+                                JUNCTIONAL RHYTHM      4  0.221 0.001        1.000        0.070 0.000 1.000
+2026-03-14 16:22:46,335 - INFO -   Macro AUROC: 0.5985 → 0.5210  (Δ -0.0774)
+2026-03-14 16:22:46,507 - INFO -   Saved: ./res/zeroshot_pruning/pruned_magnitude_ratio0.3_auroc0.5210.pth
+2026-03-14 16:22:46,507 - INFO - 
+============================================================
+2026-03-14 16:22:46,508 - INFO - PRUNING RATIO 0.4  |  method: magnitude
+2026-03-14 16:22:46,508 - INFO - ============================================================
+2026-03-14 16:22:47,114 - INFO -   Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-03-14 16:22:47,191 - INFO -   Ignoring 1 final classifier layer(s)
+2026-03-14 16:22:47,303 - INFO - Applying pruning step (zero-shot — no training data) ...
+2026-03-14 16:22:47,654 - INFO -   MACs  : 1.1727 G → 1.0810 G  (7.82% reduced)
+2026-03-14 16:22:47,655 - INFO -   Params: 30.8190 M → 29.7162 M  (3.58% reduced)
+2026-03-14 16:24:56,271 - INFO - 
+Computing full evaluation: pruned_magnitude_ratio40
+2026-03-14 16:27:14,009 - INFO - [pruned_magnitude_ratio40] Valid labels : 52/150
+2026-03-14 16:27:14,010 - INFO - [pruned_magnitude_ratio40] Macro AUROC  : 0.5129
+2026-03-14 16:27:14,010 - INFO - [pruned_magnitude_ratio40] Results saved: ./res/zeroshot_pruning/pruned_magnitude_ratio40_results.csv
+2026-03-14 16:27:14,016 - INFO - 
+                                            Label  n_pos  AUROC    F1  Sensitivity  Specificity   PPV   NPV
+                               ACUTE PERICARDITIS      1  0.897 0.000        1.000        0.000 0.000 0.000
+                         LEFT BUNDLE BRANCH BLOCK     18  0.808 0.053        0.056        0.998 0.050 0.998
+                                   ATRIAL FLUTTER     31  0.764 0.036        0.032        0.998 0.040 0.997
+                       PREMATURE ATRIAL COMPLEXES      1  0.744 0.001        1.000        0.676 0.000 1.000
+                                 INFERIOR INFARCT      8  0.693 0.053        0.125        0.997 0.033 0.999
+                                 FUSION COMPLEXES     27  0.690 0.038        0.074        0.993 0.025 0.998
+                              ATRIAL FIBRILLATION     25  0.680 0.015        0.040        0.990 0.009 0.998
+                                 ANTERIOR INFARCT      5  0.656 0.007        0.200        0.974 0.004 1.000
+    NONSPECIFIC INTRAVENTRICULAR CONDUCTION DELAY     55  0.651 0.043        0.073        0.989 0.031 0.995
+                          VENTRICULAR TACHYCARDIA     84  0.636 0.119        0.071        0.999 0.353 0.993
+                                  LOW VOLTAGE QRS    277  0.635 0.086        0.141        0.944 0.062 0.977
+                                  LATERAL INFARCT      3  0.625 0.002        0.667        0.845 0.001 1.000
+                            WOLFF-PARKINSON-WHITE    150  0.612 0.061        0.127        0.958 0.040 0.988
+                            WITH SINUS ARRHYTHMIA   1975  0.578 0.305        1.000        0.000 0.180 0.000
+                        WITH COMPLETE HEART BLOCK     67  0.564 0.014        0.582        0.508 0.007 0.995
+                                SINUS BRADYCARDIA    935  0.564 0.178        0.547        0.572 0.107 0.931
+                     SUPRAVENTRICULAR TACHYCARDIA     66  0.559 0.048        0.106        0.980 0.031 0.995
+                 WITH JUNCTIONAL ESCAPE COMPLEXES    184  0.558 0.041        0.223        0.835 0.023 0.984
+            NONSPECIFIC ST AND T WAVE ABNORMALITY    884  0.556 0.165        0.354        0.742 0.108 0.929
+               WITH 2ND DEGREE SA BLOCK MOBITZ II      9  0.546 0.002        0.667        0.541 0.001 0.999
+                   LEFT ANTERIOR FASCICULAR BLOCK    323  0.532 0.066        0.099        0.942 0.049 0.972
+                                SINUS TACHYCARDIA   2210  0.524 0.336        0.999        0.002 0.202 0.850
+                             otherwise normal ecg    621  0.522 0.107        1.000        0.000 0.057 0.000
+                             EARLY REPOLARIZATION    249  0.522 0.044        1.000        0.000 0.023 0.000
+                  PREMATURE VENTRICULAR COMPLEXES      6  0.516 0.002        0.333        0.819 0.001 1.000
+                                     PROLONGED QT    778  0.515 0.133        1.000        0.000 0.071 0.000
+                     LEFT VENTRICULAR HYPERTROPHY    348  0.511 0.065        0.273        0.767 0.037 0.970
+                           WITH 2:1 AV CONDUCTION     40  0.511 0.043        0.025        0.999 0.143 0.996
+             PREMATURE SUPRAVENTRICULAR COMPLEXES     16  0.510 0.004        0.062        0.958 0.002 0.999
+                   NONSPECIFIC T WAVE ABNORMALITY   2544  0.507 0.377        1.000        0.000 0.232 0.000
+                                       NORMAL ECG   1759  0.504 0.277        1.000        0.000 0.161 0.000
+VOLTAGE CRITERIA FOR LEFT VENTRICULAR HYPERTROPHY    805  0.493 0.137        1.000        0.000 0.073 0.000
+                                 WITH SINUS PAUSE     15  0.489 0.003        0.600        0.514 0.002 0.999
+                       NONSPECIFIC ST ABNORMALITY    326  0.486 0.060        0.831        0.200 0.031 0.975
+                            ECTOPIC ATRIAL RHYTHM    156  0.486 0.030        0.308        0.727 0.016 0.986
+                              OR DIGITALIS EFFECT      9  0.482 0.008        0.222        0.957 0.004 0.999
+                             WITH AV DISSOCIATION     70  0.459 0.013        1.000        0.000 0.006 0.000
+                           WITH VARIABLE AV BLOCK     67  0.437 0.012        1.000        0.000 0.006 0.000
+                             ANTEROSEPTAL INFARCT     14  0.437 0.010        0.071        0.983 0.005 0.999
+                         WITH 1ST DEGREE AV BLOCK    123  0.431 0.022        1.000        0.000 0.011 0.000
+                WITH VENTRICULAR ESCAPE COMPLEXES     32  0.421 0.024        0.031        0.995 0.019 0.997
+                              LEFT AXIS DEVIATION     54  0.410 0.015        0.037        0.981 0.009 0.995
+                     WITH PROLONGED AV CONDUCTION     12  0.400 0.002        1.000        0.085 0.001 1.000
+                  LEFT POSTERIOR FASCICULAR BLOCK     19  0.384 0.003        1.000        0.000 0.002 0.000
+                         RIGHT ATRIAL ENLARGEMENT    201  0.314 0.036        1.000        0.001 0.018 1.000
+                          LEFT ATRIAL ENLARGEMENT    184  0.304 0.033        1.000        0.000 0.017 0.000
+             INCOMPLETE RIGHT BUNDLE BRANCH BLOCK    336  0.301 0.060        1.000        0.000 0.031 1.000
+                    RIGHT VENTRICULAR HYPERTROPHY    693  0.285 0.119        1.000        0.000 0.063 0.000
+                                JUNCTIONAL RHYTHM      4  0.272 0.001        1.000        0.044 0.000 1.000
+                             RIGHT AXIS DEVIATION    335  0.246 0.059        1.000        0.000 0.031 0.000
+                        RIGHT BUNDLE BRANCH BLOCK    290  0.240 0.052        1.000        0.000 0.026 0.000
+                        PULMONARY DISEASE PATTERN      3  0.202 0.001        1.000        0.015 0.000 1.000
+2026-03-14 16:27:14,021 - INFO -   Macro AUROC: 0.5985 → 0.5129  (Δ -0.0856)
+2026-03-14 16:27:14,250 - INFO -   Saved: ./res/zeroshot_pruning/pruned_magnitude_ratio0.4_auroc0.5129.pth
+2026-03-14 16:27:14,250 - INFO - 
+============================================================
+2026-03-14 16:27:14,251 - INFO - PRUNING RATIO 0.5  |  method: magnitude
+2026-03-14 16:27:14,251 - INFO - ============================================================
+2026-03-14 16:27:15,030 - INFO -   Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-03-14 16:27:15,157 - INFO -   Ignoring 1 final classifier layer(s)
+2026-03-14 16:27:15,242 - INFO - Applying pruning step (zero-shot — no training data) ...
+2026-03-14 16:27:15,563 - INFO -   MACs  : 1.1727 G → 1.0810 G  (7.82% reduced)
+2026-03-14 16:27:15,563 - INFO -   Params: 30.8190 M → 29.7162 M  (3.58% reduced)
+2026-03-14 16:29:19,154 - INFO - 
+Computing full evaluation: pruned_magnitude_ratio50
+2026-03-14 16:31:36,468 - INFO - [pruned_magnitude_ratio50] Valid labels : 52/150
+2026-03-14 16:31:36,468 - INFO - [pruned_magnitude_ratio50] Macro AUROC  : 0.5129
+2026-03-14 16:31:36,469 - INFO - [pruned_magnitude_ratio50] Results saved: ./res/zeroshot_pruning/pruned_magnitude_ratio50_results.csv
+2026-03-14 16:31:36,476 - INFO - 
+                                            Label  n_pos  AUROC    F1  Sensitivity  Specificity   PPV   NPV
+                               ACUTE PERICARDITIS      1  0.897 0.000        1.000        0.000 0.000 0.000
+                         LEFT BUNDLE BRANCH BLOCK     18  0.808 0.053        0.056        0.998 0.050 0.998
+                                   ATRIAL FLUTTER     31  0.764 0.036        0.032        0.998 0.040 0.997
+                       PREMATURE ATRIAL COMPLEXES      1  0.744 0.001        1.000        0.676 0.000 1.000
+                                 INFERIOR INFARCT      8  0.693 0.053        0.125        0.997 0.033 0.999
+                                 FUSION COMPLEXES     27  0.690 0.038        0.074        0.993 0.025 0.998
+                              ATRIAL FIBRILLATION     25  0.680 0.015        0.040        0.990 0.009 0.998
+                                 ANTERIOR INFARCT      5  0.656 0.007        0.200        0.974 0.004 1.000
+    NONSPECIFIC INTRAVENTRICULAR CONDUCTION DELAY     55  0.651 0.043        0.073        0.989 0.031 0.995
+                          VENTRICULAR TACHYCARDIA     84  0.636 0.119        0.071        0.999 0.353 0.993
+                                  LOW VOLTAGE QRS    277  0.635 0.086        0.141        0.944 0.062 0.977
+                                  LATERAL INFARCT      3  0.625 0.002        0.667        0.845 0.001 1.000
+                            WOLFF-PARKINSON-WHITE    150  0.612 0.061        0.127        0.958 0.040 0.988
+                            WITH SINUS ARRHYTHMIA   1975  0.578 0.305        1.000        0.000 0.180 0.000
+                        WITH COMPLETE HEART BLOCK     67  0.564 0.014        0.582        0.508 0.007 0.995
+                                SINUS BRADYCARDIA    935  0.564 0.178        0.547        0.572 0.107 0.931
+                     SUPRAVENTRICULAR TACHYCARDIA     66  0.559 0.048        0.106        0.980 0.031 0.995
+                 WITH JUNCTIONAL ESCAPE COMPLEXES    184  0.558 0.041        0.223        0.835 0.023 0.984
+            NONSPECIFIC ST AND T WAVE ABNORMALITY    884  0.556 0.165        0.354        0.742 0.108 0.929
+               WITH 2ND DEGREE SA BLOCK MOBITZ II      9  0.546 0.002        0.667        0.541 0.001 0.999
+                   LEFT ANTERIOR FASCICULAR BLOCK    323  0.532 0.066        0.099        0.942 0.049 0.972
+                                SINUS TACHYCARDIA   2210  0.524 0.336        0.999        0.002 0.202 0.850
+                             otherwise normal ecg    621  0.522 0.107        1.000        0.000 0.057 0.000
+                             EARLY REPOLARIZATION    249  0.522 0.044        1.000        0.000 0.023 0.000
+                  PREMATURE VENTRICULAR COMPLEXES      6  0.516 0.002        0.333        0.819 0.001 1.000
+                                     PROLONGED QT    778  0.515 0.133        1.000        0.000 0.071 0.000
+                     LEFT VENTRICULAR HYPERTROPHY    348  0.511 0.065        0.273        0.767 0.037 0.970
+                           WITH 2:1 AV CONDUCTION     40  0.511 0.043        0.025        0.999 0.143 0.996
+             PREMATURE SUPRAVENTRICULAR COMPLEXES     16  0.510 0.004        0.062        0.958 0.002 0.999
+                   NONSPECIFIC T WAVE ABNORMALITY   2544  0.507 0.377        1.000        0.000 0.232 0.000
+                                       NORMAL ECG   1759  0.504 0.277        1.000        0.000 0.161 0.000
+VOLTAGE CRITERIA FOR LEFT VENTRICULAR HYPERTROPHY    805  0.493 0.137        1.000        0.000 0.073 0.000
+                                 WITH SINUS PAUSE     15  0.489 0.003        0.600        0.514 0.002 0.999
+                       NONSPECIFIC ST ABNORMALITY    326  0.486 0.060        0.831        0.200 0.031 0.975
+                            ECTOPIC ATRIAL RHYTHM    156  0.486 0.030        0.308        0.727 0.016 0.986
+                              OR DIGITALIS EFFECT      9  0.482 0.008        0.222        0.957 0.004 0.999
+                             WITH AV DISSOCIATION     70  0.459 0.013        1.000        0.000 0.006 0.000
+                           WITH VARIABLE AV BLOCK     67  0.437 0.012        1.000        0.000 0.006 0.000
+                             ANTEROSEPTAL INFARCT     14  0.437 0.010        0.071        0.983 0.005 0.999
+                         WITH 1ST DEGREE AV BLOCK    123  0.431 0.022        1.000        0.000 0.011 0.000
+                WITH VENTRICULAR ESCAPE COMPLEXES     32  0.421 0.024        0.031        0.995 0.019 0.997
+                              LEFT AXIS DEVIATION     54  0.410 0.015        0.037        0.981 0.009 0.995
+                     WITH PROLONGED AV CONDUCTION     12  0.400 0.002        1.000        0.085 0.001 1.000
+                  LEFT POSTERIOR FASCICULAR BLOCK     19  0.384 0.003        1.000        0.000 0.002 0.000
+                         RIGHT ATRIAL ENLARGEMENT    201  0.314 0.036        1.000        0.001 0.018 1.000
+                          LEFT ATRIAL ENLARGEMENT    184  0.304 0.033        1.000        0.000 0.017 0.000
+             INCOMPLETE RIGHT BUNDLE BRANCH BLOCK    336  0.301 0.060        1.000        0.000 0.031 1.000
+                    RIGHT VENTRICULAR HYPERTROPHY    693  0.285 0.119        1.000        0.000 0.063 0.000
+                                JUNCTIONAL RHYTHM      4  0.272 0.001        1.000        0.044 0.000 1.000
+                             RIGHT AXIS DEVIATION    335  0.246 0.059        1.000        0.000 0.031 0.000
+                        RIGHT BUNDLE BRANCH BLOCK    290  0.240 0.052        1.000        0.000 0.026 0.000
+                        PULMONARY DISEASE PATTERN      3  0.202 0.001        1.000        0.015 0.000 1.000
+2026-03-14 16:31:36,479 - INFO -   Macro AUROC: 0.5985 → 0.5129  (Δ -0.0856)
+2026-03-14 16:31:36,710 - INFO -   Saved: ./res/zeroshot_pruning/pruned_magnitude_ratio0.5_auroc0.5129.pth
+2026-03-14 16:31:36,712 - INFO - 
+============================================================
+2026-03-14 16:31:36,712 - INFO - PRUNING SUMMARY
+2026-03-14 16:31:36,712 - INFO - ============================================================
+2026-03-14 16:31:36,715 - INFO - 
+ pruning_ratio    method  macs_G  params_M  macs_reduction  params_reduction  macro_auroc  auroc_drop
+           0.0      none  1.1727   30.8190            0.00              0.00       0.5985      0.0000
+           0.1 magnitude  1.1498   30.5433            1.96              0.89       0.5599      0.0385
+           0.2 magnitude  1.1268   30.2676            3.91              1.79       0.5382      0.0603
+           0.3 magnitude  1.1039   29.9919            5.87              2.68       0.5210      0.0774
+           0.4 magnitude  1.0810   29.7162            7.82              3.58       0.5129      0.0856
+           0.5 magnitude  1.0810   29.7162            7.82              3.58       0.5129      0.0856
+2026-03-14 16:31:36,716 - INFO - 
+Summary saved: ./res/zeroshot_pruning/pruning_summary.csv
+2026-03-14 16:31:36,716 - INFO - ============================================================

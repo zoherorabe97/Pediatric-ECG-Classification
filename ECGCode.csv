@@ -1,0 +1,106 @@
+Description,AHA(Category&Code),CHN(Category&Code)
+Normal ECG,A1,A1
+Otherwise normal ECG,A2,A2
+Sinus tachycardia,C21,C13
+Sinus bradycardia,C22,C14
+Sinus arrhythmia,C23,C15
+"Sinoatrial block, type II",C25,C17
+Sinus pause or arrest,C26,C18
+Atrial premature complex(es),D30,D21
+"Atrial premature complexes, nonconducted",D31,D22
+Atrial reciprocal beats,N/A,D23
+Sinoatrial node to atrial internal migratory rhythm,N/A,D24
+Junctional premature complex(es),D36,D27
+Junctional escape complex(es),D37,D28
+Accelerated junctional rhythm,D39,D30
+Atrial escape complex(es),N/A,D37
+Accelerated atrial autonomous rhythm,N/A,D40
+Atrial fibrillation,E50,E48
+Atrial flutter,E51,E49
+"Ectopic atrial tachycardia, unifocal",E52,E50
+Junctional tachycardia,E54,E52
+Supraventricular tachycardia,E55,E53
+Ventricular premature complex(es),F60,F55
+Fusion complex(es),F61,F56
+Ventricular escape complex(es),F62,F57
+Ventricular tachycardia,G70,G65
+"Ventricular tachycardia, polymorphous",G72,G67
+Ventricular fibrillation,G74,G69
+Short PR interva,H80,H72
+AV conduction ratio N:D,H81,H73
+First-degree AV block,N/A,H74
+Prolonged PR interval,H82,N/A
+"Second-degree AV block, Mobitz type I(Wenckebach)",H83,H75
+"Second-degree AV block, Mobitz type II",H84,H76
+2:1 AV block,H85,H77
+"AV block, varying conduction",H86,H78
+"AV block, advanced (high-grade)",H87,H79
+"AV block, complete (third-degree)",H88,H80
+AV dissociation,H89,H81
+Left anterior fascicular block,I101,I83
+Left posterior fascicular block,I102,I84
+Left bundle-branch block,I104,I85
+Incomplete right bundle-branch block,I105,I86
+Right bundle-branch block,I106,I87
+Nonspecific intraventricular block,N/A,I88
+Preexcitation syndrome,N/A,I90
+Intraventricular conduction delay,I107,I82
+Ventricular preexcitation,I108,I89
+Osborn wave,N/A,I97
+Right-axis deviation,J120,J99
+Left-axis deviation,J121,J100
+Electrical alternans,J124,J103
+Left ventricular high voltage,N/A,J106
+Right ventricular high voltage,N/A,J107
+Abnormal precordial R-wave progression,N/A,J110
+Low voltage,J125,J(111 + 112 + 113)
+Left atrial enlargement,K140,K114
+Right atrial enlargement,K141,K115
+Left ventricular hypertrophy,K142,K117
+Right ventricular hypertrophy,K143,K118
+ST deviation,L145,L121
+ST deviation with T-wave change,L146,L122
+T-wave abnormality,L147,L123
+Prolonged QT interval,L148,L124
+Prolonged QTc interval,N/A,L125
+Short QT interval,L149,L126
+Short QTc interval,N/A,L127
+Prominent U waves,L150,L128
+Inverted U waves,L151,L129
+TU fusion,L152,L130
+Early repolarization,L155,L133
+Abnormal Q wave,N/A,L134
+Anterior MI,M160,M136
+Inferior MI,M161,M139
+Posterior MI,M162,M140
+Lateral MI,M163,N/A
+Anteroseptal MI,M165,M135
+Extensive anterior MI,M166,M138
+Pacing rhythm,N(180 + 181),N(143 + 144)
+Occasional,Modifier308,N/A
+Frequent,Modifier310,N/A
+Acute,Modifier330,N/A
+Recent,Modifier331,N/A
+Old,Modifier332,N/A
+Couplets,Modifier340,N/A
+In a bigeminal pattern,Modifier341,N/A
+In a trigeminal pattern,Modifier342,N/A
+With a rapid ventricular response,Modifier346,N/A
+With aberrancy,Modifier349,N/A
+Polymorphic,Modifier350,N/A
+Depression,Modifier362,N/A
+Elevation,Modifier363,N/A
+Inversion,Modifier367,N/A
+Acute pericarditis,Suggests200,N/A
+Brugada abnormality,Suggests202,N/A
+Digitalis effect,Suggests205,N/A
+Hypercalcemia,Suggests207,N/A
+Hyperkalemia,Suggests208,N/A
+Hypocalcemia,Suggests210,N/A
+Hypokalemia or drug effect,Suggests211,N/A
+Ostium primum ASD,Suggests213,N/A
+Acute ischemia,Consider220,N/A
+AV nodal reentry,Consider221,N/A
+Ischemia,Consider226,N/A
+Pulmonary disease,Consider229,N/A
+Dextrocardia,Consider230,N/A
