@@ -1,0 +1,872 @@
+2026-03-21 20:25:49,563 - INFO - Using device: cuda:0
+2026-03-21 20:25:49,563 - INFO - Number of classes: 150
+2026-03-21 20:25:49,571 - INFO - Loading dataset...
+2026-03-21 20:25:50,026 - INFO - Samples with at least one active label: 9397
+2026-03-21 20:25:50,057 - INFO - Recovery train samples : 6690
+2026-03-21 20:25:50,057 - INFO - Full eval samples      : 9397
+2026-03-21 20:25:50,905 - INFO - 
+============================================================
+2026-03-21 20:25:50,905 - INFO - BASELINE — fine-tuned model (no pruning)
+2026-03-21 20:25:50,905 - INFO - ============================================================
+2026-03-21 20:26:14,757 - INFO -   Detected 'backbone.' prefix — stripping for bare Net1D
+2026-03-21 20:26:24,516 - INFO -   Weights loaded (strict=True) | missing: 0 | unexpected: 0
+2026-03-21 20:26:38,127 - INFO - Running sanity-check inference...
+2026-03-21 20:40:55,571 - INFO - Sanity-check Macro AUROC: 0.8032 over 39 valid labels
+2026-03-21 20:40:55,579 - INFO - Sanity check PASSED.
+2026-03-21 20:40:55,832 - INFO - Baseline MACs  : 1.1727 G
+2026-03-21 20:40:55,832 - INFO - Baseline Params: 30.8190 M
+2026-03-21 20:40:55,832 - INFO - 
+Computing full evaluation: baseline
+2026-03-21 20:43:35,538 - INFO - 
+========================================================================
+2026-03-21 20:43:35,539 - INFO - [baseline] PER-CLASS AUROC  (39 valid / 150 total)
+2026-03-21 20:43:35,540 - INFO - ========================================================================
+2026-03-21 20:43:35,541 - INFO -   Label                                                 n_pos   AUROC  95% CI
+2026-03-21 20:43:35,541 - INFO -   ----------------------------------------------------------------------
+2026-03-21 20:43:35,542 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                          19   0.980  (0.963, 0.993)
+2026-03-21 20:43:35,543 - INFO -   SINUS BRADYCARDIA                                       935   0.976  (0.973, 0.980)
+2026-03-21 20:43:35,544 - INFO -   RIGHT BUNDLE BRANCH BLOCK                               290   0.969  (0.962, 0.976)
+2026-03-21 20:43:35,545 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                          323   0.969  (0.964, 0.975)
+2026-03-21 20:43:35,546 - INFO -   VENTRICULAR TACHYCARDIA                                  81   0.961  (0.932, 0.977)
+2026-03-21 20:43:35,546 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                           693   0.949  (0.941, 0.957)
+2026-03-21 20:43:35,547 - INFO -   RIGHT AXIS DEVIATION                                    335   0.947  (0.940, 0.954)
+2026-03-21 20:43:35,547 - INFO -   LEFT AXIS DEVIATION                                      54   0.945  (0.933, 0.956)
+2026-03-21 20:43:35,547 - INFO -   PREMATURE ATRIAL COMPLEXES                                1   0.938  (0.933, 0.942)
+2026-03-21 20:43:35,550 - INFO -   SINUS TACHYCARDIA                                      2210   0.925  (0.919, 0.930)
+2026-03-21 20:43:35,550 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                             45   0.906  (0.854, 0.944)
+2026-03-21 20:43:35,551 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK                    336   0.897  (0.883, 0.910)
+2026-03-21 20:43:35,552 - INFO -   ATRIAL FLUTTER                                           31   0.895  (0.866, 0.923)
+2026-03-21 20:43:35,552 - INFO -   ANTEROSEPTAL INFARCT                                     14   0.892  (0.800, 0.960)
+2026-03-21 20:43:35,552 - INFO -   RIGHT ATRIAL ENLARGEMENT                                201   0.869  (0.848, 0.887)
+2026-03-21 20:43:35,554 - INFO -   LEFT VENTRICULAR HYPERTROPHY                            348   0.868  (0.851, 0.886)
+2026-03-21 20:43:35,555 - INFO -   NORMAL ECG                                             1759   0.838  (0.830, 0.847)
+2026-03-21 20:43:35,556 - INFO -   LEFT BUNDLE BRANCH BLOCK                                 18   0.835  (0.751, 0.935)
+2026-03-21 20:43:35,557 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                        32   0.812  (0.725, 0.886)
+2026-03-21 20:43:35,557 - INFO -   ACUTE PERICARDITIS                                        1   0.812  (0.803, 0.821)
+2026-03-21 20:43:35,558 - INFO -   EARLY REPOLARIZATION                                    249   0.809  (0.787, 0.834)
+2026-03-21 20:43:35,559 - INFO -   ANTERIOR INFARCT                                          5   0.806  (0.354, 0.986)
+2026-03-21 20:43:35,559 - INFO -   LOW VOLTAGE QRS                                         277   0.805  (0.779, 0.822)
+2026-03-21 20:43:35,560 - INFO -   WITH COMPLETE HEART BLOCK                                67   0.784  (0.730, 0.834)
+2026-03-21 20:43:35,561 - INFO -   LEFT ATRIAL ENLARGEMENT                                 184   0.775  (0.748, 0.796)
+2026-03-21 20:43:35,562 - INFO -   WITH AV DISSOCIATION                                     70   0.736  (0.676, 0.806)
+2026-03-21 20:43:35,563 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                        184   0.730  (0.696, 0.763)
+2026-03-21 20:43:35,563 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                         2544   0.717  (0.707, 0.730)
+2026-03-21 20:43:35,563 - INFO -   otherwise normal ecg                                    621   0.703  (0.684, 0.724)
+2026-03-21 20:43:35,563 - INFO -   PREMATURE VENTRICULAR COMPLEXES                           6   0.700  (0.410, 0.921)
+2026-03-21 20:43:35,563 - INFO -   PULMONARY DISEASE PATTERN                                 3   0.683  (0.294, 0.926)
+2026-03-21 20:43:35,566 - INFO -   WITH 2:1 AV CONDUCTION                                   40   0.646  (0.574, 0.725)
+2026-03-21 20:43:35,569 - INFO -   WITH VARIABLE AV BLOCK                                   67   0.643  (0.584, 0.724)
+2026-03-21 20:43:35,569 - INFO -   PROLONGED QT                                            427   0.640  (0.613, 0.665)
+2026-03-21 20:43:35,570 - INFO -   FUSION COMPLEXES                                         27   0.640  (0.564, 0.730)
+2026-03-21 20:43:35,572 - INFO -   ATRIAL FIBRILLATION                                      25   0.630  (0.531, 0.769)
+2026-03-21 20:43:35,572 - INFO -   WITH 1ST DEGREE AV BLOCK                                123   0.612  (0.562, 0.668)
+2026-03-21 20:43:35,572 - INFO -   INFERIOR INFARCT                                          8   0.549  (0.268, 0.747)
+2026-03-21 20:43:35,573 - INFO -   LATERAL INFARCT                                           3   0.530  (0.311, 0.664)
+2026-03-21 20:43:35,574 - INFO - 
+[baseline] Valid labels : 39 / 150
+2026-03-21 20:43:35,574 - INFO - [baseline] Skipped      : 111 / 150  (all-zero, saved to ./res/iterative_pruning/baseline_skipped_labels.csv)
+2026-03-21 20:43:35,575 - INFO - [baseline] Macro AUROC  : 0.8031  (39 valid labels)
+2026-03-21 20:43:35,575 - INFO - [baseline] Results saved: ./res/iterative_pruning/baseline_results.csv
+2026-03-21 20:43:36,724 - INFO - [baseline] ROC curve plot saved: ./res/iterative_pruning/baseline_roc_curves.png
+2026-03-21 20:43:36,724 - INFO - [baseline] Plot Macro AUC=0.8031  Micro AUC=0.9430
+2026-03-21 20:43:36,739 - INFO - 
+============================================================
+2026-03-21 20:43:36,739 - INFO - PRUNING RATIO 0.1  |  method: magnitude  |  recovery: 3 epochs
+2026-03-21 20:43:36,739 - INFO - ============================================================
+2026-03-21 20:43:50,564 - INFO -   Detected 'backbone.' prefix — stripping for bare Net1D
+2026-03-21 20:43:50,843 - INFO -   Weights loaded (strict=True) | missing: 0 | unexpected: 0
+2026-03-21 20:43:55,435 - INFO -   Ignoring 1 final classifier layer(s)
+2026-03-21 20:43:55,607 - INFO - Applying single-shot pruning step...
+2026-03-21 20:44:01,775 - INFO -   MACs  : 1.1727 G → 1.1498 G  (1.96% reduced)
+2026-03-21 20:44:01,776 - INFO -   Params: 30.8190 M → 30.5433 M  (0.89% reduced)
+2026-03-21 20:44:04,243 - INFO -   Recovery fine-tuning: 3 epochs | lr=0.0001 | wd=1e-05
+2026-03-21 20:49:10,361 - INFO -   Recovery epoch 1/3 | Loss: 0.0249 | LR: 7.50e-05
+2026-03-21 20:54:08,589 - INFO -   Recovery epoch 2/3 | Loss: 0.0204 | LR: 2.50e-05
+2026-03-21 20:59:00,368 - INFO -   Recovery epoch 3/3 | Loss: 0.0186 | LR: 0.00e+00
+2026-03-21 21:03:30,851 - INFO - 
+Computing full evaluation: pruned_magnitude_ratio10
+2026-03-21 21:05:56,922 - INFO - 
+========================================================================
+2026-03-21 21:05:56,922 - INFO - [pruned_magnitude_ratio10] PER-CLASS AUROC  (39 valid / 150 total)
+2026-03-21 21:05:56,922 - INFO - ========================================================================
+2026-03-21 21:05:56,922 - INFO -   Label                                                 n_pos   AUROC  95% CI
+2026-03-21 21:05:56,922 - INFO -   ----------------------------------------------------------------------
+2026-03-21 21:05:56,929 - INFO -   PREMATURE ATRIAL COMPLEXES                                1   0.988  (0.986, 0.989)
+2026-03-21 21:05:56,929 - INFO -   RIGHT BUNDLE BRANCH BLOCK                               290   0.985  (0.979, 0.988)
+2026-03-21 21:05:56,930 - INFO -   SINUS BRADYCARDIA                                       935   0.985  (0.982, 0.988)
+2026-03-21 21:05:56,931 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                          19   0.980  (0.960, 0.993)
+2026-03-21 21:05:56,931 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                          323   0.969  (0.961, 0.975)
+2026-03-21 21:05:56,932 - INFO -   VENTRICULAR TACHYCARDIA                                  81   0.968  (0.943, 0.986)
+2026-03-21 21:05:56,932 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                             45   0.963  (0.947, 0.978)
+2026-03-21 21:05:56,933 - INFO -   ATRIAL FLUTTER                                           31   0.954  (0.931, 0.973)
+2026-03-21 21:05:56,933 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                           693   0.951  (0.943, 0.958)
+2026-03-21 21:05:56,934 - INFO -   LEFT BUNDLE BRANCH BLOCK                                 18   0.950  (0.916, 0.977)
+2026-03-21 21:05:56,935 - INFO -   SINUS TACHYCARDIA                                      2210   0.950  (0.946, 0.954)
+2026-03-21 21:05:56,935 - INFO -   RIGHT AXIS DEVIATION                                    335   0.938  (0.927, 0.948)
+2026-03-21 21:05:56,936 - INFO -   LEFT AXIS DEVIATION                                      54   0.930  (0.912, 0.950)
+2026-03-21 21:05:56,937 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK                    336   0.927  (0.914, 0.942)
+2026-03-21 21:05:56,938 - INFO -   LEFT VENTRICULAR HYPERTROPHY                            348   0.910  (0.893, 0.925)
+2026-03-21 21:05:56,938 - INFO -   RIGHT ATRIAL ENLARGEMENT                                201   0.900  (0.879, 0.918)
+2026-03-21 21:05:56,939 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                        32   0.895  (0.826, 0.943)
+2026-03-21 21:05:56,940 - INFO -   WITH 2:1 AV CONDUCTION                                   40   0.891  (0.857, 0.932)
+2026-03-21 21:05:56,940 - INFO -   NORMAL ECG                                             1759   0.881  (0.874, 0.890)
+2026-03-21 21:05:56,940 - INFO -   LOW VOLTAGE QRS                                         277   0.873  (0.856, 0.890)
+2026-03-21 21:05:56,940 - INFO -   LEFT ATRIAL ENLARGEMENT                                 184   0.870  (0.847, 0.892)
+2026-03-21 21:05:56,942 - INFO -   EARLY REPOLARIZATION                                    249   0.852  (0.830, 0.875)
+2026-03-21 21:05:56,942 - INFO -   WITH AV DISSOCIATION                                     70   0.844  (0.789, 0.895)
+2026-03-21 21:05:56,943 - INFO -   WITH 1ST DEGREE AV BLOCK                                123   0.841  (0.807, 0.874)
+2026-03-21 21:05:56,944 - INFO -   LATERAL INFARCT                                           3   0.837  (0.764, 0.895)
+2026-03-21 21:05:56,944 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                        184   0.823  (0.782, 0.856)
+2026-03-21 21:05:56,945 - INFO -   WITH COMPLETE HEART BLOCK                                67   0.820  (0.756, 0.864)
+2026-03-21 21:05:56,945 - INFO -   ANTEROSEPTAL INFARCT                                     14   0.820  (0.714, 0.921)
+2026-03-21 21:05:56,946 - INFO -   WITH VARIABLE AV BLOCK                                   67   0.811  (0.764, 0.861)
+2026-03-21 21:05:56,946 - INFO -   PREMATURE VENTRICULAR COMPLEXES                           6   0.804  (0.695, 0.945)
+2026-03-21 21:05:56,947 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                         2544   0.786  (0.776, 0.797)
+2026-03-21 21:05:56,948 - INFO -   PROLONGED QT                                            427   0.768  (0.745, 0.794)
+2026-03-21 21:05:56,948 - INFO -   otherwise normal ecg                                    621   0.765  (0.750, 0.781)
+2026-03-21 21:05:56,949 - INFO -   FUSION COMPLEXES                                         27   0.741  (0.642, 0.830)
+2026-03-21 21:05:56,949 - INFO -   ATRIAL FIBRILLATION                                      25   0.740  (0.651, 0.829)
+2026-03-21 21:05:56,949 - INFO -   PULMONARY DISEASE PATTERN                                 3   0.688  (0.387, 0.975)
+2026-03-21 21:05:56,950 - INFO -   ANTERIOR INFARCT                                          5   0.630  (0.344, 0.941)
+2026-03-21 21:05:56,951 - INFO -   INFERIOR INFARCT                                          8   0.564  (0.397, 0.796)
+2026-03-21 21:05:56,952 - INFO -   ACUTE PERICARDITIS                                        1   0.482  (0.473, 0.494)
+2026-03-21 21:05:56,953 - INFO - 
+[pruned_magnitude_ratio10] Valid labels : 39 / 150
+2026-03-21 21:05:56,954 - INFO - [pruned_magnitude_ratio10] Skipped      : 111 / 150  (all-zero, saved to ./res/iterative_pruning/pruned_magnitude_ratio10_skipped_labels.csv)
+2026-03-21 21:05:56,954 - INFO - [pruned_magnitude_ratio10] Macro AUROC  : 0.8532  (39 valid labels)
+2026-03-21 21:05:56,954 - INFO - [pruned_magnitude_ratio10] Results saved: ./res/iterative_pruning/pruned_magnitude_ratio10_results.csv
+2026-03-21 21:05:57,926 - INFO - [pruned_magnitude_ratio10] ROC curve plot saved: ./res/iterative_pruning/pruned_magnitude_ratio10_roc_curves.png
+2026-03-21 21:05:57,927 - INFO - [pruned_magnitude_ratio10] Plot Macro AUC=0.8531  Micro AUC=0.9586
+2026-03-21 21:05:57,928 - INFO -   Macro AUROC: 0.8031 → 0.8532  (Δ +0.0501 vs fine-tuned baseline)
+2026-03-21 21:05:58,450 - INFO -   Saved: ./res/iterative_pruning/pruned_magnitude_ratio0.1_recovery3ep_auroc0.8532.pth
+2026-03-21 21:05:58,450 - INFO - 
+============================================================
+2026-03-21 21:05:58,450 - INFO - PRUNING RATIO 0.2  |  method: magnitude  |  recovery: 3 epochs
+2026-03-21 21:05:58,450 - INFO - ============================================================
+2026-03-21 21:06:12,530 - INFO -   Detected 'backbone.' prefix — stripping for bare Net1D
+2026-03-21 21:06:12,904 - INFO -   Weights loaded (strict=True) | missing: 0 | unexpected: 0
+2026-03-21 21:06:17,581 - INFO -   Ignoring 1 final classifier layer(s)
+2026-03-21 21:06:17,770 - INFO - Applying single-shot pruning step...
+2026-03-21 21:06:18,691 - INFO -   MACs  : 1.1727 G → 1.1268 G  (3.91% reduced)
+2026-03-21 21:06:18,691 - INFO -   Params: 30.8190 M → 30.2676 M  (1.79% reduced)
+2026-03-21 21:06:18,694 - INFO -   Recovery fine-tuning: 3 epochs | lr=0.0001 | wd=1e-05
+2026-03-21 21:11:04,300 - INFO -   Recovery epoch 1/3 | Loss: 0.0243 | LR: 7.50e-05
+2026-03-21 21:15:57,597 - INFO -   Recovery epoch 2/3 | Loss: 0.0203 | LR: 2.50e-05
+2026-03-21 21:20:46,522 - INFO -   Recovery epoch 3/3 | Loss: 0.0187 | LR: 0.00e+00
+2026-03-21 21:25:07,123 - INFO - 
+Computing full evaluation: pruned_magnitude_ratio20
+2026-03-21 21:27:30,625 - INFO - 
+========================================================================
+2026-03-21 21:27:30,627 - INFO - [pruned_magnitude_ratio20] PER-CLASS AUROC  (39 valid / 150 total)
+2026-03-21 21:27:30,627 - INFO - ========================================================================
+2026-03-21 21:27:30,628 - INFO -   Label                                                 n_pos   AUROC  95% CI
+2026-03-21 21:27:30,628 - INFO -   ----------------------------------------------------------------------
+2026-03-21 21:27:30,629 - INFO -   SINUS BRADYCARDIA                                       935   0.985  (0.981, 0.987)
+2026-03-21 21:27:30,629 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                          323   0.980  (0.975, 0.983)
+2026-03-21 21:27:30,631 - INFO -   PREMATURE ATRIAL COMPLEXES                                1   0.978  (0.976, 0.982)
+2026-03-21 21:27:30,631 - INFO -   RIGHT BUNDLE BRANCH BLOCK                               290   0.976  (0.970, 0.981)
+2026-03-21 21:27:30,632 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                             45   0.972  (0.955, 0.984)
+2026-03-21 21:27:30,632 - INFO -   VENTRICULAR TACHYCARDIA                                  81   0.968  (0.943, 0.988)
+2026-03-21 21:27:30,632 - INFO -   ATRIAL FLUTTER                                           31   0.963  (0.951, 0.976)
+2026-03-21 21:27:30,632 - INFO -   ACUTE PERICARDITIS                                        1   0.957  (0.952, 0.960)
+2026-03-21 21:27:30,632 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                          19   0.957  (0.907, 0.989)
+2026-03-21 21:27:30,635 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                           693   0.951  (0.944, 0.957)
+2026-03-21 21:27:30,635 - INFO -   SINUS TACHYCARDIA                                      2210   0.950  (0.946, 0.956)
+2026-03-21 21:27:30,636 - INFO -   LEFT BUNDLE BRANCH BLOCK                                 18   0.947  (0.887, 0.985)
+2026-03-21 21:27:30,636 - INFO -   LEFT AXIS DEVIATION                                      54   0.946  (0.930, 0.958)
+2026-03-21 21:27:30,638 - INFO -   RIGHT AXIS DEVIATION                                    335   0.939  (0.930, 0.949)
+2026-03-21 21:27:30,638 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK                    336   0.926  (0.915, 0.939)
+2026-03-21 21:27:30,639 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                        32   0.909  (0.842, 0.958)
+2026-03-21 21:27:30,639 - INFO -   RIGHT ATRIAL ENLARGEMENT                                201   0.904  (0.881, 0.925)
+2026-03-21 21:27:30,640 - INFO -   LEFT VENTRICULAR HYPERTROPHY                            348   0.897  (0.883, 0.913)
+2026-03-21 21:27:30,641 - INFO -   LOW VOLTAGE QRS                                         277   0.883  (0.864, 0.899)
+2026-03-21 21:27:30,641 - INFO -   WITH 2:1 AV CONDUCTION                                   40   0.879  (0.823, 0.927)
+2026-03-21 21:27:30,642 - INFO -   NORMAL ECG                                             1759   0.875  (0.866, 0.882)
+2026-03-21 21:27:30,643 - INFO -   WITH AV DISSOCIATION                                     70   0.870  (0.818, 0.914)
+2026-03-21 21:27:30,644 - INFO -   LEFT ATRIAL ENLARGEMENT                                 184   0.869  (0.845, 0.897)
+2026-03-21 21:27:30,644 - INFO -   WITH COMPLETE HEART BLOCK                                67   0.850  (0.798, 0.902)
+2026-03-21 21:27:30,645 - INFO -   EARLY REPOLARIZATION                                    249   0.840  (0.817, 0.860)
+2026-03-21 21:27:30,646 - INFO -   ANTERIOR INFARCT                                          5   0.839  (0.584, 0.966)
+2026-03-21 21:27:30,646 - INFO -   ANTEROSEPTAL INFARCT                                     14   0.838  (0.714, 0.924)
+2026-03-21 21:27:30,647 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                        184   0.831  (0.803, 0.857)
+2026-03-21 21:27:30,648 - INFO -   WITH VARIABLE AV BLOCK                                   67   0.825  (0.781, 0.865)
+2026-03-21 21:27:30,649 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                         2544   0.798  (0.787, 0.808)
+2026-03-21 21:27:30,649 - INFO -   PROLONGED QT                                            427   0.790  (0.766, 0.808)
+2026-03-21 21:27:30,649 - INFO -   otherwise normal ecg                                    621   0.765  (0.750, 0.780)
+2026-03-21 21:27:30,649 - INFO -   WITH 1ST DEGREE AV BLOCK                                123   0.765  (0.735, 0.800)
+2026-03-21 21:27:30,649 - INFO -   ATRIAL FIBRILLATION                                      25   0.755  (0.631, 0.865)
+2026-03-21 21:27:30,649 - INFO -   FUSION COMPLEXES                                         27   0.751  (0.675, 0.826)
+2026-03-21 21:27:30,649 - INFO -   PREMATURE VENTRICULAR COMPLEXES                           6   0.698  (0.425, 0.926)
+2026-03-21 21:27:30,649 - INFO -   INFERIOR INFARCT                                          8   0.564  (0.351, 0.758)
+2026-03-21 21:27:30,649 - INFO -   LATERAL INFARCT                                           3   0.554  (0.250, 0.712)
+2026-03-21 21:27:30,649 - INFO -   PULMONARY DISEASE PATTERN                                 3   0.455  (0.207, 0.916)
+2026-03-21 21:27:30,649 - INFO - 
+[pruned_magnitude_ratio20] Valid labels : 39 / 150
+2026-03-21 21:27:30,649 - INFO - [pruned_magnitude_ratio20] Skipped      : 111 / 150  (all-zero, saved to ./res/iterative_pruning/pruned_magnitude_ratio20_skipped_labels.csv)
+2026-03-21 21:27:30,656 - INFO - [pruned_magnitude_ratio20] Macro AUROC  : 0.8564  (39 valid labels)
+2026-03-21 21:27:30,657 - INFO - [pruned_magnitude_ratio20] Results saved: ./res/iterative_pruning/pruned_magnitude_ratio20_results.csv
+2026-03-21 21:27:31,567 - INFO - [pruned_magnitude_ratio20] ROC curve plot saved: ./res/iterative_pruning/pruned_magnitude_ratio20_roc_curves.png
+2026-03-21 21:27:31,569 - INFO - [pruned_magnitude_ratio20] Plot Macro AUC=0.8563  Micro AUC=0.9589
+2026-03-21 21:27:31,569 - INFO -   Macro AUROC: 0.8031 → 0.8564  (Δ +0.0533 vs fine-tuned baseline)
+2026-03-21 21:27:32,232 - INFO -   Saved: ./res/iterative_pruning/pruned_magnitude_ratio0.2_recovery3ep_auroc0.8564.pth
+2026-03-21 21:27:32,232 - INFO - 
+============================================================
+2026-03-21 21:27:32,232 - INFO - PRUNING RATIO 0.3  |  method: magnitude  |  recovery: 3 epochs
+2026-03-21 21:27:32,237 - INFO - ============================================================
+2026-03-21 21:27:36,560 - INFO -   Detected 'backbone.' prefix — stripping for bare Net1D
+2026-03-21 21:27:36,724 - INFO -   Weights loaded (strict=True) | missing: 0 | unexpected: 0
+2026-03-21 21:27:36,838 - INFO -   Ignoring 1 final classifier layer(s)
+2026-03-21 21:27:36,967 - INFO - Applying single-shot pruning step...
+2026-03-21 21:27:37,438 - INFO -   MACs  : 1.1727 G → 1.1039 G  (5.87% reduced)
+2026-03-21 21:27:37,438 - INFO -   Params: 30.8190 M → 29.9919 M  (2.68% reduced)
+2026-03-21 21:27:37,438 - INFO -   Recovery fine-tuning: 3 epochs | lr=0.0001 | wd=1e-05
+2026-03-21 21:32:35,617 - INFO -   Recovery epoch 1/3 | Loss: 0.0246 | LR: 7.50e-05
+2026-03-21 21:37:12,018 - INFO -   Recovery epoch 2/3 | Loss: 0.0205 | LR: 2.50e-05
+2026-03-21 21:41:49,766 - INFO -   Recovery epoch 3/3 | Loss: 0.0189 | LR: 0.00e+00
+2026-03-21 21:45:58,877 - INFO - 
+Computing full evaluation: pruned_magnitude_ratio30
+2026-03-21 21:48:21,689 - INFO - 
+========================================================================
+2026-03-21 21:48:21,689 - INFO - [pruned_magnitude_ratio30] PER-CLASS AUROC  (39 valid / 150 total)
+2026-03-21 21:48:21,689 - INFO - ========================================================================
+2026-03-21 21:48:21,689 - INFO -   Label                                                 n_pos   AUROC  95% CI
+2026-03-21 21:48:21,691 - INFO -   ----------------------------------------------------------------------
+2026-03-21 21:48:21,691 - INFO -   SINUS BRADYCARDIA                                       935   0.984  (0.982, 0.987)
+2026-03-21 21:48:21,692 - INFO -   RIGHT BUNDLE BRANCH BLOCK                               290   0.980  (0.975, 0.984)
+2026-03-21 21:48:21,693 - INFO -   PREMATURE ATRIAL COMPLEXES                                1   0.976  (0.974, 0.978)
+2026-03-21 21:48:21,693 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                          323   0.970  (0.964, 0.976)
+2026-03-21 21:48:21,693 - INFO -   VENTRICULAR TACHYCARDIA                                  81   0.969  (0.951, 0.986)
+2026-03-21 21:48:21,694 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                          19   0.957  (0.923, 0.991)
+2026-03-21 21:48:21,695 - INFO -   ATRIAL FLUTTER                                           31   0.953  (0.932, 0.974)
+2026-03-21 21:48:21,696 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                           693   0.951  (0.944, 0.959)
+2026-03-21 21:48:21,696 - INFO -   SINUS TACHYCARDIA                                      2210   0.947  (0.943, 0.951)
+2026-03-21 21:48:21,696 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                             45   0.946  (0.907, 0.973)
+2026-03-21 21:48:21,696 - INFO -   LEFT BUNDLE BRANCH BLOCK                                 18   0.934  (0.876, 0.979)
+2026-03-21 21:48:21,696 - INFO -   RIGHT AXIS DEVIATION                                    335   0.933  (0.923, 0.943)
+2026-03-21 21:48:21,699 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK                    336   0.928  (0.919, 0.939)
+2026-03-21 21:48:21,700 - INFO -   ACUTE PERICARDITIS                                        1   0.921  (0.916, 0.926)
+2026-03-21 21:48:21,701 - INFO -   RIGHT ATRIAL ENLARGEMENT                                201   0.906  (0.883, 0.922)
+2026-03-21 21:48:21,701 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                        32   0.893  (0.850, 0.936)
+2026-03-21 21:48:21,701 - INFO -   LEFT VENTRICULAR HYPERTROPHY                            348   0.887  (0.870, 0.902)
+2026-03-21 21:48:21,701 - INFO -   LEFT AXIS DEVIATION                                      54   0.886  (0.843, 0.918)
+2026-03-21 21:48:21,746 - INFO -   NORMAL ECG                                             1759   0.881  (0.874, 0.888)
+2026-03-21 21:48:21,754 - INFO -   EARLY REPOLARIZATION                                    249   0.872  (0.853, 0.889)
+2026-03-21 21:48:21,754 - INFO -   WITH 2:1 AV CONDUCTION                                   40   0.871  (0.816, 0.924)
+2026-03-21 21:48:21,754 - INFO -   WITH VARIABLE AV BLOCK                                   67   0.862  (0.830, 0.889)
+2026-03-21 21:48:21,754 - INFO -   LEFT ATRIAL ENLARGEMENT                                 184   0.859  (0.832, 0.877)
+2026-03-21 21:48:21,754 - INFO -   WITH COMPLETE HEART BLOCK                                67   0.858  (0.804, 0.898)
+2026-03-21 21:48:21,754 - INFO -   WITH AV DISSOCIATION                                     70   0.857  (0.810, 0.900)
+2026-03-21 21:48:21,754 - INFO -   LOW VOLTAGE QRS                                         277   0.856  (0.837, 0.877)
+2026-03-21 21:48:21,763 - INFO -   ANTEROSEPTAL INFARCT                                     14   0.852  (0.721, 0.928)
+2026-03-21 21:48:21,763 - INFO -   PREMATURE VENTRICULAR COMPLEXES                           6   0.827  (0.704, 0.895)
+2026-03-21 21:48:21,764 - INFO -   ANTERIOR INFARCT                                          5   0.812  (0.488, 0.990)
+2026-03-21 21:48:21,764 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                        184   0.812  (0.785, 0.844)
+2026-03-21 21:48:21,764 - INFO -   PROLONGED QT                                            427   0.795  (0.778, 0.816)
+2026-03-21 21:48:21,764 - INFO -   LATERAL INFARCT                                           3   0.791  (0.618, 0.912)
+2026-03-21 21:48:21,764 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                         2544   0.790  (0.778, 0.799)
+2026-03-21 21:48:21,764 - INFO -   otherwise normal ecg                                    621   0.757  (0.741, 0.771)
+2026-03-21 21:48:21,768 - INFO -   WITH 1ST DEGREE AV BLOCK                                123   0.751  (0.710, 0.787)
+2026-03-21 21:48:21,768 - INFO -   FUSION COMPLEXES                                         27   0.731  (0.637, 0.814)
+2026-03-21 21:48:21,769 - INFO -   ATRIAL FIBRILLATION                                      25   0.707  (0.622, 0.801)
+2026-03-21 21:48:21,770 - INFO -   PULMONARY DISEASE PATTERN                                 3   0.682  (0.296, 0.998)
+2026-03-21 21:48:21,771 - INFO -   INFERIOR INFARCT                                          8   0.673  (0.500, 0.915)
+2026-03-21 21:48:21,771 - INFO - 
+[pruned_magnitude_ratio30] Valid labels : 39 / 150
+2026-03-21 21:48:21,783 - INFO - [pruned_magnitude_ratio30] Skipped      : 111 / 150  (all-zero, saved to ./res/iterative_pruning/pruned_magnitude_ratio30_skipped_labels.csv)
+2026-03-21 21:48:21,783 - INFO - [pruned_magnitude_ratio30] Macro AUROC  : 0.8671  (39 valid labels)
+2026-03-21 21:48:21,783 - INFO - [pruned_magnitude_ratio30] Results saved: ./res/iterative_pruning/pruned_magnitude_ratio30_results.csv
+2026-03-21 21:48:22,810 - INFO - [pruned_magnitude_ratio30] ROC curve plot saved: ./res/iterative_pruning/pruned_magnitude_ratio30_roc_curves.png
+2026-03-21 21:48:22,814 - INFO - [pruned_magnitude_ratio30] Plot Macro AUC=0.8670  Micro AUC=0.9574
+2026-03-21 21:48:22,816 - INFO -   Macro AUROC: 0.8031 → 0.8671  (Δ +0.0640 vs fine-tuned baseline)
+2026-03-21 21:48:23,212 - INFO -   Saved: ./res/iterative_pruning/pruned_magnitude_ratio0.3_recovery3ep_auroc0.8671.pth
+2026-03-21 21:48:23,215 - INFO - 
+============================================================
+2026-03-21 21:48:23,215 - INFO - PRUNING RATIO 0.4  |  method: magnitude  |  recovery: 3 epochs
+2026-03-21 21:48:23,215 - INFO - ============================================================
+2026-03-21 21:48:33,786 - INFO -   Detected 'backbone.' prefix — stripping for bare Net1D
+2026-03-21 21:48:33,908 - INFO -   Weights loaded (strict=True) | missing: 0 | unexpected: 0
+2026-03-21 21:48:33,988 - INFO -   Ignoring 1 final classifier layer(s)
+2026-03-21 21:48:34,121 - INFO - Applying single-shot pruning step...
+2026-03-21 21:48:34,634 - INFO -   MACs  : 1.1727 G → 1.0810 G  (7.82% reduced)
+2026-03-21 21:48:34,634 - INFO -   Params: 30.8190 M → 29.7162 M  (3.58% reduced)
+2026-03-21 21:48:34,634 - INFO -   Recovery fine-tuning: 3 epochs | lr=0.0001 | wd=1e-05
+2026-03-21 21:53:27,838 - INFO -   Recovery epoch 1/3 | Loss: 0.0252 | LR: 7.50e-05
+2026-03-21 21:58:14,430 - INFO -   Recovery epoch 2/3 | Loss: 0.0212 | LR: 2.50e-05
+2026-03-21 22:02:54,659 - INFO -   Recovery epoch 3/3 | Loss: 0.0196 | LR: 0.00e+00
+2026-03-21 22:07:10,472 - INFO - 
+Computing full evaluation: pruned_magnitude_ratio40
+2026-03-21 22:09:40,408 - INFO - 
+========================================================================
+2026-03-21 22:09:40,409 - INFO - [pruned_magnitude_ratio40] PER-CLASS AUROC  (39 valid / 150 total)
+2026-03-21 22:09:40,409 - INFO - ========================================================================
+2026-03-21 22:09:40,410 - INFO -   Label                                                 n_pos   AUROC  95% CI
+2026-03-21 22:09:40,410 - INFO -   ----------------------------------------------------------------------
+2026-03-21 22:09:40,411 - INFO -   ACUTE PERICARDITIS                                        1   0.992  (0.990, 0.993)
+2026-03-21 22:09:40,412 - INFO -   SINUS BRADYCARDIA                                       935   0.982  (0.979, 0.985)
+2026-03-21 22:09:40,412 - INFO -   RIGHT BUNDLE BRANCH BLOCK                               290   0.974  (0.969, 0.978)
+2026-03-21 22:09:40,413 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                          323   0.961  (0.954, 0.967)
+2026-03-21 22:09:40,413 - INFO -   VENTRICULAR TACHYCARDIA                                  81   0.954  (0.928, 0.974)
+2026-03-21 22:09:40,414 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                          19   0.949  (0.903, 0.983)
+2026-03-21 22:09:40,414 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                           693   0.948  (0.942, 0.954)
+2026-03-21 22:09:40,416 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                             45   0.947  (0.914, 0.978)
+2026-03-21 22:09:40,417 - INFO -   ATRIAL FLUTTER                                           31   0.946  (0.926, 0.971)
+2026-03-21 22:09:40,417 - INFO -   SINUS TACHYCARDIA                                      2210   0.944  (0.940, 0.949)
+2026-03-21 22:09:40,418 - INFO -   LEFT AXIS DEVIATION                                      54   0.920  (0.901, 0.940)
+2026-03-21 22:09:40,418 - INFO -   RIGHT AXIS DEVIATION                                    335   0.918  (0.909, 0.929)
+2026-03-21 22:09:40,419 - INFO -   PREMATURE ATRIAL COMPLEXES                                1   0.918  (0.912, 0.924)
+2026-03-21 22:09:40,420 - INFO -   LEFT BUNDLE BRANCH BLOCK                                 18   0.905  (0.780, 0.976)
+2026-03-21 22:09:40,420 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK                    336   0.900  (0.887, 0.918)
+2026-03-21 22:09:40,421 - INFO -   RIGHT ATRIAL ENLARGEMENT                                201   0.898  (0.880, 0.914)
+2026-03-21 22:09:40,421 - INFO -   LEFT VENTRICULAR HYPERTROPHY                            348   0.872  (0.855, 0.891)
+2026-03-21 22:09:40,422 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                        32   0.866  (0.799, 0.918)
+2026-03-21 22:09:40,423 - INFO -   NORMAL ECG                                             1759   0.865  (0.859, 0.873)
+2026-03-21 22:09:40,423 - INFO -   LOW VOLTAGE QRS                                         277   0.863  (0.847, 0.881)
+2026-03-21 22:09:40,424 - INFO -   ANTEROSEPTAL INFARCT                                     14   0.863  (0.775, 0.912)
+2026-03-21 22:09:40,425 - INFO -   WITH 2:1 AV CONDUCTION                                   40   0.862  (0.816, 0.908)
+2026-03-21 22:09:40,425 - INFO -   LEFT ATRIAL ENLARGEMENT                                 184   0.853  (0.827, 0.874)
+2026-03-21 22:09:40,426 - INFO -   WITH AV DISSOCIATION                                     70   0.853  (0.800, 0.888)
+2026-03-21 22:09:40,426 - INFO -   EARLY REPOLARIZATION                                    249   0.844  (0.817, 0.865)
+2026-03-21 22:09:40,427 - INFO -   WITH COMPLETE HEART BLOCK                                67   0.843  (0.801, 0.888)
+2026-03-21 22:09:40,427 - INFO -   WITH VARIABLE AV BLOCK                                   67   0.817  (0.772, 0.854)
+2026-03-21 22:09:40,428 - INFO -   ANTERIOR INFARCT                                          5   0.815  (0.472, 0.993)
+2026-03-21 22:09:40,429 - INFO -   WITH 1ST DEGREE AV BLOCK                                123   0.814  (0.780, 0.856)
+2026-03-21 22:09:40,429 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                        184   0.805  (0.776, 0.838)
+2026-03-21 22:09:40,429 - INFO -   INFERIOR INFARCT                                          8   0.777  (0.623, 0.904)
+2026-03-21 22:09:40,430 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                         2544   0.772  (0.764, 0.782)
+2026-03-21 22:09:40,431 - INFO -   PROLONGED QT                                            427   0.769  (0.750, 0.792)
+2026-03-21 22:09:40,432 - INFO -   FUSION COMPLEXES                                         27   0.762  (0.655, 0.852)
+2026-03-21 22:09:40,432 - INFO -   otherwise normal ecg                                    621   0.746  (0.728, 0.761)
+2026-03-21 22:09:40,433 - INFO -   PREMATURE VENTRICULAR COMPLEXES                           6   0.745  (0.533, 0.872)
+2026-03-21 22:09:40,433 - INFO -   ATRIAL FIBRILLATION                                      25   0.686  (0.564, 0.795)
+2026-03-21 22:09:40,434 - INFO -   PULMONARY DISEASE PATTERN                                 3   0.622  (0.358, 0.963)
+2026-03-21 22:09:40,435 - INFO -   LATERAL INFARCT                                           3   0.441  (0.124, 0.695)
+2026-03-21 22:09:40,435 - INFO - 
+[pruned_magnitude_ratio40] Valid labels : 39 / 150
+2026-03-21 22:09:40,436 - INFO - [pruned_magnitude_ratio40] Skipped      : 111 / 150  (all-zero, saved to ./res/iterative_pruning/pruned_magnitude_ratio40_skipped_labels.csv)
+2026-03-21 22:09:40,436 - INFO - [pruned_magnitude_ratio40] Macro AUROC  : 0.8516  (39 valid labels)
+2026-03-21 22:09:40,437 - INFO - [pruned_magnitude_ratio40] Results saved: ./res/iterative_pruning/pruned_magnitude_ratio40_results.csv
+2026-03-21 22:09:41,393 - INFO - [pruned_magnitude_ratio40] ROC curve plot saved: ./res/iterative_pruning/pruned_magnitude_ratio40_roc_curves.png
+2026-03-21 22:09:41,393 - INFO - [pruned_magnitude_ratio40] Plot Macro AUC=0.8516  Micro AUC=0.9542
+2026-03-21 22:09:41,393 - INFO -   Macro AUROC: 0.8031 → 0.8516  (Δ +0.0485 vs fine-tuned baseline)
+2026-03-21 22:09:41,775 - INFO -   Saved: ./res/iterative_pruning/pruned_magnitude_ratio0.4_recovery3ep_auroc0.8516.pth
+2026-03-21 22:09:41,776 - INFO - 
+============================================================
+2026-03-21 22:09:41,776 - INFO - PRUNING RATIO 0.5  |  method: magnitude  |  recovery: 3 epochs
+2026-03-21 22:09:41,776 - INFO - ============================================================
+2026-03-21 22:09:56,235 - INFO -   Detected 'backbone.' prefix — stripping for bare Net1D
+2026-03-21 22:09:56,464 - INFO -   Weights loaded (strict=True) | missing: 0 | unexpected: 0
+2026-03-21 22:10:01,303 - INFO -   Ignoring 1 final classifier layer(s)
+2026-03-21 22:10:01,478 - INFO - Applying single-shot pruning step...
+2026-03-21 22:10:05,918 - INFO -   MACs  : 1.1727 G → 1.0810 G  (7.82% reduced)
+2026-03-21 22:10:05,918 - INFO -   Params: 30.8190 M → 29.7162 M  (3.58% reduced)
+2026-03-21 22:10:05,918 - INFO -   Recovery fine-tuning: 3 epochs | lr=0.0001 | wd=1e-05
+2026-03-21 22:14:57,673 - INFO -   Recovery epoch 1/3 | Loss: 0.0252 | LR: 7.50e-05
+2026-03-21 22:19:34,989 - INFO -   Recovery epoch 2/3 | Loss: 0.0212 | LR: 2.50e-05
+2026-03-21 22:24:11,947 - INFO -   Recovery epoch 3/3 | Loss: 0.0196 | LR: 0.00e+00
+2026-03-21 22:28:40,233 - INFO - 
+Computing full evaluation: pruned_magnitude_ratio50
+2026-03-21 22:31:04,229 - INFO - 
+========================================================================
+2026-03-21 22:31:04,229 - INFO - [pruned_magnitude_ratio50] PER-CLASS AUROC  (39 valid / 150 total)
+2026-03-21 22:31:04,231 - INFO - ========================================================================
+2026-03-21 22:31:04,232 - INFO -   Label                                                 n_pos   AUROC  95% CI
+2026-03-21 22:31:04,232 - INFO -   ----------------------------------------------------------------------
+2026-03-21 22:31:04,233 - INFO -   ACUTE PERICARDITIS                                        1   0.992  (0.990, 0.993)
+2026-03-21 22:31:04,234 - INFO -   SINUS BRADYCARDIA                                       935   0.983  (0.979, 0.986)
+2026-03-21 22:31:04,235 - INFO -   RIGHT BUNDLE BRANCH BLOCK                               290   0.973  (0.967, 0.978)
+2026-03-21 22:31:04,236 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                          323   0.962  (0.957, 0.967)
+2026-03-21 22:31:04,236 - INFO -   VENTRICULAR TACHYCARDIA                                  81   0.956  (0.933, 0.979)
+2026-03-21 22:31:04,236 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                           693   0.949  (0.942, 0.956)
+2026-03-21 22:31:04,236 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                          19   0.948  (0.914, 0.980)
+2026-03-21 22:31:04,238 - INFO -   ATRIAL FLUTTER                                           31   0.948  (0.925, 0.967)
+2026-03-21 22:31:04,240 - INFO -   SINUS TACHYCARDIA                                      2210   0.944  (0.939, 0.948)
+2026-03-21 22:31:04,240 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                             45   0.943  (0.888, 0.975)
+2026-03-21 22:31:04,241 - INFO -   RIGHT AXIS DEVIATION                                    335   0.916  (0.902, 0.927)
+2026-03-21 22:31:04,242 - INFO -   LEFT AXIS DEVIATION                                      54   0.913  (0.886, 0.937)
+2026-03-21 22:31:04,242 - INFO -   LEFT BUNDLE BRANCH BLOCK                                 18   0.911  (0.833, 0.976)
+2026-03-21 22:31:04,243 - INFO -   PREMATURE ATRIAL COMPLEXES                                1   0.901  (0.894, 0.907)
+2026-03-21 22:31:04,243 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK                    336   0.900  (0.890, 0.915)
+2026-03-21 22:31:04,244 - INFO -   RIGHT ATRIAL ENLARGEMENT                                201   0.898  (0.881, 0.917)
+2026-03-21 22:31:04,245 - INFO -   LEFT VENTRICULAR HYPERTROPHY                            348   0.873  (0.855, 0.888)
+2026-03-21 22:31:04,245 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                        32   0.871  (0.796, 0.928)
+2026-03-21 22:31:04,246 - INFO -   LOW VOLTAGE QRS                                         277   0.868  (0.855, 0.886)
+2026-03-21 22:31:04,247 - INFO -   NORMAL ECG                                             1759   0.866  (0.858, 0.875)
+2026-03-21 22:31:04,247 - INFO -   WITH 2:1 AV CONDUCTION                                   40   0.859  (0.779, 0.910)
+2026-03-21 22:31:04,248 - INFO -   LEFT ATRIAL ENLARGEMENT                                 184   0.856  (0.827, 0.883)
+2026-03-21 22:31:04,249 - INFO -   ANTEROSEPTAL INFARCT                                     14   0.855  (0.786, 0.920)
+2026-03-21 22:31:04,250 - INFO -   WITH AV DISSOCIATION                                     70   0.848  (0.792, 0.889)
+2026-03-21 22:31:04,250 - INFO -   EARLY REPOLARIZATION                                    249   0.848  (0.828, 0.868)
+2026-03-21 22:31:04,251 - INFO -   WITH COMPLETE HEART BLOCK                                67   0.840  (0.778, 0.889)
+2026-03-21 22:31:04,252 - INFO -   WITH 1ST DEGREE AV BLOCK                                123   0.815  (0.781, 0.846)
+2026-03-21 22:31:04,253 - INFO -   ANTERIOR INFARCT                                          5   0.814  (0.507, 0.989)
+2026-03-21 22:31:04,253 - INFO -   WITH VARIABLE AV BLOCK                                   67   0.813  (0.764, 0.849)
+2026-03-21 22:31:04,254 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                        184   0.798  (0.769, 0.836)
+2026-03-21 22:31:04,254 - INFO -   PROLONGED QT                                            427   0.775  (0.757, 0.801)
+2026-03-21 22:31:04,255 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                         2544   0.769  (0.760, 0.778)
+2026-03-21 22:31:04,255 - INFO -   INFERIOR INFARCT                                          8   0.762  (0.622, 0.911)
+2026-03-21 22:31:04,255 - INFO -   FUSION COMPLEXES                                         27   0.760  (0.698, 0.858)
+2026-03-21 22:31:04,255 - INFO -   PREMATURE VENTRICULAR COMPLEXES                           6   0.759  (0.633, 0.894)
+2026-03-21 22:31:04,255 - INFO -   otherwise normal ecg                                    621   0.745  (0.731, 0.766)
+2026-03-21 22:31:04,255 - INFO -   ATRIAL FIBRILLATION                                      25   0.727  (0.624, 0.820)
+2026-03-21 22:31:04,259 - INFO -   PULMONARY DISEASE PATTERN                                 3   0.708  (0.369, 0.974)
+2026-03-21 22:31:04,260 - INFO -   LATERAL INFARCT                                           3   0.502  (0.150, 0.779)
+2026-03-21 22:31:04,260 - INFO - 
+[pruned_magnitude_ratio50] Valid labels : 39 / 150
+2026-03-21 22:31:04,260 - INFO - [pruned_magnitude_ratio50] Skipped      : 111 / 150  (all-zero, saved to ./res/iterative_pruning/pruned_magnitude_ratio50_skipped_labels.csv)
+2026-03-21 22:31:04,261 - INFO - [pruned_magnitude_ratio50] Macro AUROC  : 0.8556  (39 valid labels)
+2026-03-21 22:31:04,261 - INFO - [pruned_magnitude_ratio50] Results saved: ./res/iterative_pruning/pruned_magnitude_ratio50_results.csv
+2026-03-21 22:31:04,968 - INFO - [pruned_magnitude_ratio50] ROC curve plot saved: ./res/iterative_pruning/pruned_magnitude_ratio50_roc_curves.png
+2026-03-21 22:31:04,968 - INFO - [pruned_magnitude_ratio50] Plot Macro AUC=0.8555  Micro AUC=0.9545
+2026-03-21 22:31:04,968 - INFO -   Macro AUROC: 0.8031 → 0.8556  (Δ +0.0525 vs fine-tuned baseline)
+2026-03-21 22:31:05,364 - INFO -   Saved: ./res/iterative_pruning/pruned_magnitude_ratio0.5_recovery3ep_auroc0.8556.pth
+2026-03-21 22:31:05,370 - INFO - 
+============================================================
+2026-03-21 22:31:05,370 - INFO - ITERATIVE PRUNING SUMMARY
+2026-03-21 22:31:05,370 - INFO - ============================================================
+2026-03-21 22:31:05,380 - INFO - 
+ pruning_ratio    method  recovery_epochs  macs_G  params_M  macs_reduction  params_reduction  macro_auroc  auroc_drop
+           0.0      none                0  1.1727   30.8190            0.00              0.00       0.8031      0.0000
+           0.1 magnitude                3  1.1498   30.5433            1.96              0.89       0.8532     -0.0501
+           0.2 magnitude                3  1.1268   30.2676            3.91              1.79       0.8564     -0.0533
+           0.3 magnitude                3  1.1039   29.9919            5.87              2.68       0.8671     -0.0640
+           0.4 magnitude                3  1.0810   29.7162            7.82              3.58       0.8516     -0.0485
+           0.5 magnitude                3  1.0810   29.7162            7.82              3.58       0.8556     -0.0525
+2026-03-21 22:31:05,380 - INFO - 
+Summary saved: ./res/iterative_pruning/iterative_pruning_summary.csv
+2026-03-21 22:31:05,380 - INFO - ============================================================
+2026-03-22 01:31:55,126 - INFO - Using device: cuda:0
+2026-03-22 01:31:55,127 - INFO - Number of classes: 150
+2026-03-22 01:31:55,135 - INFO - Loading dataset...
+2026-03-22 01:31:55,530 - INFO - Samples with at least one active label: 9397
+2026-03-22 01:31:55,563 - INFO - Recovery train samples : 6690
+2026-03-22 01:31:55,565 - INFO - Full eval samples      : 9397
+2026-03-22 01:31:56,277 - INFO - 
+============================================================
+2026-03-22 01:31:56,277 - INFO - BASELINE — fine-tuned model (no pruning)
+2026-03-22 01:31:56,277 - INFO - ============================================================
+2026-03-22 01:32:23,050 - INFO -   Detected 'backbone.' prefix — stripping for bare Net1D
+2026-03-22 01:32:25,572 - INFO -   Weights loaded (strict=True) | missing: 0 | unexpected: 0
+2026-03-22 01:32:25,676 - INFO - Running sanity-check inference...
+2026-03-22 01:35:07,434 - INFO - Sanity-check Macro AUROC: 0.9212 over 39 valid labels
+2026-03-22 01:35:07,434 - INFO - Sanity check PASSED.
+2026-03-22 01:35:07,616 - INFO - Baseline MACs  : 1.1727 G
+2026-03-22 01:35:07,616 - INFO - Baseline Params: 30.8190 M
+2026-03-22 01:35:07,616 - INFO - 
+Computing full evaluation: baseline
+2026-03-22 01:37:02,306 - INFO - 
+========================================================================
+2026-03-22 01:37:02,306 - INFO - [baseline] PER-CLASS AUROC  (39 valid / 150 total)
+2026-03-22 01:37:02,306 - INFO - ========================================================================
+2026-03-22 01:37:02,306 - INFO -   Label                                                 n_pos   AUROC  95% CI
+2026-03-22 01:37:02,306 - INFO -   ----------------------------------------------------------------------
+2026-03-22 01:37:02,311 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                          19   0.996  (0.988, 1.000)
+2026-03-22 01:37:02,312 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                          323   0.990  (0.987, 0.993)
+2026-03-22 01:37:02,312 - INFO -   SINUS BRADYCARDIA                                       935   0.990  (0.987, 0.993)
+2026-03-22 01:37:02,313 - INFO -   RIGHT BUNDLE BRANCH BLOCK                               290   0.989  (0.986, 0.992)
+2026-03-22 01:37:02,313 - INFO -   VENTRICULAR TACHYCARDIA                                  81   0.989  (0.983, 0.996)
+2026-03-22 01:37:02,314 - INFO -   LEFT BUNDLE BRANCH BLOCK                                 18   0.984  (0.959, 0.997)
+2026-03-22 01:37:02,314 - INFO -   LEFT AXIS DEVIATION                                      54   0.982  (0.975, 0.988)
+2026-03-22 01:37:02,315 - INFO -   ATRIAL FLUTTER                                           31   0.974  (0.961, 0.986)
+2026-03-22 01:37:02,315 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                           693   0.973  (0.969, 0.977)
+2026-03-22 01:37:02,316 - INFO -   RIGHT AXIS DEVIATION                                    335   0.970  (0.964, 0.976)
+2026-03-22 01:37:02,316 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK                    336   0.968  (0.960, 0.975)
+2026-03-22 01:37:02,317 - INFO -   SINUS TACHYCARDIA                                      2210   0.963  (0.960, 0.967)
+2026-03-22 01:37:02,317 - INFO -   ANTEROSEPTAL INFARCT                                     14   0.961  (0.923, 0.986)
+2026-03-22 01:37:02,317 - INFO -   WITH COMPLETE HEART BLOCK                                67   0.959  (0.936, 0.977)
+2026-03-22 01:37:02,317 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                             45   0.958  (0.934, 0.981)
+2026-03-22 01:37:02,317 - INFO -   WITH 1ST DEGREE AV BLOCK                                123   0.958  (0.938, 0.969)
+2026-03-22 01:37:02,317 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                        32   0.955  (0.913, 0.986)
+2026-03-22 01:37:02,317 - INFO -   LEFT VENTRICULAR HYPERTROPHY                            348   0.954  (0.945, 0.962)
+2026-03-22 01:37:02,317 - INFO -   RIGHT ATRIAL ENLARGEMENT                                201   0.944  (0.926, 0.956)
+2026-03-22 01:37:02,317 - INFO -   LEFT ATRIAL ENLARGEMENT                                 184   0.935  (0.916, 0.950)
+2026-03-22 01:37:02,321 - INFO -   WITH VARIABLE AV BLOCK                                   67   0.932  (0.901, 0.955)
+2026-03-22 01:37:02,321 - INFO -   WITH AV DISSOCIATION                                     70   0.931  (0.898, 0.952)
+2026-03-22 01:37:02,322 - INFO -   LOW VOLTAGE QRS                                         277   0.931  (0.915, 0.944)
+2026-03-22 01:37:02,322 - INFO -   EARLY REPOLARIZATION                                    249   0.926  (0.916, 0.942)
+2026-03-22 01:37:02,322 - INFO -   NORMAL ECG                                             1759   0.920  (0.914, 0.925)
+2026-03-22 01:37:02,323 - INFO -   WITH 2:1 AV CONDUCTION                                   40   0.918  (0.885, 0.945)
+2026-03-22 01:37:02,323 - INFO -   LATERAL INFARCT                                           3   0.917  (0.853, 0.981)
+2026-03-22 01:37:02,324 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                        184   0.914  (0.896, 0.931)
+2026-03-22 01:37:02,324 - INFO -   PREMATURE ATRIAL COMPLEXES                                1   0.911  (0.906, 0.916)
+2026-03-22 01:37:02,324 - INFO -   ACUTE PERICARDITIS                                        1   0.884  (0.877, 0.890)
+2026-03-22 01:37:02,324 - INFO -   PROLONGED QT                                            427   0.877  (0.859, 0.896)
+2026-03-22 01:37:02,325 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                         2544   0.863  (0.854, 0.871)
+2026-03-22 01:37:02,325 - INFO -   otherwise normal ecg                                    621   0.835  (0.820, 0.847)
+2026-03-22 01:37:02,326 - INFO -   INFERIOR INFARCT                                          8   0.830  (0.682, 0.970)
+2026-03-22 01:37:02,326 - INFO -   PREMATURE VENTRICULAR COMPLEXES                           6   0.815  (0.636, 0.989)
+2026-03-22 01:37:02,326 - INFO -   ATRIAL FIBRILLATION                                      25   0.811  (0.696, 0.904)
+2026-03-22 01:37:02,328 - INFO -   ANTERIOR INFARCT                                          5   0.810  (0.446, 1.000)
+2026-03-22 01:37:02,328 - INFO -   FUSION COMPLEXES                                         27   0.767  (0.638, 0.867)
+2026-03-22 01:37:02,329 - INFO -   PULMONARY DISEASE PATTERN                                 3   0.744  (0.511, 0.993)
+2026-03-22 01:37:02,329 - INFO - 
+[baseline] Valid labels : 39 / 150
+2026-03-22 01:37:02,329 - INFO - [baseline] Skipped      : 111 / 150  (all-zero, saved to ./res/iterative_pruning/baseline_skipped_labels.csv)
+2026-03-22 01:37:02,330 - INFO - [baseline] Macro AUROC  : 0.9212  (39 valid labels)
+2026-03-22 01:37:02,330 - INFO - [baseline] Results saved: ./res/iterative_pruning/baseline_results.csv
+2026-03-22 01:37:02,980 - INFO - [baseline] ROC curve plot saved: ./res/iterative_pruning/baseline_roc_curves.png
+2026-03-22 01:37:02,980 - INFO - [baseline] Plot Macro AUC=0.9211  Micro AUC=0.9751
+2026-03-22 01:37:02,987 - INFO - 
+============================================================
+2026-03-22 01:37:02,987 - INFO - PRUNING RATIO 0.1  |  method: magnitude  |  recovery: 3 epochs
+2026-03-22 01:37:02,988 - INFO - ============================================================
+2026-03-22 01:37:15,514 - INFO -   Detected 'backbone.' prefix — stripping for bare Net1D
+2026-03-22 01:37:15,825 - INFO -   Weights loaded (strict=True) | missing: 0 | unexpected: 0
+2026-03-22 01:37:16,190 - INFO -   Ignoring 1 final classifier layer(s)
+2026-03-22 01:37:16,356 - INFO - Applying single-shot pruning step...
+2026-03-22 01:37:17,330 - INFO -   MACs  : 1.1727 G → 1.1498 G  (1.96% reduced)
+2026-03-22 01:37:17,330 - INFO -   Params: 30.8190 M → 30.5433 M  (0.89% reduced)
+2026-03-22 01:37:19,245 - INFO -   Recovery fine-tuning: 3 epochs | lr=0.0001 | wd=1e-05
+2026-03-22 01:40:54,351 - INFO -   Recovery epoch 1/3 | Loss: 0.0223 | LR: 7.50e-05
+2026-03-22 01:44:32,932 - INFO -   Recovery epoch 2/3 | Loss: 0.0178 | LR: 2.50e-05
+2026-03-22 01:48:11,122 - INFO -   Recovery epoch 3/3 | Loss: 0.0163 | LR: 0.00e+00
+2026-03-22 01:50:53,961 - INFO - 
+Computing full evaluation: pruned_magnitude_ratio10
+2026-03-22 01:52:50,602 - INFO - 
+========================================================================
+2026-03-22 01:52:50,603 - INFO - [pruned_magnitude_ratio10] PER-CLASS AUROC  (39 valid / 150 total)
+2026-03-22 01:52:50,603 - INFO - ========================================================================
+2026-03-22 01:52:50,604 - INFO -   Label                                                 n_pos   AUROC  95% CI
+2026-03-22 01:52:50,604 - INFO -   ----------------------------------------------------------------------
+2026-03-22 01:52:50,605 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                          19   0.991  (0.978, 0.999)
+2026-03-22 01:52:50,605 - INFO -   RIGHT BUNDLE BRANCH BLOCK                               290   0.989  (0.985, 0.992)
+2026-03-22 01:52:50,606 - INFO -   SINUS BRADYCARDIA                                       935   0.987  (0.983, 0.989)
+2026-03-22 01:52:50,606 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                          323   0.987  (0.983, 0.990)
+2026-03-22 01:52:50,607 - INFO -   VENTRICULAR TACHYCARDIA                                  81   0.986  (0.969, 0.994)
+2026-03-22 01:52:50,608 - INFO -   ACUTE PERICARDITIS                                        1   0.979  (0.976, 0.982)
+2026-03-22 01:52:50,608 - INFO -   LEFT BUNDLE BRANCH BLOCK                                 18   0.971  (0.926, 0.995)
+2026-03-22 01:52:50,609 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                             45   0.967  (0.954, 0.980)
+2026-03-22 01:52:50,609 - INFO -   LEFT AXIS DEVIATION                                      54   0.965  (0.942, 0.980)
+2026-03-22 01:52:50,610 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                           693   0.965  (0.960, 0.971)
+2026-03-22 01:52:50,611 - INFO -   ATRIAL FLUTTER                                           31   0.959  (0.935, 0.982)
+2026-03-22 01:52:50,612 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK                    336   0.958  (0.949, 0.967)
+2026-03-22 01:52:50,612 - INFO -   PREMATURE ATRIAL COMPLEXES                                1   0.957  (0.954, 0.961)
+2026-03-22 01:52:50,613 - INFO -   RIGHT AXIS DEVIATION                                    335   0.957  (0.950, 0.964)
+2026-03-22 01:52:50,614 - INFO -   SINUS TACHYCARDIA                                      2210   0.956  (0.953, 0.960)
+2026-03-22 01:52:50,614 - INFO -   WITH COMPLETE HEART BLOCK                                67   0.946  (0.928, 0.964)
+2026-03-22 01:52:50,615 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                        32   0.929  (0.873, 0.969)
+2026-03-22 01:52:50,616 - INFO -   RIGHT ATRIAL ENLARGEMENT                                201   0.926  (0.909, 0.944)
+2026-03-22 01:52:50,618 - INFO -   LEFT VENTRICULAR HYPERTROPHY                            348   0.926  (0.914, 0.938)
+2026-03-22 01:52:50,618 - INFO -   WITH AV DISSOCIATION                                     70   0.926  (0.894, 0.951)
+2026-03-22 01:52:50,618 - INFO -   ANTEROSEPTAL INFARCT                                     14   0.923  (0.888, 0.956)
+2026-03-22 01:52:50,620 - INFO -   WITH 2:1 AV CONDUCTION                                   40   0.919  (0.879, 0.952)
+2026-03-22 01:52:50,620 - INFO -   WITH VARIABLE AV BLOCK                                   67   0.917  (0.882, 0.944)
+2026-03-22 01:52:50,621 - INFO -   LEFT ATRIAL ENLARGEMENT                                 184   0.912  (0.888, 0.930)
+2026-03-22 01:52:50,622 - INFO -   WITH 1ST DEGREE AV BLOCK                                123   0.908  (0.883, 0.932)
+2026-03-22 01:52:50,622 - INFO -   EARLY REPOLARIZATION                                    249   0.904  (0.887, 0.921)
+2026-03-22 01:52:50,622 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                        184   0.902  (0.882, 0.919)
+2026-03-22 01:52:50,623 - INFO -   NORMAL ECG                                             1759   0.900  (0.893, 0.907)
+2026-03-22 01:52:50,624 - INFO -   LOW VOLTAGE QRS                                         277   0.891  (0.876, 0.905)
+2026-03-22 01:52:50,624 - INFO -   PREMATURE VENTRICULAR COMPLEXES                           6   0.845  (0.682, 0.994)
+2026-03-22 01:52:50,625 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                         2544   0.843  (0.834, 0.853)
+2026-03-22 01:52:50,625 - INFO -   ANTERIOR INFARCT                                          5   0.842  (0.591, 0.999)
+2026-03-22 01:52:50,626 - INFO -   PROLONGED QT                                            427   0.841  (0.825, 0.860)
+2026-03-22 01:52:50,627 - INFO -   ATRIAL FIBRILLATION                                      25   0.828  (0.720, 0.937)
+2026-03-22 01:52:50,627 - INFO -   LATERAL INFARCT                                           3   0.810  (0.493, 0.992)
+2026-03-22 01:52:50,628 - INFO -   otherwise normal ecg                                    621   0.795  (0.781, 0.810)
+2026-03-22 01:52:50,629 - INFO -   FUSION COMPLEXES                                         27   0.783  (0.668, 0.896)
+2026-03-22 01:52:50,630 - INFO -   PULMONARY DISEASE PATTERN                                 3   0.744  (0.483, 0.993)
+2026-03-22 01:52:50,631 - INFO -   INFERIOR INFARCT                                          8   0.742  (0.481, 0.958)
+2026-03-22 01:52:50,631 - INFO - 
+[pruned_magnitude_ratio10] Valid labels : 39 / 150
+2026-03-22 01:52:50,632 - INFO - [pruned_magnitude_ratio10] Skipped      : 111 / 150  (all-zero, saved to ./res/iterative_pruning/pruned_magnitude_ratio10_skipped_labels.csv)
+2026-03-22 01:52:50,633 - INFO - [pruned_magnitude_ratio10] Macro AUROC  : 0.9096  (39 valid labels)
+2026-03-22 01:52:50,633 - INFO - [pruned_magnitude_ratio10] Results saved: ./res/iterative_pruning/pruned_magnitude_ratio10_results.csv
+2026-03-22 01:52:51,224 - INFO - [pruned_magnitude_ratio10] ROC curve plot saved: ./res/iterative_pruning/pruned_magnitude_ratio10_roc_curves.png
+2026-03-22 01:52:51,225 - INFO - [pruned_magnitude_ratio10] Plot Macro AUC=0.9096  Micro AUC=0.9701
+2026-03-22 01:52:51,226 - INFO -   Macro AUROC: 0.9212 → 0.9096  (Δ -0.0116 vs fine-tuned baseline)
+2026-03-22 01:52:51,603 - INFO -   Saved: ./res/iterative_pruning/pruned_magnitude_ratio0.1_recovery3ep_auroc0.9096.pth
+2026-03-22 01:52:51,603 - INFO - 
+============================================================
+2026-03-22 01:52:51,603 - INFO - PRUNING RATIO 0.2  |  method: magnitude  |  recovery: 3 epochs
+2026-03-22 01:52:51,603 - INFO - ============================================================
+2026-03-22 01:52:58,785 - INFO -   Detected 'backbone.' prefix — stripping for bare Net1D
+2026-03-22 01:52:58,896 - INFO -   Weights loaded (strict=True) | missing: 0 | unexpected: 0
+2026-03-22 01:52:58,962 - INFO -   Ignoring 1 final classifier layer(s)
+2026-03-22 01:52:59,075 - INFO - Applying single-shot pruning step...
+2026-03-22 01:53:02,762 - INFO -   MACs  : 1.1727 G → 1.1268 G  (3.91% reduced)
+2026-03-22 01:53:02,769 - INFO -   Params: 30.8190 M → 30.2676 M  (1.79% reduced)
+2026-03-22 01:53:02,770 - INFO -   Recovery fine-tuning: 3 epochs | lr=0.0001 | wd=1e-05
+2026-03-22 01:56:41,485 - INFO -   Recovery epoch 1/3 | Loss: 0.0229 | LR: 7.50e-05
+2026-03-22 02:00:21,816 - INFO -   Recovery epoch 2/3 | Loss: 0.0187 | LR: 2.50e-05
+2026-03-22 02:04:02,413 - INFO -   Recovery epoch 3/3 | Loss: 0.0172 | LR: 0.00e+00
+2026-03-22 02:06:48,724 - INFO - 
+Computing full evaluation: pruned_magnitude_ratio20
+2026-03-22 02:08:53,967 - INFO - 
+========================================================================
+2026-03-22 02:08:53,967 - INFO - [pruned_magnitude_ratio20] PER-CLASS AUROC  (39 valid / 150 total)
+2026-03-22 02:08:53,968 - INFO - ========================================================================
+2026-03-22 02:08:53,969 - INFO -   Label                                                 n_pos   AUROC  95% CI
+2026-03-22 02:08:53,969 - INFO -   ----------------------------------------------------------------------
+2026-03-22 02:08:53,970 - INFO -   SINUS BRADYCARDIA                                       935   0.986  (0.982, 0.989)
+2026-03-22 02:08:53,971 - INFO -   RIGHT BUNDLE BRANCH BLOCK                               290   0.986  (0.983, 0.990)
+2026-03-22 02:08:53,971 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                          19   0.984  (0.969, 1.000)
+2026-03-22 02:08:53,972 - INFO -   ACUTE PERICARDITIS                                        1   0.984  (0.982, 0.986)
+2026-03-22 02:08:53,973 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                          323   0.983  (0.980, 0.986)
+2026-03-22 02:08:53,973 - INFO -   VENTRICULAR TACHYCARDIA                                  81   0.980  (0.967, 0.992)
+2026-03-22 02:08:53,974 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                             45   0.971  (0.960, 0.981)
+2026-03-22 02:08:53,975 - INFO -   PREMATURE ATRIAL COMPLEXES                                1   0.968  (0.965, 0.972)
+2026-03-22 02:08:53,975 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                           693   0.957  (0.951, 0.964)
+2026-03-22 02:08:53,976 - INFO -   ATRIAL FLUTTER                                           31   0.956  (0.919, 0.986)
+2026-03-22 02:08:53,976 - INFO -   LEFT AXIS DEVIATION                                      54   0.956  (0.942, 0.969)
+2026-03-22 02:08:53,977 - INFO -   SINUS TACHYCARDIA                                      2210   0.952  (0.948, 0.956)
+2026-03-22 02:08:53,977 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK                    336   0.950  (0.940, 0.959)
+2026-03-22 02:08:53,978 - INFO -   RIGHT AXIS DEVIATION                                    335   0.946  (0.935, 0.955)
+2026-03-22 02:08:53,979 - INFO -   WITH COMPLETE HEART BLOCK                                67   0.944  (0.919, 0.965)
+2026-03-22 02:08:53,979 - INFO -   ANTEROSEPTAL INFARCT                                     14   0.941  (0.874, 0.986)
+2026-03-22 02:08:53,980 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                        32   0.940  (0.895, 0.978)
+2026-03-22 02:08:53,981 - INFO -   LEFT BUNDLE BRANCH BLOCK                                 18   0.929  (0.817, 0.991)
+2026-03-22 02:08:53,981 - INFO -   RIGHT ATRIAL ENLARGEMENT                                201   0.923  (0.905, 0.938)
+2026-03-22 02:08:53,982 - INFO -   LEFT VENTRICULAR HYPERTROPHY                            348   0.921  (0.907, 0.933)
+2026-03-22 02:08:53,982 - INFO -   WITH AV DISSOCIATION                                     70   0.918  (0.882, 0.951)
+2026-03-22 02:08:53,983 - INFO -   WITH 2:1 AV CONDUCTION                                   40   0.914  (0.876, 0.953)
+2026-03-22 02:08:53,983 - INFO -   LATERAL INFARCT                                           3   0.908  (0.780, 0.996)
+2026-03-22 02:08:53,984 - INFO -   LEFT ATRIAL ENLARGEMENT                                 184   0.898  (0.870, 0.917)
+2026-03-22 02:08:53,985 - INFO -   WITH VARIABLE AV BLOCK                                   67   0.896  (0.852, 0.931)
+2026-03-22 02:08:53,985 - INFO -   EARLY REPOLARIZATION                                    249   0.892  (0.873, 0.906)
+2026-03-22 02:08:53,986 - INFO -   NORMAL ECG                                             1759   0.892  (0.885, 0.900)
+2026-03-22 02:08:53,987 - INFO -   WITH 1ST DEGREE AV BLOCK                                123   0.887  (0.856, 0.912)
+2026-03-22 02:08:53,987 - INFO -   LOW VOLTAGE QRS                                         277   0.885  (0.863, 0.906)
+2026-03-22 02:08:53,988 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                        184   0.881  (0.862, 0.900)
+2026-03-22 02:08:53,989 - INFO -   PROLONGED QT                                            427   0.828  (0.805, 0.846)
+2026-03-22 02:08:53,989 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                         2544   0.823  (0.814, 0.834)
+2026-03-22 02:08:53,990 - INFO -   ANTERIOR INFARCT                                          5   0.800  (0.510, 0.999)
+2026-03-22 02:08:53,992 - INFO -   ATRIAL FIBRILLATION                                      25   0.789  (0.713, 0.876)
+2026-03-22 02:08:53,992 - INFO -   otherwise normal ecg                                    621   0.787  (0.775, 0.800)
+2026-03-22 02:08:53,993 - INFO -   FUSION COMPLEXES                                         27   0.773  (0.682, 0.846)
+2026-03-22 02:08:53,994 - INFO -   PULMONARY DISEASE PATTERN                                 3   0.737  (0.552, 0.885)
+2026-03-22 02:08:53,994 - INFO -   PREMATURE VENTRICULAR COMPLEXES                           6   0.722  (0.486, 0.996)
+2026-03-22 02:08:53,995 - INFO -   INFERIOR INFARCT                                          8   0.684  (0.479, 0.869)
+2026-03-22 02:08:53,995 - INFO - 
+[pruned_magnitude_ratio20] Valid labels : 39 / 150
+2026-03-22 02:08:53,996 - INFO - [pruned_magnitude_ratio20] Skipped      : 111 / 150  (all-zero, saved to ./res/iterative_pruning/pruned_magnitude_ratio20_skipped_labels.csv)
+2026-03-22 02:08:53,996 - INFO - [pruned_magnitude_ratio20] Macro AUROC  : 0.8993  (39 valid labels)
+2026-03-22 02:08:53,996 - INFO - [pruned_magnitude_ratio20] Results saved: ./res/iterative_pruning/pruned_magnitude_ratio20_results.csv
+2026-03-22 02:08:54,600 - INFO - [pruned_magnitude_ratio20] ROC curve plot saved: ./res/iterative_pruning/pruned_magnitude_ratio20_roc_curves.png
+2026-03-22 02:08:54,601 - INFO - [pruned_magnitude_ratio20] Plot Macro AUC=0.8992  Micro AUC=0.9666
+2026-03-22 02:08:54,602 - INFO -   Macro AUROC: 0.9212 → 0.8993  (Δ -0.0220 vs fine-tuned baseline)
+2026-03-22 02:08:55,024 - INFO -   Saved: ./res/iterative_pruning/pruned_magnitude_ratio0.2_recovery3ep_auroc0.8993.pth
+2026-03-22 02:08:55,024 - INFO - 
+============================================================
+2026-03-22 02:08:55,025 - INFO - PRUNING RATIO 0.3  |  method: magnitude  |  recovery: 3 epochs
+2026-03-22 02:08:55,025 - INFO - ============================================================
+2026-03-22 02:09:06,586 - INFO -   Detected 'backbone.' prefix — stripping for bare Net1D
+2026-03-22 02:09:06,960 - INFO -   Weights loaded (strict=True) | missing: 0 | unexpected: 0
+2026-03-22 02:09:08,055 - INFO -   Ignoring 1 final classifier layer(s)
+2026-03-22 02:09:08,162 - INFO - Applying single-shot pruning step...
+2026-03-22 02:09:08,542 - INFO -   MACs  : 1.1727 G → 1.1039 G  (5.87% reduced)
+2026-03-22 02:09:08,542 - INFO -   Params: 30.8190 M → 29.9919 M  (2.68% reduced)
+2026-03-22 02:09:08,542 - INFO -   Recovery fine-tuning: 3 epochs | lr=0.0001 | wd=1e-05
+2026-03-22 02:12:47,938 - INFO -   Recovery epoch 1/3 | Loss: 0.0224 | LR: 7.50e-05
+2026-03-22 02:16:36,533 - INFO -   Recovery epoch 2/3 | Loss: 0.0187 | LR: 2.50e-05
+2026-03-22 02:20:09,464 - INFO -   Recovery epoch 3/3 | Loss: 0.0173 | LR: 0.00e+00
+2026-03-22 02:22:48,316 - INFO - 
+Computing full evaluation: pruned_magnitude_ratio30
+2026-03-22 02:24:54,720 - INFO - 
+========================================================================
+2026-03-22 02:24:54,727 - INFO - [pruned_magnitude_ratio30] PER-CLASS AUROC  (39 valid / 150 total)
+2026-03-22 02:24:54,727 - INFO - ========================================================================
+2026-03-22 02:24:54,727 - INFO -   Label                                                 n_pos   AUROC  95% CI
+2026-03-22 02:24:54,728 - INFO -   ----------------------------------------------------------------------
+2026-03-22 02:24:54,729 - INFO -   RIGHT BUNDLE BRANCH BLOCK                               290   0.987  (0.984, 0.991)
+2026-03-22 02:24:54,730 - INFO -   SINUS BRADYCARDIA                                       935   0.985  (0.982, 0.988)
+2026-03-22 02:24:54,730 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                          323   0.979  (0.974, 0.984)
+2026-03-22 02:24:54,731 - INFO -   VENTRICULAR TACHYCARDIA                                  81   0.977  (0.964, 0.990)
+2026-03-22 02:24:54,731 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                             45   0.975  (0.964, 0.984)
+2026-03-22 02:24:54,733 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                          19   0.972  (0.939, 0.998)
+2026-03-22 02:24:54,733 - INFO -   ATRIAL FLUTTER                                           31   0.962  (0.940, 0.980)
+2026-03-22 02:24:54,734 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                           693   0.956  (0.950, 0.962)
+2026-03-22 02:24:54,735 - INFO -   LEFT AXIS DEVIATION                                      54   0.953  (0.939, 0.968)
+2026-03-22 02:24:54,736 - INFO -   SINUS TACHYCARDIA                                      2210   0.953  (0.949, 0.957)
+2026-03-22 02:24:54,736 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK                    336   0.952  (0.943, 0.960)
+2026-03-22 02:24:54,737 - INFO -   WITH COMPLETE HEART BLOCK                                67   0.940  (0.905, 0.974)
+2026-03-22 02:24:54,737 - INFO -   LEFT BUNDLE BRANCH BLOCK                                 18   0.937  (0.842, 0.993)
+2026-03-22 02:24:54,738 - INFO -   ACUTE PERICARDITIS                                        1   0.937  (0.932, 0.941)
+2026-03-22 02:24:54,739 - INFO -   RIGHT AXIS DEVIATION                                    335   0.937  (0.924, 0.946)
+2026-03-22 02:24:54,739 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                        32   0.932  (0.868, 0.979)
+2026-03-22 02:24:54,740 - INFO -   LEFT VENTRICULAR HYPERTROPHY                            348   0.916  (0.905, 0.928)
+2026-03-22 02:24:54,740 - INFO -   RIGHT ATRIAL ENLARGEMENT                                201   0.913  (0.891, 0.933)
+2026-03-22 02:24:54,741 - INFO -   PREMATURE ATRIAL COMPLEXES                                1   0.903  (0.898, 0.909)
+2026-03-22 02:24:54,741 - INFO -   WITH AV DISSOCIATION                                     70   0.902  (0.870, 0.934)
+2026-03-22 02:24:54,742 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                        184   0.896  (0.876, 0.915)
+2026-03-22 02:24:54,742 - INFO -   WITH 2:1 AV CONDUCTION                                   40   0.896  (0.859, 0.933)
+2026-03-22 02:24:54,743 - INFO -   WITH VARIABLE AV BLOCK                                   67   0.896  (0.859, 0.933)
+2026-03-22 02:24:54,744 - INFO -   LEFT ATRIAL ENLARGEMENT                                 184   0.896  (0.878, 0.919)
+2026-03-22 02:24:54,744 - INFO -   ANTEROSEPTAL INFARCT                                     14   0.895  (0.796, 0.962)
+2026-03-22 02:24:54,745 - INFO -   EARLY REPOLARIZATION                                    249   0.895  (0.874, 0.913)
+2026-03-22 02:24:54,745 - INFO -   NORMAL ECG                                             1759   0.895  (0.888, 0.901)
+2026-03-22 02:24:54,746 - INFO -   LOW VOLTAGE QRS                                         277   0.885  (0.867, 0.907)
+2026-03-22 02:24:54,746 - INFO -   LATERAL INFARCT                                           3   0.880  (0.754, 0.981)
+2026-03-22 02:24:54,747 - INFO -   WITH 1ST DEGREE AV BLOCK                                123   0.874  (0.845, 0.901)
+2026-03-22 02:24:54,747 - INFO -   PROLONGED QT                                            427   0.834  (0.813, 0.853)
+2026-03-22 02:24:54,748 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                         2544   0.825  (0.814, 0.837)
+2026-03-22 02:24:54,749 - INFO -   ANTERIOR INFARCT                                          5   0.822  (0.578, 1.000)
+2026-03-22 02:24:54,749 - INFO -   PREMATURE VENTRICULAR COMPLEXES                           6   0.812  (0.645, 0.967)
+2026-03-22 02:24:54,750 - INFO -   FUSION COMPLEXES                                         27   0.800  (0.729, 0.871)
+2026-03-22 02:24:54,751 - INFO -   ATRIAL FIBRILLATION                                      25   0.786  (0.650, 0.856)
+2026-03-22 02:24:54,751 - INFO -   otherwise normal ecg                                    621   0.785  (0.770, 0.803)
+2026-03-22 02:24:54,752 - INFO -   PULMONARY DISEASE PATTERN                                 3   0.684  (0.265, 0.998)
+2026-03-22 02:24:54,753 - INFO -   INFERIOR INFARCT                                          8   0.603  (0.401, 0.820)
+2026-03-22 02:24:54,753 - INFO - 
+[pruned_magnitude_ratio30] Valid labels : 39 / 150
+2026-03-22 02:24:54,753 - INFO - [pruned_magnitude_ratio30] Skipped      : 111 / 150  (all-zero, saved to ./res/iterative_pruning/pruned_magnitude_ratio30_skipped_labels.csv)
+2026-03-22 02:24:54,753 - INFO - [pruned_magnitude_ratio30] Macro AUROC  : 0.8930  (39 valid labels)
+2026-03-22 02:24:54,754 - INFO - [pruned_magnitude_ratio30] Results saved: ./res/iterative_pruning/pruned_magnitude_ratio30_results.csv
+2026-03-22 02:24:55,411 - INFO - [pruned_magnitude_ratio30] ROC curve plot saved: ./res/iterative_pruning/pruned_magnitude_ratio30_roc_curves.png
+2026-03-22 02:24:55,411 - INFO - [pruned_magnitude_ratio30] Plot Macro AUC=0.8929  Micro AUC=0.9665
+2026-03-22 02:24:55,411 - INFO -   Macro AUROC: 0.9212 → 0.8930  (Δ -0.0282 vs fine-tuned baseline)
+2026-03-22 02:24:57,062 - INFO -   Saved: ./res/iterative_pruning/pruned_magnitude_ratio0.3_recovery3ep_auroc0.8930.pth
+2026-03-22 02:24:57,062 - INFO - 
+============================================================
+2026-03-22 02:24:57,062 - INFO - PRUNING RATIO 0.4  |  method: magnitude  |  recovery: 3 epochs
+2026-03-22 02:24:57,062 - INFO - ============================================================
+2026-03-22 02:25:09,639 - INFO -   Detected 'backbone.' prefix — stripping for bare Net1D
+2026-03-22 02:25:09,896 - INFO -   Weights loaded (strict=True) | missing: 0 | unexpected: 0
+2026-03-22 02:25:15,611 - INFO -   Ignoring 1 final classifier layer(s)
+2026-03-22 02:25:15,702 - INFO - Applying single-shot pruning step...
+2026-03-22 02:25:18,226 - INFO -   MACs  : 1.1727 G → 1.0810 G  (7.82% reduced)
+2026-03-22 02:25:18,226 - INFO -   Params: 30.8190 M → 29.7162 M  (3.58% reduced)
+2026-03-22 02:25:18,227 - INFO -   Recovery fine-tuning: 3 epochs | lr=0.0001 | wd=1e-05
+2026-03-22 02:29:03,888 - INFO -   Recovery epoch 1/3 | Loss: 0.0233 | LR: 7.50e-05
+2026-03-22 02:33:04,170 - INFO -   Recovery epoch 2/3 | Loss: 0.0196 | LR: 2.50e-05
+2026-03-22 02:36:53,943 - INFO -   Recovery epoch 3/3 | Loss: 0.0179 | LR: 0.00e+00
+2026-03-22 02:39:47,214 - INFO - 
+Computing full evaluation: pruned_magnitude_ratio40
+2026-03-22 02:42:02,878 - INFO - 
+========================================================================
+2026-03-22 02:42:02,878 - INFO - [pruned_magnitude_ratio40] PER-CLASS AUROC  (39 valid / 150 total)
+2026-03-22 02:42:02,878 - INFO - ========================================================================
+2026-03-22 02:42:02,878 - INFO -   Label                                                 n_pos   AUROC  95% CI
+2026-03-22 02:42:02,878 - INFO -   ----------------------------------------------------------------------
+2026-03-22 02:42:02,882 - INFO -   SINUS BRADYCARDIA                                       935   0.985  (0.982, 0.988)
+2026-03-22 02:42:02,882 - INFO -   RIGHT BUNDLE BRANCH BLOCK                               290   0.983  (0.979, 0.988)
+2026-03-22 02:42:02,884 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                          19   0.979  (0.944, 0.998)
+2026-03-22 02:42:02,884 - INFO -   VENTRICULAR TACHYCARDIA                                  81   0.978  (0.964, 0.991)
+2026-03-22 02:42:02,885 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                             45   0.977  (0.970, 0.985)
+2026-03-22 02:42:02,886 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                          323   0.974  (0.970, 0.980)
+2026-03-22 02:42:02,886 - INFO -   ACUTE PERICARDITIS                                        1   0.968  (0.965, 0.972)
+2026-03-22 02:42:02,887 - INFO -   LEFT BUNDLE BRANCH BLOCK                                 18   0.962  (0.908, 0.995)
+2026-03-22 02:42:02,888 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                           693   0.958  (0.952, 0.965)
+2026-03-22 02:42:02,889 - INFO -   ATRIAL FLUTTER                                           31   0.951  (0.919, 0.977)
+2026-03-22 02:42:02,890 - INFO -   SINUS TACHYCARDIA                                      2210   0.949  (0.945, 0.954)
+2026-03-22 02:42:02,890 - INFO -   RIGHT AXIS DEVIATION                                    335   0.944  (0.935, 0.952)
+2026-03-22 02:42:02,891 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK                    336   0.942  (0.933, 0.954)
+2026-03-22 02:42:02,892 - INFO -   ANTEROSEPTAL INFARCT                                     14   0.939  (0.903, 0.971)
+2026-03-22 02:42:02,893 - INFO -   WITH COMPLETE HEART BLOCK                                67   0.937  (0.903, 0.969)
+2026-03-22 02:42:02,894 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                        32   0.920  (0.831, 0.980)
+2026-03-22 02:42:02,894 - INFO -   RIGHT ATRIAL ENLARGEMENT                                201   0.913  (0.893, 0.930)
+2026-03-22 02:42:02,895 - INFO -   LEFT AXIS DEVIATION                                      54   0.911  (0.886, 0.944)
+2026-03-22 02:42:02,896 - INFO -   LEFT VENTRICULAR HYPERTROPHY                            348   0.899  (0.884, 0.913)
+2026-03-22 02:42:02,897 - INFO -   WITH AV DISSOCIATION                                     70   0.890  (0.833, 0.926)
+2026-03-22 02:42:02,897 - INFO -   WITH 2:1 AV CONDUCTION                                   40   0.890  (0.832, 0.944)
+2026-03-22 02:42:02,898 - INFO -   NORMAL ECG                                             1759   0.890  (0.883, 0.896)
+2026-03-22 02:42:02,899 - INFO -   PREMATURE ATRIAL COMPLEXES                                1   0.888  (0.882, 0.893)
+2026-03-22 02:42:02,899 - INFO -   ANTERIOR INFARCT                                          5   0.885  (0.668, 0.980)
+2026-03-22 02:42:02,900 - INFO -   LEFT ATRIAL ENLARGEMENT                                 184   0.882  (0.857, 0.904)
+2026-03-22 02:42:02,901 - INFO -   EARLY REPOLARIZATION                                    249   0.878  (0.858, 0.893)
+2026-03-22 02:42:02,902 - INFO -   LOW VOLTAGE QRS                                         277   0.874  (0.854, 0.890)
+2026-03-22 02:42:02,903 - INFO -   WITH VARIABLE AV BLOCK                                   67   0.873  (0.834, 0.905)
+2026-03-22 02:42:02,903 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                        184   0.867  (0.845, 0.889)
+2026-03-22 02:42:02,903 - INFO -   LATERAL INFARCT                                           3   0.842  (0.647, 0.982)
+2026-03-22 02:42:02,903 - INFO -   WITH 1ST DEGREE AV BLOCK                                123   0.840  (0.800, 0.879)
+2026-03-22 02:42:02,903 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                         2544   0.824  (0.815, 0.832)
+2026-03-22 02:42:02,903 - INFO -   PROLONGED QT                                            427   0.813  (0.788, 0.829)
+2026-03-22 02:42:02,903 - INFO -   INFERIOR INFARCT                                          8   0.786  (0.616, 0.928)
+2026-03-22 02:42:02,908 - INFO -   PREMATURE VENTRICULAR COMPLEXES                           6   0.782  (0.579, 0.971)
+2026-03-22 02:42:02,908 - INFO -   FUSION COMPLEXES                                         27   0.781  (0.680, 0.858)
+2026-03-22 02:42:02,909 - INFO -   otherwise normal ecg                                    621   0.774  (0.759, 0.786)
+2026-03-22 02:42:02,910 - INFO -   ATRIAL FIBRILLATION                                      25   0.754  (0.672, 0.844)
+2026-03-22 02:42:02,911 - INFO -   PULMONARY DISEASE PATTERN                                 3   0.725  (0.320, 0.970)
+2026-03-22 02:42:02,911 - INFO - 
+[pruned_magnitude_ratio40] Valid labels : 39 / 150
+2026-03-22 02:42:02,912 - INFO - [pruned_magnitude_ratio40] Skipped      : 111 / 150  (all-zero, saved to ./res/iterative_pruning/pruned_magnitude_ratio40_skipped_labels.csv)
+2026-03-22 02:42:02,912 - INFO - [pruned_magnitude_ratio40] Macro AUROC  : 0.8925  (39 valid labels)
+2026-03-22 02:42:02,913 - INFO - [pruned_magnitude_ratio40] Results saved: ./res/iterative_pruning/pruned_magnitude_ratio40_results.csv
+2026-03-22 02:42:03,483 - INFO - [pruned_magnitude_ratio40] ROC curve plot saved: ./res/iterative_pruning/pruned_magnitude_ratio40_roc_curves.png
+2026-03-22 02:42:03,484 - INFO - [pruned_magnitude_ratio40] Plot Macro AUC=0.8925  Micro AUC=0.9638
+2026-03-22 02:42:03,485 - INFO -   Macro AUROC: 0.9212 → 0.8925  (Δ -0.0287 vs fine-tuned baseline)
+2026-03-22 02:42:03,891 - INFO -   Saved: ./res/iterative_pruning/pruned_magnitude_ratio0.4_recovery3ep_auroc0.8925.pth
+2026-03-22 02:42:03,891 - INFO - 
+============================================================
+2026-03-22 02:42:03,896 - INFO - PRUNING RATIO 0.5  |  method: magnitude  |  recovery: 3 epochs
+2026-03-22 02:42:03,896 - INFO - ============================================================
+2026-03-22 02:42:15,903 - INFO -   Detected 'backbone.' prefix — stripping for bare Net1D
+2026-03-22 02:42:16,246 - INFO -   Weights loaded (strict=True) | missing: 0 | unexpected: 0
+2026-03-22 02:42:20,555 - INFO -   Ignoring 1 final classifier layer(s)
+2026-03-22 02:42:20,656 - INFO - Applying single-shot pruning step...
+2026-03-22 02:42:21,004 - INFO -   MACs  : 1.1727 G → 1.0810 G  (7.82% reduced)
+2026-03-22 02:42:21,004 - INFO -   Params: 30.8190 M → 29.7162 M  (3.58% reduced)
+2026-03-22 02:42:21,012 - INFO -   Recovery fine-tuning: 3 epochs | lr=0.0001 | wd=1e-05
+2026-03-22 02:46:11,642 - INFO -   Recovery epoch 1/3 | Loss: 0.0233 | LR: 7.50e-05
+2026-03-22 02:50:01,976 - INFO -   Recovery epoch 2/3 | Loss: 0.0195 | LR: 2.50e-05
+2026-03-22 02:53:48,783 - INFO -   Recovery epoch 3/3 | Loss: 0.0178 | LR: 0.00e+00
+2026-03-22 02:56:58,195 - INFO - 
+Computing full evaluation: pruned_magnitude_ratio50
+2026-03-22 02:59:22,461 - INFO - 
+========================================================================
+2026-03-22 02:59:22,461 - INFO - [pruned_magnitude_ratio50] PER-CLASS AUROC  (39 valid / 150 total)
+2026-03-22 02:59:22,463 - INFO - ========================================================================
+2026-03-22 02:59:22,463 - INFO -   Label                                                 n_pos   AUROC  95% CI
+2026-03-22 02:59:22,463 - INFO -   ----------------------------------------------------------------------
+2026-03-22 02:59:22,466 - INFO -   SINUS BRADYCARDIA                                       935   0.985  (0.982, 0.989)
+2026-03-22 02:59:22,467 - INFO -   RIGHT BUNDLE BRANCH BLOCK                               290   0.984  (0.979, 0.987)
+2026-03-22 02:59:22,467 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                          19   0.979  (0.948, 0.998)
+2026-03-22 02:59:22,468 - INFO -   VENTRICULAR TACHYCARDIA                                  81   0.978  (0.962, 0.990)
+2026-03-22 02:59:22,469 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                             45   0.977  (0.969, 0.984)
+2026-03-22 02:59:22,470 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                          323   0.974  (0.969, 0.979)
+2026-03-22 02:59:22,471 - INFO -   ACUTE PERICARDITIS                                        1   0.967  (0.963, 0.970)
+2026-03-22 02:59:22,471 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                           693   0.958  (0.950, 0.962)
+2026-03-22 02:59:22,472 - INFO -   LEFT BUNDLE BRANCH BLOCK                                 18   0.957  (0.891, 0.990)
+2026-03-22 02:59:22,472 - INFO -   ATRIAL FLUTTER                                           31   0.953  (0.924, 0.975)
+2026-03-22 02:59:22,473 - INFO -   SINUS TACHYCARDIA                                      2210   0.949  (0.943, 0.953)
+2026-03-22 02:59:22,474 - INFO -   ANTEROSEPTAL INFARCT                                     14   0.946  (0.907, 0.975)
+2026-03-22 02:59:22,475 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK                    336   0.943  (0.931, 0.952)
+2026-03-22 02:59:22,475 - INFO -   RIGHT AXIS DEVIATION                                    335   0.943  (0.934, 0.953)
+2026-03-22 02:59:22,476 - INFO -   WITH COMPLETE HEART BLOCK                                67   0.930  (0.887, 0.962)
+2026-03-22 02:59:22,476 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                        32   0.924  (0.850, 0.970)
+2026-03-22 02:59:22,476 - INFO -   LEFT AXIS DEVIATION                                      54   0.915  (0.878, 0.941)
+2026-03-22 02:59:22,476 - INFO -   RIGHT ATRIAL ENLARGEMENT                                201   0.911  (0.894, 0.930)
+2026-03-22 02:59:22,476 - INFO -   PREMATURE ATRIAL COMPLEXES                                1   0.909  (0.904, 0.914)
+2026-03-22 02:59:22,479 - INFO -   LEFT VENTRICULAR HYPERTROPHY                            348   0.898  (0.884, 0.913)
+2026-03-22 02:59:22,480 - INFO -   WITH 2:1 AV CONDUCTION                                   40   0.891  (0.839, 0.945)
+2026-03-22 02:59:22,481 - INFO -   NORMAL ECG                                             1759   0.888  (0.880, 0.895)
+2026-03-22 02:59:22,481 - INFO -   WITH AV DISSOCIATION                                     70   0.884  (0.840, 0.927)
+2026-03-22 02:59:22,482 - INFO -   LEFT ATRIAL ENLARGEMENT                                 184   0.880  (0.858, 0.901)
+2026-03-22 02:59:22,483 - INFO -   EARLY REPOLARIZATION                                    249   0.880  (0.861, 0.896)
+2026-03-22 02:59:22,484 - INFO -   LOW VOLTAGE QRS                                         277   0.875  (0.859, 0.893)
+2026-03-22 02:59:22,485 - INFO -   WITH VARIABLE AV BLOCK                                   67   0.874  (0.827, 0.908)
+2026-03-22 02:59:22,486 - INFO -   ANTERIOR INFARCT                                          5   0.874  (0.523, 0.985)
+2026-03-22 02:59:22,486 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                        184   0.863  (0.836, 0.889)
+2026-03-22 02:59:22,487 - INFO -   LATERAL INFARCT                                           3   0.845  (0.640, 0.987)
+2026-03-22 02:59:22,488 - INFO -   WITH 1ST DEGREE AV BLOCK                                123   0.842  (0.801, 0.881)
+2026-03-22 02:59:22,489 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                         2544   0.822  (0.812, 0.830)
+2026-03-22 02:59:22,489 - INFO -   PROLONGED QT                                            427   0.815  (0.798, 0.831)
+2026-03-22 02:59:22,490 - INFO -   INFERIOR INFARCT                                          8   0.790  (0.629, 0.918)
+2026-03-22 02:59:22,490 - INFO -   FUSION COMPLEXES                                         27   0.781  (0.663, 0.870)
+2026-03-22 02:59:22,490 - INFO -   PREMATURE VENTRICULAR COMPLEXES                           6   0.777  (0.606, 0.984)
+2026-03-22 02:59:22,490 - INFO -   otherwise normal ecg                                    621   0.776  (0.763, 0.789)
+2026-03-22 02:59:22,492 - INFO -   ATRIAL FIBRILLATION                                      25   0.757  (0.660, 0.861)
+2026-03-22 02:59:22,492 - INFO -   PULMONARY DISEASE PATTERN                                 3   0.719  (0.268, 0.980)
+2026-03-22 02:59:22,492 - INFO - 
+[pruned_magnitude_ratio50] Valid labels : 39 / 150
+2026-03-22 02:59:22,492 - INFO - [pruned_magnitude_ratio50] Skipped      : 111 / 150  (all-zero, saved to ./res/iterative_pruning/pruned_magnitude_ratio50_skipped_labels.csv)
+2026-03-22 02:59:22,494 - INFO - [pruned_magnitude_ratio50] Macro AUROC  : 0.8926  (39 valid labels)
+2026-03-22 02:59:22,495 - INFO - [pruned_magnitude_ratio50] Results saved: ./res/iterative_pruning/pruned_magnitude_ratio50_results.csv
+2026-03-22 02:59:23,098 - INFO - [pruned_magnitude_ratio50] ROC curve plot saved: ./res/iterative_pruning/pruned_magnitude_ratio50_roc_curves.png
+2026-03-22 02:59:23,100 - INFO - [pruned_magnitude_ratio50] Plot Macro AUC=0.8926  Micro AUC=0.9637
+2026-03-22 02:59:23,100 - INFO -   Macro AUROC: 0.9212 → 0.8926  (Δ -0.0286 vs fine-tuned baseline)
+2026-03-22 02:59:23,459 - INFO -   Saved: ./res/iterative_pruning/pruned_magnitude_ratio0.5_recovery3ep_auroc0.8926.pth
+2026-03-22 02:59:23,469 - INFO - 
+============================================================
+2026-03-22 02:59:23,469 - INFO - ITERATIVE PRUNING SUMMARY
+2026-03-22 02:59:23,469 - INFO - ============================================================
+2026-03-22 02:59:23,480 - INFO - 
+ pruning_ratio    method  recovery_epochs  macs_G  params_M  macs_reduction  params_reduction  macro_auroc  auroc_drop
+           0.0      none                0  1.1727   30.8190            0.00              0.00       0.9212      0.0000
+           0.1 magnitude                3  1.1498   30.5433            1.96              0.89       0.9096      0.0116
+           0.2 magnitude                3  1.1268   30.2676            3.91              1.79       0.8993      0.0220
+           0.3 magnitude                3  1.1039   29.9919            5.87              2.68       0.8930      0.0282
+           0.4 magnitude                3  1.0810   29.7162            7.82              3.58       0.8925      0.0287
+           0.5 magnitude                3  1.0810   29.7162            7.82              3.58       0.8926      0.0286
+2026-03-22 02:59:23,481 - INFO - 
+Summary saved: ./res/iterative_pruning/iterative_pruning_summary.csv
+2026-03-22 02:59:23,481 - INFO - ============================================================

@@ -1,0 +1,1087 @@
+2026-04-11 15:54:07,530 - INFO - Using device : cuda:0
+2026-04-11 15:54:07,533 - INFO - PEFT mode    : lora
+2026-04-11 15:54:07,534 - INFO - Number of classes: 150
+2026-04-11 15:54:08,052 - INFO - Train : 6690 samples | 5748 patients
+2026-04-11 15:54:08,052 - INFO - Val   : 766   samples | 639 patients
+2026-04-11 15:54:08,052 - INFO - Test  : 1941  samples | 1597 patients
+2026-04-11 15:54:08,089 - INFO - 
+============================================================
+2026-04-11 15:54:08,089 - INFO - Label stats [TRAIN]  --  6690 samples total
+2026-04-11 15:54:08,089 - INFO -   Active labels : 37 / 150
+2026-04-11 15:54:08,089 - INFO -   Avg labels/sample: 1.33
+2026-04-11 15:54:08,089 - INFO -   Label                                              Count   Prevalence
+2026-04-11 15:54:08,089 - INFO -   ----------------------------------------------------------------------
+2026-04-11 15:54:08,097 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                     1856     27.7%
+2026-04-11 15:54:08,097 - INFO -   SINUS TACHYCARDIA                                  1545     23.1%
+2026-04-11 15:54:08,097 - INFO -   NORMAL ECG                                         1280     19.1%
+2026-04-11 15:54:08,097 - INFO -   SINUS BRADYCARDIA                                  676      10.1%
+2026-04-11 15:54:08,100 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                      473      7.1%
+2026-04-11 15:54:08,100 - INFO -   otherwise normal ecg                               442      6.6%
+2026-04-11 15:54:08,100 - INFO -   PROLONGED QT                                       302      4.5%
+2026-04-11 15:54:08,100 - INFO -   LEFT VENTRICULAR HYPERTROPHY                       237      3.5%
+2026-04-11 15:54:08,100 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK               231      3.5%
+2026-04-11 15:54:08,102 - INFO -   RIGHT AXIS DEVIATION                               230      3.4%
+2026-04-11 15:54:08,103 - INFO -   LOW VOLTAGE QRS                                    209      3.1%
+2026-04-11 15:54:08,103 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                     202      3.0%
+2026-04-11 15:54:08,104 - INFO -   RIGHT BUNDLE BRANCH BLOCK                          189      2.8%
+2026-04-11 15:54:08,104 - INFO -   EARLY REPOLARIZATION                               180      2.7%
+2026-04-11 15:54:08,104 - INFO -   RIGHT ATRIAL ENLARGEMENT                           138      2.1%
+2026-04-11 15:54:08,104 - INFO -   LEFT ATRIAL ENLARGEMENT                            134      2.0%
+2026-04-11 15:54:08,107 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                   124      1.9%
+2026-04-11 15:54:08,107 - INFO -   WITH 1ST DEGREE AV BLOCK                           77       1.2%
+2026-04-11 15:54:08,107 - INFO -   VENTRICULAR TACHYCARDIA                            52       0.8%
+2026-04-11 15:54:08,108 - INFO -   WITH VARIABLE AV BLOCK                             48       0.7%
+2026-04-11 15:54:08,108 - INFO -   WITH AV DISSOCIATION                               43       0.6%
+2026-04-11 15:54:08,109 - INFO -   LEFT AXIS DEVIATION                                41       0.6%
+2026-04-11 15:54:08,110 - INFO -   WITH COMPLETE HEART BLOCK                          41       0.6%
+2026-04-11 15:54:08,110 - INFO -   WITH 2:1 AV CONDUCTION                             25       0.4%
+2026-04-11 15:54:08,110 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                       22       0.3%
+2026-04-11 15:54:08,110 - INFO -   FUSION COMPLEXES                                   20       0.3%
+2026-04-11 15:54:08,110 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                  20       0.3%
+2026-04-11 15:54:08,110 - INFO -   ATRIAL FIBRILLATION                                18       0.3%
+2026-04-11 15:54:08,114 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                    17       0.3%
+2026-04-11 15:54:08,114 - INFO -   ATRIAL FLUTTER                                     16       0.2%
+2026-04-11 15:54:08,115 - INFO -   ANTEROSEPTAL INFARCT                               10       0.1%
+2026-04-11 15:54:08,115 - INFO -   LEFT BUNDLE BRANCH BLOCK                           9        0.1%
+2026-04-11 15:54:08,115 - INFO -   INFERIOR INFARCT                                   6        0.1%
+2026-04-11 15:54:08,115 - INFO -   PREMATURE VENTRICULAR COMPLEXES                    5        0.1%
+2026-04-11 15:54:08,115 - INFO -   LATERAL INFARCT                                    3        0.0%
+2026-04-11 15:54:08,118 - INFO -   ANTERIOR INFARCT                                   2        0.0%
+2026-04-11 15:54:08,118 - INFO -   PULMONARY DISEASE PATTERN                          2        0.0%
+2026-04-11 15:54:08,118 - INFO - ============================================================
+
+2026-04-11 15:54:08,125 - INFO - 
+============================================================
+2026-04-11 15:54:08,126 - INFO - Label stats [VAL]  --  766 samples total
+2026-04-11 15:54:08,126 - INFO -   Active labels : 30 / 150
+2026-04-11 15:54:08,126 - INFO -   Avg labels/sample: 1.37
+2026-04-11 15:54:08,126 - INFO -   Label                                              Count   Prevalence
+2026-04-11 15:54:08,128 - INFO -   ----------------------------------------------------------------------
+2026-04-11 15:54:08,128 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                     189      24.7%
+2026-04-11 15:54:08,128 - INFO -   SINUS TACHYCARDIA                                  187      24.4%
+2026-04-11 15:54:08,130 - INFO -   NORMAL ECG                                         137      17.9%
+2026-04-11 15:54:08,131 - INFO -   SINUS BRADYCARDIA                                  75       9.8%
+2026-04-11 15:54:08,131 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                      61       8.0%
+2026-04-11 15:54:08,131 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK               43       5.6%
+2026-04-11 15:54:08,131 - INFO -   otherwise normal ecg                               42       5.5%
+2026-04-11 15:54:08,131 - INFO -   PROLONGED QT                                       40       5.2%
+2026-04-11 15:54:08,131 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                     35       4.6%
+2026-04-11 15:54:08,131 - INFO -   RIGHT BUNDLE BRANCH BLOCK                          33       4.3%
+2026-04-11 15:54:08,134 - INFO -   LEFT VENTRICULAR HYPERTROPHY                       28       3.7%
+2026-04-11 15:54:08,134 - INFO -   EARLY REPOLARIZATION                               28       3.7%
+2026-04-11 15:54:08,134 - INFO -   RIGHT AXIS DEVIATION                               24       3.1%
+2026-04-11 15:54:08,134 - INFO -   RIGHT ATRIAL ENLARGEMENT                           20       2.6%
+2026-04-11 15:54:08,134 - INFO -   LOW VOLTAGE QRS                                    18       2.3%
+2026-04-11 15:54:08,134 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                   14       1.8%
+2026-04-11 15:54:08,134 - INFO -   LEFT ATRIAL ENLARGEMENT                            11       1.4%
+2026-04-11 15:54:08,134 - INFO -   WITH 1ST DEGREE AV BLOCK                           11       1.4%
+2026-04-11 15:54:08,139 - INFO -   WITH AV DISSOCIATION                               10       1.3%
+2026-04-11 15:54:08,139 - INFO -   LEFT AXIS DEVIATION                                8        1.0%
+2026-04-11 15:54:08,139 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                       8        1.0%
+2026-04-11 15:54:08,139 - INFO -   VENTRICULAR TACHYCARDIA                            5        0.7%
+2026-04-11 15:54:08,141 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                  5        0.7%
+2026-04-11 15:54:08,141 - INFO -   WITH COMPLETE HEART BLOCK                          5        0.7%
+2026-04-11 15:54:08,141 - INFO -   LEFT BUNDLE BRANCH BLOCK                           4        0.5%
+2026-04-11 15:54:08,141 - INFO -   WITH VARIABLE AV BLOCK                             3        0.4%
+2026-04-11 15:54:08,141 - INFO -   ANTEROSEPTAL INFARCT                               2        0.3%
+2026-04-11 15:54:08,141 - INFO -   ANTERIOR INFARCT                                   1        0.1%
+2026-04-11 15:54:08,141 - INFO -   ATRIAL FLUTTER                                     1        0.1%
+2026-04-11 15:54:08,141 - INFO -   WITH 2:1 AV CONDUCTION                             1        0.1%
+2026-04-11 15:54:08,141 - INFO - ============================================================
+
+2026-04-11 15:54:08,158 - INFO - 
+============================================================
+2026-04-11 15:54:08,160 - INFO - Label stats [TEST]  --  1941 samples total
+2026-04-11 15:54:08,160 - INFO -   Active labels : 38 / 150
+2026-04-11 15:54:08,160 - INFO -   Avg labels/sample: 1.38
+2026-04-11 15:54:08,160 - INFO -   Label                                              Count   Prevalence
+2026-04-11 15:54:08,160 - INFO -   ----------------------------------------------------------------------
+2026-04-11 15:54:08,160 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                     499      25.7%
+2026-04-11 15:54:08,160 - INFO -   SINUS TACHYCARDIA                                  478      24.6%
+2026-04-11 15:54:08,160 - INFO -   NORMAL ECG                                         342      17.6%
+2026-04-11 15:54:08,164 - INFO -   SINUS BRADYCARDIA                                  184      9.5%
+2026-04-11 15:54:08,164 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                      159      8.2%
+2026-04-11 15:54:08,164 - INFO -   otherwise normal ecg                               137      7.1%
+2026-04-11 15:54:08,164 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                     86       4.4%
+2026-04-11 15:54:08,166 - INFO -   PROLONGED QT                                       85       4.4%
+2026-04-11 15:54:08,166 - INFO -   LEFT VENTRICULAR HYPERTROPHY                       83       4.3%
+2026-04-11 15:54:08,166 - INFO -   RIGHT AXIS DEVIATION                               81       4.2%
+2026-04-11 15:54:08,166 - INFO -   RIGHT BUNDLE BRANCH BLOCK                          68       3.5%
+2026-04-11 15:54:08,168 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK               62       3.2%
+2026-04-11 15:54:08,169 - INFO -   LOW VOLTAGE QRS                                    50       2.6%
+2026-04-11 15:54:08,169 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                   46       2.4%
+2026-04-11 15:54:08,169 - INFO -   RIGHT ATRIAL ENLARGEMENT                           43       2.2%
+2026-04-11 15:54:08,169 - INFO -   EARLY REPOLARIZATION                               41       2.1%
+2026-04-11 15:54:08,169 - INFO -   LEFT ATRIAL ENLARGEMENT                            39       2.0%
+2026-04-11 15:54:08,169 - INFO -   WITH 1ST DEGREE AV BLOCK                           35       1.8%
+2026-04-11 15:54:08,169 - INFO -   VENTRICULAR TACHYCARDIA                            24       1.2%
+2026-04-11 15:54:08,169 - INFO -   WITH COMPLETE HEART BLOCK                          21       1.1%
+2026-04-11 15:54:08,169 - INFO -   WITH AV DISSOCIATION                               17       0.9%
+2026-04-11 15:54:08,169 - INFO -   WITH VARIABLE AV BLOCK                             16       0.8%
+2026-04-11 15:54:08,169 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                       15       0.8%
+2026-04-11 15:54:08,169 - INFO -   ATRIAL FLUTTER                                     14       0.7%
+2026-04-11 15:54:08,169 - INFO -   WITH 2:1 AV CONDUCTION                             14       0.7%
+2026-04-11 15:54:08,169 - INFO -   ATRIAL FIBRILLATION                                7        0.4%
+2026-04-11 15:54:08,176 - INFO -   FUSION COMPLEXES                                   7        0.4%
+2026-04-11 15:54:08,177 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                  7        0.4%
+2026-04-11 15:54:08,177 - INFO -   LEFT AXIS DEVIATION                                5        0.3%
+2026-04-11 15:54:08,177 - INFO -   LEFT BUNDLE BRANCH BLOCK                           5        0.3%
+2026-04-11 15:54:08,178 - INFO -   ANTERIOR INFARCT                                   2        0.1%
+2026-04-11 15:54:08,178 - INFO -   ANTEROSEPTAL INFARCT                               2        0.1%
+2026-04-11 15:54:08,178 - INFO -   INFERIOR INFARCT                                   2        0.1%
+2026-04-11 15:54:08,180 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                    2        0.1%
+2026-04-11 15:54:08,180 - INFO -   PREMATURE VENTRICULAR COMPLEXES                    1        0.1%
+2026-04-11 15:54:08,180 - INFO -   PREMATURE ATRIAL COMPLEXES                         1        0.1%
+2026-04-11 15:54:08,180 - INFO -   PULMONARY DISEASE PATTERN                          1        0.1%
+2026-04-11 15:54:08,180 - INFO -   ACUTE PERICARDITIS                                 1        0.1%
+2026-04-11 15:54:08,180 - INFO - ============================================================
+
+2026-04-11 15:54:08,188 - INFO - Train batches: 210 | Val batches:   24   | Test batches:  61
+2026-04-11 15:54:09,405 - INFO - Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-04-11 15:54:09,407 - INFO - PEFT target_modules (4 unique leaf names):
+  ['conv', 'se_fc1', 'se_fc2', 'dense']
+2026-04-11 15:54:09,408 - INFO - LoRA | r=8, alpha=16.0, dropout=0.05
+2026-04-11 16:08:06,190 - INFO - Using device : cuda:0
+2026-04-11 16:08:06,198 - INFO - PEFT mode    : lora
+2026-04-11 16:08:06,199 - INFO - Number of classes: 150
+2026-04-11 16:08:06,621 - INFO - Train : 6690 samples | 5748 patients
+2026-04-11 16:08:06,621 - INFO - Val   : 766   samples | 639 patients
+2026-04-11 16:08:06,623 - INFO - Test  : 1941  samples | 1597 patients
+2026-04-11 16:08:06,664 - INFO - 
+============================================================
+2026-04-11 16:08:06,665 - INFO - Label stats [TRAIN]  --  6690 samples total
+2026-04-11 16:08:06,666 - INFO -   Active labels : 37 / 150
+2026-04-11 16:08:06,666 - INFO -   Avg labels/sample: 1.33
+2026-04-11 16:08:06,666 - INFO -   Label                                              Count   Prevalence
+2026-04-11 16:08:06,666 - INFO -   ----------------------------------------------------------------------
+2026-04-11 16:08:06,666 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                     1856     27.7%
+2026-04-11 16:08:06,666 - INFO -   SINUS TACHYCARDIA                                  1545     23.1%
+2026-04-11 16:08:06,666 - INFO -   NORMAL ECG                                         1280     19.1%
+2026-04-11 16:08:06,669 - INFO -   SINUS BRADYCARDIA                                  676      10.1%
+2026-04-11 16:08:06,669 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                      473      7.1%
+2026-04-11 16:08:06,669 - INFO -   otherwise normal ecg                               442      6.6%
+2026-04-11 16:08:06,670 - INFO -   PROLONGED QT                                       302      4.5%
+2026-04-11 16:08:06,671 - INFO -   LEFT VENTRICULAR HYPERTROPHY                       237      3.5%
+2026-04-11 16:08:06,671 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK               231      3.5%
+2026-04-11 16:08:06,671 - INFO -   RIGHT AXIS DEVIATION                               230      3.4%
+2026-04-11 16:08:06,671 - INFO -   LOW VOLTAGE QRS                                    209      3.1%
+2026-04-11 16:08:06,671 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                     202      3.0%
+2026-04-11 16:08:06,671 - INFO -   RIGHT BUNDLE BRANCH BLOCK                          189      2.8%
+2026-04-11 16:08:06,671 - INFO -   EARLY REPOLARIZATION                               180      2.7%
+2026-04-11 16:08:06,671 - INFO -   RIGHT ATRIAL ENLARGEMENT                           138      2.1%
+2026-04-11 16:08:06,671 - INFO -   LEFT ATRIAL ENLARGEMENT                            134      2.0%
+2026-04-11 16:08:06,671 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                   124      1.9%
+2026-04-11 16:08:06,671 - INFO -   WITH 1ST DEGREE AV BLOCK                           77       1.2%
+2026-04-11 16:08:06,671 - INFO -   VENTRICULAR TACHYCARDIA                            52       0.8%
+2026-04-11 16:08:06,671 - INFO -   WITH VARIABLE AV BLOCK                             48       0.7%
+2026-04-11 16:08:06,671 - INFO -   WITH AV DISSOCIATION                               43       0.6%
+2026-04-11 16:08:06,671 - INFO -   LEFT AXIS DEVIATION                                41       0.6%
+2026-04-11 16:08:06,671 - INFO -   WITH COMPLETE HEART BLOCK                          41       0.6%
+2026-04-11 16:08:06,671 - INFO -   WITH 2:1 AV CONDUCTION                             25       0.4%
+2026-04-11 16:08:06,671 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                       22       0.3%
+2026-04-11 16:08:06,671 - INFO -   FUSION COMPLEXES                                   20       0.3%
+2026-04-11 16:08:06,671 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                  20       0.3%
+2026-04-11 16:08:06,679 - INFO -   ATRIAL FIBRILLATION                                18       0.3%
+2026-04-11 16:08:06,680 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                    17       0.3%
+2026-04-11 16:08:06,680 - INFO -   ATRIAL FLUTTER                                     16       0.2%
+2026-04-11 16:08:06,680 - INFO -   ANTEROSEPTAL INFARCT                               10       0.1%
+2026-04-11 16:08:06,680 - INFO -   LEFT BUNDLE BRANCH BLOCK                           9        0.1%
+2026-04-11 16:08:06,680 - INFO -   INFERIOR INFARCT                                   6        0.1%
+2026-04-11 16:08:06,680 - INFO -   PREMATURE VENTRICULAR COMPLEXES                    5        0.1%
+2026-04-11 16:08:06,680 - INFO -   LATERAL INFARCT                                    3        0.0%
+2026-04-11 16:08:06,684 - INFO -   ANTERIOR INFARCT                                   2        0.0%
+2026-04-11 16:08:06,684 - INFO -   PULMONARY DISEASE PATTERN                          2        0.0%
+2026-04-11 16:08:06,685 - INFO - ============================================================
+
+2026-04-11 16:08:06,691 - INFO - 
+============================================================
+2026-04-11 16:08:06,691 - INFO - Label stats [VAL]  --  766 samples total
+2026-04-11 16:08:06,691 - INFO -   Active labels : 30 / 150
+2026-04-11 16:08:06,691 - INFO -   Avg labels/sample: 1.37
+2026-04-11 16:08:06,691 - INFO -   Label                                              Count   Prevalence
+2026-04-11 16:08:06,691 - INFO -   ----------------------------------------------------------------------
+2026-04-11 16:08:06,691 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                     189      24.7%
+2026-04-11 16:08:06,691 - INFO -   SINUS TACHYCARDIA                                  187      24.4%
+2026-04-11 16:08:06,691 - INFO -   NORMAL ECG                                         137      17.9%
+2026-04-11 16:08:06,691 - INFO -   SINUS BRADYCARDIA                                  75       9.8%
+2026-04-11 16:08:06,691 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                      61       8.0%
+2026-04-11 16:08:06,691 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK               43       5.6%
+2026-04-11 16:08:06,691 - INFO -   otherwise normal ecg                               42       5.5%
+2026-04-11 16:08:06,699 - INFO -   PROLONGED QT                                       40       5.2%
+2026-04-11 16:08:06,699 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                     35       4.6%
+2026-04-11 16:08:06,699 - INFO -   RIGHT BUNDLE BRANCH BLOCK                          33       4.3%
+2026-04-11 16:08:06,699 - INFO -   LEFT VENTRICULAR HYPERTROPHY                       28       3.7%
+2026-04-11 16:08:06,699 - INFO -   EARLY REPOLARIZATION                               28       3.7%
+2026-04-11 16:08:06,699 - INFO -   RIGHT AXIS DEVIATION                               24       3.1%
+2026-04-11 16:08:06,699 - INFO -   RIGHT ATRIAL ENLARGEMENT                           20       2.6%
+2026-04-11 16:08:06,699 - INFO -   LOW VOLTAGE QRS                                    18       2.3%
+2026-04-11 16:08:06,699 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                   14       1.8%
+2026-04-11 16:08:06,699 - INFO -   LEFT ATRIAL ENLARGEMENT                            11       1.4%
+2026-04-11 16:08:06,699 - INFO -   WITH 1ST DEGREE AV BLOCK                           11       1.4%
+2026-04-11 16:08:06,699 - INFO -   WITH AV DISSOCIATION                               10       1.3%
+2026-04-11 16:08:06,699 - INFO -   LEFT AXIS DEVIATION                                8        1.0%
+2026-04-11 16:08:06,699 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                       8        1.0%
+2026-04-11 16:08:06,699 - INFO -   VENTRICULAR TACHYCARDIA                            5        0.7%
+2026-04-11 16:08:06,705 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                  5        0.7%
+2026-04-11 16:08:06,705 - INFO -   WITH COMPLETE HEART BLOCK                          5        0.7%
+2026-04-11 16:08:06,705 - INFO -   LEFT BUNDLE BRANCH BLOCK                           4        0.5%
+2026-04-11 16:08:06,705 - INFO -   WITH VARIABLE AV BLOCK                             3        0.4%
+2026-04-11 16:08:06,705 - INFO -   ANTEROSEPTAL INFARCT                               2        0.3%
+2026-04-11 16:08:06,708 - INFO -   ANTERIOR INFARCT                                   1        0.1%
+2026-04-11 16:08:06,708 - INFO -   ATRIAL FLUTTER                                     1        0.1%
+2026-04-11 16:08:06,708 - INFO -   WITH 2:1 AV CONDUCTION                             1        0.1%
+2026-04-11 16:08:06,708 - INFO - ============================================================
+
+2026-04-11 16:08:06,721 - INFO - 
+============================================================
+2026-04-11 16:08:06,721 - INFO - Label stats [TEST]  --  1941 samples total
+2026-04-11 16:08:06,721 - INFO -   Active labels : 38 / 150
+2026-04-11 16:08:06,721 - INFO -   Avg labels/sample: 1.38
+2026-04-11 16:08:06,725 - INFO -   Label                                              Count   Prevalence
+2026-04-11 16:08:06,725 - INFO -   ----------------------------------------------------------------------
+2026-04-11 16:08:06,725 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                     499      25.7%
+2026-04-11 16:08:06,725 - INFO -   SINUS TACHYCARDIA                                  478      24.6%
+2026-04-11 16:08:06,725 - INFO -   NORMAL ECG                                         342      17.6%
+2026-04-11 16:08:06,725 - INFO -   SINUS BRADYCARDIA                                  184      9.5%
+2026-04-11 16:08:06,725 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                      159      8.2%
+2026-04-11 16:08:06,725 - INFO -   otherwise normal ecg                               137      7.1%
+2026-04-11 16:08:06,725 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                     86       4.4%
+2026-04-11 16:08:06,725 - INFO -   PROLONGED QT                                       85       4.4%
+2026-04-11 16:08:06,725 - INFO -   LEFT VENTRICULAR HYPERTROPHY                       83       4.3%
+2026-04-11 16:08:06,725 - INFO -   RIGHT AXIS DEVIATION                               81       4.2%
+2026-04-11 16:08:06,725 - INFO -   RIGHT BUNDLE BRANCH BLOCK                          68       3.5%
+2026-04-11 16:08:06,725 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK               62       3.2%
+2026-04-11 16:08:06,725 - INFO -   LOW VOLTAGE QRS                                    50       2.6%
+2026-04-11 16:08:06,725 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                   46       2.4%
+2026-04-11 16:08:06,725 - INFO -   RIGHT ATRIAL ENLARGEMENT                           43       2.2%
+2026-04-11 16:08:06,725 - INFO -   EARLY REPOLARIZATION                               41       2.1%
+2026-04-11 16:08:06,725 - INFO -   LEFT ATRIAL ENLARGEMENT                            39       2.0%
+2026-04-11 16:08:06,725 - INFO -   WITH 1ST DEGREE AV BLOCK                           35       1.8%
+2026-04-11 16:08:06,725 - INFO -   VENTRICULAR TACHYCARDIA                            24       1.2%
+2026-04-11 16:08:06,725 - INFO -   WITH COMPLETE HEART BLOCK                          21       1.1%
+2026-04-11 16:08:06,733 - INFO -   WITH AV DISSOCIATION                               17       0.9%
+2026-04-11 16:08:06,733 - INFO -   WITH VARIABLE AV BLOCK                             16       0.8%
+2026-04-11 16:08:06,733 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                       15       0.8%
+2026-04-11 16:08:06,733 - INFO -   ATRIAL FLUTTER                                     14       0.7%
+2026-04-11 16:08:06,733 - INFO -   WITH 2:1 AV CONDUCTION                             14       0.7%
+2026-04-11 16:08:06,733 - INFO -   ATRIAL FIBRILLATION                                7        0.4%
+2026-04-11 16:08:06,733 - INFO -   FUSION COMPLEXES                                   7        0.4%
+2026-04-11 16:08:06,733 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                  7        0.4%
+2026-04-11 16:08:06,733 - INFO -   LEFT AXIS DEVIATION                                5        0.3%
+2026-04-11 16:08:06,733 - INFO -   LEFT BUNDLE BRANCH BLOCK                           5        0.3%
+2026-04-11 16:08:06,733 - INFO -   ANTERIOR INFARCT                                   2        0.1%
+2026-04-11 16:08:06,733 - INFO -   ANTEROSEPTAL INFARCT                               2        0.1%
+2026-04-11 16:08:06,733 - INFO -   INFERIOR INFARCT                                   2        0.1%
+2026-04-11 16:08:06,733 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                    2        0.1%
+2026-04-11 16:08:06,733 - INFO -   PREMATURE VENTRICULAR COMPLEXES                    1        0.1%
+2026-04-11 16:08:06,733 - INFO -   PREMATURE ATRIAL COMPLEXES                         1        0.1%
+2026-04-11 16:08:06,733 - INFO -   PULMONARY DISEASE PATTERN                          1        0.1%
+2026-04-11 16:08:06,733 - INFO -   ACUTE PERICARDITIS                                 1        0.1%
+2026-04-11 16:08:06,733 - INFO - ============================================================
+
+2026-04-11 16:08:06,742 - INFO - Train batches: 210 | Val batches:   24   | Test batches:  61
+2026-04-11 16:08:07,721 - INFO - Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-04-11 16:08:07,721 - INFO - PEFT target_modules (3 unique Linear leaf names):
+  ['se_fc1', 'se_fc2', 'dense']
+2026-04-11 16:08:07,721 - INFO - LoRA | r=8, alpha=16.0, dropout=0.05 | targets: Linear only (Option A)
+2026-04-11 16:08:07,934 - INFO - Head unfrozen: dense
+2026-04-11 16:08:08,085 - INFO - 
+============================================================
+2026-04-11 16:08:08,085 - INFO - PEFT mode       : lora
+2026-04-11 16:08:08,089 - INFO - Total params    : 31,101,046
+2026-04-11 16:08:08,089 - INFO - Trainable params: 435,782  (1.40%)
+2026-04-11 16:08:08,089 - INFO - Frozen params   : 30,665,264  (98.60%)
+2026-04-11 16:08:08,089 - INFO - ============================================================
+
+2026-04-11 16:08:08,089 - INFO - Learning rate   : 0.0005
+2026-04-11 16:08:08,089 - INFO - Early stopping  : patience=10, min_delta=0.0001
+2026-04-11 16:08:08,089 - INFO - 
+============================================================
+2026-04-11 16:08:08,089 - INFO - Epoch 1/50
+2026-04-11 16:18:36,810 - INFO - Using device : cuda:0
+2026-04-11 16:18:36,810 - INFO - PEFT mode    : lora
+2026-04-11 16:18:36,813 - INFO - Number of classes: 150
+2026-04-11 16:18:37,337 - INFO - Train : 6690 samples | 5748 patients
+2026-04-11 16:18:37,337 - INFO - Val   : 766   samples | 639 patients
+2026-04-11 16:18:37,337 - INFO - Test  : 1941  samples | 1597 patients
+2026-04-11 16:18:37,376 - INFO - 
+============================================================
+2026-04-11 16:18:37,379 - INFO - Label stats [TRAIN]  --  6690 samples total
+2026-04-11 16:18:37,379 - INFO -   Active labels : 37 / 150
+2026-04-11 16:18:37,379 - INFO -   Avg labels/sample: 1.33
+2026-04-11 16:18:37,379 - INFO -   Label                                              Count   Prevalence
+2026-04-11 16:18:37,381 - INFO -   ----------------------------------------------------------------------
+2026-04-11 16:18:37,381 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                     1856     27.7%
+2026-04-11 16:18:37,381 - INFO -   SINUS TACHYCARDIA                                  1545     23.1%
+2026-04-11 16:18:37,381 - INFO -   NORMAL ECG                                         1280     19.1%
+2026-04-11 16:18:37,381 - INFO -   SINUS BRADYCARDIA                                  676      10.1%
+2026-04-11 16:18:37,381 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                      473      7.1%
+2026-04-11 16:18:37,381 - INFO -   otherwise normal ecg                               442      6.6%
+2026-04-11 16:18:37,381 - INFO -   PROLONGED QT                                       302      4.5%
+2026-04-11 16:18:37,386 - INFO -   LEFT VENTRICULAR HYPERTROPHY                       237      3.5%
+2026-04-11 16:18:37,386 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK               231      3.5%
+2026-04-11 16:18:37,387 - INFO -   RIGHT AXIS DEVIATION                               230      3.4%
+2026-04-11 16:18:37,387 - INFO -   LOW VOLTAGE QRS                                    209      3.1%
+2026-04-11 16:18:37,387 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                     202      3.0%
+2026-04-11 16:18:37,387 - INFO -   RIGHT BUNDLE BRANCH BLOCK                          189      2.8%
+2026-04-11 16:18:37,387 - INFO -   EARLY REPOLARIZATION                               180      2.7%
+2026-04-11 16:18:37,389 - INFO -   RIGHT ATRIAL ENLARGEMENT                           138      2.1%
+2026-04-11 16:18:37,389 - INFO -   LEFT ATRIAL ENLARGEMENT                            134      2.0%
+2026-04-11 16:18:37,389 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                   124      1.9%
+2026-04-11 16:18:37,391 - INFO -   WITH 1ST DEGREE AV BLOCK                           77       1.2%
+2026-04-11 16:18:37,391 - INFO -   VENTRICULAR TACHYCARDIA                            52       0.8%
+2026-04-11 16:18:37,392 - INFO -   WITH VARIABLE AV BLOCK                             48       0.7%
+2026-04-11 16:18:37,392 - INFO -   WITH AV DISSOCIATION                               43       0.6%
+2026-04-11 16:18:37,392 - INFO -   LEFT AXIS DEVIATION                                41       0.6%
+2026-04-11 16:18:37,392 - INFO -   WITH COMPLETE HEART BLOCK                          41       0.6%
+2026-04-11 16:18:37,392 - INFO -   WITH 2:1 AV CONDUCTION                             25       0.4%
+2026-04-11 16:18:37,392 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                       22       0.3%
+2026-04-11 16:18:37,392 - INFO -   FUSION COMPLEXES                                   20       0.3%
+2026-04-11 16:18:37,392 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                  20       0.3%
+2026-04-11 16:18:37,392 - INFO -   ATRIAL FIBRILLATION                                18       0.3%
+2026-04-11 16:18:37,392 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                    17       0.3%
+2026-04-11 16:18:37,392 - INFO -   ATRIAL FLUTTER                                     16       0.2%
+2026-04-11 16:18:37,392 - INFO -   ANTEROSEPTAL INFARCT                               10       0.1%
+2026-04-11 16:18:37,392 - INFO -   LEFT BUNDLE BRANCH BLOCK                           9        0.1%
+2026-04-11 16:18:37,392 - INFO -   INFERIOR INFARCT                                   6        0.1%
+2026-04-11 16:18:37,392 - INFO -   PREMATURE VENTRICULAR COMPLEXES                    5        0.1%
+2026-04-11 16:18:37,400 - INFO -   LATERAL INFARCT                                    3        0.0%
+2026-04-11 16:18:37,400 - INFO -   ANTERIOR INFARCT                                   2        0.0%
+2026-04-11 16:18:37,400 - INFO -   PULMONARY DISEASE PATTERN                          2        0.0%
+2026-04-11 16:18:37,402 - INFO - ============================================================
+
+2026-04-11 16:18:37,411 - INFO - 
+============================================================
+2026-04-11 16:18:37,412 - INFO - Label stats [VAL]  --  766 samples total
+2026-04-11 16:18:37,412 - INFO -   Active labels : 30 / 150
+2026-04-11 16:18:37,412 - INFO -   Avg labels/sample: 1.37
+2026-04-11 16:18:37,413 - INFO -   Label                                              Count   Prevalence
+2026-04-11 16:18:37,413 - INFO -   ----------------------------------------------------------------------
+2026-04-11 16:18:37,414 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                     189      24.7%
+2026-04-11 16:18:37,415 - INFO -   SINUS TACHYCARDIA                                  187      24.4%
+2026-04-11 16:18:37,415 - INFO -   NORMAL ECG                                         137      17.9%
+2026-04-11 16:18:37,415 - INFO -   SINUS BRADYCARDIA                                  75       9.8%
+2026-04-11 16:18:37,415 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                      61       8.0%
+2026-04-11 16:18:37,415 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK               43       5.6%
+2026-04-11 16:18:37,415 - INFO -   otherwise normal ecg                               42       5.5%
+2026-04-11 16:18:37,415 - INFO -   PROLONGED QT                                       40       5.2%
+2026-04-11 16:18:37,415 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                     35       4.6%
+2026-04-11 16:18:37,420 - INFO -   RIGHT BUNDLE BRANCH BLOCK                          33       4.3%
+2026-04-11 16:18:37,420 - INFO -   LEFT VENTRICULAR HYPERTROPHY                       28       3.7%
+2026-04-11 16:18:37,421 - INFO -   EARLY REPOLARIZATION                               28       3.7%
+2026-04-11 16:18:37,422 - INFO -   RIGHT AXIS DEVIATION                               24       3.1%
+2026-04-11 16:18:37,422 - INFO -   RIGHT ATRIAL ENLARGEMENT                           20       2.6%
+2026-04-11 16:18:37,422 - INFO -   LOW VOLTAGE QRS                                    18       2.3%
+2026-04-11 16:18:37,422 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                   14       1.8%
+2026-04-11 16:18:37,422 - INFO -   LEFT ATRIAL ENLARGEMENT                            11       1.4%
+2026-04-11 16:18:37,422 - INFO -   WITH 1ST DEGREE AV BLOCK                           11       1.4%
+2026-04-11 16:18:37,422 - INFO -   WITH AV DISSOCIATION                               10       1.3%
+2026-04-11 16:18:37,422 - INFO -   LEFT AXIS DEVIATION                                8        1.0%
+2026-04-11 16:18:37,422 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                       8        1.0%
+2026-04-11 16:18:37,422 - INFO -   VENTRICULAR TACHYCARDIA                            5        0.7%
+2026-04-11 16:18:37,422 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                  5        0.7%
+2026-04-11 16:18:37,422 - INFO -   WITH COMPLETE HEART BLOCK                          5        0.7%
+2026-04-11 16:18:37,422 - INFO -   LEFT BUNDLE BRANCH BLOCK                           4        0.5%
+2026-04-11 16:18:37,422 - INFO -   WITH VARIABLE AV BLOCK                             3        0.4%
+2026-04-11 16:18:37,430 - INFO -   ANTEROSEPTAL INFARCT                               2        0.3%
+2026-04-11 16:18:37,430 - INFO -   ANTERIOR INFARCT                                   1        0.1%
+2026-04-11 16:18:37,430 - INFO -   ATRIAL FLUTTER                                     1        0.1%
+2026-04-11 16:18:37,432 - INFO -   WITH 2:1 AV CONDUCTION                             1        0.1%
+2026-04-11 16:18:37,432 - INFO - ============================================================
+
+2026-04-11 16:18:37,446 - INFO - 
+============================================================
+2026-04-11 16:18:37,446 - INFO - Label stats [TEST]  --  1941 samples total
+2026-04-11 16:18:37,446 - INFO -   Active labels : 38 / 150
+2026-04-11 16:18:37,446 - INFO -   Avg labels/sample: 1.38
+2026-04-11 16:18:37,446 - INFO -   Label                                              Count   Prevalence
+2026-04-11 16:18:37,450 - INFO -   ----------------------------------------------------------------------
+2026-04-11 16:18:37,450 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                     499      25.7%
+2026-04-11 16:18:37,450 - INFO -   SINUS TACHYCARDIA                                  478      24.6%
+2026-04-11 16:18:37,450 - INFO -   NORMAL ECG                                         342      17.6%
+2026-04-11 16:18:37,450 - INFO -   SINUS BRADYCARDIA                                  184      9.5%
+2026-04-11 16:18:37,450 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                      159      8.2%
+2026-04-11 16:18:37,450 - INFO -   otherwise normal ecg                               137      7.1%
+2026-04-11 16:18:37,450 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                     86       4.4%
+2026-04-11 16:18:37,450 - INFO -   PROLONGED QT                                       85       4.4%
+2026-04-11 16:18:37,450 - INFO -   LEFT VENTRICULAR HYPERTROPHY                       83       4.3%
+2026-04-11 16:18:37,456 - INFO -   RIGHT AXIS DEVIATION                               81       4.2%
+2026-04-11 16:18:37,456 - INFO -   RIGHT BUNDLE BRANCH BLOCK                          68       3.5%
+2026-04-11 16:18:37,456 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK               62       3.2%
+2026-04-11 16:18:37,456 - INFO -   LOW VOLTAGE QRS                                    50       2.6%
+2026-04-11 16:18:37,456 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                   46       2.4%
+2026-04-11 16:18:37,456 - INFO -   RIGHT ATRIAL ENLARGEMENT                           43       2.2%
+2026-04-11 16:18:37,459 - INFO -   EARLY REPOLARIZATION                               41       2.1%
+2026-04-11 16:18:37,459 - INFO -   LEFT ATRIAL ENLARGEMENT                            39       2.0%
+2026-04-11 16:18:37,459 - INFO -   WITH 1ST DEGREE AV BLOCK                           35       1.8%
+2026-04-11 16:18:37,460 - INFO -   VENTRICULAR TACHYCARDIA                            24       1.2%
+2026-04-11 16:18:37,460 - INFO -   WITH COMPLETE HEART BLOCK                          21       1.1%
+2026-04-11 16:18:37,460 - INFO -   WITH AV DISSOCIATION                               17       0.9%
+2026-04-11 16:18:37,460 - INFO -   WITH VARIABLE AV BLOCK                             16       0.8%
+2026-04-11 16:18:37,460 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                       15       0.8%
+2026-04-11 16:18:37,463 - INFO -   ATRIAL FLUTTER                                     14       0.7%
+2026-04-11 16:18:37,463 - INFO -   WITH 2:1 AV CONDUCTION                             14       0.7%
+2026-04-11 16:18:37,463 - INFO -   ATRIAL FIBRILLATION                                7        0.4%
+2026-04-11 16:18:37,464 - INFO -   FUSION COMPLEXES                                   7        0.4%
+2026-04-11 16:18:37,464 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                  7        0.4%
+2026-04-11 16:18:37,464 - INFO -   LEFT AXIS DEVIATION                                5        0.3%
+2026-04-11 16:18:37,466 - INFO -   LEFT BUNDLE BRANCH BLOCK                           5        0.3%
+2026-04-11 16:18:37,466 - INFO -   ANTERIOR INFARCT                                   2        0.1%
+2026-04-11 16:18:37,466 - INFO -   ANTEROSEPTAL INFARCT                               2        0.1%
+2026-04-11 16:18:37,466 - INFO -   INFERIOR INFARCT                                   2        0.1%
+2026-04-11 16:18:37,466 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                    2        0.1%
+2026-04-11 16:18:37,466 - INFO -   PREMATURE VENTRICULAR COMPLEXES                    1        0.1%
+2026-04-11 16:18:37,466 - INFO -   PREMATURE ATRIAL COMPLEXES                         1        0.1%
+2026-04-11 16:18:37,466 - INFO -   PULMONARY DISEASE PATTERN                          1        0.1%
+2026-04-11 16:18:37,466 - INFO -   ACUTE PERICARDITIS                                 1        0.1%
+2026-04-11 16:18:37,471 - INFO - ============================================================
+
+2026-04-11 16:18:37,472 - INFO - Train batches: 210 | Val batches:   24   | Test batches:  61
+2026-04-11 16:18:38,987 - INFO - Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-04-11 16:18:39,022 - INFO - LoRA injected | r=8, alpha=16.0, dropout=0.05 | targets: {'se_fc1', 'se_fc2'}
+2026-04-11 16:18:39,030 - INFO - Head unfrozen: dense
+2026-04-11 16:18:39,030 - INFO - 
+============================================================
+2026-04-11 16:18:39,030 - INFO - PEFT mode       : lora
+2026-04-11 16:18:39,030 - INFO - Total params    : 21,615,414
+2026-04-11 16:18:39,030 - INFO - Trainable params: 426,390  (1.97%)
+2026-04-11 16:18:39,035 - INFO - Frozen params   : 21,189,024  (98.03%)
+2026-04-11 16:18:39,035 - INFO - ============================================================
+
+2026-04-11 16:18:40,522 - INFO - Learning rate   : 0.0005
+2026-04-11 16:18:40,522 - INFO - Early stopping  : patience=10, min_delta=0.0001
+2026-04-11 16:18:40,522 - INFO - 
+============================================================
+2026-04-11 16:18:40,522 - INFO - Epoch 1/50
+2026-04-11 16:20:58,156 - INFO - Train Loss: 0.0312
+2026-04-11 16:21:12,223 - INFO - Val Loss: 0.0237 | Val Macro AUROC: 0.8381 | Valid labels: 30/150
+2026-04-11 16:21:12,511 - INFO - [SAVED] Best checkpoint: child_ecg_peft_lora_epoch1_auroc0.8381.pth
+2026-04-11 16:21:12,511 - INFO - 
+============================================================
+2026-04-11 16:21:12,513 - INFO - Epoch 2/50
+2026-04-11 16:23:10,923 - INFO - Train Loss: 0.0211
+2026-04-11 16:23:23,399 - INFO - Val Loss: 0.0221 | Val Macro AUROC: 0.8730 | Valid labels: 30/150
+2026-04-11 16:23:23,416 - INFO - [DELETED] Old checkpoint: child_ecg_peft_lora_epoch1_auroc0.8381.pth
+2026-04-11 16:23:23,731 - INFO - [SAVED] Best checkpoint: child_ecg_peft_lora_epoch2_auroc0.8730.pth
+2026-04-11 16:23:23,731 - INFO - 
+============================================================
+2026-04-11 16:23:23,731 - INFO - Epoch 3/50
+2026-04-11 16:25:26,218 - INFO - Train Loss: 0.0197
+2026-04-11 16:25:38,872 - INFO - Val Loss: 0.0215 | Val Macro AUROC: 0.8836 | Valid labels: 30/150
+2026-04-11 16:25:38,887 - INFO - [DELETED] Old checkpoint: child_ecg_peft_lora_epoch2_auroc0.8730.pth
+2026-04-11 16:25:39,214 - INFO - [SAVED] Best checkpoint: child_ecg_peft_lora_epoch3_auroc0.8836.pth
+2026-04-11 16:25:39,214 - INFO - 
+============================================================
+2026-04-11 16:25:39,214 - INFO - Epoch 4/50
+2026-04-11 16:50:15,066 - INFO - Train Loss: 0.0187
+2026-04-11 16:50:24,826 - INFO - Val Loss: 0.0211 | Val Macro AUROC: 0.8931 | Valid labels: 30/150
+2026-04-11 16:50:24,837 - INFO - [DELETED] Old checkpoint: child_ecg_peft_lora_epoch3_auroc0.8836.pth
+2026-04-11 16:50:25,039 - INFO - [SAVED] Best checkpoint: child_ecg_peft_lora_epoch4_auroc0.8931.pth
+2026-04-11 16:50:25,039 - INFO - 
+============================================================
+2026-04-11 16:50:25,039 - INFO - Epoch 5/50
+2026-04-11 16:52:18,253 - INFO - Train Loss: 0.0181
+2026-04-11 16:52:28,630 - INFO - Val Loss: 0.0207 | Val Macro AUROC: 0.9002 | Valid labels: 30/150
+2026-04-11 16:52:28,639 - INFO - [DELETED] Old checkpoint: child_ecg_peft_lora_epoch4_auroc0.8931.pth
+2026-04-11 16:52:28,861 - INFO - [SAVED] Best checkpoint: child_ecg_peft_lora_epoch5_auroc0.9002.pth
+2026-04-11 16:52:28,862 - INFO - 
+============================================================
+2026-04-11 16:52:28,862 - INFO - Epoch 6/50
+2026-04-11 16:54:28,944 - INFO - Train Loss: 0.0176
+2026-04-11 16:54:38,242 - INFO - Val Loss: 0.0206 | Val Macro AUROC: 0.8959 | Valid labels: 30/150
+2026-04-11 16:54:38,242 - INFO - EarlyStopping: no improvement for 1/10 epoch(s) (best=0.9002, current=0.8959, delta=-0.0043)
+2026-04-11 16:54:38,243 - INFO - 
+============================================================
+2026-04-11 16:54:38,243 - INFO - Epoch 7/50
+2026-04-11 16:56:29,767 - INFO - Train Loss: 0.0171
+2026-04-11 16:56:39,375 - INFO - Val Loss: 0.0206 | Val Macro AUROC: 0.8989 | Valid labels: 30/150
+2026-04-11 16:56:39,375 - INFO - EarlyStopping: no improvement for 2/10 epoch(s) (best=0.9002, current=0.8989, delta=-0.0013)
+2026-04-11 16:56:39,375 - INFO - 
+============================================================
+2026-04-11 16:56:39,376 - INFO - Epoch 8/50
+2026-04-11 16:58:48,460 - INFO - Train Loss: 0.0168
+2026-04-11 16:58:57,527 - INFO - Val Loss: 0.0203 | Val Macro AUROC: 0.8983 | Valid labels: 30/150
+2026-04-11 16:58:57,528 - INFO - EarlyStopping: no improvement for 3/10 epoch(s) (best=0.9002, current=0.8983, delta=-0.0019)
+2026-04-11 16:58:57,528 - INFO - 
+============================================================
+2026-04-11 16:58:57,529 - INFO - Epoch 9/50
+2026-04-11 17:00:47,646 - INFO - Train Loss: 0.0165
+2026-04-11 17:00:59,779 - INFO - Val Loss: 0.0207 | Val Macro AUROC: 0.9004 | Valid labels: 30/150
+2026-04-11 17:00:59,787 - INFO - [DELETED] Old checkpoint: child_ecg_peft_lora_epoch5_auroc0.9002.pth
+2026-04-11 17:00:59,980 - INFO - [SAVED] Best checkpoint: child_ecg_peft_lora_epoch9_auroc0.9004.pth
+2026-04-11 17:00:59,981 - INFO - 
+============================================================
+2026-04-11 17:00:59,982 - INFO - Epoch 10/50
+2026-04-11 17:02:50,491 - INFO - Train Loss: 0.0161
+2026-04-11 17:03:02,506 - INFO - Val Loss: 0.0207 | Val Macro AUROC: 0.9002 | Valid labels: 30/150
+2026-04-11 17:03:02,506 - INFO - EarlyStopping: no improvement for 1/10 epoch(s) (best=0.9004, current=0.9002, delta=-0.0002)
+2026-04-11 17:03:02,506 - INFO - 
+============================================================
+2026-04-11 17:03:02,507 - INFO - Epoch 11/50
+2026-04-11 17:04:45,717 - INFO - Train Loss: 0.0159
+2026-04-11 17:04:56,094 - INFO - Val Loss: 0.0205 | Val Macro AUROC: 0.9015 | Valid labels: 30/150
+2026-04-11 17:04:56,109 - INFO - [DELETED] Old checkpoint: child_ecg_peft_lora_epoch9_auroc0.9004.pth
+2026-04-11 17:04:56,298 - INFO - [SAVED] Best checkpoint: child_ecg_peft_lora_epoch11_auroc0.9015.pth
+2026-04-11 17:04:56,299 - INFO - 
+============================================================
+2026-04-11 17:04:56,299 - INFO - Epoch 12/50
+2026-04-11 17:06:39,193 - INFO - Train Loss: 0.0155
+2026-04-11 17:06:48,786 - INFO - Val Loss: 0.0205 | Val Macro AUROC: 0.8962 | Valid labels: 30/150
+2026-04-11 17:06:48,787 - INFO - EarlyStopping: no improvement for 1/10 epoch(s) (best=0.9015, current=0.8962, delta=-0.0054)
+2026-04-11 17:06:48,787 - INFO - 
+============================================================
+2026-04-11 17:06:48,787 - INFO - Epoch 13/50
+2026-04-11 17:08:26,959 - INFO - Train Loss: 0.0154
+2026-04-11 17:08:36,469 - INFO - Val Loss: 0.0205 | Val Macro AUROC: 0.9003 | Valid labels: 30/150
+2026-04-11 17:08:36,469 - INFO - EarlyStopping: no improvement for 2/10 epoch(s) (best=0.9015, current=0.9003, delta=-0.0013)
+2026-04-11 17:08:36,469 - INFO - 
+============================================================
+2026-04-11 17:08:36,470 - INFO - Epoch 14/50
+2026-04-11 17:10:18,896 - INFO - Train Loss: 0.0152
+2026-04-11 17:10:31,882 - INFO - Val Loss: 0.0205 | Val Macro AUROC: 0.9015 | Valid labels: 30/150
+2026-04-11 17:10:31,894 - INFO - [DELETED] Old checkpoint: child_ecg_peft_lora_epoch11_auroc0.9015.pth
+2026-04-11 17:10:32,114 - INFO - [SAVED] Best checkpoint: child_ecg_peft_lora_epoch14_auroc0.9015.pth
+2026-04-11 17:10:32,116 - INFO - EarlyStopping: no improvement for 3/10 epoch(s) (best=0.9015, current=0.9015, delta=+0.0000)
+2026-04-11 17:10:32,116 - INFO - 
+============================================================
+2026-04-11 17:10:32,117 - INFO - Epoch 15/50
+2026-04-11 17:12:23,750 - INFO - Train Loss: 0.0150
+2026-04-11 17:12:33,696 - INFO - Val Loss: 0.0204 | Val Macro AUROC: 0.8979 | Valid labels: 30/150
+2026-04-11 17:12:33,696 - INFO - LR reduced: 0.000500 -> 0.000050
+2026-04-11 17:12:33,697 - INFO - EarlyStopping: no improvement for 4/10 epoch(s) (best=0.9015, current=0.8979, delta=-0.0036)
+2026-04-11 17:12:33,697 - INFO - 
+============================================================
+2026-04-11 17:12:33,698 - INFO - Epoch 16/50
+2026-04-11 17:14:20,994 - INFO - Train Loss: 0.0142
+2026-04-11 17:14:31,368 - INFO - Val Loss: 0.0203 | Val Macro AUROC: 0.8997 | Valid labels: 30/150
+2026-04-11 17:14:31,368 - INFO - EarlyStopping: no improvement for 5/10 epoch(s) (best=0.9015, current=0.8997, delta=-0.0018)
+2026-04-11 17:14:31,368 - INFO - 
+============================================================
+2026-04-11 17:14:31,369 - INFO - Epoch 17/50
+2026-04-11 17:16:17,939 - INFO - Train Loss: 0.0141
+2026-04-11 17:16:28,089 - INFO - Val Loss: 0.0203 | Val Macro AUROC: 0.8996 | Valid labels: 30/150
+2026-04-11 17:16:28,089 - INFO - EarlyStopping: no improvement for 6/10 epoch(s) (best=0.9015, current=0.8996, delta=-0.0019)
+2026-04-11 17:16:28,089 - INFO - 
+============================================================
+2026-04-11 17:16:28,090 - INFO - Epoch 18/50
+2026-04-11 17:18:15,013 - INFO - Train Loss: 0.0141
+2026-04-11 17:18:25,059 - INFO - Val Loss: 0.0203 | Val Macro AUROC: 0.8998 | Valid labels: 30/150
+2026-04-11 17:18:25,060 - INFO - EarlyStopping: no improvement for 7/10 epoch(s) (best=0.9015, current=0.8998, delta=-0.0017)
+2026-04-11 17:18:25,060 - INFO - 
+============================================================
+2026-04-11 17:18:25,061 - INFO - Epoch 19/50
+2026-04-11 17:20:12,333 - INFO - Train Loss: 0.0140
+2026-04-11 17:20:22,599 - INFO - Val Loss: 0.0203 | Val Macro AUROC: 0.8999 | Valid labels: 30/150
+2026-04-11 17:20:22,600 - INFO - LR reduced: 0.000050 -> 0.000005
+2026-04-11 17:20:22,600 - INFO - LR floor reached (< 1.00e-05) — stopping.
+2026-04-11 17:20:22,600 - INFO - 
+Training complete | Best Val Macro AUROC: 0.9015 | Stopped at epoch: 19/50
+2026-04-11 17:20:22,601 - INFO - 
+Reloading best checkpoint: child_ecg_peft_lora_epoch14_auroc0.9015.pth
+2026-04-11 17:20:22,829 - INFO - Loaded epoch 14 (val AUROC=0.9015)
+2026-04-11 17:20:22,830 - INFO - 
+Running final test evaluation...
+2026-04-11 17:20:52,331 - INFO - 
+Computing full evaluation for: test
+2026-04-11 17:21:42,402 - INFO - 
+======================================================================
+2026-04-11 17:21:42,402 - INFO - [test] PER-CLASS AUROC  (38 valid / 150 total)
+2026-04-11 17:21:42,402 - INFO - ======================================================================
+2026-04-11 17:21:42,403 - INFO -   Label                                                 n_pos   AUROC  95% CI
+2026-04-11 17:21:42,403 - INFO -   --------------------------------------------------------------------
+2026-04-11 17:21:42,405 - INFO -   VENTRICULAR TACHYCARDIA                                  24   0.995  (0.988, 0.999)
+2026-04-11 17:21:42,405 - INFO -   RIGHT BUNDLE BRANCH BLOCK                                68   0.980  (0.972, 0.989)
+2026-04-11 17:21:42,406 - INFO -   SINUS BRADYCARDIA                                       184   0.975  (0.963, 0.985)
+2026-04-11 17:21:42,407 - INFO -   ACUTE PERICARDITIS                                        1   0.975  (0.968, 0.983)
+2026-04-11 17:21:42,408 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                           86   0.972  (0.956, 0.985)
+2026-04-11 17:21:42,408 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                           2   0.961  (0.941, 0.980)
+2026-04-11 17:21:42,409 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                             15   0.948  (0.915, 0.984)
+2026-04-11 17:21:42,410 - INFO -   ATRIAL FLUTTER                                           14   0.946  (0.917, 0.971)
+2026-04-11 17:21:42,410 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                           159   0.944  (0.929, 0.957)
+2026-04-11 17:21:42,411 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK                     62   0.941  (0.921, 0.961)
+2026-04-11 17:21:42,412 - INFO -   RIGHT AXIS DEVIATION                                     81   0.937  (0.917, 0.953)
+2026-04-11 17:21:42,413 - INFO -   LEFT AXIS DEVIATION                                       5   0.931  (0.840, 0.983)
+2026-04-11 17:21:42,413 - INFO -   SINUS TACHYCARDIA                                       478   0.926  (0.913, 0.939)
+2026-04-11 17:21:42,414 - INFO -   EARLY REPOLARIZATION                                     41   0.924  (0.883, 0.951)
+2026-04-11 17:21:42,414 - INFO -   RIGHT ATRIAL ENLARGEMENT                                 43   0.915  (0.887, 0.940)
+2026-04-11 17:21:42,415 - INFO -   WITH COMPLETE HEART BLOCK                                21   0.908  (0.839, 0.946)
+2026-04-11 17:21:42,415 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                         7   0.908  (0.810, 0.993)
+2026-04-11 17:21:42,416 - INFO -   LEFT VENTRICULAR HYPERTROPHY                             83   0.901  (0.867, 0.933)
+2026-04-11 17:21:42,417 - INFO -   LEFT BUNDLE BRANCH BLOCK                                  5   0.900  (0.742, 0.999)
+2026-04-11 17:21:42,417 - INFO -   WITH 1ST DEGREE AV BLOCK                                 35   0.896  (0.834, 0.947)
+2026-04-11 17:21:42,418 - INFO -   LEFT ATRIAL ENLARGEMENT                                  39   0.888  (0.830, 0.944)
+2026-04-11 17:21:42,418 - INFO -   NORMAL ECG                                              342   0.875  (0.859, 0.895)
+2026-04-11 17:21:42,419 - INFO -   WITH AV DISSOCIATION                                     17   0.863  (0.794, 0.919)
+2026-04-11 17:21:42,419 - INFO -   ANTEROSEPTAL INFARCT                                      2   0.843  (0.825, 0.862)
+2026-04-11 17:21:42,420 - INFO -   WITH VARIABLE AV BLOCK                                   16   0.839  (0.774, 0.906)
+2026-04-11 17:21:42,420 - INFO -   WITH 2:1 AV CONDUCTION                                   14   0.829  (0.695, 0.933)
+2026-04-11 17:21:42,421 - INFO -   LOW VOLTAGE QRS                                          50   0.823  (0.759, 0.875)
+2026-04-11 17:21:42,421 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                         46   0.815  (0.751, 0.859)
+2026-04-11 17:21:42,422 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                          499   0.796  (0.774, 0.818)
+2026-04-11 17:21:42,422 - INFO -   PROLONGED QT                                             85   0.786  (0.740, 0.836)
+2026-04-11 17:21:42,423 - INFO -   PULMONARY DISEASE PATTERN                                 1   0.738  (0.716, 0.756)
+2026-04-11 17:21:42,423 - INFO -   FUSION COMPLEXES                                          7   0.711  (0.485, 0.916)
+2026-04-11 17:21:42,423 - INFO -   otherwise normal ecg                                    137   0.706  (0.663, 0.745)
+2026-04-11 17:21:42,424 - INFO -   PREMATURE VENTRICULAR COMPLEXES                           1   0.576  (0.557, 0.601)
+2026-04-11 17:21:42,424 - INFO -   ATRIAL FIBRILLATION                                       7   0.548  (0.364, 0.704)
+2026-04-11 17:21:42,424 - INFO -   ANTERIOR INFARCT                                          2   0.502  (0.065, 0.932)
+2026-04-11 17:21:42,425 - INFO -   INFERIOR INFARCT                                          2   0.350  (0.275, 0.434)
+2026-04-11 17:21:42,425 - INFO -   PREMATURE ATRIAL COMPLEXES                                1   0.313  (0.295, 0.330)
+2026-04-11 17:21:42,425 - INFO - 
+[test] SKIPPED (112) — all-zero labels
+2026-04-11 17:21:42,427 - INFO -   ABNORMAL ECG                                          all zeros — AUROC undefined
+2026-04-11 17:21:42,427 - INFO -   NORMAL SINUS RHYTHM                                   all zeros — AUROC undefined
+2026-04-11 17:21:42,427 - INFO -   SINUS RHYTHM                                          all zeros — AUROC undefined
+2026-04-11 17:21:42,428 - INFO -   BORDERLINE ECG                                        all zeros — AUROC undefined
+2026-04-11 17:21:42,429 - INFO -   SEPTAL INFARCT                                        all zeros — AUROC undefined
+2026-04-11 17:21:42,429 - INFO -   PREMATURE SUPRAVENTRICULAR COMPLEXES                  all zeros — AUROC undefined
+2026-04-11 17:21:42,430 - INFO -   NONSPECIFIC T WAVE ABNORMALITY NOW EVIDENT IN         all zeros — AUROC undefined
+2026-04-11 17:21:42,430 - INFO -   NONSPECIFIC T WAVE ABNORMALITY NO LONGER EVIDENT IN   all zeros — AUROC undefined
+2026-04-11 17:21:42,431 - INFO -   T WAVE INVERSION NOW EVIDENT IN                       all zeros — AUROC undefined
+2026-04-11 17:21:42,431 - INFO -   LATERAL INFARCT                                       all zeros — AUROC undefined
+2026-04-11 17:21:42,431 - INFO -   NONSPECIFIC ST ABNORMALITY                            all zeros — AUROC undefined
+2026-04-11 17:21:42,432 - INFO -   T WAVE INVERSION NO LONGER EVIDENT IN                 all zeros — AUROC undefined
+2026-04-11 17:21:42,432 - INFO -   WITH RAPID VENTRICULAR RESPONSE                       all zeros — AUROC undefined
+2026-04-11 17:21:42,433 - INFO -   QT HAS SHORTENED                                      all zeros — AUROC undefined
+2026-04-11 17:21:42,433 - INFO -   QT HAS LENGTHENED                                     all zeros — AUROC undefined
+2026-04-11 17:21:42,434 - INFO -   MARKED SINUS BRADYCARDIA                              all zeros — AUROC undefined
+2026-04-11 17:21:42,434 - INFO -   WITH SINUS ARRHYTHMIA                                 all zeros — AUROC undefined
+2026-04-11 17:21:42,434 - INFO -   NONSPECIFIC ST AND T WAVE ABNORMALITY                 all zeros — AUROC undefined
+2026-04-11 17:21:42,435 - INFO -   ECTOPIC ATRIAL RHYTHM                                 all zeros — AUROC undefined
+2026-04-11 17:21:42,435 - INFO -   UNDETERMINED RHYTHM                                   all zeros — AUROC undefined
+2026-04-11 17:21:42,435 - INFO -   RIGHTWARD AXIS                                        all zeros — AUROC undefined
+2026-04-11 17:21:42,436 - INFO -   ST NOW DEPRESSED IN                                   all zeros — AUROC undefined
+2026-04-11 17:21:42,436 - INFO -   WITH SHORT PR                                         all zeros — AUROC undefined
+2026-04-11 17:21:42,436 - INFO -   WITH MARKED SINUS ARRHYTHMIA                          all zeros — AUROC undefined
+2026-04-11 17:21:42,437 - INFO -   ST NO LONGER DEPRESSED IN                             all zeros — AUROC undefined
+2026-04-11 17:21:42,437 - INFO -   INVERTED T WAVES HAVE REPLACED NONSPECIFIC T WAVE ABNORMALITY IN  all zeros — AUROC undefined
+2026-04-11 17:21:42,437 - INFO -   NON-SPECIFIC CHANGE IN ST SEGMENT IN                  all zeros — AUROC undefined
+2026-04-11 17:21:42,438 - INFO -   NONSPECIFIC T WAVE ABNORMALITY HAS REPLACED INVERTED T WAVES IN  all zeros — AUROC undefined
+2026-04-11 17:21:42,438 - INFO -   JUNCTIONAL RHYTHM                                     all zeros — AUROC undefined
+2026-04-11 17:21:42,439 - INFO -   ELECTRONIC ATRIAL PACEMAKER                           all zeros — AUROC undefined
+2026-04-11 17:21:42,439 - INFO -   ABERRANT CONDUCTION                                   all zeros — AUROC undefined
+2026-04-11 17:21:42,439 - INFO -   ELECTRONIC VENTRICULAR PACEMAKER                      all zeros — AUROC undefined
+2026-04-11 17:21:42,440 - INFO -   T WAVE INVERSION LESS EVIDENT IN                      all zeros — AUROC undefined
+2026-04-11 17:21:42,440 - INFO -   ANTEROLATERAL INFARCT                                 all zeros — AUROC undefined
+2026-04-11 17:21:42,440 - INFO -   WITH REPOLARIZATION ABNORMALITY                       all zeros — AUROC undefined
+2026-04-11 17:21:42,441 - INFO -   RSR' OR QR PATTERN IN V1 SUGGESTS RIGHT VENTRICULAR CONDUCTION DELAY  all zeros — AUROC undefined
+2026-04-11 17:21:42,441 - INFO -   T WAVE INVERSION MORE EVIDENT IN                      all zeros — AUROC undefined
+2026-04-11 17:21:42,441 - INFO -   WIDE QRS RHYTHM                                       all zeros — AUROC undefined
+2026-04-11 17:21:42,442 - INFO -   WITH PREMATURE VENTRICULAR OR ABERRANTLY CONDUCTED COMPLEXES  all zeros — AUROC undefined
+2026-04-11 17:21:42,443 - INFO -   INCOMPLETE LEFT BUNDLE BRANCH BLOCK                   all zeros — AUROC undefined
+2026-04-11 17:21:42,443 - INFO -   VOLTAGE CRITERIA FOR LEFT VENTRICULAR HYPERTROPHY     all zeros — AUROC undefined
+2026-04-11 17:21:42,443 - INFO -   OR DIGITALIS EFFECT                                   all zeros — AUROC undefined
+2026-04-11 17:21:42,443 - INFO -   BIFASCICULAR BLOCK                                    all zeros — AUROC undefined
+2026-04-11 17:21:42,443 - INFO -   ST NO LONGER ELEVATED IN                              all zeros — AUROC undefined
+2026-04-11 17:21:42,443 - INFO -   WITH SLOW VENTRICULAR RESPONSE                        all zeros — AUROC undefined
+2026-04-11 17:21:42,445 - INFO -   ST ELEVATION NOW PRESENT IN                           all zeros — AUROC undefined
+2026-04-11 17:21:42,445 - INFO -   PREMATURE ECTOPIC COMPLEXES                           all zeros — AUROC undefined
+2026-04-11 17:21:42,445 - INFO -   T WAVE AMPLITUDE HAS DECREASED IN                     all zeros — AUROC undefined
+2026-04-11 17:21:42,445 - INFO -   WITH A COMPETING JUNCTIONAL PACEMAKER                 all zeros — AUROC undefined
+2026-04-11 17:21:42,446 - INFO -   RIGHT SUPERIOR AXIS DEVIATION                         all zeros — AUROC undefined
+2026-04-11 17:21:42,446 - INFO -   BIATRIAL ENLARGEMENT                                  all zeros — AUROC undefined
+2026-04-11 17:21:42,448 - INFO -   VENTRICULAR-PACED RHYTHM                              all zeros — AUROC undefined
+2026-04-11 17:21:42,448 - INFO -   ATRIAL-PACED RHYTHM                                   all zeros — AUROC undefined
+2026-04-11 17:21:42,448 - INFO -   T WAVE AMPLITUDE HAS INCREASED IN                     all zeros — AUROC undefined
+2026-04-11 17:21:42,448 - INFO -   WITH QRS WIDENING                                     all zeros — AUROC undefined
+2026-04-11 17:21:42,449 - INFO -   WITH PROLONGED AV CONDUCTION                          all zeros — AUROC undefined
+2026-04-11 17:21:42,449 - INFO -   WITH QRS WIDENING AND REPOLARIZATION ABNORMALITY      all zeros — AUROC undefined
+2026-04-11 17:21:42,451 - INFO -   ATRIAL-SENSED VENTRICULAR-PACED RHYTHM                all zeros — AUROC undefined
+2026-04-11 17:21:42,451 - INFO -   AV SEQUENTIAL OR DUAL CHAMBER ELECTRONIC PACEMAKER    all zeros — AUROC undefined
+2026-04-11 17:21:42,452 - INFO -   ACUTE MI / STEMI                                      all zeros — AUROC undefined
+2026-04-11 17:21:42,452 - INFO -   INFERIOR-POSTERIOR INFARCT                            all zeros — AUROC undefined
+2026-04-11 17:21:42,453 - INFO -   NONSPECIFIC INTRAVENTRICULAR CONDUCTION DELAY         all zeros — AUROC undefined
+2026-04-11 17:21:42,453 - INFO -   PREMATURE VENTRICULAR AND FUSION COMPLEXES            all zeros — AUROC undefined
+2026-04-11 17:21:42,453 - INFO -   IN A PATTERN OF BIGEMINY                              all zeros — AUROC undefined
+2026-04-11 17:21:42,455 - INFO -   AV DUAL-PACED RHYTHM                                  all zeros — AUROC undefined
+2026-04-11 17:21:42,455 - INFO -   VENTRICULAR-PACED COMPLEXES                           all zeros — AUROC undefined
+2026-04-11 17:21:42,456 - INFO -   WIDE QRS TACHYCARDIA                                  all zeros — AUROC undefined
+2026-04-11 17:21:42,456 - INFO -   RSR' PATTERN IN V1                                    all zeros — AUROC undefined
+2026-04-11 17:21:42,457 - INFO -   ST LESS DEPRESSED IN                                  all zeros — AUROC undefined
+2026-04-11 17:21:42,457 - INFO -   ST MORE DEPRESSED IN                                  all zeros — AUROC undefined
+2026-04-11 17:21:42,457 - INFO -   ANTEROLATERAL LEADS                                   all zeros — AUROC undefined
+2026-04-11 17:21:42,458 - INFO -   ELECTRONIC DEMAND PACING                              all zeros — AUROC undefined
+2026-04-11 17:21:42,458 - INFO -   RBBB AND LEFT ANTERIOR FASCICULAR BLOCK               all zeros — AUROC undefined
+2026-04-11 17:21:42,459 - INFO -   LATERAL INJURY PATTERN                                all zeros — AUROC undefined
+2026-04-11 17:21:42,459 - INFO -   BIVENTRICULAR PACEMAKER DETECTED                      all zeros — AUROC undefined
+2026-04-11 17:21:42,460 - INFO -   SUSPECT UNSPECIFIED PACEMAKER FAILURE                 all zeros — AUROC undefined
+2026-04-11 17:21:42,460 - INFO -   WOLFF-PARKINSON-WHITE                                 all zeros — AUROC undefined
+2026-04-11 17:21:42,460 - INFO -   INFERIOR INJURY PATTERN                               all zeros — AUROC undefined
+2026-04-11 17:21:42,461 - INFO -   CONSIDER RIGHT VENTRICULAR INVOLVEMENT IN ACUTE INFERIOR INFARCT  all zeros — AUROC undefined
+2026-04-11 17:21:42,461 - INFO -   ST ELEVATION HAS REPLACED ST DEPRESSION IN            all zeros — AUROC undefined
+2026-04-11 17:21:42,462 - INFO -   NONSPECIFIC INTRAVENTRICULAR BLOCK                    all zeros — AUROC undefined
+2026-04-11 17:21:42,462 - INFO -   MASKED BY FASCICULAR BLOCK                            all zeros — AUROC undefined
+2026-04-11 17:21:42,463 - INFO -   PEDIATRIC ECG ANALYSIS                                all zeros — AUROC undefined
+2026-04-11 17:21:42,463 - INFO -   BLOCKED                                               all zeros — AUROC undefined
+2026-04-11 17:21:42,463 - INFO -   WITH UNDETERMINED RHYTHM IRREGULARITY                 all zeros — AUROC undefined
+2026-04-11 17:21:42,464 - INFO -   LEFTWARD AXIS                                         all zeros — AUROC undefined
+2026-04-11 17:21:42,464 - INFO -   WITH 2ND DEGREE SA BLOCK MOBITZ I                     all zeros — AUROC undefined
+2026-04-11 17:21:42,465 - INFO -   ACUTE                                                 all zeros — AUROC undefined
+2026-04-11 17:21:42,465 - INFO -   ABNORMAL LEFT AXIS DEVIATION                          all zeros — AUROC undefined
+2026-04-11 17:21:42,466 - INFO -   NO P-WAVES FOUND                                      all zeros — AUROC undefined
+2026-04-11 17:21:42,467 - INFO -   ST LESS ELEVATED IN                                   all zeros — AUROC undefined
+2026-04-11 17:21:42,467 - INFO -   WITH RETROGRADE CONDUCTION                            all zeros — AUROC undefined
+2026-04-11 17:21:42,467 - INFO -   ST MORE ELEVATED IN                                   all zeros — AUROC undefined
+2026-04-11 17:21:42,468 - INFO -   JUNCTIONAL BRADYCARDIA                                all zeros — AUROC undefined
+2026-04-11 17:21:42,468 - INFO -   ANTERIOR INJURY PATTERN                               all zeros — AUROC undefined
+2026-04-11 17:21:42,469 - INFO -   ACUTE MI                                              all zeros — AUROC undefined
+2026-04-11 17:21:42,469 - INFO -   POSTERIOR INFARCT                                     all zeros — AUROC undefined
+2026-04-11 17:21:42,469 - INFO -   IDIOVENTRICULAR RHYTHM                                all zeros — AUROC undefined
+2026-04-11 17:21:42,470 - INFO -   WITH 2ND DEGREE SA BLOCK MOBITZ II                    all zeros — AUROC undefined
+2026-04-11 17:21:42,470 - INFO -   R IN AVL                                              all zeros — AUROC undefined
+2026-04-11 17:21:42,470 - INFO -   SINUS/ATRIAL CAPTURE                                  all zeros — AUROC undefined
+2026-04-11 17:21:42,471 - INFO -   AV DUAL-PACED COMPLEXES                               all zeros — AUROC undefined
+2026-04-11 17:21:42,471 - INFO -   INFEROLATERAL INJURY PATTERN                          all zeros — AUROC undefined
+2026-04-11 17:21:42,471 - INFO -   RBBB AND LEFT POSTERIOR FASCICULAR BLOCK              all zeros — AUROC undefined
+2026-04-11 17:21:42,472 - INFO -   ANTEROLATERAL INJURY PATTERN                          all zeros — AUROC undefined
+2026-04-11 17:21:42,472 - INFO -   ATRIAL-PACED COMPLEXES                                all zeros — AUROC undefined
+2026-04-11 17:21:42,473 - INFO -   WITH SINUS PAUSE                                      all zeros — AUROC undefined
+2026-04-11 17:21:42,473 - INFO -   BIVENTRICULAR HYPERTROPHY                             all zeros — AUROC undefined
+2026-04-11 17:21:42,473 - INFO -   ABNORMAL RIGHT AXIS DEVIATION                         all zeros — AUROC undefined
+2026-04-11 17:21:42,474 - INFO -   SUPRAVENTRICULAR COMPLEXES                            all zeros — AUROC undefined
+2026-04-11 17:21:42,474 - INFO -   WITH 2ND DEGREE AV BLOCK MOBITZ I                     all zeros — AUROC undefined
+2026-04-11 17:21:42,475 - INFO -   MULTIFOCAL ATRIAL TACHYCARDIA                         all zeros — AUROC undefined
+2026-04-11 17:21:42,475 - INFO - 
+[test] Valid labels : 38 / 150
+2026-04-11 17:21:42,475 - INFO - [test] Macro AUROC  : 0.8312
+2026-04-11 17:21:42,515 - INFO - [test] Plotting 38 valid ROC curves
+2026-04-11 17:21:42,937 - INFO - [test] ROC curve plot saved: ./res/peft_lora/test_roc_curves.png
+2026-04-11 17:21:42,938 - INFO - [test] Plot Macro AUC=0.8312  Micro AUC=0.9511
+2026-04-11 17:21:42,938 - INFO - 
+Zero-shot cache not found — generating baseline on test split...
+2026-04-11 17:21:42,939 - INFO - 
+Generating zero-shot baseline predictions...
+2026-04-11 17:22:12,133 - INFO - Zero-shot predictions saved — gt: (1941, 150)  pred: (1941, 150)
+2026-04-11 17:22:12,155 - INFO - [comparison] Shared valid labels: 38/150
+2026-04-11 17:22:12,471 - INFO - [comparison] Plot saved: ./res/peft_lora/comparison_zeroshot_vs_peft_test.png
+2026-04-11 17:22:12,472 - INFO - 
+Running inference on full dataset (train + val + test)...
+2026-04-11 17:24:31,580 - INFO - Running zero-shot inference on full dataset...
+2026-04-11 17:24:31,580 - INFO - 
+Generating zero-shot baseline predictions...
+2026-04-11 17:26:49,868 - INFO - Zero-shot predictions saved — gt: (9397, 150)  pred: (9397, 150)
+2026-04-11 17:26:49,880 - INFO - 
+Computing full evaluation for: full_dataset
+2026-04-11 17:28:27,414 - INFO - 
+======================================================================
+2026-04-11 17:28:27,414 - INFO - [full_dataset] PER-CLASS AUROC  (39 valid / 150 total)
+2026-04-11 17:28:27,415 - INFO - ======================================================================
+2026-04-11 17:28:27,415 - INFO -   Label                                                 n_pos   AUROC  95% CI
+2026-04-11 17:28:27,415 - INFO -   --------------------------------------------------------------------
+2026-04-11 17:28:27,417 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                          19   0.997  (0.992, 1.000)
+2026-04-11 17:28:27,417 - INFO -   LATERAL INFARCT                                           3   0.996  (0.987, 1.000)
+2026-04-11 17:28:27,419 - INFO -   VENTRICULAR TACHYCARDIA                                  81   0.994  (0.988, 0.998)
+2026-04-11 17:28:27,420 - INFO -   RIGHT BUNDLE BRANCH BLOCK                               290   0.989  (0.985, 0.992)
+2026-04-11 17:28:27,420 - INFO -   SINUS BRADYCARDIA                                       935   0.987  (0.984, 0.990)
+2026-04-11 17:28:27,421 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                          323   0.986  (0.981, 0.990)
+2026-04-11 17:28:27,421 - INFO -   LEFT AXIS DEVIATION                                      54   0.979  (0.970, 0.990)
+2026-04-11 17:28:27,422 - INFO -   ACUTE PERICARDITIS                                        1   0.978  (0.975, 0.980)
+2026-04-11 17:28:27,423 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                             45   0.973  (0.953, 0.986)
+2026-04-11 17:28:27,424 - INFO -   LEFT BUNDLE BRANCH BLOCK                                 18   0.973  (0.905, 0.999)
+2026-04-11 17:28:27,424 - INFO -   ATRIAL FLUTTER                                           31   0.972  (0.953, 0.984)
+2026-04-11 17:28:27,424 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                        32   0.972  (0.944, 0.995)
+2026-04-11 17:28:27,425 - INFO -   ANTEROSEPTAL INFARCT                                     14   0.970  (0.937, 0.985)
+2026-04-11 17:28:27,425 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                           693   0.967  (0.961, 0.972)
+2026-04-11 17:28:27,425 - INFO -   WITH COMPLETE HEART BLOCK                                67   0.967  (0.948, 0.983)
+2026-04-11 17:28:27,426 - INFO -   RIGHT AXIS DEVIATION                                    335   0.965  (0.960, 0.971)
+2026-04-11 17:28:27,427 - INFO -   SINUS TACHYCARDIA                                      2210   0.955  (0.951, 0.960)
+2026-04-11 17:28:27,427 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK                    336   0.955  (0.946, 0.964)
+2026-04-11 17:28:27,428 - INFO -   RIGHT ATRIAL ENLARGEMENT                                201   0.943  (0.932, 0.955)
+2026-04-11 17:28:27,429 - INFO -   WITH VARIABLE AV BLOCK                                   67   0.942  (0.920, 0.966)
+2026-04-11 17:28:27,429 - INFO -   LEFT VENTRICULAR HYPERTROPHY                            348   0.941  (0.931, 0.949)
+2026-04-11 17:28:27,429 - INFO -   WITH AV DISSOCIATION                                     70   0.937  (0.903, 0.964)
+2026-04-11 17:28:27,430 - INFO -   EARLY REPOLARIZATION                                    249   0.936  (0.924, 0.947)
+2026-04-11 17:28:27,430 - INFO -   LEFT ATRIAL ENLARGEMENT                                 184   0.936  (0.918, 0.953)
+2026-04-11 17:28:27,431 - INFO -   WITH 1ST DEGREE AV BLOCK                                123   0.935  (0.908, 0.958)
+2026-04-11 17:28:27,431 - INFO -   WITH 2:1 AV CONDUCTION                                   40   0.927  (0.882, 0.969)
+2026-04-11 17:28:27,432 - INFO -   LOW VOLTAGE QRS                                         277   0.926  (0.912, 0.939)
+2026-04-11 17:28:27,433 - INFO -   PULMONARY DISEASE PATTERN                                 3   0.917  (0.768, 1.000)
+2026-04-11 17:28:27,433 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                        184   0.917  (0.895, 0.930)
+2026-04-11 17:28:27,434 - INFO -   FUSION COMPLEXES                                         27   0.908  (0.828, 0.955)
+2026-04-11 17:28:27,434 - INFO -   PREMATURE VENTRICULAR COMPLEXES                           6   0.904  (0.742, 0.999)
+2026-04-11 17:28:27,435 - INFO -   NORMAL ECG                                             1759   0.898  (0.891, 0.903)
+2026-04-11 17:28:27,435 - INFO -   PROLONGED QT                                            427   0.863  (0.844, 0.885)
+2026-04-11 17:28:27,436 - INFO -   ATRIAL FIBRILLATION                                      25   0.840  (0.735, 0.910)
+2026-04-11 17:28:27,436 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                         2544   0.838  (0.831, 0.847)
+2026-04-11 17:28:27,437 - INFO -   INFERIOR INFARCT                                          8   0.836  (0.623, 1.000)
+2026-04-11 17:28:27,437 - INFO -   ANTERIOR INFARCT                                          5   0.797  (0.411, 0.997)
+2026-04-11 17:28:27,438 - INFO -   otherwise normal ecg                                    621   0.796  (0.780, 0.811)
+2026-04-11 17:28:27,438 - INFO -   PREMATURE ATRIAL COMPLEXES                                1   0.329  (0.316, 0.337)
+2026-04-11 17:28:27,438 - INFO - 
+[full_dataset] SKIPPED (111) — all-zero labels
+2026-04-11 17:28:27,439 - INFO -   ABNORMAL ECG                                          all zeros — AUROC undefined
+2026-04-11 17:28:27,440 - INFO -   NORMAL SINUS RHYTHM                                   all zeros — AUROC undefined
+2026-04-11 17:28:27,440 - INFO -   SINUS RHYTHM                                          all zeros — AUROC undefined
+2026-04-11 17:28:27,440 - INFO -   BORDERLINE ECG                                        all zeros — AUROC undefined
+2026-04-11 17:28:27,441 - INFO -   SEPTAL INFARCT                                        all zeros — AUROC undefined
+2026-04-11 17:28:27,441 - INFO -   PREMATURE SUPRAVENTRICULAR COMPLEXES                  all zeros — AUROC undefined
+2026-04-11 17:28:27,442 - INFO -   NONSPECIFIC T WAVE ABNORMALITY NOW EVIDENT IN         all zeros — AUROC undefined
+2026-04-11 17:28:27,443 - INFO -   NONSPECIFIC T WAVE ABNORMALITY NO LONGER EVIDENT IN   all zeros — AUROC undefined
+2026-04-11 17:28:27,443 - INFO -   T WAVE INVERSION NOW EVIDENT IN                       all zeros — AUROC undefined
+2026-04-11 17:28:27,444 - INFO -   NONSPECIFIC ST ABNORMALITY                            all zeros — AUROC undefined
+2026-04-11 17:28:27,444 - INFO -   T WAVE INVERSION NO LONGER EVIDENT IN                 all zeros — AUROC undefined
+2026-04-11 17:28:27,445 - INFO -   WITH RAPID VENTRICULAR RESPONSE                       all zeros — AUROC undefined
+2026-04-11 17:28:27,445 - INFO -   QT HAS SHORTENED                                      all zeros — AUROC undefined
+2026-04-11 17:28:27,445 - INFO -   QT HAS LENGTHENED                                     all zeros — AUROC undefined
+2026-04-11 17:28:27,446 - INFO -   MARKED SINUS BRADYCARDIA                              all zeros — AUROC undefined
+2026-04-11 17:28:27,446 - INFO -   WITH SINUS ARRHYTHMIA                                 all zeros — AUROC undefined
+2026-04-11 17:28:27,447 - INFO -   NONSPECIFIC ST AND T WAVE ABNORMALITY                 all zeros — AUROC undefined
+2026-04-11 17:28:27,447 - INFO -   ECTOPIC ATRIAL RHYTHM                                 all zeros — AUROC undefined
+2026-04-11 17:28:27,448 - INFO -   UNDETERMINED RHYTHM                                   all zeros — AUROC undefined
+2026-04-11 17:28:27,449 - INFO -   RIGHTWARD AXIS                                        all zeros — AUROC undefined
+2026-04-11 17:28:27,449 - INFO -   ST NOW DEPRESSED IN                                   all zeros — AUROC undefined
+2026-04-11 17:28:27,450 - INFO -   WITH SHORT PR                                         all zeros — AUROC undefined
+2026-04-11 17:28:27,450 - INFO -   WITH MARKED SINUS ARRHYTHMIA                          all zeros — AUROC undefined
+2026-04-11 17:28:27,451 - INFO -   ST NO LONGER DEPRESSED IN                             all zeros — AUROC undefined
+2026-04-11 17:28:27,451 - INFO -   INVERTED T WAVES HAVE REPLACED NONSPECIFIC T WAVE ABNORMALITY IN  all zeros — AUROC undefined
+2026-04-11 17:28:27,451 - INFO -   NON-SPECIFIC CHANGE IN ST SEGMENT IN                  all zeros — AUROC undefined
+2026-04-11 17:28:27,452 - INFO -   NONSPECIFIC T WAVE ABNORMALITY HAS REPLACED INVERTED T WAVES IN  all zeros — AUROC undefined
+2026-04-11 17:28:27,452 - INFO -   JUNCTIONAL RHYTHM                                     all zeros — AUROC undefined
+2026-04-11 17:28:27,453 - INFO -   ELECTRONIC ATRIAL PACEMAKER                           all zeros — AUROC undefined
+2026-04-11 17:28:27,453 - INFO -   ABERRANT CONDUCTION                                   all zeros — AUROC undefined
+2026-04-11 17:28:27,454 - INFO -   ELECTRONIC VENTRICULAR PACEMAKER                      all zeros — AUROC undefined
+2026-04-11 17:28:27,454 - INFO -   T WAVE INVERSION LESS EVIDENT IN                      all zeros — AUROC undefined
+2026-04-11 17:28:27,454 - INFO -   ANTEROLATERAL INFARCT                                 all zeros — AUROC undefined
+2026-04-11 17:28:27,454 - INFO -   WITH REPOLARIZATION ABNORMALITY                       all zeros — AUROC undefined
+2026-04-11 17:28:27,454 - INFO -   RSR' OR QR PATTERN IN V1 SUGGESTS RIGHT VENTRICULAR CONDUCTION DELAY  all zeros — AUROC undefined
+2026-04-11 17:28:27,455 - INFO -   T WAVE INVERSION MORE EVIDENT IN                      all zeros — AUROC undefined
+2026-04-11 17:28:27,456 - INFO -   WIDE QRS RHYTHM                                       all zeros — AUROC undefined
+2026-04-11 17:28:27,456 - INFO -   WITH PREMATURE VENTRICULAR OR ABERRANTLY CONDUCTED COMPLEXES  all zeros — AUROC undefined
+2026-04-11 17:28:27,457 - INFO -   INCOMPLETE LEFT BUNDLE BRANCH BLOCK                   all zeros — AUROC undefined
+2026-04-11 17:28:27,457 - INFO -   VOLTAGE CRITERIA FOR LEFT VENTRICULAR HYPERTROPHY     all zeros — AUROC undefined
+2026-04-11 17:28:27,458 - INFO -   OR DIGITALIS EFFECT                                   all zeros — AUROC undefined
+2026-04-11 17:28:27,458 - INFO -   BIFASCICULAR BLOCK                                    all zeros — AUROC undefined
+2026-04-11 17:28:27,459 - INFO -   ST NO LONGER ELEVATED IN                              all zeros — AUROC undefined
+2026-04-11 17:28:27,459 - INFO -   WITH SLOW VENTRICULAR RESPONSE                        all zeros — AUROC undefined
+2026-04-11 17:28:27,460 - INFO -   ST ELEVATION NOW PRESENT IN                           all zeros — AUROC undefined
+2026-04-11 17:28:27,460 - INFO -   PREMATURE ECTOPIC COMPLEXES                           all zeros — AUROC undefined
+2026-04-11 17:28:27,460 - INFO -   T WAVE AMPLITUDE HAS DECREASED IN                     all zeros — AUROC undefined
+2026-04-11 17:28:27,461 - INFO -   WITH A COMPETING JUNCTIONAL PACEMAKER                 all zeros — AUROC undefined
+2026-04-11 17:28:27,461 - INFO -   RIGHT SUPERIOR AXIS DEVIATION                         all zeros — AUROC undefined
+2026-04-11 17:28:27,462 - INFO -   BIATRIAL ENLARGEMENT                                  all zeros — AUROC undefined
+2026-04-11 17:28:27,462 - INFO -   VENTRICULAR-PACED RHYTHM                              all zeros — AUROC undefined
+2026-04-11 17:28:27,462 - INFO -   ATRIAL-PACED RHYTHM                                   all zeros — AUROC undefined
+2026-04-11 17:28:27,463 - INFO -   T WAVE AMPLITUDE HAS INCREASED IN                     all zeros — AUROC undefined
+2026-04-11 17:28:27,463 - INFO -   WITH QRS WIDENING                                     all zeros — AUROC undefined
+2026-04-11 17:28:27,464 - INFO -   WITH PROLONGED AV CONDUCTION                          all zeros — AUROC undefined
+2026-04-11 17:28:27,464 - INFO -   WITH QRS WIDENING AND REPOLARIZATION ABNORMALITY      all zeros — AUROC undefined
+2026-04-11 17:28:27,464 - INFO -   ATRIAL-SENSED VENTRICULAR-PACED RHYTHM                all zeros — AUROC undefined
+2026-04-11 17:28:27,465 - INFO -   AV SEQUENTIAL OR DUAL CHAMBER ELECTRONIC PACEMAKER    all zeros — AUROC undefined
+2026-04-11 17:28:27,465 - INFO -   ACUTE MI / STEMI                                      all zeros — AUROC undefined
+2026-04-11 17:28:27,465 - INFO -   INFERIOR-POSTERIOR INFARCT                            all zeros — AUROC undefined
+2026-04-11 17:28:27,466 - INFO -   NONSPECIFIC INTRAVENTRICULAR CONDUCTION DELAY         all zeros — AUROC undefined
+2026-04-11 17:28:27,466 - INFO -   PREMATURE VENTRICULAR AND FUSION COMPLEXES            all zeros — AUROC undefined
+2026-04-11 17:28:27,466 - INFO -   IN A PATTERN OF BIGEMINY                              all zeros — AUROC undefined
+2026-04-11 17:28:27,466 - INFO -   AV DUAL-PACED RHYTHM                                  all zeros — AUROC undefined
+2026-04-11 17:28:27,467 - INFO -   VENTRICULAR-PACED COMPLEXES                           all zeros — AUROC undefined
+2026-04-11 17:28:27,467 - INFO -   WIDE QRS TACHYCARDIA                                  all zeros — AUROC undefined
+2026-04-11 17:28:27,467 - INFO -   RSR' PATTERN IN V1                                    all zeros — AUROC undefined
+2026-04-11 17:28:27,468 - INFO -   ST LESS DEPRESSED IN                                  all zeros — AUROC undefined
+2026-04-11 17:28:27,468 - INFO -   ST MORE DEPRESSED IN                                  all zeros — AUROC undefined
+2026-04-11 17:28:27,468 - INFO -   ANTEROLATERAL LEADS                                   all zeros — AUROC undefined
+2026-04-11 17:28:27,468 - INFO -   ELECTRONIC DEMAND PACING                              all zeros — AUROC undefined
+2026-04-11 17:28:27,469 - INFO -   RBBB AND LEFT ANTERIOR FASCICULAR BLOCK               all zeros — AUROC undefined
+2026-04-11 17:28:27,469 - INFO -   LATERAL INJURY PATTERN                                all zeros — AUROC undefined
+2026-04-11 17:28:27,470 - INFO -   BIVENTRICULAR PACEMAKER DETECTED                      all zeros — AUROC undefined
+2026-04-11 17:28:27,470 - INFO -   SUSPECT UNSPECIFIED PACEMAKER FAILURE                 all zeros — AUROC undefined
+2026-04-11 17:28:27,471 - INFO -   WOLFF-PARKINSON-WHITE                                 all zeros — AUROC undefined
+2026-04-11 17:28:27,472 - INFO -   INFERIOR INJURY PATTERN                               all zeros — AUROC undefined
+2026-04-11 17:28:27,472 - INFO -   CONSIDER RIGHT VENTRICULAR INVOLVEMENT IN ACUTE INFERIOR INFARCT  all zeros — AUROC undefined
+2026-04-11 17:28:27,473 - INFO -   ST ELEVATION HAS REPLACED ST DEPRESSION IN            all zeros — AUROC undefined
+2026-04-11 17:28:27,473 - INFO -   NONSPECIFIC INTRAVENTRICULAR BLOCK                    all zeros — AUROC undefined
+2026-04-11 17:28:27,474 - INFO -   MASKED BY FASCICULAR BLOCK                            all zeros — AUROC undefined
+2026-04-11 17:28:27,474 - INFO -   PEDIATRIC ECG ANALYSIS                                all zeros — AUROC undefined
+2026-04-11 17:28:27,475 - INFO -   BLOCKED                                               all zeros — AUROC undefined
+2026-04-11 17:28:27,475 - INFO -   WITH UNDETERMINED RHYTHM IRREGULARITY                 all zeros — AUROC undefined
+2026-04-11 17:28:27,475 - INFO -   LEFTWARD AXIS                                         all zeros — AUROC undefined
+2026-04-11 17:28:27,476 - INFO -   WITH 2ND DEGREE SA BLOCK MOBITZ I                     all zeros — AUROC undefined
+2026-04-11 17:28:27,476 - INFO -   ACUTE                                                 all zeros — AUROC undefined
+2026-04-11 17:28:27,477 - INFO -   ABNORMAL LEFT AXIS DEVIATION                          all zeros — AUROC undefined
+2026-04-11 17:28:27,477 - INFO -   NO P-WAVES FOUND                                      all zeros — AUROC undefined
+2026-04-11 17:28:27,478 - INFO -   ST LESS ELEVATED IN                                   all zeros — AUROC undefined
+2026-04-11 17:28:27,478 - INFO -   WITH RETROGRADE CONDUCTION                            all zeros — AUROC undefined
+2026-04-11 17:28:27,478 - INFO -   ST MORE ELEVATED IN                                   all zeros — AUROC undefined
+2026-04-11 17:28:27,479 - INFO -   JUNCTIONAL BRADYCARDIA                                all zeros — AUROC undefined
+2026-04-11 17:28:27,479 - INFO -   ANTERIOR INJURY PATTERN                               all zeros — AUROC undefined
+2026-04-11 17:28:27,479 - INFO -   ACUTE MI                                              all zeros — AUROC undefined
+2026-04-11 17:28:27,480 - INFO -   POSTERIOR INFARCT                                     all zeros — AUROC undefined
+2026-04-11 17:28:27,480 - INFO -   IDIOVENTRICULAR RHYTHM                                all zeros — AUROC undefined
+2026-04-11 17:28:27,481 - INFO -   WITH 2ND DEGREE SA BLOCK MOBITZ II                    all zeros — AUROC undefined
+2026-04-11 17:28:27,481 - INFO -   R IN AVL                                              all zeros — AUROC undefined
+2026-04-11 17:28:27,481 - INFO -   SINUS/ATRIAL CAPTURE                                  all zeros — AUROC undefined
+2026-04-11 17:28:27,482 - INFO -   AV DUAL-PACED COMPLEXES                               all zeros — AUROC undefined
+2026-04-11 17:28:27,483 - INFO -   INFEROLATERAL INJURY PATTERN                          all zeros — AUROC undefined
+2026-04-11 17:28:27,483 - INFO -   RBBB AND LEFT POSTERIOR FASCICULAR BLOCK              all zeros — AUROC undefined
+2026-04-11 17:28:27,483 - INFO -   ANTEROLATERAL INJURY PATTERN                          all zeros — AUROC undefined
+2026-04-11 17:28:27,484 - INFO -   ATRIAL-PACED COMPLEXES                                all zeros — AUROC undefined
+2026-04-11 17:28:27,484 - INFO -   WITH SINUS PAUSE                                      all zeros — AUROC undefined
+2026-04-11 17:28:27,484 - INFO -   BIVENTRICULAR HYPERTROPHY                             all zeros — AUROC undefined
+2026-04-11 17:28:27,485 - INFO -   ABNORMAL RIGHT AXIS DEVIATION                         all zeros — AUROC undefined
+2026-04-11 17:28:27,485 - INFO -   SUPRAVENTRICULAR COMPLEXES                            all zeros — AUROC undefined
+2026-04-11 17:28:27,485 - INFO -   WITH 2ND DEGREE AV BLOCK MOBITZ I                     all zeros — AUROC undefined
+2026-04-11 17:28:27,486 - INFO -   MULTIFOCAL ATRIAL TACHYCARDIA                         all zeros — AUROC undefined
+2026-04-11 17:28:27,486 - INFO - 
+[full_dataset] Valid labels : 39 / 150
+2026-04-11 17:28:27,486 - INFO - [full_dataset] Macro AUROC  : 0.9190
+2026-04-11 17:28:27,548 - INFO - [full_dataset] Plotting 39 valid ROC curves
+2026-04-11 17:28:27,979 - INFO - [full_dataset] ROC curve plot saved: ./res/peft_lora/full_dataset_roc_curves.png
+2026-04-11 17:28:27,980 - INFO - [full_dataset] Plot Macro AUC=0.9188  Micro AUC=0.9729
+2026-04-11 17:28:28,109 - INFO - [comparison] Shared valid labels: 39/150
+2026-04-11 17:28:28,555 - INFO - [comparison] Plot saved: ./res/peft_lora/comparison_zeroshot_vs_peft_full.png
+2026-04-11 17:28:28,556 - INFO - 
+All done.
+2026-04-11 19:56:03,854 - INFO - Using device : cuda:0
+2026-04-11 19:56:03,854 - INFO - PEFT mode    : lora
+2026-04-11 19:56:03,854 - INFO - Number of classes: 150
+2026-04-11 19:56:04,117 - INFO - Train : 6690 samples | 5748 patients
+2026-04-11 19:56:04,117 - INFO - Val   : 766   samples | 639 patients
+2026-04-11 19:56:04,117 - INFO - Test  : 1941  samples | 1597 patients
+2026-04-11 19:56:04,147 - INFO - 
+============================================================
+2026-04-11 19:56:04,148 - INFO - Label stats [TRAIN]  --  6690 samples total
+2026-04-11 19:56:04,148 - INFO -   Active labels : 37 / 150
+2026-04-11 19:56:04,149 - INFO -   Avg labels/sample: 1.33
+2026-04-11 19:56:04,149 - INFO -   Label                                              Count   Prevalence
+2026-04-11 19:56:04,150 - INFO -   ----------------------------------------------------------------------
+2026-04-11 19:56:04,150 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                     1856     27.7%
+2026-04-11 19:56:04,150 - INFO -   SINUS TACHYCARDIA                                  1545     23.1%
+2026-04-11 19:56:04,150 - INFO -   NORMAL ECG                                         1280     19.1%
+2026-04-11 19:56:04,150 - INFO -   SINUS BRADYCARDIA                                  676      10.1%
+2026-04-11 19:56:04,150 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                      473      7.1%
+2026-04-11 19:56:04,150 - INFO -   otherwise normal ecg                               442      6.6%
+2026-04-11 19:56:04,150 - INFO -   PROLONGED QT                                       302      4.5%
+2026-04-11 19:56:04,150 - INFO -   LEFT VENTRICULAR HYPERTROPHY                       237      3.5%
+2026-04-11 19:56:04,150 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK               231      3.5%
+2026-04-11 19:56:04,150 - INFO -   RIGHT AXIS DEVIATION                               230      3.4%
+2026-04-11 19:56:04,150 - INFO -   LOW VOLTAGE QRS                                    209      3.1%
+2026-04-11 19:56:04,150 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                     202      3.0%
+2026-04-11 19:56:04,157 - INFO -   RIGHT BUNDLE BRANCH BLOCK                          189      2.8%
+2026-04-11 19:56:04,157 - INFO -   EARLY REPOLARIZATION                               180      2.7%
+2026-04-11 19:56:04,157 - INFO -   RIGHT ATRIAL ENLARGEMENT                           138      2.1%
+2026-04-11 19:56:04,157 - INFO -   LEFT ATRIAL ENLARGEMENT                            134      2.0%
+2026-04-11 19:56:04,157 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                   124      1.9%
+2026-04-11 19:56:04,157 - INFO -   WITH 1ST DEGREE AV BLOCK                           77       1.2%
+2026-04-11 19:56:04,157 - INFO -   VENTRICULAR TACHYCARDIA                            52       0.8%
+2026-04-11 19:56:04,162 - INFO -   WITH VARIABLE AV BLOCK                             48       0.7%
+2026-04-11 19:56:04,163 - INFO -   WITH AV DISSOCIATION                               43       0.6%
+2026-04-11 19:56:04,163 - INFO -   LEFT AXIS DEVIATION                                41       0.6%
+2026-04-11 19:56:04,164 - INFO -   WITH COMPLETE HEART BLOCK                          41       0.6%
+2026-04-11 19:56:04,164 - INFO -   WITH 2:1 AV CONDUCTION                             25       0.4%
+2026-04-11 19:56:04,164 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                       22       0.3%
+2026-04-11 19:56:04,164 - INFO -   FUSION COMPLEXES                                   20       0.3%
+2026-04-11 19:56:04,164 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                  20       0.3%
+2026-04-11 19:56:04,164 - INFO -   ATRIAL FIBRILLATION                                18       0.3%
+2026-04-11 19:56:04,164 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                    17       0.3%
+2026-04-11 19:56:04,164 - INFO -   ATRIAL FLUTTER                                     16       0.2%
+2026-04-11 19:56:04,167 - INFO -   ANTEROSEPTAL INFARCT                               10       0.1%
+2026-04-11 19:56:04,167 - INFO -   LEFT BUNDLE BRANCH BLOCK                           9        0.1%
+2026-04-11 19:56:04,167 - INFO -   INFERIOR INFARCT                                   6        0.1%
+2026-04-11 19:56:04,167 - INFO -   PREMATURE VENTRICULAR COMPLEXES                    5        0.1%
+2026-04-11 19:56:04,167 - INFO -   LATERAL INFARCT                                    3        0.0%
+2026-04-11 19:56:04,167 - INFO -   ANTERIOR INFARCT                                   2        0.0%
+2026-04-11 19:56:04,167 - INFO -   PULMONARY DISEASE PATTERN                          2        0.0%
+2026-04-11 19:56:04,167 - INFO - ============================================================
+
+2026-04-11 19:56:04,178 - INFO - 
+============================================================
+2026-04-11 19:56:04,178 - INFO - Label stats [VAL]  --  766 samples total
+2026-04-11 19:56:04,178 - INFO -   Active labels : 30 / 150
+2026-04-11 19:56:04,178 - INFO -   Avg labels/sample: 1.37
+2026-04-11 19:56:04,184 - INFO -   Label                                              Count   Prevalence
+2026-04-11 19:56:04,184 - INFO -   ----------------------------------------------------------------------
+2026-04-11 19:56:04,184 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                     189      24.7%
+2026-04-11 19:56:04,186 - INFO -   SINUS TACHYCARDIA                                  187      24.4%
+2026-04-11 19:56:04,186 - INFO -   NORMAL ECG                                         137      17.9%
+2026-04-11 19:56:04,186 - INFO -   SINUS BRADYCARDIA                                  75       9.8%
+2026-04-11 19:56:04,186 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                      61       8.0%
+2026-04-11 19:56:04,188 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK               43       5.6%
+2026-04-11 19:56:04,188 - INFO -   otherwise normal ecg                               42       5.5%
+2026-04-11 19:56:04,188 - INFO -   PROLONGED QT                                       40       5.2%
+2026-04-11 19:56:04,190 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                     35       4.6%
+2026-04-11 19:56:04,190 - INFO -   RIGHT BUNDLE BRANCH BLOCK                          33       4.3%
+2026-04-11 19:56:04,190 - INFO -   LEFT VENTRICULAR HYPERTROPHY                       28       3.7%
+2026-04-11 19:56:04,190 - INFO -   EARLY REPOLARIZATION                               28       3.7%
+2026-04-11 19:56:04,191 - INFO -   RIGHT AXIS DEVIATION                               24       3.1%
+2026-04-11 19:56:04,191 - INFO -   RIGHT ATRIAL ENLARGEMENT                           20       2.6%
+2026-04-11 19:56:04,193 - INFO -   LOW VOLTAGE QRS                                    18       2.3%
+2026-04-11 19:56:04,193 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                   14       1.8%
+2026-04-11 19:56:04,194 - INFO -   LEFT ATRIAL ENLARGEMENT                            11       1.4%
+2026-04-11 19:56:04,194 - INFO -   WITH 1ST DEGREE AV BLOCK                           11       1.4%
+2026-04-11 19:56:04,194 - INFO -   WITH AV DISSOCIATION                               10       1.3%
+2026-04-11 19:56:04,194 - INFO -   LEFT AXIS DEVIATION                                8        1.0%
+2026-04-11 19:56:04,197 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                       8        1.0%
+2026-04-11 19:56:04,198 - INFO -   VENTRICULAR TACHYCARDIA                            5        0.7%
+2026-04-11 19:56:04,199 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                  5        0.7%
+2026-04-11 19:56:04,199 - INFO -   WITH COMPLETE HEART BLOCK                          5        0.7%
+2026-04-11 19:56:04,199 - INFO -   LEFT BUNDLE BRANCH BLOCK                           4        0.5%
+2026-04-11 19:56:04,199 - INFO -   WITH VARIABLE AV BLOCK                             3        0.4%
+2026-04-11 19:56:04,199 - INFO -   ANTEROSEPTAL INFARCT                               2        0.3%
+2026-04-11 19:56:04,199 - INFO -   ANTERIOR INFARCT                                   1        0.1%
+2026-04-11 19:56:04,199 - INFO -   ATRIAL FLUTTER                                     1        0.1%
+2026-04-11 19:56:04,199 - INFO -   WITH 2:1 AV CONDUCTION                             1        0.1%
+2026-04-11 19:56:04,199 - INFO - ============================================================
+
+2026-04-11 19:56:04,216 - INFO - 
+============================================================
+2026-04-11 19:56:04,218 - INFO - Label stats [TEST]  --  1941 samples total
+2026-04-11 19:56:04,218 - INFO -   Active labels : 38 / 150
+2026-04-11 19:56:04,218 - INFO -   Avg labels/sample: 1.38
+2026-04-11 19:56:04,218 - INFO -   Label                                              Count   Prevalence
+2026-04-11 19:56:04,218 - INFO -   ----------------------------------------------------------------------
+2026-04-11 19:56:04,218 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                     499      25.7%
+2026-04-11 19:56:04,218 - INFO -   SINUS TACHYCARDIA                                  478      24.6%
+2026-04-11 19:56:04,218 - INFO -   NORMAL ECG                                         342      17.6%
+2026-04-11 19:56:04,218 - INFO -   SINUS BRADYCARDIA                                  184      9.5%
+2026-04-11 19:56:04,218 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                      159      8.2%
+2026-04-11 19:56:04,218 - INFO -   otherwise normal ecg                               137      7.1%
+2026-04-11 19:56:04,218 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                     86       4.4%
+2026-04-11 19:56:04,218 - INFO -   PROLONGED QT                                       85       4.4%
+2026-04-11 19:56:04,218 - INFO -   LEFT VENTRICULAR HYPERTROPHY                       83       4.3%
+2026-04-11 19:56:04,226 - INFO -   RIGHT AXIS DEVIATION                               81       4.2%
+2026-04-11 19:56:04,226 - INFO -   RIGHT BUNDLE BRANCH BLOCK                          68       3.5%
+2026-04-11 19:56:04,226 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK               62       3.2%
+2026-04-11 19:56:04,226 - INFO -   LOW VOLTAGE QRS                                    50       2.6%
+2026-04-11 19:56:04,226 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                   46       2.4%
+2026-04-11 19:56:04,226 - INFO -   RIGHT ATRIAL ENLARGEMENT                           43       2.2%
+2026-04-11 19:56:04,226 - INFO -   EARLY REPOLARIZATION                               41       2.1%
+2026-04-11 19:56:04,231 - INFO -   LEFT ATRIAL ENLARGEMENT                            39       2.0%
+2026-04-11 19:56:04,231 - INFO -   WITH 1ST DEGREE AV BLOCK                           35       1.8%
+2026-04-11 19:56:04,231 - INFO -   VENTRICULAR TACHYCARDIA                            24       1.2%
+2026-04-11 19:56:04,234 - INFO -   WITH COMPLETE HEART BLOCK                          21       1.1%
+2026-04-11 19:56:04,234 - INFO -   WITH AV DISSOCIATION                               17       0.9%
+2026-04-11 19:56:04,234 - INFO -   WITH VARIABLE AV BLOCK                             16       0.8%
+2026-04-11 19:56:04,234 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                       15       0.8%
+2026-04-11 19:56:04,236 - INFO -   ATRIAL FLUTTER                                     14       0.7%
+2026-04-11 19:56:04,236 - INFO -   WITH 2:1 AV CONDUCTION                             14       0.7%
+2026-04-11 19:56:04,236 - INFO -   ATRIAL FIBRILLATION                                7        0.4%
+2026-04-11 19:56:04,236 - INFO -   FUSION COMPLEXES                                   7        0.4%
+2026-04-11 19:56:04,238 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                  7        0.4%
+2026-04-11 19:56:04,238 - INFO -   LEFT AXIS DEVIATION                                5        0.3%
+2026-04-11 19:56:04,238 - INFO -   LEFT BUNDLE BRANCH BLOCK                           5        0.3%
+2026-04-11 19:56:04,238 - INFO -   ANTERIOR INFARCT                                   2        0.1%
+2026-04-11 19:56:04,238 - INFO -   ANTEROSEPTAL INFARCT                               2        0.1%
+2026-04-11 19:56:04,240 - INFO -   INFERIOR INFARCT                                   2        0.1%
+2026-04-11 19:56:04,240 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                    2        0.1%
+2026-04-11 19:56:04,242 - INFO -   PREMATURE VENTRICULAR COMPLEXES                    1        0.1%
+2026-04-11 19:56:04,242 - INFO -   PREMATURE ATRIAL COMPLEXES                         1        0.1%
+2026-04-11 19:56:04,243 - INFO -   PULMONARY DISEASE PATTERN                          1        0.1%
+2026-04-11 19:56:04,243 - INFO -   ACUTE PERICARDITIS                                 1        0.1%
+2026-04-11 19:56:04,243 - INFO - ============================================================
+
+2026-04-11 19:56:04,249 - INFO - Train batches: 210 | Val batches:   24   | Test batches:  61
+2026-04-11 19:56:05,369 - INFO - Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-04-11 19:56:05,407 - INFO - LoRA injected | r=16, alpha=32.0, dropout=0.05 | targets: {'se_fc2', 'se_fc1'}
+2026-04-11 19:56:05,407 - INFO - Head unfrozen: dense
+2026-04-11 19:56:05,412 - INFO - 
+============================================================
+2026-04-11 19:56:05,414 - INFO - PEFT mode       : lora
+2026-04-11 19:56:05,414 - INFO - Total params    : 21,888,054
+2026-04-11 19:56:05,414 - INFO - Trainable params: 699,030  (3.19%)
+2026-04-11 19:56:05,414 - INFO - Frozen params   : 21,189,024  (96.81%)
+2026-04-11 19:56:05,414 - INFO - ============================================================
+
+2026-04-11 19:56:07,833 - INFO - Learning rate   : 0.0005
+2026-04-11 19:56:07,833 - INFO - Early stopping  : patience=10, min_delta=0.0001
+2026-04-11 19:56:07,833 - INFO - 
+============================================================
+2026-04-11 19:56:07,833 - INFO - Epoch 1/50

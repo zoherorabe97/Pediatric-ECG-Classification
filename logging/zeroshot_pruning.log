@@ -434,3 +434,1108 @@ VOLTAGE CRITERIA FOR LEFT VENTRICULAR HYPERTROPHY    805  0.493 0.137        1.0
 2026-03-14 16:31:36,716 - INFO - 
 Summary saved: ./res/zeroshot_pruning/pruning_summary.csv
 2026-03-14 16:31:36,716 - INFO - ============================================================
+2026-03-21 14:17:00,646 - INFO - Using device: cuda:0
+2026-03-21 14:17:00,647 - INFO - Number of classes: 150
+2026-03-21 14:17:00,647 - INFO - Loading ecg_df ...
+2026-03-21 14:17:41,198 - INFO - Using device: cuda:0
+2026-03-21 14:17:41,198 - INFO - Number of classes: 150
+2026-03-21 14:17:41,198 - INFO - Loading ecg_df ...
+2026-03-21 14:17:41,445 - INFO - Samples with at least one active label: 9397
+2026-03-21 14:17:41,448 - INFO - Total samples: 9397 | Batches: 294
+2026-03-21 14:17:41,932 - INFO - 
+============================================================
+2026-03-21 14:17:41,932 - INFO - BASELINE — unpruned model
+2026-03-21 14:17:41,932 - INFO - ============================================================
+2026-03-21 14:17:42,409 - INFO -   Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-03-21 14:17:42,787 - INFO - Baseline MACs  : 1.1727 G
+2026-03-21 14:17:42,787 - INFO - Baseline Params: 30.8190 M
+2026-03-21 14:20:09,006 - INFO - 
+Computing full evaluation: baseline
+2026-03-21 14:21:46,156 - INFO - 
+========================================================================
+2026-03-21 14:21:46,156 - INFO - [baseline] PER-CLASS AUROC  (39 valid / 150 total labels)
+2026-03-21 14:21:46,156 - INFO - ========================================================================
+2026-03-21 14:21:46,156 - INFO -   Label                                                 n_pos   AUROC  95% CI
+2026-03-21 14:21:46,156 - INFO -   ----------------------------------------------------------------------
+2026-03-21 14:21:46,161 - INFO -   LEFT AXIS DEVIATION                                      54   0.923  (0.902, 0.944)
+2026-03-21 14:21:46,161 - INFO -   PREMATURE ATRIAL COMPLEXES                                1   0.915  (0.910, 0.921)
+2026-03-21 14:21:46,161 - INFO -   RIGHT BUNDLE BRANCH BLOCK                               290   0.915  (0.904, 0.928)
+2026-03-21 14:21:46,161 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                          323   0.887  (0.873, 0.899)
+2026-03-21 14:21:46,162 - INFO -   RIGHT AXIS DEVIATION                                    335   0.880  (0.867, 0.892)
+2026-03-21 14:21:46,162 - INFO -   ANTEROSEPTAL INFARCT                                     14   0.857  (0.789, 0.913)
+2026-03-21 14:21:46,163 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                           693   0.834  (0.819, 0.847)
+2026-03-21 14:21:46,164 - INFO -   ANTERIOR INFARCT                                          5   0.798  (0.515, 0.993)
+2026-03-21 14:21:46,164 - INFO -   ATRIAL FLUTTER                                           31   0.753  (0.675, 0.815)
+2026-03-21 14:21:46,164 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK                    336   0.710  (0.682, 0.740)
+2026-03-21 14:21:46,165 - INFO -   PREMATURE VENTRICULAR COMPLEXES                           6   0.709  (0.395, 0.964)
+2026-03-21 14:21:46,165 - INFO -   ATRIAL FIBRILLATION                                      25   0.704  (0.583, 0.814)
+2026-03-21 14:21:46,166 - INFO -   LEFT VENTRICULAR HYPERTROPHY                            348   0.677  (0.650, 0.705)
+2026-03-21 14:21:46,166 - INFO -   LOW VOLTAGE QRS                                         277   0.672  (0.642, 0.705)
+2026-03-21 14:21:46,168 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                          19   0.668  (0.506, 0.777)
+2026-03-21 14:21:46,168 - INFO -   VENTRICULAR TACHYCARDIA                                  81   0.633  (0.576, 0.697)
+2026-03-21 14:21:46,169 - INFO -   SINUS BRADYCARDIA                                       935   0.628  (0.606, 0.647)
+2026-03-21 14:21:46,169 - INFO -   WITH COMPLETE HEART BLOCK                                67   0.610  (0.552, 0.663)
+2026-03-21 14:21:46,169 - INFO -   EARLY REPOLARIZATION                                    249   0.609  (0.576, 0.647)
+2026-03-21 14:21:46,170 - INFO -   PULMONARY DISEASE PATTERN                                 3   0.606  (0.191, 0.833)
+2026-03-21 14:21:46,170 - INFO -   FUSION COMPLEXES                                         27   0.600  (0.452, 0.708)
+2026-03-21 14:21:46,170 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                         2544   0.600  (0.588, 0.611)
+2026-03-21 14:21:46,170 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                             45   0.599  (0.517, 0.678)
+2026-03-21 14:21:46,171 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                        32   0.582  (0.517, 0.668)
+2026-03-21 14:21:46,172 - INFO -   NORMAL ECG                                             1759   0.550  (0.534, 0.563)
+2026-03-21 14:21:46,172 - INFO -   INFERIOR INFARCT                                          8   0.542  (0.308, 0.786)
+2026-03-21 14:21:46,172 - INFO -   otherwise normal ecg                                    621   0.540  (0.520, 0.570)
+2026-03-21 14:21:46,172 - INFO -   LEFT BUNDLE BRANCH BLOCK                                 18   0.515  (0.396, 0.638)
+2026-03-21 14:21:46,173 - INFO -   LEFT ATRIAL ENLARGEMENT                                 184   0.514  (0.476, 0.553)
+2026-03-21 14:21:46,173 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                        184   0.501  (0.462, 0.542)
+2026-03-21 14:21:46,173 - INFO -   LATERAL INFARCT                                           3   0.497  (0.399, 0.627)
+2026-03-21 14:21:46,173 - INFO -   PROLONGED QT                                            427   0.479  (0.450, 0.503)
+2026-03-21 14:21:46,173 - INFO -   RIGHT ATRIAL ENLARGEMENT                                201   0.449  (0.416, 0.484)
+2026-03-21 14:21:46,174 - INFO -   SINUS TACHYCARDIA                                      2210   0.413  (0.398, 0.426)
+2026-03-21 14:21:46,174 - INFO -   WITH 1ST DEGREE AV BLOCK                                123   0.395  (0.352, 0.443)
+2026-03-21 14:21:46,174 - INFO -   WITH AV DISSOCIATION                                     70   0.387  (0.310, 0.451)
+2026-03-21 14:21:46,174 - INFO -   WITH 2:1 AV CONDUCTION                                   40   0.348  (0.273, 0.424)
+2026-03-21 14:21:46,174 - INFO -   WITH VARIABLE AV BLOCK                                   67   0.335  (0.284, 0.388)
+2026-03-21 14:21:46,174 - INFO -   ACUTE PERICARDITIS                                        1   0.239  (0.233, 0.246)
+2026-03-21 14:21:46,176 - INFO - 
+========================================================================
+2026-03-21 14:21:46,176 - INFO - [baseline] SKIPPED LABELS — no positive samples (111 labels)
+2026-03-21 14:21:46,176 - INFO - ========================================================================
+2026-03-21 14:21:46,177 - INFO -   ABNORMAL ECG                                          all zeros — AUROC undefined
+2026-03-21 14:21:46,178 - INFO -   NORMAL SINUS RHYTHM                                   all zeros — AUROC undefined
+2026-03-21 14:21:46,178 - INFO -   SINUS RHYTHM                                          all zeros — AUROC undefined
+2026-03-21 14:21:46,179 - INFO -   BORDERLINE ECG                                        all zeros — AUROC undefined
+2026-03-21 14:21:46,179 - INFO -   SEPTAL INFARCT                                        all zeros — AUROC undefined
+2026-03-21 14:21:46,180 - INFO -   PREMATURE SUPRAVENTRICULAR COMPLEXES                  all zeros — AUROC undefined
+2026-03-21 14:21:46,180 - INFO -   NONSPECIFIC T WAVE ABNORMALITY NOW EVIDENT IN         all zeros — AUROC undefined
+2026-03-21 14:21:46,181 - INFO -   NONSPECIFIC T WAVE ABNORMALITY NO LONGER EVIDENT IN   all zeros — AUROC undefined
+2026-03-21 14:21:46,181 - INFO -   T WAVE INVERSION NOW EVIDENT IN                       all zeros — AUROC undefined
+2026-03-21 14:21:46,182 - INFO -   NONSPECIFIC ST ABNORMALITY                            all zeros — AUROC undefined
+2026-03-21 14:21:46,182 - INFO -   T WAVE INVERSION NO LONGER EVIDENT IN                 all zeros — AUROC undefined
+2026-03-21 14:21:46,183 - INFO -   WITH RAPID VENTRICULAR RESPONSE                       all zeros — AUROC undefined
+2026-03-21 14:21:46,183 - INFO -   QT HAS SHORTENED                                      all zeros — AUROC undefined
+2026-03-21 14:21:46,184 - INFO -   QT HAS LENGTHENED                                     all zeros — AUROC undefined
+2026-03-21 14:21:46,185 - INFO -   MARKED SINUS BRADYCARDIA                              all zeros — AUROC undefined
+2026-03-21 14:21:46,185 - INFO -   WITH SINUS ARRHYTHMIA                                 all zeros — AUROC undefined
+2026-03-21 14:21:46,185 - INFO -   NONSPECIFIC ST AND T WAVE ABNORMALITY                 all zeros — AUROC undefined
+2026-03-21 14:21:46,185 - INFO -   ECTOPIC ATRIAL RHYTHM                                 all zeros — AUROC undefined
+2026-03-21 14:21:46,185 - INFO -   UNDETERMINED RHYTHM                                   all zeros — AUROC undefined
+2026-03-21 14:21:46,186 - INFO -   RIGHTWARD AXIS                                        all zeros — AUROC undefined
+2026-03-21 14:21:46,186 - INFO -   ST NOW DEPRESSED IN                                   all zeros — AUROC undefined
+2026-03-21 14:21:46,186 - INFO -   WITH SHORT PR                                         all zeros — AUROC undefined
+2026-03-21 14:21:46,186 - INFO -   WITH MARKED SINUS ARRHYTHMIA                          all zeros — AUROC undefined
+2026-03-21 14:21:46,186 - INFO -   ST NO LONGER DEPRESSED IN                             all zeros — AUROC undefined
+2026-03-21 14:21:46,187 - INFO -   INVERTED T WAVES HAVE REPLACED NONSPECIFIC T WAVE ABNORMALITY IN  all zeros — AUROC undefined
+2026-03-21 14:21:46,187 - INFO -   NON-SPECIFIC CHANGE IN ST SEGMENT IN                  all zeros — AUROC undefined
+2026-03-21 14:21:46,187 - INFO -   NONSPECIFIC T WAVE ABNORMALITY HAS REPLACED INVERTED T WAVES IN  all zeros — AUROC undefined
+2026-03-21 14:21:46,187 - INFO -   JUNCTIONAL RHYTHM                                     all zeros — AUROC undefined
+2026-03-21 14:21:46,188 - INFO -   ELECTRONIC ATRIAL PACEMAKER                           all zeros — AUROC undefined
+2026-03-21 14:21:46,188 - INFO -   ABERRANT CONDUCTION                                   all zeros — AUROC undefined
+2026-03-21 14:21:46,188 - INFO -   ELECTRONIC VENTRICULAR PACEMAKER                      all zeros — AUROC undefined
+2026-03-21 14:21:46,188 - INFO -   T WAVE INVERSION LESS EVIDENT IN                      all zeros — AUROC undefined
+2026-03-21 14:21:46,188 - INFO -   ANTEROLATERAL INFARCT                                 all zeros — AUROC undefined
+2026-03-21 14:21:46,188 - INFO -   WITH REPOLARIZATION ABNORMALITY                       all zeros — AUROC undefined
+2026-03-21 14:21:46,189 - INFO -   RSR' OR QR PATTERN IN V1 SUGGESTS RIGHT VENTRICULAR CONDUCTION DELAY  all zeros — AUROC undefined
+2026-03-21 14:21:46,189 - INFO -   T WAVE INVERSION MORE EVIDENT IN                      all zeros — AUROC undefined
+2026-03-21 14:21:46,189 - INFO -   WIDE QRS RHYTHM                                       all zeros — AUROC undefined
+2026-03-21 14:21:46,189 - INFO -   WITH PREMATURE VENTRICULAR OR ABERRANTLY CONDUCTED COMPLEXES  all zeros — AUROC undefined
+2026-03-21 14:21:46,189 - INFO -   INCOMPLETE LEFT BUNDLE BRANCH BLOCK                   all zeros — AUROC undefined
+2026-03-21 14:21:46,189 - INFO -   VOLTAGE CRITERIA FOR LEFT VENTRICULAR HYPERTROPHY     all zeros — AUROC undefined
+2026-03-21 14:21:46,189 - INFO -   OR DIGITALIS EFFECT                                   all zeros — AUROC undefined
+2026-03-21 14:21:46,189 - INFO -   BIFASCICULAR BLOCK                                    all zeros — AUROC undefined
+2026-03-21 14:21:46,191 - INFO -   ST NO LONGER ELEVATED IN                              all zeros — AUROC undefined
+2026-03-21 14:21:46,191 - INFO -   WITH SLOW VENTRICULAR RESPONSE                        all zeros — AUROC undefined
+2026-03-21 14:21:46,191 - INFO -   ST ELEVATION NOW PRESENT IN                           all zeros — AUROC undefined
+2026-03-21 14:21:46,191 - INFO -   PREMATURE ECTOPIC COMPLEXES                           all zeros — AUROC undefined
+2026-03-21 14:21:46,191 - INFO -   T WAVE AMPLITUDE HAS DECREASED IN                     all zeros — AUROC undefined
+2026-03-21 14:21:46,192 - INFO -   WITH A COMPETING JUNCTIONAL PACEMAKER                 all zeros — AUROC undefined
+2026-03-21 14:21:46,192 - INFO -   RIGHT SUPERIOR AXIS DEVIATION                         all zeros — AUROC undefined
+2026-03-21 14:21:46,192 - INFO -   BIATRIAL ENLARGEMENT                                  all zeros — AUROC undefined
+2026-03-21 14:21:46,192 - INFO -   VENTRICULAR-PACED RHYTHM                              all zeros — AUROC undefined
+2026-03-21 14:21:46,192 - INFO -   ATRIAL-PACED RHYTHM                                   all zeros — AUROC undefined
+2026-03-21 14:21:46,193 - INFO -   T WAVE AMPLITUDE HAS INCREASED IN                     all zeros — AUROC undefined
+2026-03-21 14:21:46,193 - INFO -   WITH QRS WIDENING                                     all zeros — AUROC undefined
+2026-03-21 14:21:46,193 - INFO -   WITH PROLONGED AV CONDUCTION                          all zeros — AUROC undefined
+2026-03-21 14:21:46,193 - INFO -   WITH QRS WIDENING AND REPOLARIZATION ABNORMALITY      all zeros — AUROC undefined
+2026-03-21 14:21:46,193 - INFO -   ATRIAL-SENSED VENTRICULAR-PACED RHYTHM                all zeros — AUROC undefined
+2026-03-21 14:21:46,193 - INFO -   AV SEQUENTIAL OR DUAL CHAMBER ELECTRONIC PACEMAKER    all zeros — AUROC undefined
+2026-03-21 14:21:46,194 - INFO -   ACUTE MI / STEMI                                      all zeros — AUROC undefined
+2026-03-21 14:21:46,194 - INFO -   INFERIOR-POSTERIOR INFARCT                            all zeros — AUROC undefined
+2026-03-21 14:21:46,194 - INFO -   NONSPECIFIC INTRAVENTRICULAR CONDUCTION DELAY         all zeros — AUROC undefined
+2026-03-21 14:21:46,194 - INFO -   PREMATURE VENTRICULAR AND FUSION COMPLEXES            all zeros — AUROC undefined
+2026-03-21 14:21:46,194 - INFO -   IN A PATTERN OF BIGEMINY                              all zeros — AUROC undefined
+2026-03-21 14:21:46,194 - INFO -   AV DUAL-PACED RHYTHM                                  all zeros — AUROC undefined
+2026-03-21 14:21:46,195 - INFO -   VENTRICULAR-PACED COMPLEXES                           all zeros — AUROC undefined
+2026-03-21 14:21:46,195 - INFO -   WIDE QRS TACHYCARDIA                                  all zeros — AUROC undefined
+2026-03-21 14:21:46,195 - INFO -   RSR' PATTERN IN V1                                    all zeros — AUROC undefined
+2026-03-21 14:21:46,196 - INFO -   ST LESS DEPRESSED IN                                  all zeros — AUROC undefined
+2026-03-21 14:21:46,197 - INFO -   ST MORE DEPRESSED IN                                  all zeros — AUROC undefined
+2026-03-21 14:21:46,197 - INFO -   ANTEROLATERAL LEADS                                   all zeros — AUROC undefined
+2026-03-21 14:21:46,197 - INFO -   ELECTRONIC DEMAND PACING                              all zeros — AUROC undefined
+2026-03-21 14:21:46,197 - INFO -   RBBB AND LEFT ANTERIOR FASCICULAR BLOCK               all zeros — AUROC undefined
+2026-03-21 14:21:46,198 - INFO -   LATERAL INJURY PATTERN                                all zeros — AUROC undefined
+2026-03-21 14:21:46,198 - INFO -   BIVENTRICULAR PACEMAKER DETECTED                      all zeros — AUROC undefined
+2026-03-21 14:21:46,198 - INFO -   SUSPECT UNSPECIFIED PACEMAKER FAILURE                 all zeros — AUROC undefined
+2026-03-21 14:21:46,199 - INFO -   WOLFF-PARKINSON-WHITE                                 all zeros — AUROC undefined
+2026-03-21 14:21:46,199 - INFO -   INFERIOR INJURY PATTERN                               all zeros — AUROC undefined
+2026-03-21 14:21:46,199 - INFO -   CONSIDER RIGHT VENTRICULAR INVOLVEMENT IN ACUTE INFERIOR INFARCT  all zeros — AUROC undefined
+2026-03-21 14:21:46,199 - INFO -   ST ELEVATION HAS REPLACED ST DEPRESSION IN            all zeros — AUROC undefined
+2026-03-21 14:21:46,200 - INFO -   NONSPECIFIC INTRAVENTRICULAR BLOCK                    all zeros — AUROC undefined
+2026-03-21 14:21:46,201 - INFO -   MASKED BY FASCICULAR BLOCK                            all zeros — AUROC undefined
+2026-03-21 14:21:46,201 - INFO -   PEDIATRIC ECG ANALYSIS                                all zeros — AUROC undefined
+2026-03-21 14:21:46,202 - INFO -   BLOCKED                                               all zeros — AUROC undefined
+2026-03-21 14:21:46,202 - INFO -   WITH UNDETERMINED RHYTHM IRREGULARITY                 all zeros — AUROC undefined
+2026-03-21 14:21:46,202 - INFO -   LEFTWARD AXIS                                         all zeros — AUROC undefined
+2026-03-21 14:21:46,203 - INFO -   WITH 2ND DEGREE SA BLOCK MOBITZ I                     all zeros — AUROC undefined
+2026-03-21 14:21:46,203 - INFO -   ACUTE                                                 all zeros — AUROC undefined
+2026-03-21 14:21:46,203 - INFO -   ABNORMAL LEFT AXIS DEVIATION                          all zeros — AUROC undefined
+2026-03-21 14:21:46,203 - INFO -   NO P-WAVES FOUND                                      all zeros — AUROC undefined
+2026-03-21 14:21:46,204 - INFO -   ST LESS ELEVATED IN                                   all zeros — AUROC undefined
+2026-03-21 14:21:46,204 - INFO -   WITH RETROGRADE CONDUCTION                            all zeros — AUROC undefined
+2026-03-21 14:21:46,204 - INFO -   ST MORE ELEVATED IN                                   all zeros — AUROC undefined
+2026-03-21 14:21:46,204 - INFO -   JUNCTIONAL BRADYCARDIA                                all zeros — AUROC undefined
+2026-03-21 14:21:46,205 - INFO -   ANTERIOR INJURY PATTERN                               all zeros — AUROC undefined
+2026-03-21 14:21:46,205 - INFO -   ACUTE MI                                              all zeros — AUROC undefined
+2026-03-21 14:21:46,205 - INFO -   POSTERIOR INFARCT                                     all zeros — AUROC undefined
+2026-03-21 14:21:46,205 - INFO -   IDIOVENTRICULAR RHYTHM                                all zeros — AUROC undefined
+2026-03-21 14:21:46,206 - INFO -   WITH 2ND DEGREE SA BLOCK MOBITZ II                    all zeros — AUROC undefined
+2026-03-21 14:21:46,206 - INFO -   R IN AVL                                              all zeros — AUROC undefined
+2026-03-21 14:21:46,206 - INFO -   SINUS/ATRIAL CAPTURE                                  all zeros — AUROC undefined
+2026-03-21 14:21:46,206 - INFO -   AV DUAL-PACED COMPLEXES                               all zeros — AUROC undefined
+2026-03-21 14:21:46,206 - INFO -   INFEROLATERAL INJURY PATTERN                          all zeros — AUROC undefined
+2026-03-21 14:21:46,207 - INFO -   RBBB AND LEFT POSTERIOR FASCICULAR BLOCK              all zeros — AUROC undefined
+2026-03-21 14:21:46,207 - INFO -   ANTEROLATERAL INJURY PATTERN                          all zeros — AUROC undefined
+2026-03-21 14:21:46,207 - INFO -   ATRIAL-PACED COMPLEXES                                all zeros — AUROC undefined
+2026-03-21 14:21:46,207 - INFO -   WITH SINUS PAUSE                                      all zeros — AUROC undefined
+2026-03-21 14:21:46,208 - INFO -   BIVENTRICULAR HYPERTROPHY                             all zeros — AUROC undefined
+2026-03-21 14:21:46,208 - INFO -   ABNORMAL RIGHT AXIS DEVIATION                         all zeros — AUROC undefined
+2026-03-21 14:21:46,208 - INFO -   SUPRAVENTRICULAR COMPLEXES                            all zeros — AUROC undefined
+2026-03-21 14:21:46,208 - INFO -   WITH 2ND DEGREE AV BLOCK MOBITZ I                     all zeros — AUROC undefined
+2026-03-21 14:21:46,208 - INFO -   MULTIFOCAL ATRIAL TACHYCARDIA                         all zeros — AUROC undefined
+2026-03-21 14:21:46,209 - INFO - 
+[baseline] Valid labels : 39 / 150
+2026-03-21 14:21:46,209 - INFO - [baseline] Skipped      : 111 / 150  (all-zero, AUROC undefined)
+2026-03-21 14:21:46,209 - INFO - [baseline] Macro AUROC  : 0.6173  (averaged over 39 valid labels)
+2026-03-21 14:21:46,209 - INFO - [baseline] Results saved: ./res/zeroshot_pruning/baseline_results.csv
+2026-03-21 14:21:46,209 - INFO - [baseline] Skipped saved: ./res/zeroshot_pruning/baseline_skipped_labels.csv
+2026-03-21 14:21:46,209 - INFO - Plotting ROC curves for: baseline
+2026-03-21 14:21:46,897 - INFO - ROC curve plot saved: ./res/zeroshot_pruning/baseline_roc_curves.png
+2026-03-21 14:21:46,898 - INFO - 
+============================================================
+2026-03-21 14:21:46,899 - INFO - PRUNING RATIO 0.1  |  method: magnitude
+2026-03-21 14:21:46,899 - INFO - ============================================================
+2026-03-21 14:21:47,827 - INFO -   Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-03-21 14:21:47,933 - INFO -   Ignoring 1 final classifier layer(s)
+2026-03-21 14:21:48,031 - INFO - Applying pruning step (zero-shot — no training data) ...
+2026-03-21 14:21:48,601 - INFO -   MACs  : 1.1727 G → 1.1498 G  (1.96% reduced)
+2026-03-21 14:21:48,601 - INFO -   Params: 30.8190 M → 30.5433 M  (0.89% reduced)
+2026-03-21 14:23:41,860 - INFO - 
+Computing full evaluation: pruned_magnitude_ratio10
+2026-03-21 14:25:19,809 - INFO - 
+========================================================================
+2026-03-21 14:25:19,810 - INFO - [pruned_magnitude_ratio10] PER-CLASS AUROC  (39 valid / 150 total labels)
+2026-03-21 14:25:19,810 - INFO - ========================================================================
+2026-03-21 14:25:19,810 - INFO -   Label                                                 n_pos   AUROC  95% CI
+2026-03-21 14:25:19,811 - INFO -   ----------------------------------------------------------------------
+2026-03-21 14:25:19,811 - INFO -   PREMATURE ATRIAL COMPLEXES                                1   0.999  (0.999, 1.000)
+2026-03-21 14:25:19,812 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                           693   0.838  (0.826, 0.850)
+2026-03-21 14:25:19,812 - INFO -   RIGHT BUNDLE BRANCH BLOCK                               290   0.766  (0.743, 0.788)
+2026-03-21 14:25:19,813 - INFO -   LEFT BUNDLE BRANCH BLOCK                                 18   0.745  (0.573, 0.869)
+2026-03-21 14:25:19,813 - INFO -   LOW VOLTAGE QRS                                         277   0.724  (0.697, 0.756)
+2026-03-21 14:25:19,814 - INFO -   RIGHT AXIS DEVIATION                                    335   0.713  (0.689, 0.741)
+2026-03-21 14:25:19,814 - INFO -   FUSION COMPLEXES                                         27   0.680  (0.591, 0.771)
+2026-03-21 14:25:19,815 - INFO -   ACUTE PERICARDITIS                                        1   0.679  (0.672, 0.687)
+2026-03-21 14:25:19,815 - INFO -   WITH VARIABLE AV BLOCK                                   67   0.679  (0.627, 0.736)
+2026-03-21 14:25:19,815 - INFO -   LEFT VENTRICULAR HYPERTROPHY                            348   0.667  (0.640, 0.690)
+2026-03-21 14:25:19,816 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK                    336   0.656  (0.632, 0.687)
+2026-03-21 14:25:19,816 - INFO -   PULMONARY DISEASE PATTERN                                 3   0.634  (0.531, 0.781)
+2026-03-21 14:25:19,817 - INFO -   PREMATURE VENTRICULAR COMPLEXES                           6   0.620  (0.330, 0.892)
+2026-03-21 14:25:19,817 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                        32   0.597  (0.504, 0.701)
+2026-03-21 14:25:19,818 - INFO -   LATERAL INFARCT                                           3   0.592  (0.453, 0.836)
+2026-03-21 14:25:19,818 - INFO -   INFERIOR INFARCT                                          8   0.591  (0.360, 0.799)
+2026-03-21 14:25:19,818 - INFO -   WITH AV DISSOCIATION                                     70   0.582  (0.510, 0.634)
+2026-03-21 14:25:19,819 - INFO -   ATRIAL FIBRILLATION                                      25   0.579  (0.454, 0.655)
+2026-03-21 14:25:19,819 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                        184   0.576  (0.536, 0.619)
+2026-03-21 14:25:19,819 - INFO -   ANTERIOR INFARCT                                          5   0.575  (0.043, 0.917)
+2026-03-21 14:25:19,820 - INFO -   RIGHT ATRIAL ENLARGEMENT                                201   0.564  (0.531, 0.603)
+2026-03-21 14:25:19,820 - INFO -   ANTEROSEPTAL INFARCT                                     14   0.547  (0.394, 0.729)
+2026-03-21 14:25:19,821 - INFO -   otherwise normal ecg                                    621   0.533  (0.512, 0.555)
+2026-03-21 14:25:19,821 - INFO -   EARLY REPOLARIZATION                                    249   0.519  (0.487, 0.555)
+2026-03-21 14:25:19,822 - INFO -   LEFT AXIS DEVIATION                                      54   0.513  (0.459, 0.601)
+2026-03-21 14:25:19,822 - INFO -   PROLONGED QT                                            427   0.508  (0.483, 0.535)
+2026-03-21 14:25:19,824 - INFO -   NORMAL ECG                                             1759   0.502  (0.490, 0.519)
+2026-03-21 14:25:19,824 - INFO -   LEFT ATRIAL ENLARGEMENT                                 184   0.494  (0.442, 0.547)
+2026-03-21 14:25:19,825 - INFO -   ATRIAL FLUTTER                                           31   0.493  (0.412, 0.585)
+2026-03-21 14:25:19,825 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                          323   0.490  (0.458, 0.520)
+2026-03-21 14:25:19,825 - INFO -   WITH 2:1 AV CONDUCTION                                   40   0.488  (0.421, 0.574)
+2026-03-21 14:25:19,826 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                         2544   0.471  (0.460, 0.486)
+2026-03-21 14:25:19,826 - INFO -   WITH 1ST DEGREE AV BLOCK                                123   0.471  (0.428, 0.539)
+2026-03-21 14:25:19,827 - INFO -   WITH COMPLETE HEART BLOCK                                67   0.449  (0.390, 0.527)
+2026-03-21 14:25:19,827 - INFO -   SINUS TACHYCARDIA                                      2210   0.441  (0.428, 0.454)
+2026-03-21 14:25:19,828 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                             45   0.413  (0.318, 0.494)
+2026-03-21 14:25:19,828 - INFO -   SINUS BRADYCARDIA                                       935   0.298  (0.281, 0.315)
+2026-03-21 14:25:19,828 - INFO -   VENTRICULAR TACHYCARDIA                                  81   0.262  (0.212, 0.296)
+2026-03-21 14:25:19,829 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                          19   0.157  (0.079, 0.224)
+2026-03-21 14:25:19,829 - INFO - 
+========================================================================
+2026-03-21 14:25:19,829 - INFO - [pruned_magnitude_ratio10] SKIPPED LABELS — no positive samples (111 labels)
+2026-03-21 14:25:19,829 - INFO - ========================================================================
+2026-03-21 14:25:19,830 - INFO -   ABNORMAL ECG                                          all zeros — AUROC undefined
+2026-03-21 14:25:19,830 - INFO -   NORMAL SINUS RHYTHM                                   all zeros — AUROC undefined
+2026-03-21 14:25:19,831 - INFO -   SINUS RHYTHM                                          all zeros — AUROC undefined
+2026-03-21 14:25:19,831 - INFO -   BORDERLINE ECG                                        all zeros — AUROC undefined
+2026-03-21 14:25:19,831 - INFO -   SEPTAL INFARCT                                        all zeros — AUROC undefined
+2026-03-21 14:25:19,832 - INFO -   PREMATURE SUPRAVENTRICULAR COMPLEXES                  all zeros — AUROC undefined
+2026-03-21 14:25:19,832 - INFO -   NONSPECIFIC T WAVE ABNORMALITY NOW EVIDENT IN         all zeros — AUROC undefined
+2026-03-21 14:25:19,832 - INFO -   NONSPECIFIC T WAVE ABNORMALITY NO LONGER EVIDENT IN   all zeros — AUROC undefined
+2026-03-21 14:25:19,833 - INFO -   T WAVE INVERSION NOW EVIDENT IN                       all zeros — AUROC undefined
+2026-03-21 14:25:19,833 - INFO -   NONSPECIFIC ST ABNORMALITY                            all zeros — AUROC undefined
+2026-03-21 14:25:19,833 - INFO -   T WAVE INVERSION NO LONGER EVIDENT IN                 all zeros — AUROC undefined
+2026-03-21 14:25:19,834 - INFO -   WITH RAPID VENTRICULAR RESPONSE                       all zeros — AUROC undefined
+2026-03-21 14:25:19,834 - INFO -   QT HAS SHORTENED                                      all zeros — AUROC undefined
+2026-03-21 14:25:19,834 - INFO -   QT HAS LENGTHENED                                     all zeros — AUROC undefined
+2026-03-21 14:25:19,835 - INFO -   MARKED SINUS BRADYCARDIA                              all zeros — AUROC undefined
+2026-03-21 14:25:19,835 - INFO -   WITH SINUS ARRHYTHMIA                                 all zeros — AUROC undefined
+2026-03-21 14:25:19,835 - INFO -   NONSPECIFIC ST AND T WAVE ABNORMALITY                 all zeros — AUROC undefined
+2026-03-21 14:25:19,836 - INFO -   ECTOPIC ATRIAL RHYTHM                                 all zeros — AUROC undefined
+2026-03-21 14:25:19,836 - INFO -   UNDETERMINED RHYTHM                                   all zeros — AUROC undefined
+2026-03-21 14:25:19,837 - INFO -   RIGHTWARD AXIS                                        all zeros — AUROC undefined
+2026-03-21 14:25:19,837 - INFO -   ST NOW DEPRESSED IN                                   all zeros — AUROC undefined
+2026-03-21 14:25:19,837 - INFO -   WITH SHORT PR                                         all zeros — AUROC undefined
+2026-03-21 14:25:19,838 - INFO -   WITH MARKED SINUS ARRHYTHMIA                          all zeros — AUROC undefined
+2026-03-21 14:25:19,838 - INFO -   ST NO LONGER DEPRESSED IN                             all zeros — AUROC undefined
+2026-03-21 14:25:19,838 - INFO -   INVERTED T WAVES HAVE REPLACED NONSPECIFIC T WAVE ABNORMALITY IN  all zeros — AUROC undefined
+2026-03-21 14:25:19,839 - INFO -   NON-SPECIFIC CHANGE IN ST SEGMENT IN                  all zeros — AUROC undefined
+2026-03-21 14:25:19,839 - INFO -   NONSPECIFIC T WAVE ABNORMALITY HAS REPLACED INVERTED T WAVES IN  all zeros — AUROC undefined
+2026-03-21 14:25:19,839 - INFO -   JUNCTIONAL RHYTHM                                     all zeros — AUROC undefined
+2026-03-21 14:25:19,840 - INFO -   ELECTRONIC ATRIAL PACEMAKER                           all zeros — AUROC undefined
+2026-03-21 14:25:19,840 - INFO -   ABERRANT CONDUCTION                                   all zeros — AUROC undefined
+2026-03-21 14:25:19,840 - INFO -   ELECTRONIC VENTRICULAR PACEMAKER                      all zeros — AUROC undefined
+2026-03-21 14:25:19,841 - INFO -   T WAVE INVERSION LESS EVIDENT IN                      all zeros — AUROC undefined
+2026-03-21 14:25:19,841 - INFO -   ANTEROLATERAL INFARCT                                 all zeros — AUROC undefined
+2026-03-21 14:25:19,841 - INFO -   WITH REPOLARIZATION ABNORMALITY                       all zeros — AUROC undefined
+2026-03-21 14:25:19,842 - INFO -   RSR' OR QR PATTERN IN V1 SUGGESTS RIGHT VENTRICULAR CONDUCTION DELAY  all zeros — AUROC undefined
+2026-03-21 14:25:19,842 - INFO -   T WAVE INVERSION MORE EVIDENT IN                      all zeros — AUROC undefined
+2026-03-21 14:25:19,842 - INFO -   WIDE QRS RHYTHM                                       all zeros — AUROC undefined
+2026-03-21 14:25:19,842 - INFO -   WITH PREMATURE VENTRICULAR OR ABERRANTLY CONDUCTED COMPLEXES  all zeros — AUROC undefined
+2026-03-21 14:25:19,843 - INFO -   INCOMPLETE LEFT BUNDLE BRANCH BLOCK                   all zeros — AUROC undefined
+2026-03-21 14:25:19,844 - INFO -   VOLTAGE CRITERIA FOR LEFT VENTRICULAR HYPERTROPHY     all zeros — AUROC undefined
+2026-03-21 14:25:19,845 - INFO -   OR DIGITALIS EFFECT                                   all zeros — AUROC undefined
+2026-03-21 14:25:19,845 - INFO -   BIFASCICULAR BLOCK                                    all zeros — AUROC undefined
+2026-03-21 14:25:19,846 - INFO -   ST NO LONGER ELEVATED IN                              all zeros — AUROC undefined
+2026-03-21 14:25:19,846 - INFO -   WITH SLOW VENTRICULAR RESPONSE                        all zeros — AUROC undefined
+2026-03-21 14:25:19,847 - INFO -   ST ELEVATION NOW PRESENT IN                           all zeros — AUROC undefined
+2026-03-21 14:25:19,847 - INFO -   PREMATURE ECTOPIC COMPLEXES                           all zeros — AUROC undefined
+2026-03-21 14:25:19,848 - INFO -   T WAVE AMPLITUDE HAS DECREASED IN                     all zeros — AUROC undefined
+2026-03-21 14:25:19,848 - INFO -   WITH A COMPETING JUNCTIONAL PACEMAKER                 all zeros — AUROC undefined
+2026-03-21 14:25:19,849 - INFO -   RIGHT SUPERIOR AXIS DEVIATION                         all zeros — AUROC undefined
+2026-03-21 14:25:19,849 - INFO -   BIATRIAL ENLARGEMENT                                  all zeros — AUROC undefined
+2026-03-21 14:25:19,849 - INFO -   VENTRICULAR-PACED RHYTHM                              all zeros — AUROC undefined
+2026-03-21 14:25:19,850 - INFO -   ATRIAL-PACED RHYTHM                                   all zeros — AUROC undefined
+2026-03-21 14:25:19,850 - INFO -   T WAVE AMPLITUDE HAS INCREASED IN                     all zeros — AUROC undefined
+2026-03-21 14:25:19,850 - INFO -   WITH QRS WIDENING                                     all zeros — AUROC undefined
+2026-03-21 14:25:19,851 - INFO -   WITH PROLONGED AV CONDUCTION                          all zeros — AUROC undefined
+2026-03-21 14:25:19,851 - INFO -   WITH QRS WIDENING AND REPOLARIZATION ABNORMALITY      all zeros — AUROC undefined
+2026-03-21 14:25:19,852 - INFO -   ATRIAL-SENSED VENTRICULAR-PACED RHYTHM                all zeros — AUROC undefined
+2026-03-21 14:25:19,852 - INFO -   AV SEQUENTIAL OR DUAL CHAMBER ELECTRONIC PACEMAKER    all zeros — AUROC undefined
+2026-03-21 14:25:19,852 - INFO -   ACUTE MI / STEMI                                      all zeros — AUROC undefined
+2026-03-21 14:25:19,853 - INFO -   INFERIOR-POSTERIOR INFARCT                            all zeros — AUROC undefined
+2026-03-21 14:25:19,853 - INFO -   NONSPECIFIC INTRAVENTRICULAR CONDUCTION DELAY         all zeros — AUROC undefined
+2026-03-21 14:25:19,853 - INFO -   PREMATURE VENTRICULAR AND FUSION COMPLEXES            all zeros — AUROC undefined
+2026-03-21 14:25:19,853 - INFO -   IN A PATTERN OF BIGEMINY                              all zeros — AUROC undefined
+2026-03-21 14:25:19,854 - INFO -   AV DUAL-PACED RHYTHM                                  all zeros — AUROC undefined
+2026-03-21 14:25:19,854 - INFO -   VENTRICULAR-PACED COMPLEXES                           all zeros — AUROC undefined
+2026-03-21 14:25:19,855 - INFO -   WIDE QRS TACHYCARDIA                                  all zeros — AUROC undefined
+2026-03-21 14:25:19,855 - INFO -   RSR' PATTERN IN V1                                    all zeros — AUROC undefined
+2026-03-21 14:25:19,855 - INFO -   ST LESS DEPRESSED IN                                  all zeros — AUROC undefined
+2026-03-21 14:25:19,856 - INFO -   ST MORE DEPRESSED IN                                  all zeros — AUROC undefined
+2026-03-21 14:25:19,856 - INFO -   ANTEROLATERAL LEADS                                   all zeros — AUROC undefined
+2026-03-21 14:25:19,857 - INFO -   ELECTRONIC DEMAND PACING                              all zeros — AUROC undefined
+2026-03-21 14:25:19,857 - INFO -   RBBB AND LEFT ANTERIOR FASCICULAR BLOCK               all zeros — AUROC undefined
+2026-03-21 14:25:19,858 - INFO -   LATERAL INJURY PATTERN                                all zeros — AUROC undefined
+2026-03-21 14:25:19,858 - INFO -   BIVENTRICULAR PACEMAKER DETECTED                      all zeros — AUROC undefined
+2026-03-21 14:25:19,858 - INFO -   SUSPECT UNSPECIFIED PACEMAKER FAILURE                 all zeros — AUROC undefined
+2026-03-21 14:25:19,859 - INFO -   WOLFF-PARKINSON-WHITE                                 all zeros — AUROC undefined
+2026-03-21 14:25:19,859 - INFO -   INFERIOR INJURY PATTERN                               all zeros — AUROC undefined
+2026-03-21 14:25:19,859 - INFO -   CONSIDER RIGHT VENTRICULAR INVOLVEMENT IN ACUTE INFERIOR INFARCT  all zeros — AUROC undefined
+2026-03-21 14:25:19,859 - INFO -   ST ELEVATION HAS REPLACED ST DEPRESSION IN            all zeros — AUROC undefined
+2026-03-21 14:25:19,860 - INFO -   NONSPECIFIC INTRAVENTRICULAR BLOCK                    all zeros — AUROC undefined
+2026-03-21 14:25:19,860 - INFO -   MASKED BY FASCICULAR BLOCK                            all zeros — AUROC undefined
+2026-03-21 14:25:19,860 - INFO -   PEDIATRIC ECG ANALYSIS                                all zeros — AUROC undefined
+2026-03-21 14:25:19,861 - INFO -   BLOCKED                                               all zeros — AUROC undefined
+2026-03-21 14:25:19,861 - INFO -   WITH UNDETERMINED RHYTHM IRREGULARITY                 all zeros — AUROC undefined
+2026-03-21 14:25:19,862 - INFO -   LEFTWARD AXIS                                         all zeros — AUROC undefined
+2026-03-21 14:25:19,862 - INFO -   WITH 2ND DEGREE SA BLOCK MOBITZ I                     all zeros — AUROC undefined
+2026-03-21 14:25:19,862 - INFO -   ACUTE                                                 all zeros — AUROC undefined
+2026-03-21 14:25:19,862 - INFO -   ABNORMAL LEFT AXIS DEVIATION                          all zeros — AUROC undefined
+2026-03-21 14:25:19,862 - INFO -   NO P-WAVES FOUND                                      all zeros — AUROC undefined
+2026-03-21 14:25:19,863 - INFO -   ST LESS ELEVATED IN                                   all zeros — AUROC undefined
+2026-03-21 14:25:19,863 - INFO -   WITH RETROGRADE CONDUCTION                            all zeros — AUROC undefined
+2026-03-21 14:25:19,863 - INFO -   ST MORE ELEVATED IN                                   all zeros — AUROC undefined
+2026-03-21 14:25:19,863 - INFO -   JUNCTIONAL BRADYCARDIA                                all zeros — AUROC undefined
+2026-03-21 14:25:19,864 - INFO -   ANTERIOR INJURY PATTERN                               all zeros — AUROC undefined
+2026-03-21 14:25:19,864 - INFO -   ACUTE MI                                              all zeros — AUROC undefined
+2026-03-21 14:25:19,864 - INFO -   POSTERIOR INFARCT                                     all zeros — AUROC undefined
+2026-03-21 14:25:19,864 - INFO -   IDIOVENTRICULAR RHYTHM                                all zeros — AUROC undefined
+2026-03-21 14:25:19,864 - INFO -   WITH 2ND DEGREE SA BLOCK MOBITZ II                    all zeros — AUROC undefined
+2026-03-21 14:25:19,865 - INFO -   R IN AVL                                              all zeros — AUROC undefined
+2026-03-21 14:25:19,865 - INFO -   SINUS/ATRIAL CAPTURE                                  all zeros — AUROC undefined
+2026-03-21 14:25:19,865 - INFO -   AV DUAL-PACED COMPLEXES                               all zeros — AUROC undefined
+2026-03-21 14:25:19,865 - INFO -   INFEROLATERAL INJURY PATTERN                          all zeros — AUROC undefined
+2026-03-21 14:25:19,865 - INFO -   RBBB AND LEFT POSTERIOR FASCICULAR BLOCK              all zeros — AUROC undefined
+2026-03-21 14:25:19,866 - INFO -   ANTEROLATERAL INJURY PATTERN                          all zeros — AUROC undefined
+2026-03-21 14:25:19,866 - INFO -   ATRIAL-PACED COMPLEXES                                all zeros — AUROC undefined
+2026-03-21 14:25:19,866 - INFO -   WITH SINUS PAUSE                                      all zeros — AUROC undefined
+2026-03-21 14:25:19,867 - INFO -   BIVENTRICULAR HYPERTROPHY                             all zeros — AUROC undefined
+2026-03-21 14:25:19,867 - INFO -   ABNORMAL RIGHT AXIS DEVIATION                         all zeros — AUROC undefined
+2026-03-21 14:25:19,867 - INFO -   SUPRAVENTRICULAR COMPLEXES                            all zeros — AUROC undefined
+2026-03-21 14:25:19,867 - INFO -   WITH 2ND DEGREE AV BLOCK MOBITZ I                     all zeros — AUROC undefined
+2026-03-21 14:25:19,867 - INFO -   MULTIFOCAL ATRIAL TACHYCARDIA                         all zeros — AUROC undefined
+2026-03-21 14:25:19,867 - INFO - 
+[pruned_magnitude_ratio10] Valid labels : 39 / 150
+2026-03-21 14:25:19,868 - INFO - [pruned_magnitude_ratio10] Skipped      : 111 / 150  (all-zero, AUROC undefined)
+2026-03-21 14:25:19,868 - INFO - [pruned_magnitude_ratio10] Macro AUROC  : 0.5668  (averaged over 39 valid labels)
+2026-03-21 14:25:19,868 - INFO - [pruned_magnitude_ratio10] Results saved: ./res/zeroshot_pruning/pruned_magnitude_ratio10_results.csv
+2026-03-21 14:25:19,868 - INFO - [pruned_magnitude_ratio10] Skipped saved: ./res/zeroshot_pruning/pruned_magnitude_ratio10_skipped_labels.csv
+2026-03-21 14:25:19,868 - INFO - Plotting ROC curves for: pruned_magnitude_ratio10
+2026-03-21 14:25:20,441 - INFO - ROC curve plot saved: ./res/zeroshot_pruning/pruned_magnitude_ratio10_roc_curves.png
+2026-03-21 14:25:20,442 - INFO -   Macro AUROC: 0.6173 → 0.5668  (Δ -0.0505)
+2026-03-21 14:25:20,687 - INFO -   Saved: ./res/zeroshot_pruning/pruned_magnitude_ratio0.1_auroc0.5668.pth
+2026-03-21 14:25:20,688 - INFO - 
+============================================================
+2026-03-21 14:25:20,688 - INFO - PRUNING RATIO 0.2  |  method: magnitude
+2026-03-21 14:25:20,688 - INFO - ============================================================
+2026-03-21 14:25:21,555 - INFO -   Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-03-21 14:25:21,686 - INFO -   Ignoring 1 final classifier layer(s)
+2026-03-21 14:25:21,771 - INFO - Applying pruning step (zero-shot — no training data) ...
+2026-03-21 14:25:22,243 - INFO -   MACs  : 1.1727 G → 1.1268 G  (3.91% reduced)
+2026-03-21 14:25:22,243 - INFO -   Params: 30.8190 M → 30.2676 M  (1.79% reduced)
+2026-03-21 14:27:14,707 - INFO - 
+Computing full evaluation: pruned_magnitude_ratio20
+2026-03-21 14:29:27,459 - INFO - 
+========================================================================
+2026-03-21 14:29:27,460 - INFO - [pruned_magnitude_ratio20] PER-CLASS AUROC  (39 valid / 150 total labels)
+2026-03-21 14:29:27,460 - INFO - ========================================================================
+2026-03-21 14:29:27,461 - INFO -   Label                                                 n_pos   AUROC  95% CI
+2026-03-21 14:29:27,461 - INFO -   ----------------------------------------------------------------------
+2026-03-21 14:29:27,463 - INFO -   PREMATURE ATRIAL COMPLEXES                                1   0.984  (0.982, 0.987)
+2026-03-21 14:29:27,463 - INFO -   LEFT BUNDLE BRANCH BLOCK                                 18   0.817  (0.758, 0.865)
+2026-03-21 14:29:27,464 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                           693   0.777  (0.758, 0.792)
+2026-03-21 14:29:27,464 - INFO -   RIGHT AXIS DEVIATION                                    335   0.774  (0.750, 0.795)
+2026-03-21 14:29:27,465 - INFO -   LEFT AXIS DEVIATION                                      54   0.766  (0.713, 0.811)
+2026-03-21 14:29:27,465 - INFO -   ANTERIOR INFARCT                                          5   0.718  (0.436, 0.961)
+2026-03-21 14:29:27,465 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                          19   0.709  (0.597, 0.802)
+2026-03-21 14:29:27,465 - INFO -   FUSION COMPLEXES                                         27   0.693  (0.604, 0.775)
+2026-03-21 14:29:27,465 - INFO -   ANTEROSEPTAL INFARCT                                     14   0.685  (0.521, 0.819)
+2026-03-21 14:29:27,465 - INFO -   LOW VOLTAGE QRS                                         277   0.665  (0.638, 0.696)
+2026-03-21 14:29:27,465 - INFO -   ATRIAL FIBRILLATION                                      25   0.665  (0.525, 0.767)
+2026-03-21 14:29:27,465 - INFO -   WITH AV DISSOCIATION                                     70   0.658  (0.603, 0.717)
+2026-03-21 14:29:27,465 - INFO -   RIGHT ATRIAL ENLARGEMENT                                201   0.604  (0.564, 0.641)
+2026-03-21 14:29:27,465 - INFO -   WITH COMPLETE HEART BLOCK                                67   0.575  (0.497, 0.654)
+2026-03-21 14:29:27,465 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                         2544   0.565  (0.555, 0.576)
+2026-03-21 14:29:27,465 - INFO -   PULMONARY DISEASE PATTERN                                 3   0.557  (0.099, 0.922)
+2026-03-21 14:29:27,465 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                        184   0.556  (0.525, 0.594)
+2026-03-21 14:29:27,465 - INFO -   PREMATURE VENTRICULAR COMPLEXES                           6   0.554  (0.265, 0.835)
+2026-03-21 14:29:27,465 - INFO -   ATRIAL FLUTTER                                           31   0.542  (0.467, 0.624)
+2026-03-21 14:29:27,465 - INFO -   otherwise normal ecg                                    621   0.529  (0.508, 0.550)
+2026-03-21 14:29:27,465 - INFO -   PROLONGED QT                                            427   0.503  (0.476, 0.532)
+2026-03-21 14:29:27,465 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                             45   0.502  (0.401, 0.593)
+2026-03-21 14:29:27,465 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                          323   0.495  (0.456, 0.535)
+2026-03-21 14:29:27,465 - INFO -   LEFT VENTRICULAR HYPERTROPHY                            348   0.486  (0.454, 0.517)
+2026-03-21 14:29:27,465 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                        32   0.477  (0.400, 0.557)
+2026-03-21 14:29:27,472 - INFO -   EARLY REPOLARIZATION                                    249   0.476  (0.439, 0.506)
+2026-03-21 14:29:27,472 - INFO -   LEFT ATRIAL ENLARGEMENT                                 184   0.475  (0.444, 0.519)
+2026-03-21 14:29:27,473 - INFO -   WITH 1ST DEGREE AV BLOCK                                123   0.468  (0.428, 0.527)
+2026-03-21 14:29:27,474 - INFO -   SINUS TACHYCARDIA                                      2210   0.463  (0.451, 0.478)
+2026-03-21 14:29:27,474 - INFO -   NORMAL ECG                                             1759   0.453  (0.439, 0.468)
+2026-03-21 14:29:27,475 - INFO -   VENTRICULAR TACHYCARDIA                                  81   0.442  (0.380, 0.489)
+2026-03-21 14:29:27,475 - INFO -   WITH VARIABLE AV BLOCK                                   67   0.431  (0.361, 0.489)
+2026-03-21 14:29:27,476 - INFO -   WITH 2:1 AV CONDUCTION                                   40   0.415  (0.345, 0.504)
+2026-03-21 14:29:27,477 - INFO -   SINUS BRADYCARDIA                                       935   0.411  (0.391, 0.426)
+2026-03-21 14:29:27,477 - INFO -   LATERAL INFARCT                                           3   0.375  (0.173, 0.519)
+2026-03-21 14:29:27,477 - INFO -   INFERIOR INFARCT                                          8   0.373  (0.221, 0.537)
+2026-03-21 14:29:27,478 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK                    336   0.341  (0.309, 0.370)
+2026-03-21 14:29:27,478 - INFO -   ACUTE PERICARDITIS                                        1   0.334  (0.324, 0.344)
+2026-03-21 14:29:27,478 - INFO -   RIGHT BUNDLE BRANCH BLOCK                               290   0.216  (0.193, 0.239)
+2026-03-21 14:29:27,479 - INFO - 
+========================================================================
+2026-03-21 14:29:27,479 - INFO - [pruned_magnitude_ratio20] SKIPPED LABELS — no positive samples (111 labels)
+2026-03-21 14:29:27,479 - INFO - ========================================================================
+2026-03-21 14:29:27,479 - INFO -   ABNORMAL ECG                                          all zeros — AUROC undefined
+2026-03-21 14:29:27,479 - INFO -   NORMAL SINUS RHYTHM                                   all zeros — AUROC undefined
+2026-03-21 14:29:27,481 - INFO -   SINUS RHYTHM                                          all zeros — AUROC undefined
+2026-03-21 14:29:27,481 - INFO -   BORDERLINE ECG                                        all zeros — AUROC undefined
+2026-03-21 14:29:27,481 - INFO -   SEPTAL INFARCT                                        all zeros — AUROC undefined
+2026-03-21 14:29:27,481 - INFO -   PREMATURE SUPRAVENTRICULAR COMPLEXES                  all zeros — AUROC undefined
+2026-03-21 14:29:27,481 - INFO -   NONSPECIFIC T WAVE ABNORMALITY NOW EVIDENT IN         all zeros — AUROC undefined
+2026-03-21 14:29:27,482 - INFO -   NONSPECIFIC T WAVE ABNORMALITY NO LONGER EVIDENT IN   all zeros — AUROC undefined
+2026-03-21 14:29:27,482 - INFO -   T WAVE INVERSION NOW EVIDENT IN                       all zeros — AUROC undefined
+2026-03-21 14:29:27,482 - INFO -   NONSPECIFIC ST ABNORMALITY                            all zeros — AUROC undefined
+2026-03-21 14:29:27,483 - INFO -   T WAVE INVERSION NO LONGER EVIDENT IN                 all zeros — AUROC undefined
+2026-03-21 14:29:27,483 - INFO -   WITH RAPID VENTRICULAR RESPONSE                       all zeros — AUROC undefined
+2026-03-21 14:29:27,483 - INFO -   QT HAS SHORTENED                                      all zeros — AUROC undefined
+2026-03-21 14:29:27,483 - INFO -   QT HAS LENGTHENED                                     all zeros — AUROC undefined
+2026-03-21 14:29:27,484 - INFO -   MARKED SINUS BRADYCARDIA                              all zeros — AUROC undefined
+2026-03-21 14:29:27,484 - INFO -   WITH SINUS ARRHYTHMIA                                 all zeros — AUROC undefined
+2026-03-21 14:29:27,484 - INFO -   NONSPECIFIC ST AND T WAVE ABNORMALITY                 all zeros — AUROC undefined
+2026-03-21 14:29:27,486 - INFO -   ECTOPIC ATRIAL RHYTHM                                 all zeros — AUROC undefined
+2026-03-21 14:29:27,486 - INFO -   UNDETERMINED RHYTHM                                   all zeros — AUROC undefined
+2026-03-21 14:29:27,486 - INFO -   RIGHTWARD AXIS                                        all zeros — AUROC undefined
+2026-03-21 14:29:27,486 - INFO -   ST NOW DEPRESSED IN                                   all zeros — AUROC undefined
+2026-03-21 14:29:27,487 - INFO -   WITH SHORT PR                                         all zeros — AUROC undefined
+2026-03-21 14:29:27,487 - INFO -   WITH MARKED SINUS ARRHYTHMIA                          all zeros — AUROC undefined
+2026-03-21 14:29:27,487 - INFO -   ST NO LONGER DEPRESSED IN                             all zeros — AUROC undefined
+2026-03-21 14:29:27,487 - INFO -   INVERTED T WAVES HAVE REPLACED NONSPECIFIC T WAVE ABNORMALITY IN  all zeros — AUROC undefined
+2026-03-21 14:29:27,487 - INFO -   NON-SPECIFIC CHANGE IN ST SEGMENT IN                  all zeros — AUROC undefined
+2026-03-21 14:29:27,487 - INFO -   NONSPECIFIC T WAVE ABNORMALITY HAS REPLACED INVERTED T WAVES IN  all zeros — AUROC undefined
+2026-03-21 14:29:27,487 - INFO -   JUNCTIONAL RHYTHM                                     all zeros — AUROC undefined
+2026-03-21 14:29:27,487 - INFO -   ELECTRONIC ATRIAL PACEMAKER                           all zeros — AUROC undefined
+2026-03-21 14:29:27,487 - INFO -   ABERRANT CONDUCTION                                   all zeros — AUROC undefined
+2026-03-21 14:29:27,489 - INFO -   ELECTRONIC VENTRICULAR PACEMAKER                      all zeros — AUROC undefined
+2026-03-21 14:29:27,489 - INFO -   T WAVE INVERSION LESS EVIDENT IN                      all zeros — AUROC undefined
+2026-03-21 14:29:27,489 - INFO -   ANTEROLATERAL INFARCT                                 all zeros — AUROC undefined
+2026-03-21 14:29:27,490 - INFO -   WITH REPOLARIZATION ABNORMALITY                       all zeros — AUROC undefined
+2026-03-21 14:29:27,490 - INFO -   RSR' OR QR PATTERN IN V1 SUGGESTS RIGHT VENTRICULAR CONDUCTION DELAY  all zeros — AUROC undefined
+2026-03-21 14:29:27,491 - INFO -   T WAVE INVERSION MORE EVIDENT IN                      all zeros — AUROC undefined
+2026-03-21 14:29:27,491 - INFO -   WIDE QRS RHYTHM                                       all zeros — AUROC undefined
+2026-03-21 14:29:27,491 - INFO -   WITH PREMATURE VENTRICULAR OR ABERRANTLY CONDUCTED COMPLEXES  all zeros — AUROC undefined
+2026-03-21 14:29:27,492 - INFO -   INCOMPLETE LEFT BUNDLE BRANCH BLOCK                   all zeros — AUROC undefined
+2026-03-21 14:29:27,492 - INFO -   VOLTAGE CRITERIA FOR LEFT VENTRICULAR HYPERTROPHY     all zeros — AUROC undefined
+2026-03-21 14:29:27,493 - INFO -   OR DIGITALIS EFFECT                                   all zeros — AUROC undefined
+2026-03-21 14:29:27,494 - INFO -   BIFASCICULAR BLOCK                                    all zeros — AUROC undefined
+2026-03-21 14:29:27,494 - INFO -   ST NO LONGER ELEVATED IN                              all zeros — AUROC undefined
+2026-03-21 14:29:27,494 - INFO -   WITH SLOW VENTRICULAR RESPONSE                        all zeros — AUROC undefined
+2026-03-21 14:29:27,495 - INFO -   ST ELEVATION NOW PRESENT IN                           all zeros — AUROC undefined
+2026-03-21 14:29:27,495 - INFO -   PREMATURE ECTOPIC COMPLEXES                           all zeros — AUROC undefined
+2026-03-21 14:29:27,496 - INFO -   T WAVE AMPLITUDE HAS DECREASED IN                     all zeros — AUROC undefined
+2026-03-21 14:29:27,496 - INFO -   WITH A COMPETING JUNCTIONAL PACEMAKER                 all zeros — AUROC undefined
+2026-03-21 14:29:27,496 - INFO -   RIGHT SUPERIOR AXIS DEVIATION                         all zeros — AUROC undefined
+2026-03-21 14:29:27,496 - INFO -   BIATRIAL ENLARGEMENT                                  all zeros — AUROC undefined
+2026-03-21 14:29:27,496 - INFO -   VENTRICULAR-PACED RHYTHM                              all zeros — AUROC undefined
+2026-03-21 14:29:27,497 - INFO -   ATRIAL-PACED RHYTHM                                   all zeros — AUROC undefined
+2026-03-21 14:29:27,497 - INFO -   T WAVE AMPLITUDE HAS INCREASED IN                     all zeros — AUROC undefined
+2026-03-21 14:29:27,498 - INFO -   WITH QRS WIDENING                                     all zeros — AUROC undefined
+2026-03-21 14:29:27,498 - INFO -   WITH PROLONGED AV CONDUCTION                          all zeros — AUROC undefined
+2026-03-21 14:29:27,498 - INFO -   WITH QRS WIDENING AND REPOLARIZATION ABNORMALITY      all zeros — AUROC undefined
+2026-03-21 14:29:27,498 - INFO -   ATRIAL-SENSED VENTRICULAR-PACED RHYTHM                all zeros — AUROC undefined
+2026-03-21 14:29:27,499 - INFO -   AV SEQUENTIAL OR DUAL CHAMBER ELECTRONIC PACEMAKER    all zeros — AUROC undefined
+2026-03-21 14:29:27,499 - INFO -   ACUTE MI / STEMI                                      all zeros — AUROC undefined
+2026-03-21 14:29:27,499 - INFO -   INFERIOR-POSTERIOR INFARCT                            all zeros — AUROC undefined
+2026-03-21 14:29:27,499 - INFO -   NONSPECIFIC INTRAVENTRICULAR CONDUCTION DELAY         all zeros — AUROC undefined
+2026-03-21 14:29:27,499 - INFO -   PREMATURE VENTRICULAR AND FUSION COMPLEXES            all zeros — AUROC undefined
+2026-03-21 14:29:27,501 - INFO -   IN A PATTERN OF BIGEMINY                              all zeros — AUROC undefined
+2026-03-21 14:29:27,501 - INFO -   AV DUAL-PACED RHYTHM                                  all zeros — AUROC undefined
+2026-03-21 14:29:27,501 - INFO -   VENTRICULAR-PACED COMPLEXES                           all zeros — AUROC undefined
+2026-03-21 14:29:27,502 - INFO -   WIDE QRS TACHYCARDIA                                  all zeros — AUROC undefined
+2026-03-21 14:29:27,502 - INFO -   RSR' PATTERN IN V1                                    all zeros — AUROC undefined
+2026-03-21 14:29:27,502 - INFO -   ST LESS DEPRESSED IN                                  all zeros — AUROC undefined
+2026-03-21 14:29:27,503 - INFO -   ST MORE DEPRESSED IN                                  all zeros — AUROC undefined
+2026-03-21 14:29:27,503 - INFO -   ANTEROLATERAL LEADS                                   all zeros — AUROC undefined
+2026-03-21 14:29:27,503 - INFO -   ELECTRONIC DEMAND PACING                              all zeros — AUROC undefined
+2026-03-21 14:29:27,503 - INFO -   RBBB AND LEFT ANTERIOR FASCICULAR BLOCK               all zeros — AUROC undefined
+2026-03-21 14:29:27,504 - INFO -   LATERAL INJURY PATTERN                                all zeros — AUROC undefined
+2026-03-21 14:29:27,504 - INFO -   BIVENTRICULAR PACEMAKER DETECTED                      all zeros — AUROC undefined
+2026-03-21 14:29:27,504 - INFO -   SUSPECT UNSPECIFIED PACEMAKER FAILURE                 all zeros — AUROC undefined
+2026-03-21 14:29:27,504 - INFO -   WOLFF-PARKINSON-WHITE                                 all zeros — AUROC undefined
+2026-03-21 14:29:27,505 - INFO -   INFERIOR INJURY PATTERN                               all zeros — AUROC undefined
+2026-03-21 14:29:27,505 - INFO -   CONSIDER RIGHT VENTRICULAR INVOLVEMENT IN ACUTE INFERIOR INFARCT  all zeros — AUROC undefined
+2026-03-21 14:29:27,505 - INFO -   ST ELEVATION HAS REPLACED ST DEPRESSION IN            all zeros — AUROC undefined
+2026-03-21 14:29:27,506 - INFO -   NONSPECIFIC INTRAVENTRICULAR BLOCK                    all zeros — AUROC undefined
+2026-03-21 14:29:27,506 - INFO -   MASKED BY FASCICULAR BLOCK                            all zeros — AUROC undefined
+2026-03-21 14:29:27,506 - INFO -   PEDIATRIC ECG ANALYSIS                                all zeros — AUROC undefined
+2026-03-21 14:29:27,507 - INFO -   BLOCKED                                               all zeros — AUROC undefined
+2026-03-21 14:29:27,507 - INFO -   WITH UNDETERMINED RHYTHM IRREGULARITY                 all zeros — AUROC undefined
+2026-03-21 14:29:27,508 - INFO -   LEFTWARD AXIS                                         all zeros — AUROC undefined
+2026-03-21 14:29:27,508 - INFO -   WITH 2ND DEGREE SA BLOCK MOBITZ I                     all zeros — AUROC undefined
+2026-03-21 14:29:27,508 - INFO -   ACUTE                                                 all zeros — AUROC undefined
+2026-03-21 14:29:27,509 - INFO -   ABNORMAL LEFT AXIS DEVIATION                          all zeros — AUROC undefined
+2026-03-21 14:29:27,509 - INFO -   NO P-WAVES FOUND                                      all zeros — AUROC undefined
+2026-03-21 14:29:27,509 - INFO -   ST LESS ELEVATED IN                                   all zeros — AUROC undefined
+2026-03-21 14:29:27,510 - INFO -   WITH RETROGRADE CONDUCTION                            all zeros — AUROC undefined
+2026-03-21 14:29:27,510 - INFO -   ST MORE ELEVATED IN                                   all zeros — AUROC undefined
+2026-03-21 14:29:27,510 - INFO -   JUNCTIONAL BRADYCARDIA                                all zeros — AUROC undefined
+2026-03-21 14:29:27,511 - INFO -   ANTERIOR INJURY PATTERN                               all zeros — AUROC undefined
+2026-03-21 14:29:27,511 - INFO -   ACUTE MI                                              all zeros — AUROC undefined
+2026-03-21 14:29:27,511 - INFO -   POSTERIOR INFARCT                                     all zeros — AUROC undefined
+2026-03-21 14:29:27,512 - INFO -   IDIOVENTRICULAR RHYTHM                                all zeros — AUROC undefined
+2026-03-21 14:29:27,512 - INFO -   WITH 2ND DEGREE SA BLOCK MOBITZ II                    all zeros — AUROC undefined
+2026-03-21 14:29:27,512 - INFO -   R IN AVL                                              all zeros — AUROC undefined
+2026-03-21 14:29:27,513 - INFO -   SINUS/ATRIAL CAPTURE                                  all zeros — AUROC undefined
+2026-03-21 14:29:27,513 - INFO -   AV DUAL-PACED COMPLEXES                               all zeros — AUROC undefined
+2026-03-21 14:29:27,513 - INFO -   INFEROLATERAL INJURY PATTERN                          all zeros — AUROC undefined
+2026-03-21 14:29:27,514 - INFO -   RBBB AND LEFT POSTERIOR FASCICULAR BLOCK              all zeros — AUROC undefined
+2026-03-21 14:29:27,514 - INFO -   ANTEROLATERAL INJURY PATTERN                          all zeros — AUROC undefined
+2026-03-21 14:29:27,514 - INFO -   ATRIAL-PACED COMPLEXES                                all zeros — AUROC undefined
+2026-03-21 14:29:27,514 - INFO -   WITH SINUS PAUSE                                      all zeros — AUROC undefined
+2026-03-21 14:29:27,516 - INFO -   BIVENTRICULAR HYPERTROPHY                             all zeros — AUROC undefined
+2026-03-21 14:29:27,516 - INFO -   ABNORMAL RIGHT AXIS DEVIATION                         all zeros — AUROC undefined
+2026-03-21 14:29:27,516 - INFO -   SUPRAVENTRICULAR COMPLEXES                            all zeros — AUROC undefined
+2026-03-21 14:29:27,517 - INFO -   WITH 2ND DEGREE AV BLOCK MOBITZ I                     all zeros — AUROC undefined
+2026-03-21 14:29:27,517 - INFO -   MULTIFOCAL ATRIAL TACHYCARDIA                         all zeros — AUROC undefined
+2026-03-21 14:29:27,517 - INFO - 
+[pruned_magnitude_ratio20] Valid labels : 39 / 150
+2026-03-21 14:29:27,517 - INFO - [pruned_magnitude_ratio20] Skipped      : 111 / 150  (all-zero, AUROC undefined)
+2026-03-21 14:29:27,517 - INFO - [pruned_magnitude_ratio20] Macro AUROC  : 0.5520  (averaged over 39 valid labels)
+2026-03-21 14:29:27,517 - INFO - [pruned_magnitude_ratio20] Results saved: ./res/zeroshot_pruning/pruned_magnitude_ratio20_results.csv
+2026-03-21 14:29:27,517 - INFO - [pruned_magnitude_ratio20] Skipped saved: ./res/zeroshot_pruning/pruned_magnitude_ratio20_skipped_labels.csv
+2026-03-21 14:29:27,517 - INFO - Plotting ROC curves for: pruned_magnitude_ratio20
+2026-03-21 14:29:28,062 - INFO - ROC curve plot saved: ./res/zeroshot_pruning/pruned_magnitude_ratio20_roc_curves.png
+2026-03-21 14:29:28,062 - INFO -   Macro AUROC: 0.6173 → 0.5520  (Δ -0.0652)
+2026-03-21 14:29:28,288 - INFO -   Saved: ./res/zeroshot_pruning/pruned_magnitude_ratio0.2_auroc0.5520.pth
+2026-03-21 14:29:28,288 - INFO - 
+============================================================
+2026-03-21 14:29:28,288 - INFO - PRUNING RATIO 0.3  |  method: magnitude
+2026-03-21 14:29:28,288 - INFO - ============================================================
+2026-03-21 14:29:29,218 - INFO -   Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-03-21 14:29:29,334 - INFO -   Ignoring 1 final classifier layer(s)
+2026-03-21 14:29:29,424 - INFO - Applying pruning step (zero-shot — no training data) ...
+2026-03-21 14:29:29,779 - INFO -   MACs  : 1.1727 G → 1.1039 G  (5.87% reduced)
+2026-03-21 14:29:29,781 - INFO -   Params: 30.8190 M → 29.9919 M  (2.68% reduced)
+2026-03-21 14:33:01,963 - INFO - 
+Computing full evaluation: pruned_magnitude_ratio30
+2026-03-21 14:35:47,729 - INFO - 
+========================================================================
+2026-03-21 14:35:47,730 - INFO - [pruned_magnitude_ratio30] PER-CLASS AUROC  (39 valid / 150 total labels)
+2026-03-21 14:35:47,730 - INFO - ========================================================================
+2026-03-21 14:35:47,730 - INFO -   Label                                                 n_pos   AUROC  95% CI
+2026-03-21 14:35:47,731 - INFO -   ----------------------------------------------------------------------
+2026-03-21 14:35:47,731 - INFO -   PREMATURE ATRIAL COMPLEXES                                1   0.797  (0.787, 0.805)
+2026-03-21 14:35:47,732 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                           693   0.760  (0.741, 0.774)
+2026-03-21 14:35:47,733 - INFO -   LATERAL INFARCT                                           3   0.701  (0.540, 0.805)
+2026-03-21 14:35:47,733 - INFO -   FUSION COMPLEXES                                         27   0.669  (0.589, 0.759)
+2026-03-21 14:35:47,734 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                          19   0.667  (0.540, 0.762)
+2026-03-21 14:35:47,734 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                          323   0.666  (0.634, 0.695)
+2026-03-21 14:35:47,735 - INFO -   ATRIAL FLUTTER                                           31   0.664  (0.575, 0.756)
+2026-03-21 14:35:47,735 - INFO -   ANTERIOR INFARCT                                          5   0.658  (0.476, 0.851)
+2026-03-21 14:35:47,736 - INFO -   ACUTE PERICARDITIS                                        1   0.650  (0.643, 0.660)
+2026-03-21 14:35:47,736 - INFO -   ATRIAL FIBRILLATION                                      25   0.642  (0.545, 0.738)
+2026-03-21 14:35:47,737 - INFO -   WITH 2:1 AV CONDUCTION                                   40   0.583  (0.520, 0.670)
+2026-03-21 14:35:47,737 - INFO -   otherwise normal ecg                                    621   0.580  (0.559, 0.600)
+2026-03-21 14:35:47,738 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                         2544   0.574  (0.564, 0.590)
+2026-03-21 14:35:47,738 - INFO -   WITH AV DISSOCIATION                                     70   0.567  (0.490, 0.648)
+2026-03-21 14:35:47,739 - INFO -   WITH COMPLETE HEART BLOCK                                67   0.562  (0.510, 0.626)
+2026-03-21 14:35:47,739 - INFO -   EARLY REPOLARIZATION                                    249   0.561  (0.533, 0.595)
+2026-03-21 14:35:47,740 - INFO -   RIGHT AXIS DEVIATION                                    335   0.556  (0.520, 0.580)
+2026-03-21 14:35:47,741 - INFO -   PROLONGED QT                                            427   0.540  (0.512, 0.563)
+2026-03-21 14:35:47,741 - INFO -   LOW VOLTAGE QRS                                         277   0.536  (0.511, 0.567)
+2026-03-21 14:35:47,742 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                        32   0.526  (0.442, 0.633)
+2026-03-21 14:35:47,742 - INFO -   LEFT BUNDLE BRANCH BLOCK                                 18   0.525  (0.419, 0.649)
+2026-03-21 14:35:47,742 - INFO -   PREMATURE VENTRICULAR COMPLEXES                           6   0.524  (0.357, 0.705)
+2026-03-21 14:35:47,743 - INFO -   NORMAL ECG                                             1759   0.500  (0.486, 0.513)
+2026-03-21 14:35:47,744 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                        184   0.500  (0.465, 0.536)
+2026-03-21 14:35:47,744 - INFO -   ANTEROSEPTAL INFARCT                                     14   0.496  (0.383, 0.596)
+2026-03-21 14:35:47,745 - INFO -   SINUS BRADYCARDIA                                       935   0.485  (0.467, 0.505)
+2026-03-21 14:35:47,745 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                             45   0.482  (0.389, 0.589)
+2026-03-21 14:35:47,746 - INFO -   LEFT AXIS DEVIATION                                      54   0.475  (0.397, 0.559)
+2026-03-21 14:35:47,746 - INFO -   WITH 1ST DEGREE AV BLOCK                                123   0.466  (0.425, 0.512)
+2026-03-21 14:35:47,747 - INFO -   RIGHT ATRIAL ENLARGEMENT                                201   0.463  (0.428, 0.506)
+2026-03-21 14:35:47,747 - INFO -   WITH VARIABLE AV BLOCK                                   67   0.455  (0.387, 0.514)
+2026-03-21 14:35:47,748 - INFO -   LEFT VENTRICULAR HYPERTROPHY                            348   0.446  (0.423, 0.472)
+2026-03-21 14:35:47,748 - INFO -   LEFT ATRIAL ENLARGEMENT                                 184   0.442  (0.400, 0.483)
+2026-03-21 14:35:47,749 - INFO -   VENTRICULAR TACHYCARDIA                                  81   0.431  (0.370, 0.499)
+2026-03-21 14:35:47,749 - INFO -   SINUS TACHYCARDIA                                      2210   0.413  (0.400, 0.427)
+2026-03-21 14:35:47,750 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK                    336   0.387  (0.354, 0.425)
+2026-03-21 14:35:47,750 - INFO -   INFERIOR INFARCT                                          8   0.381  (0.198, 0.568)
+2026-03-21 14:35:47,751 - INFO -   PULMONARY DISEASE PATTERN                                 3   0.306  (0.080, 0.497)
+2026-03-21 14:35:47,751 - INFO -   RIGHT BUNDLE BRANCH BLOCK                               290   0.246  (0.219, 0.271)
+2026-03-21 14:35:47,752 - INFO - 
+========================================================================
+2026-03-21 14:35:47,752 - INFO - [pruned_magnitude_ratio30] SKIPPED LABELS — no positive samples (111 labels)
+2026-03-21 14:35:47,752 - INFO - ========================================================================
+2026-03-21 14:35:47,753 - INFO -   ABNORMAL ECG                                          all zeros — AUROC undefined
+2026-03-21 14:35:47,754 - INFO -   NORMAL SINUS RHYTHM                                   all zeros — AUROC undefined
+2026-03-21 14:35:47,754 - INFO -   SINUS RHYTHM                                          all zeros — AUROC undefined
+2026-03-21 14:35:47,755 - INFO -   BORDERLINE ECG                                        all zeros — AUROC undefined
+2026-03-21 14:35:47,755 - INFO -   SEPTAL INFARCT                                        all zeros — AUROC undefined
+2026-03-21 14:35:47,756 - INFO -   PREMATURE SUPRAVENTRICULAR COMPLEXES                  all zeros — AUROC undefined
+2026-03-21 14:35:47,757 - INFO -   NONSPECIFIC T WAVE ABNORMALITY NOW EVIDENT IN         all zeros — AUROC undefined
+2026-03-21 14:35:47,757 - INFO -   NONSPECIFIC T WAVE ABNORMALITY NO LONGER EVIDENT IN   all zeros — AUROC undefined
+2026-03-21 14:35:47,758 - INFO -   T WAVE INVERSION NOW EVIDENT IN                       all zeros — AUROC undefined
+2026-03-21 14:35:47,758 - INFO -   NONSPECIFIC ST ABNORMALITY                            all zeros — AUROC undefined
+2026-03-21 14:35:47,759 - INFO -   T WAVE INVERSION NO LONGER EVIDENT IN                 all zeros — AUROC undefined
+2026-03-21 14:35:47,759 - INFO -   WITH RAPID VENTRICULAR RESPONSE                       all zeros — AUROC undefined
+2026-03-21 14:35:47,760 - INFO -   QT HAS SHORTENED                                      all zeros — AUROC undefined
+2026-03-21 14:35:47,760 - INFO -   QT HAS LENGTHENED                                     all zeros — AUROC undefined
+2026-03-21 14:35:47,761 - INFO -   MARKED SINUS BRADYCARDIA                              all zeros — AUROC undefined
+2026-03-21 14:35:47,762 - INFO -   WITH SINUS ARRHYTHMIA                                 all zeros — AUROC undefined
+2026-03-21 14:35:47,762 - INFO -   NONSPECIFIC ST AND T WAVE ABNORMALITY                 all zeros — AUROC undefined
+2026-03-21 14:35:47,763 - INFO -   ECTOPIC ATRIAL RHYTHM                                 all zeros — AUROC undefined
+2026-03-21 14:35:47,763 - INFO -   UNDETERMINED RHYTHM                                   all zeros — AUROC undefined
+2026-03-21 14:35:47,764 - INFO -   RIGHTWARD AXIS                                        all zeros — AUROC undefined
+2026-03-21 14:35:47,764 - INFO -   ST NOW DEPRESSED IN                                   all zeros — AUROC undefined
+2026-03-21 14:35:47,765 - INFO -   WITH SHORT PR                                         all zeros — AUROC undefined
+2026-03-21 14:35:47,765 - INFO -   WITH MARKED SINUS ARRHYTHMIA                          all zeros — AUROC undefined
+2026-03-21 14:35:47,766 - INFO -   ST NO LONGER DEPRESSED IN                             all zeros — AUROC undefined
+2026-03-21 14:35:47,766 - INFO -   INVERTED T WAVES HAVE REPLACED NONSPECIFIC T WAVE ABNORMALITY IN  all zeros — AUROC undefined
+2026-03-21 14:35:47,767 - INFO -   NON-SPECIFIC CHANGE IN ST SEGMENT IN                  all zeros — AUROC undefined
+2026-03-21 14:35:47,767 - INFO -   NONSPECIFIC T WAVE ABNORMALITY HAS REPLACED INVERTED T WAVES IN  all zeros — AUROC undefined
+2026-03-21 14:35:47,768 - INFO -   JUNCTIONAL RHYTHM                                     all zeros — AUROC undefined
+2026-03-21 14:35:47,769 - INFO -   ELECTRONIC ATRIAL PACEMAKER                           all zeros — AUROC undefined
+2026-03-21 14:35:47,769 - INFO -   ABERRANT CONDUCTION                                   all zeros — AUROC undefined
+2026-03-21 14:35:47,770 - INFO -   ELECTRONIC VENTRICULAR PACEMAKER                      all zeros — AUROC undefined
+2026-03-21 14:35:47,770 - INFO -   T WAVE INVERSION LESS EVIDENT IN                      all zeros — AUROC undefined
+2026-03-21 14:35:47,771 - INFO -   ANTEROLATERAL INFARCT                                 all zeros — AUROC undefined
+2026-03-21 14:35:47,772 - INFO -   WITH REPOLARIZATION ABNORMALITY                       all zeros — AUROC undefined
+2026-03-21 14:35:47,772 - INFO -   RSR' OR QR PATTERN IN V1 SUGGESTS RIGHT VENTRICULAR CONDUCTION DELAY  all zeros — AUROC undefined
+2026-03-21 14:35:47,773 - INFO -   T WAVE INVERSION MORE EVIDENT IN                      all zeros — AUROC undefined
+2026-03-21 14:35:47,773 - INFO -   WIDE QRS RHYTHM                                       all zeros — AUROC undefined
+2026-03-21 14:35:47,774 - INFO -   WITH PREMATURE VENTRICULAR OR ABERRANTLY CONDUCTED COMPLEXES  all zeros — AUROC undefined
+2026-03-21 14:35:47,774 - INFO -   INCOMPLETE LEFT BUNDLE BRANCH BLOCK                   all zeros — AUROC undefined
+2026-03-21 14:35:47,775 - INFO -   VOLTAGE CRITERIA FOR LEFT VENTRICULAR HYPERTROPHY     all zeros — AUROC undefined
+2026-03-21 14:35:47,775 - INFO -   OR DIGITALIS EFFECT                                   all zeros — AUROC undefined
+2026-03-21 14:35:47,776 - INFO -   BIFASCICULAR BLOCK                                    all zeros — AUROC undefined
+2026-03-21 14:35:47,777 - INFO -   ST NO LONGER ELEVATED IN                              all zeros — AUROC undefined
+2026-03-21 14:35:47,777 - INFO -   WITH SLOW VENTRICULAR RESPONSE                        all zeros — AUROC undefined
+2026-03-21 14:35:47,778 - INFO -   ST ELEVATION NOW PRESENT IN                           all zeros — AUROC undefined
+2026-03-21 14:35:47,778 - INFO -   PREMATURE ECTOPIC COMPLEXES                           all zeros — AUROC undefined
+2026-03-21 14:35:47,778 - INFO -   T WAVE AMPLITUDE HAS DECREASED IN                     all zeros — AUROC undefined
+2026-03-21 14:35:47,779 - INFO -   WITH A COMPETING JUNCTIONAL PACEMAKER                 all zeros — AUROC undefined
+2026-03-21 14:35:47,779 - INFO -   RIGHT SUPERIOR AXIS DEVIATION                         all zeros — AUROC undefined
+2026-03-21 14:35:47,780 - INFO -   BIATRIAL ENLARGEMENT                                  all zeros — AUROC undefined
+2026-03-21 14:35:47,780 - INFO -   VENTRICULAR-PACED RHYTHM                              all zeros — AUROC undefined
+2026-03-21 14:35:47,781 - INFO -   ATRIAL-PACED RHYTHM                                   all zeros — AUROC undefined
+2026-03-21 14:35:47,781 - INFO -   T WAVE AMPLITUDE HAS INCREASED IN                     all zeros — AUROC undefined
+2026-03-21 14:35:47,782 - INFO -   WITH QRS WIDENING                                     all zeros — AUROC undefined
+2026-03-21 14:35:47,782 - INFO -   WITH PROLONGED AV CONDUCTION                          all zeros — AUROC undefined
+2026-03-21 14:35:47,783 - INFO -   WITH QRS WIDENING AND REPOLARIZATION ABNORMALITY      all zeros — AUROC undefined
+2026-03-21 14:35:47,783 - INFO -   ATRIAL-SENSED VENTRICULAR-PACED RHYTHM                all zeros — AUROC undefined
+2026-03-21 14:35:47,784 - INFO -   AV SEQUENTIAL OR DUAL CHAMBER ELECTRONIC PACEMAKER    all zeros — AUROC undefined
+2026-03-21 14:35:47,784 - INFO -   ACUTE MI / STEMI                                      all zeros — AUROC undefined
+2026-03-21 14:35:47,784 - INFO -   INFERIOR-POSTERIOR INFARCT                            all zeros — AUROC undefined
+2026-03-21 14:35:47,785 - INFO -   NONSPECIFIC INTRAVENTRICULAR CONDUCTION DELAY         all zeros — AUROC undefined
+2026-03-21 14:35:47,785 - INFO -   PREMATURE VENTRICULAR AND FUSION COMPLEXES            all zeros — AUROC undefined
+2026-03-21 14:35:47,786 - INFO -   IN A PATTERN OF BIGEMINY                              all zeros — AUROC undefined
+2026-03-21 14:35:47,786 - INFO -   AV DUAL-PACED RHYTHM                                  all zeros — AUROC undefined
+2026-03-21 14:35:47,786 - INFO -   VENTRICULAR-PACED COMPLEXES                           all zeros — AUROC undefined
+2026-03-21 14:35:47,787 - INFO -   WIDE QRS TACHYCARDIA                                  all zeros — AUROC undefined
+2026-03-21 14:35:47,787 - INFO -   RSR' PATTERN IN V1                                    all zeros — AUROC undefined
+2026-03-21 14:35:47,788 - INFO -   ST LESS DEPRESSED IN                                  all zeros — AUROC undefined
+2026-03-21 14:35:47,788 - INFO -   ST MORE DEPRESSED IN                                  all zeros — AUROC undefined
+2026-03-21 14:35:47,788 - INFO -   ANTEROLATERAL LEADS                                   all zeros — AUROC undefined
+2026-03-21 14:35:47,789 - INFO -   ELECTRONIC DEMAND PACING                              all zeros — AUROC undefined
+2026-03-21 14:35:47,789 - INFO -   RBBB AND LEFT ANTERIOR FASCICULAR BLOCK               all zeros — AUROC undefined
+2026-03-21 14:35:47,790 - INFO -   LATERAL INJURY PATTERN                                all zeros — AUROC undefined
+2026-03-21 14:35:47,790 - INFO -   BIVENTRICULAR PACEMAKER DETECTED                      all zeros — AUROC undefined
+2026-03-21 14:35:47,791 - INFO -   SUSPECT UNSPECIFIED PACEMAKER FAILURE                 all zeros — AUROC undefined
+2026-03-21 14:35:47,791 - INFO -   WOLFF-PARKINSON-WHITE                                 all zeros — AUROC undefined
+2026-03-21 14:35:47,792 - INFO -   INFERIOR INJURY PATTERN                               all zeros — AUROC undefined
+2026-03-21 14:35:47,792 - INFO -   CONSIDER RIGHT VENTRICULAR INVOLVEMENT IN ACUTE INFERIOR INFARCT  all zeros — AUROC undefined
+2026-03-21 14:35:47,793 - INFO -   ST ELEVATION HAS REPLACED ST DEPRESSION IN            all zeros — AUROC undefined
+2026-03-21 14:35:47,793 - INFO -   NONSPECIFIC INTRAVENTRICULAR BLOCK                    all zeros — AUROC undefined
+2026-03-21 14:35:47,794 - INFO -   MASKED BY FASCICULAR BLOCK                            all zeros — AUROC undefined
+2026-03-21 14:35:47,794 - INFO -   PEDIATRIC ECG ANALYSIS                                all zeros — AUROC undefined
+2026-03-21 14:35:47,795 - INFO -   BLOCKED                                               all zeros — AUROC undefined
+2026-03-21 14:35:47,795 - INFO -   WITH UNDETERMINED RHYTHM IRREGULARITY                 all zeros — AUROC undefined
+2026-03-21 14:35:47,796 - INFO -   LEFTWARD AXIS                                         all zeros — AUROC undefined
+2026-03-21 14:35:47,796 - INFO -   WITH 2ND DEGREE SA BLOCK MOBITZ I                     all zeros — AUROC undefined
+2026-03-21 14:35:47,796 - INFO -   ACUTE                                                 all zeros — AUROC undefined
+2026-03-21 14:35:47,796 - INFO -   ABNORMAL LEFT AXIS DEVIATION                          all zeros — AUROC undefined
+2026-03-21 14:35:47,797 - INFO -   NO P-WAVES FOUND                                      all zeros — AUROC undefined
+2026-03-21 14:35:47,797 - INFO -   ST LESS ELEVATED IN                                   all zeros — AUROC undefined
+2026-03-21 14:35:47,798 - INFO -   WITH RETROGRADE CONDUCTION                            all zeros — AUROC undefined
+2026-03-21 14:35:47,798 - INFO -   ST MORE ELEVATED IN                                   all zeros — AUROC undefined
+2026-03-21 14:35:47,799 - INFO -   JUNCTIONAL BRADYCARDIA                                all zeros — AUROC undefined
+2026-03-21 14:35:47,799 - INFO -   ANTERIOR INJURY PATTERN                               all zeros — AUROC undefined
+2026-03-21 14:35:47,800 - INFO -   ACUTE MI                                              all zeros — AUROC undefined
+2026-03-21 14:35:47,800 - INFO -   POSTERIOR INFARCT                                     all zeros — AUROC undefined
+2026-03-21 14:35:47,801 - INFO -   IDIOVENTRICULAR RHYTHM                                all zeros — AUROC undefined
+2026-03-21 14:35:47,802 - INFO -   WITH 2ND DEGREE SA BLOCK MOBITZ II                    all zeros — AUROC undefined
+2026-03-21 14:35:47,802 - INFO -   R IN AVL                                              all zeros — AUROC undefined
+2026-03-21 14:35:47,802 - INFO -   SINUS/ATRIAL CAPTURE                                  all zeros — AUROC undefined
+2026-03-21 14:35:47,803 - INFO -   AV DUAL-PACED COMPLEXES                               all zeros — AUROC undefined
+2026-03-21 14:35:47,803 - INFO -   INFEROLATERAL INJURY PATTERN                          all zeros — AUROC undefined
+2026-03-21 14:35:47,804 - INFO -   RBBB AND LEFT POSTERIOR FASCICULAR BLOCK              all zeros — AUROC undefined
+2026-03-21 14:35:47,804 - INFO -   ANTEROLATERAL INJURY PATTERN                          all zeros — AUROC undefined
+2026-03-21 14:35:47,805 - INFO -   ATRIAL-PACED COMPLEXES                                all zeros — AUROC undefined
+2026-03-21 14:35:47,805 - INFO -   WITH SINUS PAUSE                                      all zeros — AUROC undefined
+2026-03-21 14:35:47,806 - INFO -   BIVENTRICULAR HYPERTROPHY                             all zeros — AUROC undefined
+2026-03-21 14:35:47,806 - INFO -   ABNORMAL RIGHT AXIS DEVIATION                         all zeros — AUROC undefined
+2026-03-21 14:35:47,807 - INFO -   SUPRAVENTRICULAR COMPLEXES                            all zeros — AUROC undefined
+2026-03-21 14:35:47,807 - INFO -   WITH 2ND DEGREE AV BLOCK MOBITZ I                     all zeros — AUROC undefined
+2026-03-21 14:35:47,808 - INFO -   MULTIFOCAL ATRIAL TACHYCARDIA                         all zeros — AUROC undefined
+2026-03-21 14:35:47,808 - INFO - 
+[pruned_magnitude_ratio30] Valid labels : 39 / 150
+2026-03-21 14:35:47,808 - INFO - [pruned_magnitude_ratio30] Skipped      : 111 / 150  (all-zero, AUROC undefined)
+2026-03-21 14:35:47,809 - INFO - [pruned_magnitude_ratio30] Macro AUROC  : 0.5354  (averaged over 39 valid labels)
+2026-03-21 14:35:47,809 - INFO - [pruned_magnitude_ratio30] Results saved: ./res/zeroshot_pruning/pruned_magnitude_ratio30_results.csv
+2026-03-21 14:35:47,809 - INFO - [pruned_magnitude_ratio30] Skipped saved: ./res/zeroshot_pruning/pruned_magnitude_ratio30_skipped_labels.csv
+2026-03-21 14:35:47,811 - INFO - Plotting ROC curves for: pruned_magnitude_ratio30
+2026-03-21 14:35:48,613 - INFO - ROC curve plot saved: ./res/zeroshot_pruning/pruned_magnitude_ratio30_roc_curves.png
+2026-03-21 14:35:48,613 - INFO -   Macro AUROC: 0.6173 → 0.5354  (Δ -0.0818)
+2026-03-21 14:35:48,881 - INFO -   Saved: ./res/zeroshot_pruning/pruned_magnitude_ratio0.3_auroc0.5354.pth
+2026-03-21 14:35:48,881 - INFO - 
+============================================================
+2026-03-21 14:35:48,882 - INFO - PRUNING RATIO 0.4  |  method: magnitude
+2026-03-21 14:35:48,882 - INFO - ============================================================
+2026-03-21 14:35:49,940 - INFO -   Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-03-21 14:35:50,121 - INFO -   Ignoring 1 final classifier layer(s)
+2026-03-21 14:35:50,276 - INFO - Applying pruning step (zero-shot — no training data) ...
+2026-03-21 14:35:50,976 - INFO -   MACs  : 1.1727 G → 1.0810 G  (7.82% reduced)
+2026-03-21 14:35:50,977 - INFO -   Params: 30.8190 M → 29.7162 M  (3.58% reduced)
+2026-03-21 14:38:21,735 - INFO - 
+Computing full evaluation: pruned_magnitude_ratio40
+2026-03-21 14:40:12,041 - INFO - 
+========================================================================
+2026-03-21 14:40:12,041 - INFO - [pruned_magnitude_ratio40] PER-CLASS AUROC  (39 valid / 150 total labels)
+2026-03-21 14:40:12,041 - INFO - ========================================================================
+2026-03-21 14:40:12,041 - INFO -   Label                                                 n_pos   AUROC  95% CI
+2026-03-21 14:40:12,041 - INFO -   ----------------------------------------------------------------------
+2026-03-21 14:40:12,041 - INFO -   ACUTE PERICARDITIS                                        1   0.897  (0.890, 0.903)
+2026-03-21 14:40:12,041 - INFO -   LEFT BUNDLE BRANCH BLOCK                                 18   0.803  (0.725, 0.888)
+2026-03-21 14:40:12,041 - INFO -   ATRIAL FLUTTER                                           31   0.754  (0.660, 0.843)
+2026-03-21 14:40:12,041 - INFO -   PREMATURE ATRIAL COMPLEXES                                1   0.747  (0.738, 0.753)
+2026-03-21 14:40:12,041 - INFO -   FUSION COMPLEXES                                         27   0.693  (0.592, 0.788)
+2026-03-21 14:40:12,041 - INFO -   INFERIOR INFARCT                                          8   0.686  (0.544, 0.850)
+2026-03-21 14:40:12,044 - INFO -   ATRIAL FIBRILLATION                                      25   0.676  (0.580, 0.761)
+2026-03-21 14:40:12,044 - INFO -   ANTERIOR INFARCT                                          5   0.651  (0.402, 0.923)
+2026-03-21 14:40:12,045 - INFO -   VENTRICULAR TACHYCARDIA                                  81   0.643  (0.581, 0.705)
+2026-03-21 14:40:12,045 - INFO -   LOW VOLTAGE QRS                                         277   0.626  (0.599, 0.659)
+2026-03-21 14:40:12,046 - INFO -   LATERAL INFARCT                                           3   0.617  (0.145, 0.877)
+2026-03-21 14:40:12,046 - INFO -   SINUS BRADYCARDIA                                       935   0.562  (0.546, 0.579)
+2026-03-21 14:40:12,046 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                        184   0.560  (0.520, 0.594)
+2026-03-21 14:40:12,047 - INFO -   WITH COMPLETE HEART BLOCK                                67   0.558  (0.515, 0.617)
+2026-03-21 14:40:12,047 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                             45   0.545  (0.451, 0.626)
+2026-03-21 14:40:12,048 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                          323   0.529  (0.496, 0.560)
+2026-03-21 14:40:12,048 - INFO -   SINUS TACHYCARDIA                                      2210   0.526  (0.509, 0.538)
+2026-03-21 14:40:12,049 - INFO -   EARLY REPOLARIZATION                                    249   0.521  (0.483, 0.548)
+2026-03-21 14:40:12,050 - INFO -   PREMATURE VENTRICULAR COMPLEXES                           6   0.520  (0.257, 0.726)
+2026-03-21 14:40:12,050 - INFO -   otherwise normal ecg                                    621   0.519  (0.504, 0.541)
+2026-03-21 14:40:12,050 - INFO -   LEFT VENTRICULAR HYPERTROPHY                            348   0.519  (0.489, 0.548)
+2026-03-21 14:40:12,050 - INFO -   WITH 2:1 AV CONDUCTION                                   40   0.514  (0.431, 0.586)
+2026-03-21 14:40:12,050 - INFO -   NORMAL ECG                                             1759   0.512  (0.500, 0.524)
+2026-03-21 14:40:12,051 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                         2544   0.507  (0.495, 0.517)
+2026-03-21 14:40:12,051 - INFO -   PROLONGED QT                                            427   0.497  (0.476, 0.521)
+2026-03-21 14:40:12,052 - INFO -   WITH AV DISSOCIATION                                     70   0.465  (0.391, 0.533)
+2026-03-21 14:40:12,052 - INFO -   ANTEROSEPTAL INFARCT                                     14   0.443  (0.283, 0.562)
+2026-03-21 14:40:12,052 - INFO -   WITH 1ST DEGREE AV BLOCK                                123   0.437  (0.392, 0.488)
+2026-03-21 14:40:12,053 - INFO -   WITH VARIABLE AV BLOCK                                   67   0.435  (0.373, 0.498)
+2026-03-21 14:40:12,053 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                        32   0.424  (0.319, 0.507)
+2026-03-21 14:40:12,053 - INFO -   LEFT AXIS DEVIATION                                      54   0.414  (0.341, 0.474)
+2026-03-21 14:40:12,054 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                          19   0.385  (0.264, 0.515)
+2026-03-21 14:40:12,054 - INFO -   LEFT ATRIAL ENLARGEMENT                                 184   0.316  (0.277, 0.345)
+2026-03-21 14:40:12,055 - INFO -   RIGHT ATRIAL ENLARGEMENT                                201   0.315  (0.290, 0.349)
+2026-03-21 14:40:12,055 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK                    336   0.303  (0.271, 0.332)
+2026-03-21 14:40:12,055 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                           693   0.285  (0.262, 0.308)
+2026-03-21 14:40:12,056 - INFO -   RIGHT AXIS DEVIATION                                    335   0.252  (0.222, 0.284)
+2026-03-21 14:40:12,056 - INFO -   RIGHT BUNDLE BRANCH BLOCK                               290   0.246  (0.217, 0.276)
+2026-03-21 14:40:12,056 - INFO -   PULMONARY DISEASE PATTERN                                 3   0.202  (0.031, 0.296)
+2026-03-21 14:40:12,056 - INFO - 
+========================================================================
+2026-03-21 14:40:12,057 - INFO - [pruned_magnitude_ratio40] SKIPPED LABELS — no positive samples (111 labels)
+2026-03-21 14:40:12,057 - INFO - ========================================================================
+2026-03-21 14:40:12,058 - INFO -   ABNORMAL ECG                                          all zeros — AUROC undefined
+2026-03-21 14:40:12,058 - INFO -   NORMAL SINUS RHYTHM                                   all zeros — AUROC undefined
+2026-03-21 14:40:12,058 - INFO -   SINUS RHYTHM                                          all zeros — AUROC undefined
+2026-03-21 14:40:12,059 - INFO -   BORDERLINE ECG                                        all zeros — AUROC undefined
+2026-03-21 14:40:12,059 - INFO -   SEPTAL INFARCT                                        all zeros — AUROC undefined
+2026-03-21 14:40:12,059 - INFO -   PREMATURE SUPRAVENTRICULAR COMPLEXES                  all zeros — AUROC undefined
+2026-03-21 14:40:12,060 - INFO -   NONSPECIFIC T WAVE ABNORMALITY NOW EVIDENT IN         all zeros — AUROC undefined
+2026-03-21 14:40:12,060 - INFO -   NONSPECIFIC T WAVE ABNORMALITY NO LONGER EVIDENT IN   all zeros — AUROC undefined
+2026-03-21 14:40:12,060 - INFO -   T WAVE INVERSION NOW EVIDENT IN                       all zeros — AUROC undefined
+2026-03-21 14:40:12,061 - INFO -   NONSPECIFIC ST ABNORMALITY                            all zeros — AUROC undefined
+2026-03-21 14:40:12,062 - INFO -   T WAVE INVERSION NO LONGER EVIDENT IN                 all zeros — AUROC undefined
+2026-03-21 14:40:12,062 - INFO -   WITH RAPID VENTRICULAR RESPONSE                       all zeros — AUROC undefined
+2026-03-21 14:40:12,063 - INFO -   QT HAS SHORTENED                                      all zeros — AUROC undefined
+2026-03-21 14:40:12,063 - INFO -   QT HAS LENGTHENED                                     all zeros — AUROC undefined
+2026-03-21 14:40:12,063 - INFO -   MARKED SINUS BRADYCARDIA                              all zeros — AUROC undefined
+2026-03-21 14:40:12,064 - INFO -   WITH SINUS ARRHYTHMIA                                 all zeros — AUROC undefined
+2026-03-21 14:40:12,064 - INFO -   NONSPECIFIC ST AND T WAVE ABNORMALITY                 all zeros — AUROC undefined
+2026-03-21 14:40:12,065 - INFO -   ECTOPIC ATRIAL RHYTHM                                 all zeros — AUROC undefined
+2026-03-21 14:40:12,065 - INFO -   UNDETERMINED RHYTHM                                   all zeros — AUROC undefined
+2026-03-21 14:40:12,065 - INFO -   RIGHTWARD AXIS                                        all zeros — AUROC undefined
+2026-03-21 14:40:12,066 - INFO -   ST NOW DEPRESSED IN                                   all zeros — AUROC undefined
+2026-03-21 14:40:12,066 - INFO -   WITH SHORT PR                                         all zeros — AUROC undefined
+2026-03-21 14:40:12,067 - INFO -   WITH MARKED SINUS ARRHYTHMIA                          all zeros — AUROC undefined
+2026-03-21 14:40:12,067 - INFO -   ST NO LONGER DEPRESSED IN                             all zeros — AUROC undefined
+2026-03-21 14:40:12,068 - INFO -   INVERTED T WAVES HAVE REPLACED NONSPECIFIC T WAVE ABNORMALITY IN  all zeros — AUROC undefined
+2026-03-21 14:40:12,068 - INFO -   NON-SPECIFIC CHANGE IN ST SEGMENT IN                  all zeros — AUROC undefined
+2026-03-21 14:40:12,069 - INFO -   NONSPECIFIC T WAVE ABNORMALITY HAS REPLACED INVERTED T WAVES IN  all zeros — AUROC undefined
+2026-03-21 14:40:12,069 - INFO -   JUNCTIONAL RHYTHM                                     all zeros — AUROC undefined
+2026-03-21 14:40:12,070 - INFO -   ELECTRONIC ATRIAL PACEMAKER                           all zeros — AUROC undefined
+2026-03-21 14:40:12,070 - INFO -   ABERRANT CONDUCTION                                   all zeros — AUROC undefined
+2026-03-21 14:40:12,070 - INFO -   ELECTRONIC VENTRICULAR PACEMAKER                      all zeros — AUROC undefined
+2026-03-21 14:40:12,070 - INFO -   T WAVE INVERSION LESS EVIDENT IN                      all zeros — AUROC undefined
+2026-03-21 14:40:12,070 - INFO -   ANTEROLATERAL INFARCT                                 all zeros — AUROC undefined
+2026-03-21 14:40:12,070 - INFO -   WITH REPOLARIZATION ABNORMALITY                       all zeros — AUROC undefined
+2026-03-21 14:40:12,070 - INFO -   RSR' OR QR PATTERN IN V1 SUGGESTS RIGHT VENTRICULAR CONDUCTION DELAY  all zeros — AUROC undefined
+2026-03-21 14:40:12,070 - INFO -   T WAVE INVERSION MORE EVIDENT IN                      all zeros — AUROC undefined
+2026-03-21 14:40:12,073 - INFO -   WIDE QRS RHYTHM                                       all zeros — AUROC undefined
+2026-03-21 14:40:12,073 - INFO -   WITH PREMATURE VENTRICULAR OR ABERRANTLY CONDUCTED COMPLEXES  all zeros — AUROC undefined
+2026-03-21 14:40:12,073 - INFO -   INCOMPLETE LEFT BUNDLE BRANCH BLOCK                   all zeros — AUROC undefined
+2026-03-21 14:40:12,073 - INFO -   VOLTAGE CRITERIA FOR LEFT VENTRICULAR HYPERTROPHY     all zeros — AUROC undefined
+2026-03-21 14:40:12,074 - INFO -   OR DIGITALIS EFFECT                                   all zeros — AUROC undefined
+2026-03-21 14:40:12,074 - INFO -   BIFASCICULAR BLOCK                                    all zeros — AUROC undefined
+2026-03-21 14:40:12,074 - INFO -   ST NO LONGER ELEVATED IN                              all zeros — AUROC undefined
+2026-03-21 14:40:12,075 - INFO -   WITH SLOW VENTRICULAR RESPONSE                        all zeros — AUROC undefined
+2026-03-21 14:40:12,075 - INFO -   ST ELEVATION NOW PRESENT IN                           all zeros — AUROC undefined
+2026-03-21 14:40:12,075 - INFO -   PREMATURE ECTOPIC COMPLEXES                           all zeros — AUROC undefined
+2026-03-21 14:40:12,076 - INFO -   T WAVE AMPLITUDE HAS DECREASED IN                     all zeros — AUROC undefined
+2026-03-21 14:40:12,076 - INFO -   WITH A COMPETING JUNCTIONAL PACEMAKER                 all zeros — AUROC undefined
+2026-03-21 14:40:12,076 - INFO -   RIGHT SUPERIOR AXIS DEVIATION                         all zeros — AUROC undefined
+2026-03-21 14:40:12,077 - INFO -   BIATRIAL ENLARGEMENT                                  all zeros — AUROC undefined
+2026-03-21 14:40:12,077 - INFO -   VENTRICULAR-PACED RHYTHM                              all zeros — AUROC undefined
+2026-03-21 14:40:12,077 - INFO -   ATRIAL-PACED RHYTHM                                   all zeros — AUROC undefined
+2026-03-21 14:40:12,078 - INFO -   T WAVE AMPLITUDE HAS INCREASED IN                     all zeros — AUROC undefined
+2026-03-21 14:40:12,079 - INFO -   WITH QRS WIDENING                                     all zeros — AUROC undefined
+2026-03-21 14:40:12,079 - INFO -   WITH PROLONGED AV CONDUCTION                          all zeros — AUROC undefined
+2026-03-21 14:40:12,080 - INFO -   WITH QRS WIDENING AND REPOLARIZATION ABNORMALITY      all zeros — AUROC undefined
+2026-03-21 14:40:12,080 - INFO -   ATRIAL-SENSED VENTRICULAR-PACED RHYTHM                all zeros — AUROC undefined
+2026-03-21 14:40:12,080 - INFO -   AV SEQUENTIAL OR DUAL CHAMBER ELECTRONIC PACEMAKER    all zeros — AUROC undefined
+2026-03-21 14:40:12,081 - INFO -   ACUTE MI / STEMI                                      all zeros — AUROC undefined
+2026-03-21 14:40:12,081 - INFO -   INFERIOR-POSTERIOR INFARCT                            all zeros — AUROC undefined
+2026-03-21 14:40:12,081 - INFO -   NONSPECIFIC INTRAVENTRICULAR CONDUCTION DELAY         all zeros — AUROC undefined
+2026-03-21 14:40:12,082 - INFO -   PREMATURE VENTRICULAR AND FUSION COMPLEXES            all zeros — AUROC undefined
+2026-03-21 14:40:12,082 - INFO -   IN A PATTERN OF BIGEMINY                              all zeros — AUROC undefined
+2026-03-21 14:40:12,082 - INFO -   AV DUAL-PACED RHYTHM                                  all zeros — AUROC undefined
+2026-03-21 14:40:12,083 - INFO -   VENTRICULAR-PACED COMPLEXES                           all zeros — AUROC undefined
+2026-03-21 14:40:12,083 - INFO -   WIDE QRS TACHYCARDIA                                  all zeros — AUROC undefined
+2026-03-21 14:40:12,084 - INFO -   RSR' PATTERN IN V1                                    all zeros — AUROC undefined
+2026-03-21 14:40:12,084 - INFO -   ST LESS DEPRESSED IN                                  all zeros — AUROC undefined
+2026-03-21 14:40:12,084 - INFO -   ST MORE DEPRESSED IN                                  all zeros — AUROC undefined
+2026-03-21 14:40:12,085 - INFO -   ANTEROLATERAL LEADS                                   all zeros — AUROC undefined
+2026-03-21 14:40:12,085 - INFO -   ELECTRONIC DEMAND PACING                              all zeros — AUROC undefined
+2026-03-21 14:40:12,085 - INFO -   RBBB AND LEFT ANTERIOR FASCICULAR BLOCK               all zeros — AUROC undefined
+2026-03-21 14:40:12,086 - INFO -   LATERAL INJURY PATTERN                                all zeros — AUROC undefined
+2026-03-21 14:40:12,086 - INFO -   BIVENTRICULAR PACEMAKER DETECTED                      all zeros — AUROC undefined
+2026-03-21 14:40:12,087 - INFO -   SUSPECT UNSPECIFIED PACEMAKER FAILURE                 all zeros — AUROC undefined
+2026-03-21 14:40:12,087 - INFO -   WOLFF-PARKINSON-WHITE                                 all zeros — AUROC undefined
+2026-03-21 14:40:12,087 - INFO -   INFERIOR INJURY PATTERN                               all zeros — AUROC undefined
+2026-03-21 14:40:12,088 - INFO -   CONSIDER RIGHT VENTRICULAR INVOLVEMENT IN ACUTE INFERIOR INFARCT  all zeros — AUROC undefined
+2026-03-21 14:40:12,088 - INFO -   ST ELEVATION HAS REPLACED ST DEPRESSION IN            all zeros — AUROC undefined
+2026-03-21 14:40:12,089 - INFO -   NONSPECIFIC INTRAVENTRICULAR BLOCK                    all zeros — AUROC undefined
+2026-03-21 14:40:12,089 - INFO -   MASKED BY FASCICULAR BLOCK                            all zeros — AUROC undefined
+2026-03-21 14:40:12,089 - INFO -   PEDIATRIC ECG ANALYSIS                                all zeros — AUROC undefined
+2026-03-21 14:40:12,090 - INFO -   BLOCKED                                               all zeros — AUROC undefined
+2026-03-21 14:40:12,090 - INFO -   WITH UNDETERMINED RHYTHM IRREGULARITY                 all zeros — AUROC undefined
+2026-03-21 14:40:12,090 - INFO -   LEFTWARD AXIS                                         all zeros — AUROC undefined
+2026-03-21 14:40:12,091 - INFO -   WITH 2ND DEGREE SA BLOCK MOBITZ I                     all zeros — AUROC undefined
+2026-03-21 14:40:12,091 - INFO -   ACUTE                                                 all zeros — AUROC undefined
+2026-03-21 14:40:12,091 - INFO -   ABNORMAL LEFT AXIS DEVIATION                          all zeros — AUROC undefined
+2026-03-21 14:40:12,092 - INFO -   NO P-WAVES FOUND                                      all zeros — AUROC undefined
+2026-03-21 14:40:12,092 - INFO -   ST LESS ELEVATED IN                                   all zeros — AUROC undefined
+2026-03-21 14:40:12,092 - INFO -   WITH RETROGRADE CONDUCTION                            all zeros — AUROC undefined
+2026-03-21 14:40:12,093 - INFO -   ST MORE ELEVATED IN                                   all zeros — AUROC undefined
+2026-03-21 14:40:12,094 - INFO -   JUNCTIONAL BRADYCARDIA                                all zeros — AUROC undefined
+2026-03-21 14:40:12,094 - INFO -   ANTERIOR INJURY PATTERN                               all zeros — AUROC undefined
+2026-03-21 14:40:12,094 - INFO -   ACUTE MI                                              all zeros — AUROC undefined
+2026-03-21 14:40:12,095 - INFO -   POSTERIOR INFARCT                                     all zeros — AUROC undefined
+2026-03-21 14:40:12,095 - INFO -   IDIOVENTRICULAR RHYTHM                                all zeros — AUROC undefined
+2026-03-21 14:40:12,096 - INFO -   WITH 2ND DEGREE SA BLOCK MOBITZ II                    all zeros — AUROC undefined
+2026-03-21 14:40:12,096 - INFO -   R IN AVL                                              all zeros — AUROC undefined
+2026-03-21 14:40:12,097 - INFO -   SINUS/ATRIAL CAPTURE                                  all zeros — AUROC undefined
+2026-03-21 14:40:12,097 - INFO -   AV DUAL-PACED COMPLEXES                               all zeros — AUROC undefined
+2026-03-21 14:40:12,097 - INFO -   INFEROLATERAL INJURY PATTERN                          all zeros — AUROC undefined
+2026-03-21 14:40:12,097 - INFO -   RBBB AND LEFT POSTERIOR FASCICULAR BLOCK              all zeros — AUROC undefined
+2026-03-21 14:40:12,098 - INFO -   ANTEROLATERAL INJURY PATTERN                          all zeros — AUROC undefined
+2026-03-21 14:40:12,098 - INFO -   ATRIAL-PACED COMPLEXES                                all zeros — AUROC undefined
+2026-03-21 14:40:12,098 - INFO -   WITH SINUS PAUSE                                      all zeros — AUROC undefined
+2026-03-21 14:40:12,098 - INFO -   BIVENTRICULAR HYPERTROPHY                             all zeros — AUROC undefined
+2026-03-21 14:40:12,099 - INFO -   ABNORMAL RIGHT AXIS DEVIATION                         all zeros — AUROC undefined
+2026-03-21 14:40:12,099 - INFO -   SUPRAVENTRICULAR COMPLEXES                            all zeros — AUROC undefined
+2026-03-21 14:40:12,099 - INFO -   WITH 2ND DEGREE AV BLOCK MOBITZ I                     all zeros — AUROC undefined
+2026-03-21 14:40:12,100 - INFO -   MULTIFOCAL ATRIAL TACHYCARDIA                         all zeros — AUROC undefined
+2026-03-21 14:40:12,100 - INFO - 
+[pruned_magnitude_ratio40] Valid labels : 39 / 150
+2026-03-21 14:40:12,100 - INFO - [pruned_magnitude_ratio40] Skipped      : 111 / 150  (all-zero, AUROC undefined)
+2026-03-21 14:40:12,100 - INFO - [pruned_magnitude_ratio40] Macro AUROC  : 0.5155  (averaged over 39 valid labels)
+2026-03-21 14:40:12,101 - INFO - [pruned_magnitude_ratio40] Results saved: ./res/zeroshot_pruning/pruned_magnitude_ratio40_results.csv
+2026-03-21 14:40:12,101 - INFO - [pruned_magnitude_ratio40] Skipped saved: ./res/zeroshot_pruning/pruned_magnitude_ratio40_skipped_labels.csv
+2026-03-21 14:40:12,101 - INFO - Plotting ROC curves for: pruned_magnitude_ratio40
+2026-03-21 14:40:12,711 - INFO - ROC curve plot saved: ./res/zeroshot_pruning/pruned_magnitude_ratio40_roc_curves.png
+2026-03-21 14:40:12,712 - INFO -   Macro AUROC: 0.6173 → 0.5155  (Δ -0.1018)
+2026-03-21 14:40:12,912 - INFO -   Saved: ./res/zeroshot_pruning/pruned_magnitude_ratio0.4_auroc0.5155.pth
+2026-03-21 14:40:12,913 - INFO - 
+============================================================
+2026-03-21 14:40:12,913 - INFO - PRUNING RATIO 0.5  |  method: magnitude
+2026-03-21 14:40:12,914 - INFO - ============================================================
+2026-03-21 14:40:13,554 - INFO -   Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-03-21 14:40:13,649 - INFO -   Ignoring 1 final classifier layer(s)
+2026-03-21 14:40:13,813 - INFO - Applying pruning step (zero-shot — no training data) ...
+2026-03-21 14:40:14,149 - INFO -   MACs  : 1.1727 G → 1.0810 G  (7.82% reduced)
+2026-03-21 14:40:14,149 - INFO -   Params: 30.8190 M → 29.7162 M  (3.58% reduced)
+2026-03-21 14:42:05,642 - INFO - 
+Computing full evaluation: pruned_magnitude_ratio50
+2026-03-21 14:43:42,308 - INFO - 
+========================================================================
+2026-03-21 14:43:42,308 - INFO - [pruned_magnitude_ratio50] PER-CLASS AUROC  (39 valid / 150 total labels)
+2026-03-21 14:43:42,308 - INFO - ========================================================================
+2026-03-21 14:43:42,308 - INFO -   Label                                                 n_pos   AUROC  95% CI
+2026-03-21 14:43:42,308 - INFO -   ----------------------------------------------------------------------
+2026-03-21 14:43:42,308 - INFO -   ACUTE PERICARDITIS                                        1   0.897  (0.891, 0.904)
+2026-03-21 14:43:42,308 - INFO -   LEFT BUNDLE BRANCH BLOCK                                 18   0.803  (0.740, 0.868)
+2026-03-21 14:43:42,312 - INFO -   ATRIAL FLUTTER                                           31   0.754  (0.651, 0.853)
+2026-03-21 14:43:42,312 - INFO -   PREMATURE ATRIAL COMPLEXES                                1   0.747  (0.739, 0.754)
+2026-03-21 14:43:42,312 - INFO -   FUSION COMPLEXES                                         27   0.693  (0.578, 0.791)
+2026-03-21 14:43:42,313 - INFO -   INFERIOR INFARCT                                          8   0.686  (0.554, 0.798)
+2026-03-21 14:43:42,313 - INFO -   ATRIAL FIBRILLATION                                      25   0.676  (0.582, 0.752)
+2026-03-21 14:43:42,313 - INFO -   ANTERIOR INFARCT                                          5   0.651  (0.185, 0.892)
+2026-03-21 14:43:42,314 - INFO -   VENTRICULAR TACHYCARDIA                                  81   0.643  (0.575, 0.715)
+2026-03-21 14:43:42,314 - INFO -   LOW VOLTAGE QRS                                         277   0.626  (0.590, 0.651)
+2026-03-21 14:43:42,315 - INFO -   LATERAL INFARCT                                           3   0.617  (0.141, 0.874)
+2026-03-21 14:43:42,315 - INFO -   SINUS BRADYCARDIA                                       935   0.562  (0.543, 0.578)
+2026-03-21 14:43:42,315 - INFO -   WITH JUNCTIONAL ESCAPE COMPLEXES                        184   0.560  (0.519, 0.602)
+2026-03-21 14:43:42,316 - INFO -   WITH COMPLETE HEART BLOCK                                67   0.558  (0.499, 0.616)
+2026-03-21 14:43:42,316 - INFO -   SUPRAVENTRICULAR TACHYCARDIA                             45   0.545  (0.451, 0.628)
+2026-03-21 14:43:42,316 - INFO -   LEFT ANTERIOR FASCICULAR BLOCK                          323   0.529  (0.505, 0.568)
+2026-03-21 14:43:42,317 - INFO -   SINUS TACHYCARDIA                                      2210   0.526  (0.509, 0.539)
+2026-03-21 14:43:42,317 - INFO -   EARLY REPOLARIZATION                                    249   0.521  (0.485, 0.544)
+2026-03-21 14:43:42,317 - INFO -   PREMATURE VENTRICULAR COMPLEXES                           6   0.520  (0.316, 0.799)
+2026-03-21 14:43:42,318 - INFO -   otherwise normal ecg                                    621   0.519  (0.495, 0.540)
+2026-03-21 14:43:42,318 - INFO -   LEFT VENTRICULAR HYPERTROPHY                            348   0.519  (0.482, 0.549)
+2026-03-21 14:43:42,318 - INFO -   WITH 2:1 AV CONDUCTION                                   40   0.514  (0.425, 0.596)
+2026-03-21 14:43:42,319 - INFO -   NORMAL ECG                                             1759   0.512  (0.495, 0.527)
+2026-03-21 14:43:42,319 - INFO -   NONSPECIFIC T WAVE ABNORMALITY                         2544   0.507  (0.494, 0.520)
+2026-03-21 14:43:42,320 - INFO -   PROLONGED QT                                            427   0.497  (0.469, 0.525)
+2026-03-21 14:43:42,320 - INFO -   WITH AV DISSOCIATION                                     70   0.465  (0.376, 0.566)
+2026-03-21 14:43:42,321 - INFO -   ANTEROSEPTAL INFARCT                                     14   0.443  (0.282, 0.580)
+2026-03-21 14:43:42,321 - INFO -   WITH 1ST DEGREE AV BLOCK                                123   0.437  (0.393, 0.488)
+2026-03-21 14:43:42,321 - INFO -   WITH VARIABLE AV BLOCK                                   67   0.435  (0.370, 0.501)
+2026-03-21 14:43:42,322 - INFO -   WITH VENTRICULAR ESCAPE COMPLEXES                        32   0.424  (0.315, 0.523)
+2026-03-21 14:43:42,322 - INFO -   LEFT AXIS DEVIATION                                      54   0.414  (0.356, 0.475)
+2026-03-21 14:43:42,322 - INFO -   LEFT POSTERIOR FASCICULAR BLOCK                          19   0.385  (0.275, 0.515)
+2026-03-21 14:43:42,323 - INFO -   LEFT ATRIAL ENLARGEMENT                                 184   0.316  (0.273, 0.352)
+2026-03-21 14:43:42,323 - INFO -   RIGHT ATRIAL ENLARGEMENT                                201   0.315  (0.277, 0.350)
+2026-03-21 14:43:42,324 - INFO -   INCOMPLETE RIGHT BUNDLE BRANCH BLOCK                    336   0.303  (0.278, 0.330)
+2026-03-21 14:43:42,324 - INFO -   RIGHT VENTRICULAR HYPERTROPHY                           693   0.285  (0.262, 0.309)
+2026-03-21 14:43:42,324 - INFO -   RIGHT AXIS DEVIATION                                    335   0.252  (0.219, 0.280)
+2026-03-21 14:43:42,325 - INFO -   RIGHT BUNDLE BRANCH BLOCK                               290   0.246  (0.223, 0.269)
+2026-03-21 14:43:42,325 - INFO -   PULMONARY DISEASE PATTERN                                 3   0.202  (0.032, 0.310)
+2026-03-21 14:43:42,325 - INFO - 
+========================================================================
+2026-03-21 14:43:42,326 - INFO - [pruned_magnitude_ratio50] SKIPPED LABELS — no positive samples (111 labels)
+2026-03-21 14:43:42,326 - INFO - ========================================================================
+2026-03-21 14:43:42,326 - INFO -   ABNORMAL ECG                                          all zeros — AUROC undefined
+2026-03-21 14:43:42,327 - INFO -   NORMAL SINUS RHYTHM                                   all zeros — AUROC undefined
+2026-03-21 14:43:42,327 - INFO -   SINUS RHYTHM                                          all zeros — AUROC undefined
+2026-03-21 14:43:42,327 - INFO -   BORDERLINE ECG                                        all zeros — AUROC undefined
+2026-03-21 14:43:42,328 - INFO -   SEPTAL INFARCT                                        all zeros — AUROC undefined
+2026-03-21 14:43:42,328 - INFO -   PREMATURE SUPRAVENTRICULAR COMPLEXES                  all zeros — AUROC undefined
+2026-03-21 14:43:42,328 - INFO -   NONSPECIFIC T WAVE ABNORMALITY NOW EVIDENT IN         all zeros — AUROC undefined
+2026-03-21 14:43:42,329 - INFO -   NONSPECIFIC T WAVE ABNORMALITY NO LONGER EVIDENT IN   all zeros — AUROC undefined
+2026-03-21 14:43:42,329 - INFO -   T WAVE INVERSION NOW EVIDENT IN                       all zeros — AUROC undefined
+2026-03-21 14:43:42,330 - INFO -   NONSPECIFIC ST ABNORMALITY                            all zeros — AUROC undefined
+2026-03-21 14:43:42,330 - INFO -   T WAVE INVERSION NO LONGER EVIDENT IN                 all zeros — AUROC undefined
+2026-03-21 14:43:42,330 - INFO -   WITH RAPID VENTRICULAR RESPONSE                       all zeros — AUROC undefined
+2026-03-21 14:43:42,331 - INFO -   QT HAS SHORTENED                                      all zeros — AUROC undefined
+2026-03-21 14:43:42,331 - INFO -   QT HAS LENGTHENED                                     all zeros — AUROC undefined
+2026-03-21 14:43:42,331 - INFO -   MARKED SINUS BRADYCARDIA                              all zeros — AUROC undefined
+2026-03-21 14:43:42,332 - INFO -   WITH SINUS ARRHYTHMIA                                 all zeros — AUROC undefined
+2026-03-21 14:43:42,332 - INFO -   NONSPECIFIC ST AND T WAVE ABNORMALITY                 all zeros — AUROC undefined
+2026-03-21 14:43:42,333 - INFO -   ECTOPIC ATRIAL RHYTHM                                 all zeros — AUROC undefined
+2026-03-21 14:43:42,333 - INFO -   UNDETERMINED RHYTHM                                   all zeros — AUROC undefined
+2026-03-21 14:43:42,333 - INFO -   RIGHTWARD AXIS                                        all zeros — AUROC undefined
+2026-03-21 14:43:42,334 - INFO -   ST NOW DEPRESSED IN                                   all zeros — AUROC undefined
+2026-03-21 14:43:42,334 - INFO -   WITH SHORT PR                                         all zeros — AUROC undefined
+2026-03-21 14:43:42,334 - INFO -   WITH MARKED SINUS ARRHYTHMIA                          all zeros — AUROC undefined
+2026-03-21 14:43:42,335 - INFO -   ST NO LONGER DEPRESSED IN                             all zeros — AUROC undefined
+2026-03-21 14:43:42,335 - INFO -   INVERTED T WAVES HAVE REPLACED NONSPECIFIC T WAVE ABNORMALITY IN  all zeros — AUROC undefined
+2026-03-21 14:43:42,336 - INFO -   NON-SPECIFIC CHANGE IN ST SEGMENT IN                  all zeros — AUROC undefined
+2026-03-21 14:43:42,336 - INFO -   NONSPECIFIC T WAVE ABNORMALITY HAS REPLACED INVERTED T WAVES IN  all zeros — AUROC undefined
+2026-03-21 14:43:42,336 - INFO -   JUNCTIONAL RHYTHM                                     all zeros — AUROC undefined
+2026-03-21 14:43:42,337 - INFO -   ELECTRONIC ATRIAL PACEMAKER                           all zeros — AUROC undefined
+2026-03-21 14:43:42,337 - INFO -   ABERRANT CONDUCTION                                   all zeros — AUROC undefined
+2026-03-21 14:43:42,337 - INFO -   ELECTRONIC VENTRICULAR PACEMAKER                      all zeros — AUROC undefined
+2026-03-21 14:43:42,337 - INFO -   T WAVE INVERSION LESS EVIDENT IN                      all zeros — AUROC undefined
+2026-03-21 14:43:42,338 - INFO -   ANTEROLATERAL INFARCT                                 all zeros — AUROC undefined
+2026-03-21 14:43:42,338 - INFO -   WITH REPOLARIZATION ABNORMALITY                       all zeros — AUROC undefined
+2026-03-21 14:43:42,338 - INFO -   RSR' OR QR PATTERN IN V1 SUGGESTS RIGHT VENTRICULAR CONDUCTION DELAY  all zeros — AUROC undefined
+2026-03-21 14:43:42,339 - INFO -   T WAVE INVERSION MORE EVIDENT IN                      all zeros — AUROC undefined
+2026-03-21 14:43:42,339 - INFO -   WIDE QRS RHYTHM                                       all zeros — AUROC undefined
+2026-03-21 14:43:42,340 - INFO -   WITH PREMATURE VENTRICULAR OR ABERRANTLY CONDUCTED COMPLEXES  all zeros — AUROC undefined
+2026-03-21 14:43:42,340 - INFO -   INCOMPLETE LEFT BUNDLE BRANCH BLOCK                   all zeros — AUROC undefined
+2026-03-21 14:43:42,340 - INFO -   VOLTAGE CRITERIA FOR LEFT VENTRICULAR HYPERTROPHY     all zeros — AUROC undefined
+2026-03-21 14:43:42,341 - INFO -   OR DIGITALIS EFFECT                                   all zeros — AUROC undefined
+2026-03-21 14:43:42,341 - INFO -   BIFASCICULAR BLOCK                                    all zeros — AUROC undefined
+2026-03-21 14:43:42,341 - INFO -   ST NO LONGER ELEVATED IN                              all zeros — AUROC undefined
+2026-03-21 14:43:42,342 - INFO -   WITH SLOW VENTRICULAR RESPONSE                        all zeros — AUROC undefined
+2026-03-21 14:43:42,342 - INFO -   ST ELEVATION NOW PRESENT IN                           all zeros — AUROC undefined
+2026-03-21 14:43:42,342 - INFO -   PREMATURE ECTOPIC COMPLEXES                           all zeros — AUROC undefined
+2026-03-21 14:43:42,343 - INFO -   T WAVE AMPLITUDE HAS DECREASED IN                     all zeros — AUROC undefined
+2026-03-21 14:43:42,343 - INFO -   WITH A COMPETING JUNCTIONAL PACEMAKER                 all zeros — AUROC undefined
+2026-03-21 14:43:42,343 - INFO -   RIGHT SUPERIOR AXIS DEVIATION                         all zeros — AUROC undefined
+2026-03-21 14:43:42,344 - INFO -   BIATRIAL ENLARGEMENT                                  all zeros — AUROC undefined
+2026-03-21 14:43:42,344 - INFO -   VENTRICULAR-PACED RHYTHM                              all zeros — AUROC undefined
+2026-03-21 14:43:42,344 - INFO -   ATRIAL-PACED RHYTHM                                   all zeros — AUROC undefined
+2026-03-21 14:43:42,345 - INFO -   T WAVE AMPLITUDE HAS INCREASED IN                     all zeros — AUROC undefined
+2026-03-21 14:43:42,345 - INFO -   WITH QRS WIDENING                                     all zeros — AUROC undefined
+2026-03-21 14:43:42,346 - INFO -   WITH PROLONGED AV CONDUCTION                          all zeros — AUROC undefined
+2026-03-21 14:43:42,346 - INFO -   WITH QRS WIDENING AND REPOLARIZATION ABNORMALITY      all zeros — AUROC undefined
+2026-03-21 14:43:42,347 - INFO -   ATRIAL-SENSED VENTRICULAR-PACED RHYTHM                all zeros — AUROC undefined
+2026-03-21 14:43:42,347 - INFO -   AV SEQUENTIAL OR DUAL CHAMBER ELECTRONIC PACEMAKER    all zeros — AUROC undefined
+2026-03-21 14:43:42,348 - INFO -   ACUTE MI / STEMI                                      all zeros — AUROC undefined
+2026-03-21 14:43:42,348 - INFO -   INFERIOR-POSTERIOR INFARCT                            all zeros — AUROC undefined
+2026-03-21 14:43:42,349 - INFO -   NONSPECIFIC INTRAVENTRICULAR CONDUCTION DELAY         all zeros — AUROC undefined
+2026-03-21 14:43:42,349 - INFO -   PREMATURE VENTRICULAR AND FUSION COMPLEXES            all zeros — AUROC undefined
+2026-03-21 14:43:42,349 - INFO -   IN A PATTERN OF BIGEMINY                              all zeros — AUROC undefined
+2026-03-21 14:43:42,350 - INFO -   AV DUAL-PACED RHYTHM                                  all zeros — AUROC undefined
+2026-03-21 14:43:42,350 - INFO -   VENTRICULAR-PACED COMPLEXES                           all zeros — AUROC undefined
+2026-03-21 14:43:42,350 - INFO -   WIDE QRS TACHYCARDIA                                  all zeros — AUROC undefined
+2026-03-21 14:43:42,350 - INFO -   RSR' PATTERN IN V1                                    all zeros — AUROC undefined
+2026-03-21 14:43:42,350 - INFO -   ST LESS DEPRESSED IN                                  all zeros — AUROC undefined
+2026-03-21 14:43:42,350 - INFO -   ST MORE DEPRESSED IN                                  all zeros — AUROC undefined
+2026-03-21 14:43:42,350 - INFO -   ANTEROLATERAL LEADS                                   all zeros — AUROC undefined
+2026-03-21 14:43:42,350 - INFO -   ELECTRONIC DEMAND PACING                              all zeros — AUROC undefined
+2026-03-21 14:43:42,350 - INFO -   RBBB AND LEFT ANTERIOR FASCICULAR BLOCK               all zeros — AUROC undefined
+2026-03-21 14:43:42,354 - INFO -   LATERAL INJURY PATTERN                                all zeros — AUROC undefined
+2026-03-21 14:43:42,354 - INFO -   BIVENTRICULAR PACEMAKER DETECTED                      all zeros — AUROC undefined
+2026-03-21 14:43:42,354 - INFO -   SUSPECT UNSPECIFIED PACEMAKER FAILURE                 all zeros — AUROC undefined
+2026-03-21 14:43:42,354 - INFO -   WOLFF-PARKINSON-WHITE                                 all zeros — AUROC undefined
+2026-03-21 14:43:42,354 - INFO -   INFERIOR INJURY PATTERN                               all zeros — AUROC undefined
+2026-03-21 14:43:42,355 - INFO -   CONSIDER RIGHT VENTRICULAR INVOLVEMENT IN ACUTE INFERIOR INFARCT  all zeros — AUROC undefined
+2026-03-21 14:43:42,355 - INFO -   ST ELEVATION HAS REPLACED ST DEPRESSION IN            all zeros — AUROC undefined
+2026-03-21 14:43:42,355 - INFO -   NONSPECIFIC INTRAVENTRICULAR BLOCK                    all zeros — AUROC undefined
+2026-03-21 14:43:42,355 - INFO -   MASKED BY FASCICULAR BLOCK                            all zeros — AUROC undefined
+2026-03-21 14:43:42,356 - INFO -   PEDIATRIC ECG ANALYSIS                                all zeros — AUROC undefined
+2026-03-21 14:43:42,356 - INFO -   BLOCKED                                               all zeros — AUROC undefined
+2026-03-21 14:43:42,356 - INFO -   WITH UNDETERMINED RHYTHM IRREGULARITY                 all zeros — AUROC undefined
+2026-03-21 14:43:42,357 - INFO -   LEFTWARD AXIS                                         all zeros — AUROC undefined
+2026-03-21 14:43:42,357 - INFO -   WITH 2ND DEGREE SA BLOCK MOBITZ I                     all zeros — AUROC undefined
+2026-03-21 14:43:42,358 - INFO -   ACUTE                                                 all zeros — AUROC undefined
+2026-03-21 14:43:42,359 - INFO -   ABNORMAL LEFT AXIS DEVIATION                          all zeros — AUROC undefined
+2026-03-21 14:43:42,359 - INFO -   NO P-WAVES FOUND                                      all zeros — AUROC undefined
+2026-03-21 14:43:42,359 - INFO -   ST LESS ELEVATED IN                                   all zeros — AUROC undefined
+2026-03-21 14:43:42,359 - INFO -   WITH RETROGRADE CONDUCTION                            all zeros — AUROC undefined
+2026-03-21 14:43:42,359 - INFO -   ST MORE ELEVATED IN                                   all zeros — AUROC undefined
+2026-03-21 14:43:42,359 - INFO -   JUNCTIONAL BRADYCARDIA                                all zeros — AUROC undefined
+2026-03-21 14:43:42,359 - INFO -   ANTERIOR INJURY PATTERN                               all zeros — AUROC undefined
+2026-03-21 14:43:42,359 - INFO -   ACUTE MI                                              all zeros — AUROC undefined
+2026-03-21 14:43:42,359 - INFO -   POSTERIOR INFARCT                                     all zeros — AUROC undefined
+2026-03-21 14:43:42,359 - INFO -   IDIOVENTRICULAR RHYTHM                                all zeros — AUROC undefined
+2026-03-21 14:43:42,362 - INFO -   WITH 2ND DEGREE SA BLOCK MOBITZ II                    all zeros — AUROC undefined
+2026-03-21 14:43:42,363 - INFO -   R IN AVL                                              all zeros — AUROC undefined
+2026-03-21 14:43:42,363 - INFO -   SINUS/ATRIAL CAPTURE                                  all zeros — AUROC undefined
+2026-03-21 14:43:42,363 - INFO -   AV DUAL-PACED COMPLEXES                               all zeros — AUROC undefined
+2026-03-21 14:43:42,364 - INFO -   INFEROLATERAL INJURY PATTERN                          all zeros — AUROC undefined
+2026-03-21 14:43:42,364 - INFO -   RBBB AND LEFT POSTERIOR FASCICULAR BLOCK              all zeros — AUROC undefined
+2026-03-21 14:43:42,364 - INFO -   ANTEROLATERAL INJURY PATTERN                          all zeros — AUROC undefined
+2026-03-21 14:43:42,365 - INFO -   ATRIAL-PACED COMPLEXES                                all zeros — AUROC undefined
+2026-03-21 14:43:42,365 - INFO -   WITH SINUS PAUSE                                      all zeros — AUROC undefined
+2026-03-21 14:43:42,365 - INFO -   BIVENTRICULAR HYPERTROPHY                             all zeros — AUROC undefined
+2026-03-21 14:43:42,366 - INFO -   ABNORMAL RIGHT AXIS DEVIATION                         all zeros — AUROC undefined
+2026-03-21 14:43:42,366 - INFO -   SUPRAVENTRICULAR COMPLEXES                            all zeros — AUROC undefined
+2026-03-21 14:43:42,367 - INFO -   WITH 2ND DEGREE AV BLOCK MOBITZ I                     all zeros — AUROC undefined
+2026-03-21 14:43:42,367 - INFO -   MULTIFOCAL ATRIAL TACHYCARDIA                         all zeros — AUROC undefined
+2026-03-21 14:43:42,367 - INFO - 
+[pruned_magnitude_ratio50] Valid labels : 39 / 150
+2026-03-21 14:43:42,367 - INFO - [pruned_magnitude_ratio50] Skipped      : 111 / 150  (all-zero, AUROC undefined)
+2026-03-21 14:43:42,367 - INFO - [pruned_magnitude_ratio50] Macro AUROC  : 0.5155  (averaged over 39 valid labels)
+2026-03-21 14:43:42,368 - INFO - [pruned_magnitude_ratio50] Results saved: ./res/zeroshot_pruning/pruned_magnitude_ratio50_results.csv
+2026-03-21 14:43:42,368 - INFO - [pruned_magnitude_ratio50] Skipped saved: ./res/zeroshot_pruning/pruned_magnitude_ratio50_skipped_labels.csv
+2026-03-21 14:43:42,368 - INFO - Plotting ROC curves for: pruned_magnitude_ratio50
+2026-03-21 14:43:42,920 - INFO - ROC curve plot saved: ./res/zeroshot_pruning/pruned_magnitude_ratio50_roc_curves.png
+2026-03-21 14:43:42,921 - INFO -   Macro AUROC: 0.6173 → 0.5155  (Δ -0.1018)
+2026-03-21 14:43:43,145 - INFO -   Saved: ./res/zeroshot_pruning/pruned_magnitude_ratio0.5_auroc0.5155.pth
+2026-03-21 14:43:43,147 - INFO - 
+============================================================
+2026-03-21 14:43:43,148 - INFO - PRUNING SUMMARY
+2026-03-21 14:43:43,148 - INFO - ============================================================
+2026-03-21 14:43:43,154 - INFO - 
+ pruning_ratio    method  macs_G  params_M  macs_reduction  params_reduction  macro_auroc  auroc_drop
+           0.0      none  1.1727   30.8190            0.00              0.00       0.6173      0.0000
+           0.1 magnitude  1.1498   30.5433            1.96              0.89       0.5668      0.0505
+           0.2 magnitude  1.1268   30.2676            3.91              1.79       0.5520      0.0652
+           0.3 magnitude  1.1039   29.9919            5.87              2.68       0.5354      0.0818
+           0.4 magnitude  1.0810   29.7162            7.82              3.58       0.5155      0.1018
+           0.5 magnitude  1.0810   29.7162            7.82              3.58       0.5155      0.1018
+2026-03-21 14:43:43,155 - INFO - 
+Summary saved: ./res/zeroshot_pruning/pruning_summary.csv
+2026-03-21 14:43:43,155 - INFO - ============================================================

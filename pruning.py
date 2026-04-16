@@ -1,23 +1,34 @@
 # =============================================================================
-# Zero-Shot Pruning + Evaluation on Child ECG Dataset
-# No training data required — prune with random/magnitude importance,
-# then evaluate the pruned model on the full ecg_df.
+# Pruning of Fine-tuned ECGFounder on Child ECG Dataset
+# Prunes the fine-tuned model (not the original pretrained weights),
+# evaluates each pruning ratio on the full ecg_df, and produces
+# per-class ROC plots + a pruning summary table.
+#
+# Key fix vs previous version:
+#   load_fresh_model() now strips the 'backbone.' prefix that ft_ChildECG
+#   adds when saving, so fine-tuned weights load with strict=True correctly.
+#   A sanity-check AUROC gate (> 0.55) aborts early if loading fails.
 # =============================================================================
 
 import os
 import sys
 import json
-import copy
 import logging
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
 from scipy.interpolate import interp1d
 
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+import matplotlib.cm as cm
+from matplotlib.patches import Patch
+
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, Dataset
-from sklearn.metrics import roc_auc_score, average_precision_score
+from sklearn.metrics import roc_auc_score, average_precision_score, roc_curve, auc
 
 import torch_pruning as tp
 import wfdb
@@ -25,30 +36,31 @@ import wfdb
 from net1d import Net1D
 
 # =============================================================================
-# CONFIG  —  edit these paths / settings
+# CONFIG
 # =============================================================================
-gpu_id        = 0
-batch_size    = 32
+gpu_id     = 0
+batch_size = 32
 
 # Pruning settings
-PRUNING_RATIOS   = [0.1, 0.2, 0.3, 0.4, 0.5]   # evaluate each ratio independently
-PRUNING_METHOD   = "magnitude"                    # "magnitude" | "random"
-#   ↑ Taylor needs gradients (i.e. training data), so magnitude/random only here
-GLOBAL_PRUNING   = False
-ISOMORPHIC       = True                           # recommended for transformer-style blocks
-ROUND_TO         = 8                              # channel multiple for GPU efficiency
+PRUNING_RATIOS = [0.1, 0.2, 0.3, 0.4, 0.5]
+PRUNING_METHOD = "magnitude"    # "magnitude" | "random"
+GLOBAL_PRUNING = False
+ISOMORPHIC     = True
+ROUND_TO       = 8
 
 # Paths
 ecg_path   = "C:/Users/zoorab/Desktop/zoher/University/Projects/Zhengzhou_ECG/Child_ecg/"
-csv_path   = "./ecg_df.csv"
-pth        = "./12_lead_ECGFounder.pth"
+csv_path   = "./ecg_with_exact_match.csv"
 tasks_path = "./tasks.txt"
-saved_dir  = "./res/zeroshot_pruning/"
-log_file   = "logging/zeroshot_pruning.log"
+saved_dir  = "./res/pruning_ft/"
+log_file   = "logging/pruning_ft.log"
 
-target_fs  = 5000
+# Path to the fine-tuned checkpoint saved by ft.py
+pth = "C:/Users/zoorab/Desktop/zoher/University/Projects/ECGFounder/res/finetune/child_ecg_full_ft_epoch1_auroc0.8408.pth"
 
-os.makedirs(saved_dir,              exist_ok=True)
+target_fs = 5000
+
+os.makedirs(saved_dir,                 exist_ok=True)
 os.makedirs(os.path.dirname(log_file), exist_ok=True)
 
 # =============================================================================
@@ -107,8 +119,8 @@ class ECG_Dataset(Dataset):
         if 2 * fs_out == fs_in:
             return ts[:, ::2]
         resampled = np.zeros((ts.shape[0], fs_out))
-        x_old     = np.linspace(0, t, num=ts.shape[1],   endpoint=True)
-        x_new     = np.linspace(0, t, num=int(fs_out),   endpoint=True)
+        x_old     = np.linspace(0, t, num=ts.shape[1], endpoint=True)
+        x_new     = np.linspace(0, t, num=int(fs_out), endpoint=True)
         for i in range(ts.shape[0]):
             f = interp1d(x_old, ts[i, :], kind="linear")
             resampled[i, :] = f(x_new)
@@ -122,7 +134,6 @@ class ECG_Dataset(Dataset):
         label       = torch.tensor(row["label"], dtype=torch.float)
         file_path   = self.ecg_path + row["Filename"]
         sample_rate = row["Sampling_point"]
-
         try:
             data, _ = wfdb.rdsamp(file_path)
             data    = np.transpose(data, (1, 0))
@@ -132,41 +143,72 @@ class ECG_Dataset(Dataset):
         except Exception as e:
             logger.warning(f"Failed to load {file_path}: {e} — returning zeros")
             signal = torch.zeros((12, self.target_fs))
-
         return signal, label
 
 
 # =============================================================================
-# MODEL LOADER  (fresh copy each pruning ratio so ratios are independent)
+# MODEL LOADER  — KEY FIX
 # =============================================================================
 def load_fresh_model(pth, n_classes, device):
+    """
+    Load a bare Net1D from a fine-tuned ft_ChildECG checkpoint.
+
+    ft_ChildECG wraps Net1D under self.backbone, so every saved key is
+    prefixed 'backbone.XXX'.  A bare Net1D expects 'XXX'.
+    We detect and strip that prefix so strict=True loading works correctly.
+
+    If the checkpoint was saved directly from Net1D (no wrapper, e.g. the
+    original pretrained model), keys have no prefix and load as-is.
+    """
     model = Net1D(
-        in_channels      = 12,
-        base_filters     = 64,
-        ratio            = 1,
-        filter_list      = [64, 160, 160, 400, 400, 1024, 1024],
-        m_blocks_list    = [2, 2, 2, 3, 3, 4, 4],
-        kernel_size      = 16,
-        stride           = 2,
-        groups_width     = 16,
-        verbose          = False,
-        use_bn           = False,
-        use_do           = False,
-        n_classes        = n_classes
+        in_channels   = 12,
+        base_filters  = 64,
+        ratio         = 1,
+        filter_list   = [64, 160, 160, 400, 400, 1024, 1024],
+        m_blocks_list = [2, 2, 2, 3, 3, 4, 4],
+        kernel_size   = 16,
+        stride        = 2,
+        groups_width  = 16,
+        verbose       = False,
+        use_bn        = False,
+        use_do        = False,
+        n_classes     = n_classes
     )
+
     checkpoint = torch.load(pth, map_location=device, weights_only=False)
-    state_dict = checkpoint["state_dict"]
-    log        = model.load_state_dict(state_dict, strict=False)
+    raw_sd     = checkpoint["state_dict"]
+
+    # detect wrapper prefix
+    has_backbone_prefix = any(k.startswith("backbone.") for k in raw_sd)
+
+    if has_backbone_prefix:
+        state_dict = {
+            k[len("backbone."):]: v
+            for k, v in raw_sd.items()
+            if k.startswith("backbone.")
+        }
+        logger.info("  Detected 'backbone.' prefix — stripping for bare Net1D")
+    else:
+        state_dict = raw_sd
+        logger.info("  No wrapper prefix detected — loading keys as-is")
+
+    log = model.load_state_dict(state_dict, strict=True)
     logger.info(
-        f"  Pretrained weights loaded | "
-        f"missing: {len(log.missing_keys)} | "
-        f"unexpected: {len(log.unexpected_keys)}"
+        f"  Weights loaded (strict=True) | "
+        f"missing: {len(log.missing_keys)} | unexpected: {len(log.unexpected_keys)}"
     )
+
+    # warn if anything is off — strict=True would have raised, but log anyway
+    if log.missing_keys:
+        logger.warning(f"  Missing  : {log.missing_keys[:5]}{'...' if len(log.missing_keys) > 5 else ''}")
+    if log.unexpected_keys:
+        logger.warning(f"  Unexpected: {log.unexpected_keys[:5]}{'...' if len(log.unexpected_keys) > 5 else ''}")
+
     return model.to(device)
 
 
 # =============================================================================
-# METRICS  (identical to ft.py)
+# METRICS
 # =============================================================================
 def calculate_performance_metrics(true, pred, threshold):
     pred_binary = (pred >= threshold).astype(int)
@@ -174,7 +216,6 @@ def calculate_performance_metrics(true, pred, threshold):
     fp = np.sum((true == 0) & (pred_binary == 1))
     tn = np.sum((true == 0) & (pred_binary == 0))
     fn = np.sum((true == 1) & (pred_binary == 0))
-
     sens      = tp / (tp + fn) if (tp + fn) > 0 else 0
     spec      = tn / (tn + fp) if (tn + fp) > 0 else 0
     precision = tp / (tp + fp) if (tp + fp) > 0 else 0
@@ -182,7 +223,6 @@ def calculate_performance_metrics(true, pred, threshold):
     f1        = 2 * (precision * sens) / (precision + sens) if (precision + sens) > 0 else 0
     auroc     = roc_auc_score(true, pred)            if len(np.unique(true)) > 1 else np.nan
     auprc     = average_precision_score(true, pred)  if len(np.unique(true)) > 1 else np.nan
-
     return sens, spec, precision, f1, precision, npv, auroc, auprc
 
 
@@ -225,9 +265,131 @@ def compute_macro_auroc(all_gt, all_pred, n_classes):
     return (np.mean(scores) if scores else 0.0), len(scores)
 
 
+# =============================================================================
+# ROC CURVE PLOT
+# =============================================================================
+def plot_roc_curves(all_gt, all_pred, labels, n_classes, split_name, saved_dir):
+    valid_indices = [i for i in range(n_classes) if len(np.unique(all_gt[:, i])) > 1]
+    n_valid       = len(valid_indices)
+
+    fig, ax = plt.subplots(figsize=(16, 11))
+    ax.set_facecolor("#0d1117")
+    fig.patch.set_facecolor("#0d1117")
+
+    cmap_a = cm.get_cmap("tab20",  20)
+    cmap_b = cm.get_cmap("tab20b", 20)
+    def get_color(k):
+        return cmap_a(k % 20) if k < 20 else cmap_b((k - 20) % 20)
+
+    mean_fpr    = np.linspace(0, 1, 500)
+    tprs_interp = []
+    class_lines = []
+
+    for colour_idx, i in enumerate(valid_indices):
+        true = all_gt[:, i]
+        pred = all_pred[:, i]
+        fpr, tpr, _ = roc_curve(true, pred)
+        roc_auc_val = auc(fpr, tpr)
+
+        tpr_i    = np.interp(mean_fpr, fpr, tpr); tpr_i[0] = 0.0
+        tprs_interp.append(tpr_i)
+
+        line, = ax.plot(fpr, tpr, color=get_color(colour_idx), lw=0.7, alpha=0.40)
+        class_lines.append((line, f"{labels[i]}  (AUC={roc_auc_val:.2f})", roc_auc_val))
+
+    # macro-average + std band
+    mean_tpr      = np.mean(tprs_interp, axis=0); mean_tpr[0] = 0.0
+    std_tpr       = np.std(tprs_interp,  axis=0)
+    macro_auc_val = auc(mean_fpr, mean_tpr)
+
+    macro_line, = ax.plot(
+        mean_fpr, mean_tpr,
+        color="#f0c040", lw=2.8, ls="--", zorder=10,
+        label=f"Macro-average  (AUC={macro_auc_val:.3f})"
+    )
+    ax.fill_between(
+        mean_fpr,
+        np.clip(mean_tpr - std_tpr, 0, 1),
+        np.clip(mean_tpr + std_tpr, 0, 1),
+        color="#f0c040", alpha=0.10, zorder=9
+    )
+
+    # micro-average
+    gt_flat   = all_gt[:,   valid_indices].ravel()
+    pred_flat = all_pred[:, valid_indices].ravel()
+    fpr_m, tpr_m, _ = roc_curve(gt_flat, pred_flat)
+    micro_auc_val   = auc(fpr_m, tpr_m)
+
+    micro_line, = ax.plot(
+        fpr_m, tpr_m,
+        color="#40e0d0", lw=2.8, ls="-.", zorder=10,
+        label=f"Micro-average  (AUC={micro_auc_val:.3f})"
+    )
+
+    chance_line, = ax.plot(
+        [0, 1], [0, 1],
+        color="#666666", lw=1.0, ls=":", zorder=5,
+        label="Chance  (AUC=0.500)"
+    )
+
+    ax.set_xlim([-0.01, 1.01])
+    ax.set_ylim([-0.01, 1.05])
+    ax.set_xlabel("False Positive Rate", color="#cccccc", fontsize=13, labelpad=8)
+    ax.set_ylabel("True Positive Rate",  color="#cccccc", fontsize=13, labelpad=8)
+    ax.set_title(
+        f"ROC Curves per Class — {split_name}\n"
+        f"{n_valid} valid / {n_classes} total labels  |  "
+        f"Macro AUC={macro_auc_val:.3f}   Micro AUC={micro_auc_val:.3f}",
+        color="#ffffff", fontsize=13, pad=14
+    )
+    ax.tick_params(colors="#888888", labelsize=10)
+    for spine in ax.spines.values():
+        spine.set_edgecolor("#2a2a2a")
+    ax.grid(color="#1e1e1e", lw=0.5, linestyle="--")
+
+    std_patch = Patch(facecolor="#f0c040", alpha=0.20, label="Macro ± 1 std")
+    summary_h = [macro_line, std_patch, micro_line, chance_line]
+    summary_l = [
+        f"Macro-average  (AUC={macro_auc_val:.3f})",
+        "Macro ± 1 std",
+        f"Micro-average  (AUC={micro_auc_val:.3f})",
+        "Chance  (AUC=0.500)"
+    ]
+    legend_summary = ax.legend(
+        summary_h, summary_l, loc="lower right", fontsize=10,
+        framealpha=0.75, facecolor="#141920", edgecolor="#444444", labelcolor="#eeeeee"
+    )
+    ax.add_artist(legend_summary)
+
+    class_sorted = sorted(class_lines, key=lambda x: x[2], reverse=True)
+    ncol         = 2 if n_valid > 30 else 1
+    ax.legend(
+        [x[0] for x in class_sorted], [x[1] for x in class_sorted],
+        loc="upper left", bbox_to_anchor=(1.01, 1.0),
+        fontsize=5.5, framealpha=0.55,
+        facecolor="#141920", edgecolor="#333333", labelcolor="#bbbbbb",
+        ncol=ncol, handlelength=1.2, handleheight=0.8,
+        borderpad=0.5, labelspacing=0.25
+    )
+
+    right_margin = 0.62 if ncol == 2 else 0.73
+    plt.tight_layout(rect=[0, 0, right_margin, 1])
+
+    out_path = os.path.join(saved_dir, f"{split_name}_roc_curves.png")
+    fig.savefig(out_path, dpi=160, bbox_inches="tight", facecolor=fig.get_facecolor())
+    plt.close(fig)
+    logger.info(f"[{split_name}] ROC curve plot saved: {out_path}")
+
+    return macro_auc_val, micro_auc_val
+
+
+# =============================================================================
+# FULL EVALUATION
+# =============================================================================
 def full_evaluation(all_gt, all_pred, labels, n_classes, split_name, saved_dir, n_resamples=100):
     logger.info(f"\nComputing full evaluation: {split_name}")
     results = []
+    skipped = []
 
     for i, label in enumerate(tqdm(labels, desc=f"Metrics [{split_name}]")):
         true  = all_gt[:, i]
@@ -236,10 +398,11 @@ def full_evaluation(all_gt, all_pred, labels, n_classes, split_name, saved_dir, 
         n_neg = int((1 - true).sum())
 
         if len(np.unique(true)) < 2:
+            skipped.append({"Label": label, "n_pos": n_pos, "reason": "all zeros — AUROC undefined"})
             continue
 
-        threshold                                          = compute_optimal_threshold(true, pred)
-        sens, spec, prec, f1, ppv, npv, auroc, auprc      = calculate_performance_metrics(true, pred, threshold)
+        threshold                                     = compute_optimal_threshold(true, pred)
+        sens, spec, prec, f1, ppv, npv, auroc, auprc = calculate_performance_metrics(true, pred, threshold)
 
         sens_ci  = bootstrap_ci(lambda t, p, th: calculate_performance_metrics(t, p, th)[0], true, pred, threshold, n_resamples)
         spec_ci  = bootstrap_ci(lambda t, p, th: calculate_performance_metrics(t, p, th)[1], true, pred, threshold, n_resamples)
@@ -266,44 +429,67 @@ def full_evaluation(all_gt, all_pred, labels, n_classes, split_name, saved_dir, 
         })
 
     results_df = pd.DataFrame(results).sort_values("AUROC", ascending=False)
-    out_path   = os.path.join(saved_dir, f"{split_name}_results.csv")
-    results_df.to_csv(out_path, index=False)
+    skipped_df = pd.DataFrame(skipped) if skipped else pd.DataFrame(columns=["Label", "n_pos", "reason"])
+
+    out_path     = os.path.join(saved_dir, f"{split_name}_results.csv")
+    skipped_path = os.path.join(saved_dir, f"{split_name}_skipped_labels.csv")
+    results_df.to_csv(out_path,     index=False)
+    skipped_df.to_csv(skipped_path, index=False)
 
     macro_auroc = results_df["AUROC"].dropna().mean()
-    logger.info(f"[{split_name}] Valid labels : {len(results_df)}/{n_classes}")
-    logger.info(f"[{split_name}] Macro AUROC  : {macro_auroc:.4f}")
+
+    logger.info(f"\n{'='*72}")
+    logger.info(f"[{split_name}] PER-CLASS AUROC  ({len(results_df)} valid / {n_classes} total)")
+    logger.info(f"{'='*72}")
+    logger.info(f"  {'Label':<52} {'n_pos':>6}  {'AUROC':>6}  95% CI")
+    logger.info(f"  {'-'*70}")
+    for _, row in results_df.iterrows():
+        ci = row["AUROC_CI"]
+        logger.info(
+            f"  {row['Label']:<52} {int(row['n_pos']):>6}  {row['AUROC']:>6.3f}"
+            f"  ({ci[0]:.3f}, {ci[1]:.3f})"
+        )
+
+    if len(skipped_df) > 0:
+        logger.info(f"\n{'='*72}")
+        logger.info(f"[{split_name}] SKIPPED ({len(skipped_df)}) — all-zero labels, AUROC undefined")
+        logger.info(f"{'='*72}")
+        for _, row in skipped_df.iterrows():
+            logger.info(f"  {row['Label']:<52}  {row['reason']}")
+
+    logger.info(f"\n[{split_name}] Valid labels : {len(results_df)} / {n_classes}")
+    logger.info(f"[{split_name}] Skipped      : {len(skipped_df)} / {n_classes}")
+    logger.info(f"[{split_name}] Macro AUROC  : {macro_auroc:.4f}  ({len(results_df)} valid labels)")
     logger.info(f"[{split_name}] Results saved: {out_path}")
-    logger.info(
-        f"\n{results_df[['Label','n_pos','AUROC','F1','Sensitivity','Specificity','PPV','NPV']].to_string(index=False)}"
+
+    plot_macro, plot_micro = plot_roc_curves(
+        all_gt, all_pred, labels, n_classes, split_name, saved_dir
     )
+    logger.info(f"[{split_name}] Plot Macro AUC={plot_macro:.4f}  Micro AUC={plot_micro:.4f}")
 
     return results_df, macro_auroc
 
 
 # =============================================================================
-# INFERENCE  (no training, no grad updates)
+# INFERENCE
 # =============================================================================
 def run_inference(model, dataloader, device):
     model.eval()
     all_gt, all_pred = [], []
-
     with torch.no_grad():
         for x, y in tqdm(dataloader, desc="Inference", leave=False):
             x, y = x.to(device), y.to(device)
-            pred = torch.sigmoid(model(x))
             all_gt.append(y.cpu().numpy())
-            all_pred.append(pred.cpu().numpy())
-
+            all_pred.append(torch.sigmoid(model(x)).cpu().numpy())
     return np.concatenate(all_gt), np.concatenate(all_pred)
 
 
 # =============================================================================
-# BUILD PRUNER  (magnitude or random — both data-free)
+# BUILD PRUNER
 # =============================================================================
 def build_pruner(model, example_inputs, pruning_ratio, n_classes,
                  method, global_pruning, isomorphic, round_to):
 
-    # Never prune the final classification head
     ignored_layers = [
         m for m in model.modules()
         if isinstance(m, nn.Linear) and m.out_features == n_classes
@@ -311,19 +497,19 @@ def build_pruner(model, example_inputs, pruning_ratio, n_classes,
     logger.info(f"  Ignoring {len(ignored_layers)} final classifier layer(s)")
 
     if method == "magnitude":
-        importance    = tp.importance.GroupMagnitudeImportance(p=2)
-        pruner_class  = tp.pruner.MagnitudePruner
+        importance   = tp.importance.GroupMagnitudeImportance(p=2)
+        pruner_class = tp.pruner.MagnitudePruner
     elif method == "random":
-        importance    = tp.importance.RandomImportance()
-        pruner_class  = tp.pruner.MagnitudePruner
+        importance   = tp.importance.RandomImportance()
+        pruner_class = tp.pruner.MagnitudePruner
     else:
-        raise ValueError(f"Unsupported zero-shot pruning method: {method}. Use 'magnitude' or 'random'.")
+        raise ValueError(f"Unsupported method: {method}. Use 'magnitude' or 'random'.")
 
     kwargs = dict(
         model           = model,
         example_inputs  = example_inputs,
         importance      = importance,
-        iterative_steps = 1,          # single-shot for zero-shot evaluation
+        iterative_steps = 1,
         pruning_ratio   = pruning_ratio,
         global_pruning  = global_pruning,
         ignored_layers  = ignored_layers,
@@ -339,61 +525,75 @@ def build_pruner(model, example_inputs, pruning_ratio, n_classes,
 # MAIN
 # =============================================================================
 def main():
-    # ── Load data ──────────────────────────────────────────────────────────────
-    logger.info("Loading ecg_df ...")
+
+    # ── load data ─────────────────────────────────────────────────────────────
+    logger.info("Loading dataset...")
     ecg_df = pd.read_csv(csv_path)
 
-    # parse label column (JSON string → list → numpy array)
     def parse_label(val):
         if isinstance(val, list):
             return np.array(val, dtype=np.float32)
         val = str(val).strip()
-        if ',' not in val:                        # numpy repr without commas
-            val = val.replace('[', '').replace(']', '')
+        if "," not in val:
+            val = val.replace("[", "").replace("]", "")
             return np.array([int(x) for x in val.split()], dtype=np.float32)
         return np.array(json.loads(val), dtype=np.float32)
 
     ecg_df["label"] = ecg_df["label"].apply(parse_label)
 
-    # drop rows with all-zero labels (unencodeable / fully unmapped)
     valid_mask = ecg_df["label"].apply(lambda x: x.sum() > 0)
     ecg_df     = ecg_df[valid_mask].reset_index(drop=True)
     logger.info(f"Samples with at least one active label: {len(ecg_df)}")
 
-    # ── Build dataloader (entire dataset — zero-shot, no splits needed) ────────
+    # ── dataloader ────────────────────────────────────────────────────────────
     full_dataset = ECG_Dataset(ecg_path=ecg_path, df=ecg_df, target_fs=target_fs)
     full_loader  = DataLoader(
-        full_dataset,
-        batch_size  = batch_size,
-        shuffle     = False,
-        num_workers = 0,
-        pin_memory  = True
+        full_dataset, batch_size=batch_size,
+        shuffle=False, num_workers=0, pin_memory=True
     )
     logger.info(f"Total samples: {len(full_dataset)} | Batches: {len(full_loader)}")
 
-    # ── Example input shape for dependency graph ───────────────────────────────
-    sample_x, _ = full_dataset[0]
+    sample_x, _    = full_dataset[0]
     example_inputs = torch.randn(1, *sample_x.shape).to(device)
 
-    # ── Baseline evaluation (unpruned model) ──────────────────────────────────
+    # ── baseline: fine-tuned model BEFORE any pruning ─────────────────────────
     logger.info("\n" + "=" * 60)
-    logger.info("BASELINE — unpruned model")
+    logger.info("BASELINE — fine-tuned model (no pruning)")
     logger.info("=" * 60)
 
-    baseline_model           = load_fresh_model(pth, n_classes, device)
-    base_macs, base_params   = tp.utils.count_ops_and_params(baseline_model, example_inputs)
+    baseline_model = load_fresh_model(pth, n_classes, device)
+
+    # sanity-check: macro AUC must be well above chance
+    logger.info("Running sanity-check inference to verify weights loaded correctly...")
+    base_gt, base_pred = run_inference(baseline_model, full_loader, device)
+    sanity_macro, sanity_n = compute_macro_auroc(base_gt, base_pred, n_classes)
+    logger.info(f"Sanity-check Macro AUROC: {sanity_macro:.4f} over {sanity_n} valid labels")
+
+    if sanity_macro < 0.55:
+        raise RuntimeError(
+            f"\nSanity check FAILED: macro AUROC = {sanity_macro:.4f} (expected >> 0.5).\n"
+            "The fine-tuned weights did not load correctly.\n"
+            "Verify that 'pth' points to an ft.py checkpoint, not the original pretrained model."
+        )
+    logger.info("Sanity check PASSED — fine-tuned weights loaded correctly.")
+
+    base_macs, base_params = tp.utils.count_ops_and_params(baseline_model, example_inputs)
     logger.info(f"Baseline MACs  : {base_macs  / 1e9:.4f} G")
     logger.info(f"Baseline Params: {base_params / 1e6:.4f} M")
 
-    base_gt, base_pred = run_inference(baseline_model, full_loader, device)
-    baseline_results, baseline_macro_auroc = full_evaluation(
+    # reuse already-computed predictions as baseline evaluation
+    _, baseline_macro_auroc = full_evaluation(
         base_gt, base_pred, labels, n_classes,
-        split_name = "baseline",
-        saved_dir  = saved_dir,
+        split_name  = "baseline",
+        saved_dir   = saved_dir,
         n_resamples = 100
     )
 
-    # ── Summary table (filled as we go) ───────────────────────────────────────
+    # save baseline arrays for downstream comparison plots
+    np.save(os.path.join(saved_dir, "baseline_gt.npy"),   base_gt)
+    np.save(os.path.join(saved_dir, "baseline_pred.npy"), base_pred)
+    logger.info(f"Baseline gt/pred saved to {saved_dir}")
+
     summary_rows = [{
         "pruning_ratio"   : 0.0,
         "method"          : "none",
@@ -405,31 +605,29 @@ def main():
         "auroc_drop"      : 0.0,
     }]
 
-    # ── Iterate over pruning ratios ────────────────────────────────────────────
+    # ── pruning loop ──────────────────────────────────────────────────────────
     for ratio in PRUNING_RATIOS:
         logger.info("\n" + "=" * 60)
         logger.info(f"PRUNING RATIO {ratio}  |  method: {PRUNING_METHOD}")
         logger.info("=" * 60)
 
-        # fresh model for every ratio (independent experiments)
+        # independent fresh copy of the fine-tuned model for each ratio
         model = load_fresh_model(pth, n_classes, device)
 
-        # build pruner and apply single-shot pruning (no training)
         pruner = build_pruner(
             model          = model,
             example_inputs = example_inputs,
             pruning_ratio  = ratio,
             n_classes      = n_classes,
             method         = PRUNING_METHOD,
-            global_pruning  = GLOBAL_PRUNING,
+            global_pruning = GLOBAL_PRUNING,
             isomorphic     = ISOMORPHIC,
             round_to       = ROUND_TO,
         )
 
-        logger.info("Applying pruning step (zero-shot — no training data) ...")
+        logger.info("Applying single-shot pruning step...")
         pruner.step()
 
-        # model size after pruning
         pruned_macs, pruned_params = tp.utils.count_ops_and_params(model, example_inputs)
         macs_red   = (1 - pruned_macs   / base_macs)   * 100
         params_red = (1 - pruned_params / base_params)  * 100
@@ -437,10 +635,9 @@ def main():
         logger.info(f"  MACs  : {base_macs/1e9:.4f} G → {pruned_macs/1e9:.4f} G  ({macs_red:.2f}% reduced)")
         logger.info(f"  Params: {base_params/1e6:.4f} M → {pruned_params/1e6:.4f} M  ({params_red:.2f}% reduced)")
 
-        # inference on full dataset
-        gt, pred = run_inference(model, full_loader, device)
-
+        gt, pred   = run_inference(model, full_loader, device)
         split_name = f"pruned_{PRUNING_METHOD}_ratio{int(ratio*100):02d}"
+
         results_df, macro_auroc = full_evaluation(
             gt, pred, labels, n_classes,
             split_name  = split_name,
@@ -449,24 +646,27 @@ def main():
         )
 
         auroc_drop = baseline_macro_auroc - macro_auroc
-        logger.info(f"  Macro AUROC: {baseline_macro_auroc:.4f} → {macro_auroc:.4f}  (Δ {-auroc_drop:+.4f})")
+        logger.info(
+            f"  Macro AUROC: {baseline_macro_auroc:.4f} → {macro_auroc:.4f}  "
+            f"(Δ {-auroc_drop:+.4f} vs fine-tuned baseline)"
+        )
 
-        # save pruned model
         ckpt_path = os.path.join(
             saved_dir,
             f"pruned_{PRUNING_METHOD}_ratio{ratio}_auroc{macro_auroc:.4f}.pth"
         )
         model.zero_grad()
         torch.save({
-            "model"            : model,
-            "pruning_ratio"    : ratio,
-            "pruning_method"   : PRUNING_METHOD,
-            "macro_auroc"      : macro_auroc,
-            "baseline_auroc"   : baseline_macro_auroc,
-            "macs"             : pruned_macs,
-            "params"           : pruned_params,
-            "baseline_macs"    : base_macs,
-            "baseline_params"  : base_params,
+            "model"           : model,
+            "pruning_ratio"   : ratio,
+            "pruning_method"  : PRUNING_METHOD,
+            "macro_auroc"     : macro_auroc,
+            "baseline_auroc"  : baseline_macro_auroc,
+            "macs"            : pruned_macs,
+            "params"          : pruned_params,
+            "baseline_macs"   : base_macs,
+            "baseline_params" : base_params,
+            "source_pth"      : pth,
         }, ckpt_path)
         logger.info(f"  Saved: {ckpt_path}")
 
@@ -481,7 +681,7 @@ def main():
             "auroc_drop"      : round(auroc_drop,  4),
         })
 
-    # ── Save and print summary ─────────────────────────────────────────────────
+    # ── final summary ─────────────────────────────────────────────────────────
     summary_df   = pd.DataFrame(summary_rows)
     summary_path = os.path.join(saved_dir, "pruning_summary.csv")
     summary_df.to_csv(summary_path, index=False)
