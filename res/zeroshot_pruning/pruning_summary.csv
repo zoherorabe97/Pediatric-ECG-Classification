@@ -1,0 +1,7 @@
+pruning_ratio,method,macs_G,params_M,macs_reduction,params_reduction,macro_auroc,auroc_drop
+0.0,none,1.1727,30.819,0.0,0.0,0.6173,0.0
+0.1,magnitude,1.1498,30.5433,1.96,0.89,0.5668,0.0505
+0.2,magnitude,1.1268,30.2676,3.91,1.79,0.552,0.0652
+0.3,magnitude,1.1039,29.9919,5.87,2.68,0.5354,0.0818
+0.4,magnitude,1.081,29.7162,7.82,3.58,0.5155,0.1018
+0.5,magnitude,1.081,29.7162,7.82,3.58,0.5155,0.1018

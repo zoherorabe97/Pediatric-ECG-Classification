@@ -1,0 +1,7 @@
+pruning_ratio,method,recovery_epochs,macs_G,params_M,macs_reduction,params_reduction,macro_auroc,auroc_drop
+0.0,none,0,1.1727,30.819,0.0,0.0,0.9212,0.0
+0.1,magnitude,3,1.1498,30.5433,1.96,0.89,0.9096,0.0116
+0.2,magnitude,3,1.1268,30.2676,3.91,1.79,0.8993,0.022
+0.3,magnitude,3,1.1039,29.9919,5.87,2.68,0.893,0.0282
+0.4,magnitude,3,1.081,29.7162,7.82,3.58,0.8925,0.0287
+0.5,magnitude,3,1.081,29.7162,7.82,3.58,0.8926,0.0286

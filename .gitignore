@@ -1,4 +1,3 @@
-res/
 *.pth
 __pycache__/
 .venv
