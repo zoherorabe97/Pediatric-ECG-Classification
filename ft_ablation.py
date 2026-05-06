@@ -89,7 +89,7 @@ ZEROSHOT_PRED_PATH = os.path.join(saved_dir, "zeroshot_test_pred.npy")
 
 # ── Ablation axis ─────────────────────────────────────────────────────────────
 # None  → use all available training samples
-SAMPLE_BUDGETS = [None, 3000, 1000, 500]
+SAMPLE_BUDGETS = [None, 3000, 1000, 500, 100]
 
 os.makedirs(saved_dir, exist_ok=True)
 os.makedirs("logging", exist_ok=True)
@@ -170,49 +170,50 @@ class EarlyStopping:
 # =============================================================================
 # DATASET
 # =============================================================================
+
 class ECG_Dataset(Dataset):
-    def __init__(self, ecg_path: str, df: pd.DataFrame):
+    def __init__(self, ecg_path, df):
         self.ecg_path  = ecg_path
         self.data      = df.copy().reset_index(drop=True)
+        self.target_fs = 5000
 
-    def z_score_normalization(self, signal: np.ndarray) -> np.ndarray:
+    def z_score_normalization(self, signal):
         return (signal - np.mean(signal)) / (np.std(signal) + 1e-8)
 
-    def resample_unequal(self, ts: np.ndarray, fs_in: float, fs_out: int) -> np.ndarray:
+    def resample_unequal(self, ts, fs_in, fs_out):
         if fs_in == 0 or len(ts) == 0:
             return ts
-        t      = ts.shape[1] / fs_in
-        fs_in  = int(fs_in)
-        fs_out = int(fs_out)
+        t = ts.shape[1] / fs_in
+        fs_in, fs_out = int(fs_in), int(fs_out)
         if fs_out == fs_in:
             return ts
         if 2 * fs_out == fs_in:
             return ts[:, ::2]
-        resampled = np.zeros((ts.shape[0], fs_out), dtype=np.float32)
+        resampled_ts = np.zeros((ts.shape[0], fs_out))
         x_old = np.linspace(0, t, num=ts.shape[1], endpoint=True)
-        x_new = np.linspace(0, t, num=fs_out,       endpoint=True)
+        x_new = np.linspace(0, t, num=int(fs_out), endpoint=True)
         for i in range(ts.shape[0]):
             f = interp1d(x_old, ts[i, :], kind="linear")
-            resampled[i, :] = f(x_new)
-        return resampled
+            resampled_ts[i, :] = f(x_new)
+        return resampled_ts
 
-    def __len__(self) -> int:
+    def __len__(self):
         return len(self.data)
 
-    def __getitem__(self, idx: int):
+    def __getitem__(self, idx):
         row         = self.data.iloc[idx]
         label       = torch.tensor(row["label"], dtype=torch.float)
         file_path   = self.ecg_path + row["Filename"]
-        sample_rate = row["Sampling_point"]
+        sample_rate =  500
         try:
             data, _ = wfdb.rdsamp(file_path)
             data    = np.transpose(data, (1, 0))
             data    = self.z_score_normalization(data)
-            data    = self.resample_unequal(data, sample_rate, target_fs)
+            data    = self.resample_unequal(data, sample_rate, self.target_fs)
             signal  = torch.FloatTensor(data)
         except Exception as e:
-            logger.warning(f"Failed to load {file_path}: {e} — returning zeros")
-            signal = torch.zeros((12, target_fs))
+            logger.warning(f"Failed to load {file_path}: {e} -- returning zeros")
+            signal = torch.zeros((12, self.target_fs))
         return signal, label
 
 # =============================================================================

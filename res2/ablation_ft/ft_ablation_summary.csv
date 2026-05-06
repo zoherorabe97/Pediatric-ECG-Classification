@@ -1,0 +1,5 @@
+experiment,model,n_train_requested,n_train_actual,n_val,n_test,total_params,trainable_params,best_val_AUROC,test_macro_AUROC
+ft_full,ECGFounder_FT,full,7674,879,2132,30819014,30819014,0.9224,0.9326
+ft_3000,ECGFounder_FT,3000,3000,879,2132,30819014,30819014,0.9122,0.9227
+ft_1000,ECGFounder_FT,1000,1000,879,2132,30819014,30819014,0.8858,0.9136
+ft_500,ECGFounder_FT,500,500,879,2132,30819014,30819014,0.8757,0.8948

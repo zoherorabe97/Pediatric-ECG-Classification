@@ -1,0 +1,17 @@
+2026-04-28 10:07:10,884 - Using device: cuda:0
+2026-04-28 10:07:10,885 - Number of classes: 150
+2026-04-28 10:07:11,182 - Full Valid Dataset : 10685 samples
+2026-04-28 10:07:11,182 - Test Dataset       : 2132 samples
+2026-04-28 10:07:11,839 - Model loaded. Missing: 0, Unexpected: 0
+2026-04-28 10:07:11,917 - 
+--- EVALUATING ON ENTIRE PEDIATRIC DATASET ---
+2026-04-28 10:09:46,942 - 
+Computing evaluation for: Full_Data
+2026-04-28 10:10:05,005 - [Full_Data] Macro AUROC: 0.6079  (46 valid labels)
+2026-04-28 10:10:05,555 - [Full_Data] Plot Macro AUC=0.6079  Micro AUC=0.6226
+2026-04-28 10:10:05,563 - 
+--- EVALUATING ON TEST SPLIT ONLY ---
+2026-04-28 10:10:30,830 - 
+Computing evaluation for: Test_Set
+2026-04-28 10:10:38,683 - [Test_Set] Macro AUROC: 0.6172  (42 valid labels)
+2026-04-28 10:10:39,076 - [Test_Set] Plot Macro AUC=0.6171  Micro AUC=0.6084

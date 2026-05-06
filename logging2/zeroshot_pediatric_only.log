@@ -1,0 +1,17 @@
+2026-04-18 17:03:58,648 - Using device: cpu
+2026-04-18 17:03:58,648 - Number of classes: 150
+2026-04-18 17:03:59,194 - Full Valid Dataset : 9397 samples
+2026-04-18 17:03:59,194 - Test Dataset       : 1941 samples
+2026-04-18 17:04:00,026 - Model loaded. Missing: 0, Unexpected: 0
+2026-04-18 17:04:00,035 - 
+--- EVALUATING ON ENTIRE PEDIATRIC DATASET ---
+2026-04-18 17:08:29,935 - 
+Computing evaluation for: Full_Data
+2026-04-18 17:08:53,876 - [Full_Data] Macro AUROC: 0.8572  (39 valid labels)
+2026-04-18 17:08:54,912 - [Full_Data] Plot Macro AUC=0.8572  Micro AUC=0.8979
+2026-04-18 17:08:54,916 - 
+--- EVALUATING ON TEST SPLIT ONLY ---
+2026-04-18 17:09:47,041 - 
+Computing evaluation for: Test_Set
+2026-04-18 17:09:57,672 - [Test_Set] Macro AUROC: 0.8400  (38 valid labels)
+2026-04-18 17:09:58,477 - [Test_Set] Plot Macro AUC=0.8400  Micro AUC=0.8904

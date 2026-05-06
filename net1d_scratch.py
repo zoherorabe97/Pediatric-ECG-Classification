@@ -15,6 +15,7 @@
 
 import os
 import sys
+import glob
 import copy
 import numpy as np
 import pandas as pd
@@ -66,7 +67,7 @@ tasks_path = "./tasks.txt"
 
 # ── Ablation axes ─────────────────────────────────────────────────────────────
 MODEL_SIZES    = ["large", "medium", "small"]   # network widths
-SAMPLE_BUDGETS = [None, 3000, 1000, 500]        # None = use all training data
+SAMPLE_BUDGETS = [None, 3000, 1000, 500, 100]        # None = use all training data
 
 os.makedirs(saved_dir, exist_ok=True)
 os.makedirs("logging", exist_ok=True)
@@ -161,51 +162,40 @@ class EarlyStopping:
 # DATASET
 # =============================================================================
 class ECG_Dataset(Dataset):
-    def __init__(self, ecg_path: str, df: pd.DataFrame):
+    def __init__(self, ecg_path, df):
         self.ecg_path  = ecg_path
         self.data      = df.copy().reset_index(drop=True)
-        self.target_fs = target_fs
+        self.target_fs = 5000
 
-    def z_score_normalization(self, signal: np.ndarray) -> np.ndarray:
+    def z_score_normalization(self, signal):
         return (signal - np.mean(signal)) / (np.std(signal) + 1e-8)
 
-    def resample_unequal(self, ts: np.ndarray, fs_in: float, fs_out: int) -> np.ndarray:
-        if fs_in == 0 or len(ts) == 0:
-            return ts
-        t      = ts.shape[1] / fs_in
-        fs_in  = int(fs_in)
-        fs_out = int(fs_out)
-        if fs_out == fs_in:
-            return ts
-        if 2 * fs_out == fs_in:
-            return ts[:, ::2]
-        resampled = np.zeros((ts.shape[0], fs_out), dtype=np.float32)
-        x_old = np.linspace(0, t, num=ts.shape[1], endpoint=True)
-        x_new = np.linspace(0, t, num=fs_out,       endpoint=True)
-        for i in range(ts.shape[0]):
-            f = interp1d(x_old, ts[i, :], kind="linear")
-            resampled[i, :] = f(x_new)
-        return resampled
-
-    def __len__(self) -> int:
+    def __len__(self):
         return len(self.data)
 
-    def __getitem__(self, idx: int):
+    def __getitem__(self, idx):
         row         = self.data.iloc[idx]
         label       = torch.tensor(row["label"], dtype=torch.float)
         file_path   = self.ecg_path + row["Filename"]
-        sample_rate = row["Sampling_point"]
         try:
             data, _ = wfdb.rdsamp(file_path)
             data    = np.transpose(data, (1, 0))
             data    = self.z_score_normalization(data)
-            data    = self.resample_unequal(data, sample_rate, self.target_fs)
+            
+            # ---> FIX APPLIED HERE <---
+            # Guarantee 10 seconds (5000 points @ 500Hz) vs naive compression
+            expected_samples = self.target_fs
+            if data.shape[1] >= expected_samples:
+                data = data[:, :expected_samples]
+            else:
+                pad_len = expected_samples - data.shape[1]
+                data = np.pad(data, ((0, 0), (0, pad_len)), 'constant')
+            
             signal  = torch.FloatTensor(data)
         except Exception as e:
-            logger.warning(f"Failed to load {file_path}: {e} — returning zeros")
+            logger.warning(f"Failed to load {file_path}: {e} -- returning zeros")
             signal = torch.zeros((12, self.target_fs))
         return signal, label
-
 # =============================================================================
 # MODEL ARCHITECTURE VARIANTS
 # =============================================================================
@@ -558,6 +548,19 @@ def subsample_train(train_df: pd.DataFrame, n: int, seed: int) -> pd.DataFrame:
     logger.info(f"  Subsampled training set: {len(sub)} / {len(train_df)} records")
     return sub
 
+def find_best_checkpoint(exp_dir: str, exp_id: str):
+    pattern = os.path.join(exp_dir, f"{exp_id}_epoch*.pth")
+    matches = glob.glob(pattern)
+    if not matches:
+        return None
+    def _auroc_from_name(p):
+        try:
+            return float(p.split("auroc")[-1].replace(".pth", ""))
+        except Exception:
+            return 0.0
+    matches.sort(key=_auroc_from_name, reverse=True)
+    return matches[0]
+
 # =============================================================================
 # SINGLE EXPERIMENT  (one model size × one sample budget)
 # =============================================================================
@@ -609,6 +612,78 @@ def run_experiment(
     logger.info(f"  Total params    : {total_p:,}")
     logger.info(f"  Trainable params: {train_p:,}")
     logger.info(f"  Train samples   : {len(cur_train_df)}")
+
+    existing_ckpt = find_best_checkpoint(exp_dir, experiment_id)
+    test_gt_path   = os.path.join(exp_dir, "test_gt.npy")
+    test_pred_path = os.path.join(exp_dir, "test_pred.npy")
+
+    if existing_ckpt is not None:
+        logger.info(f"  [SKIP TRAINING] Checkpoint found: {os.path.basename(existing_ckpt)}")
+        ckpt = torch.load(existing_ckpt, map_location=device, weights_only=False)
+        model.load_state_dict(ckpt["state_dict"])
+        best_val_auroc = ckpt.get("val_auroc", float("nan"))
+        logger.info(f"  Loaded epoch {ckpt.get('epoch', '?')} | val AUROC: {best_val_auroc:.4f}")
+
+        if os.path.exists(test_gt_path) and os.path.exists(test_pred_path):
+            test_gt = np.load(test_gt_path)
+            test_pred = np.load(test_pred_path)
+            if test_gt.shape[0] == len(test_df):
+                logger.info(f"  [SKIP TEST EVAL] Cached test predictions found ({test_gt.shape[0]} samples).")
+                test_macro, _ = full_evaluation(
+                    test_gt, test_pred, labels_list, n_classes,
+                    split_name=f"{experiment_id}_test",
+                    out_dir=exp_dir,
+                    n_resamples=100
+                )
+                return {
+                    "experiment"         : experiment_id,
+                    "model_size"         : size,
+                    "n_train_requested"  : budget_label,
+                    "n_train_actual"     : len(cur_train_df),
+                    "n_val"              : len(val_df),
+                    "n_test"             : len(test_df),
+                    "total_params"       : total_p,
+                    "trainable_params"   : train_p,
+                    "best_val_AUROC"     : round(best_val_auroc, 4),
+                    "test_macro_AUROC"   : round(test_macro, 4),
+                }
+            else:
+                logger.warning("  Cached test predictions size mismatch — re-running test eval.")
+        
+        # Test evaluation from loaded checkpoint
+        logger.info("  Running test evaluation from loaded checkpoint …")
+        model.eval()
+        test_gt_list, test_pred_list = [], []
+        with torch.no_grad():
+            for x, y in tqdm(testloader, desc=f"[{experiment_id}] Test", leave=False):
+                x, y = x.to(device), y.to(device)
+                test_pred_list.append(torch.sigmoid(model(x)).cpu().numpy())
+                test_gt_list.append(y.cpu().numpy())
+
+        test_gt   = np.concatenate(test_gt_list)
+        test_pred = np.concatenate(test_pred_list)
+
+        np.save(test_gt_path,   test_gt)
+        np.save(test_pred_path, test_pred)
+
+        test_macro, _ = full_evaluation(
+            test_gt, test_pred, labels_list, n_classes,
+            split_name=f"{experiment_id}_test",
+            out_dir=exp_dir,
+            n_resamples=100
+        )
+        return {
+            "experiment"         : experiment_id,
+            "model_size"         : size,
+            "n_train_requested"  : budget_label,
+            "n_train_actual"     : len(cur_train_df),
+            "n_val"              : len(val_df),
+            "n_test"             : len(test_df),
+            "total_params"       : total_p,
+            "trainable_params"   : train_p,
+            "best_val_AUROC"     : round(best_val_auroc, 4),
+            "test_macro_AUROC"   : round(test_macro, 4),
+        }
 
     optimizer = optim.Adam(model.parameters(), lr=lr, weight_decay=weight_decay)
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(

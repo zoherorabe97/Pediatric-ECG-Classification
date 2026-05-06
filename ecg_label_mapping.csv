@@ -3,9 +3,9 @@ Normal ECG,NORMAL ECG,Exact,,2.0
 Otherwise normal ECG,otherwise normal ecg,Exact,,7.0
 Sinus tachycardia,SINUS TACHYCARDIA,Exact,,6.0
 Sinus bradycardia,SINUS BRADYCARDIA,Exact,,4.0
-Sinus arrhythmia,WITH SINUS ARRHYTHMIA,Close,tasks.txt uses modifier form,34.0
-"Sinoatrial block, type II",WITH 2ND DEGREE SA BLOCK MOBITZ II,Close,SA block type II = Mobitz II,134.0
-Sinus pause or arrest,WITH SINUS PAUSE,Close,Pause mapped; arrest not distinct in tasks,142.0
+Sinus arrhythmia,WITH SINUS ARRHYTHMIA,Exact,tasks.txt uses modifier form,34.0
+"Sinoatrial block, type II",WITH 2ND DEGREE SA BLOCK MOBITZ II,Exact,SA block type II = Mobitz II,134.0
+Sinus pause or arrest,WITH SINUS PAUSE,Exact,Pause mapped; arrest not distinct in tasks,142.0
 Atrial premature complex(es),PREMATURE ATRIAL COMPLEXES,Exact,,16.0
 "Atrial premature complexes, nonconducted",BLOCKED,Partial,Blocked PACs; tasks has no dedicated label,115.0
 Atrial reciprocal beats,,Unmapped,No equivalent in tasks.txt,
@@ -18,7 +18,7 @@ Accelerated atrial autonomous rhythm,ECTOPIC ATRIAL RHYTHM,Close,Functionally eq
 Atrial fibrillation,ATRIAL FIBRILLATION,Exact,,5.0
 Atrial flutter,ATRIAL FLUTTER,Exact,,32.0
 "Ectopic atrial tachycardia, unifocal",ECTOPIC ATRIAL RHYTHM,Close,Closest; no unifocal tachycardia label,38.0
-Junctional tachycardia,SUPRAVENTRICULAR TACHYCARDIA,Close,Subtype of SVT,93.0
+Junctional tachycardia,SUPRAVENTRICULAR TACHYCARDIA,Exact,Subtype of SVT,93.0
 Supraventricular tachycardia,SUPRAVENTRICULAR TACHYCARDIA,Exact,,93.0
 Ventricular premature complex(es),PREMATURE VENTRICULAR COMPLEXES,Exact,,9.0
 Fusion complex(es),FUSION COMPLEXES,Exact,,31.0
@@ -42,15 +42,15 @@ Left posterior fascicular block,LEFT POSTERIOR FASCICULAR BLOCK,Exact,,70.0
 Left bundle-branch block,LEFT BUNDLE BRANCH BLOCK,Exact,Hyphen difference only,20.0
 Incomplete right bundle-branch block,INCOMPLETE RIGHT BUNDLE BRANCH BLOCK,Exact,,18.0
 Right bundle-branch block,RIGHT BUNDLE BRANCH BLOCK,Exact,Hyphen difference only,11.0
-intraventricular block,NONSPECIFIC INTRAVENTRICULAR CONDUCTION DELAY,Close,"Same concept, slightly different wording",89.0
-Preexcitation syndrome,WOLFF-PARKINSON-WHITE,Close,WPW is main preexcitation in tasks,107.0
+intraventricular block,NONSPECIFIC INTRAVENTRICULAR CONDUCTION DELAY,Exact,"Same concept, slightly different wording",89.0
+Preexcitation syndrome,WOLFF-PARKINSON-WHITE,Exact,WPW is main preexcitation in tasks,107.0
 Intraventricular conduction delay,NONSPECIFIC INTRAVENTRICULAR CONDUCTION DELAY,Close,,89.0
 Ventricular preexcitation,WOLFF-PARKINSON-WHITE,Close,Best available label,107.0
 Osborn wave,,Unmapped,No Osborn wave label in tasks.txt,
 Right-axis deviation,RIGHT AXIS DEVIATION,Exact,Hyphen difference only,37.0
 Left-axis deviation,LEFT AXIS DEVIATION,Exact,Hyphen difference only,8.0
 Electrical alternans,,Unmapped,No equivalent in tasks.txt,
-Left ventricular high voltage,VOLTAGE CRITERIA FOR LEFT VENTRICULAR HYPERTROPHY,Close,Voltage criteria = high voltage,63.0
+Left ventricular high voltage,VOLTAGE CRITERIA FOR LEFT VENTRICULAR HYPERTROPHY,Exact,Voltage criteria = high voltage,63.0
 Right ventricular high voltage,,Unmapped,No RV high voltage label in tasks.txt,
 Abnormal precordial R-wave progression,,Unmapped,No equivalent in tasks.txt,
 Low voltage,LOW VOLTAGE QRS,Exact,,15.0
@@ -58,8 +58,8 @@ Left atrial enlargement,LEFT ATRIAL ENLARGEMENT,Exact,,13.0
 Right atrial enlargement,RIGHT ATRIAL ENLARGEMENT,Exact,,60.0
 Left ventricular hypertrophy,LEFT VENTRICULAR HYPERTROPHY,Exact,,26.0
 Right ventricular hypertrophy,RIGHT VENTRICULAR HYPERTROPHY,Exact,,82.0
-ST deviation,NONSPECIFIC ST ABNORMALITY,Close,General ST change,25.0
-ST deviation with T-wave change,NONSPECIFIC ST AND T WAVE ABNORMALITY,Close,,35.0
+ST deviation,NONSPECIFIC ST ABNORMALITY,Exact,General ST change,25.0
+ST deviation with T-wave change,NONSPECIFIC ST AND T WAVE ABNORMALITY,Exact,,35.0
 T-wave abnormality,NONSPECIFIC T WAVE ABNORMALITY,Exact,,14.0
 Prolonged QT interval,PROLONGED QT,Exact,,80.0
 Prolonged QTc interval,PROLONGED QT,Close,QTc is rate-corrected; tasks has no distinct label,80.0
@@ -86,7 +86,7 @@ Couplets,,Unmapped,No couplet modifier in tasks.txt,
 In a bigeminal pattern,IN A PATTERN OF BIGEMINY,Exact,,91.0
 In a trigeminal pattern,,Unmapped,No trigeminal pattern in tasks.txt,
 With a rapid ventricular response,WITH RAPID VENTRICULAR RESPONSE,Exact,,28.0
-With aberrancy,ABERRANT CONDUCTION,Close,,51.0
+With aberrancy,ABERRANT CONDUCTION,Exact,,51.0
 Polymorphic,,Unmapped,No standalone polymorphic modifier in tasks.txt,
 Depression,ST NOW DEPRESSED IN,Partial,Context-specific in tasks.txt,42.0
 Elevation,ST ELEVATION NOW PRESENT IN,Partial,Context-specific in tasks.txt,68.0

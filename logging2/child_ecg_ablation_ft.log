@@ -1,0 +1,312 @@
+2026-04-02 20:31:19,153 - INFO - Using device: cuda:0
+2026-04-02 20:31:19,153 - INFO - Number of classes: 150
+2026-04-02 20:31:19,423 - INFO - ✓ Patient-level split verified — no leakage detected.
+2026-04-02 20:31:19,423 - INFO -   TRAIN :  6690 samples |  5748 patients
+2026-04-02 20:31:19,423 - INFO -   VAL   :   766 samples |   639 patients
+2026-04-02 20:31:19,423 - INFO -   TEST  :  1941 samples |  1597 patients
+2026-04-02 20:31:19,423 - INFO - 
+======================================================================
+2026-04-02 20:31:19,423 - INFO - EXPERIMENT: ft_full
+2026-04-02 20:31:19,423 - INFO - ======================================================================
+2026-04-02 20:31:19,423 - INFO -   Using full training set: 6690 records
+2026-04-02 20:31:19,431 - INFO -   Train batches: 210 | Val batches: 24 | Test batches: 61
+2026-04-02 20:31:20,617 - INFO -   Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-04-02 20:31:20,705 - INFO -   Total params    : 30,819,014
+2026-04-02 20:31:20,706 - INFO -   Trainable params: 30,819,014
+2026-04-02 20:33:37,468 - INFO - [ft_full] E001  train_loss=0.0303  val_loss=0.0237  val_AUROC=0.8369  valid_labels=30/150
+2026-04-02 20:33:38,011 - INFO -   [SAVED] ft_full_epoch1_auroc0.8369.pth
+2026-04-02 20:35:35,739 - INFO - [ft_full] E002  train_loss=0.0204  val_loss=0.0216  val_AUROC=0.8648  valid_labels=30/150
+2026-04-02 20:35:36,272 - INFO -   [SAVED] ft_full_epoch2_auroc0.8648.pth
+2026-04-02 20:37:33,716 - INFO - [ft_full] E003  train_loss=0.0185  val_loss=0.0207  val_AUROC=0.8872  valid_labels=30/150
+2026-04-02 20:37:34,399 - INFO -   [SAVED] ft_full_epoch3_auroc0.8872.pth
+2026-04-02 20:39:32,561 - INFO - [ft_full] E004  train_loss=0.0173  val_loss=0.0199  val_AUROC=0.8991  valid_labels=30/150
+2026-04-02 20:39:33,154 - INFO -   [SAVED] ft_full_epoch4_auroc0.8991.pth
+2026-04-02 20:41:26,775 - INFO - [ft_full] E005  train_loss=0.0163  val_loss=0.0198  val_AUROC=0.9001  valid_labels=30/150
+2026-04-02 20:41:27,319 - INFO -   [SAVED] ft_full_epoch5_auroc0.9001.pth
+2026-04-02 20:43:22,737 - INFO - [ft_full] E006  train_loss=0.0155  val_loss=0.0196  val_AUROC=0.9041  valid_labels=30/150
+2026-04-02 20:43:23,272 - INFO -   [SAVED] ft_full_epoch6_auroc0.9041.pth
+2026-04-02 20:45:20,975 - INFO - [ft_full] E007  train_loss=0.0147  val_loss=0.0197  val_AUROC=0.9049  valid_labels=30/150
+2026-04-02 20:45:21,500 - INFO -   [SAVED] ft_full_epoch7_auroc0.9049.pth
+2026-04-02 20:47:14,126 - INFO - [ft_full] E008  train_loss=0.0139  val_loss=0.0203  val_AUROC=0.9048  valid_labels=30/150
+2026-04-02 20:47:14,126 - INFO - EarlyStopping: no improvement for 1/10 epoch(s) (best=0.9049, current=0.9048)
+2026-04-02 20:49:07,692 - INFO - [ft_full] E009  train_loss=0.0134  val_loss=0.0201  val_AUROC=0.8992  valid_labels=30/150
+2026-04-02 20:49:07,692 - INFO - EarlyStopping: no improvement for 2/10 epoch(s) (best=0.9049, current=0.8992)
+2026-04-02 20:51:01,472 - INFO - [ft_full] E010  train_loss=0.0127  val_loss=0.0199  val_AUROC=0.9047  valid_labels=30/150
+2026-04-02 20:51:01,472 - INFO - EarlyStopping: no improvement for 3/10 epoch(s) (best=0.9049, current=0.9047)
+2026-04-02 20:52:53,464 - INFO - [ft_full] E011  train_loss=0.0119  val_loss=0.0206  val_AUROC=0.9027  valid_labels=30/150
+2026-04-02 20:52:53,472 - INFO -   LR: 1.00e-04 → 1.00e-05
+2026-04-02 20:52:53,472 - INFO - EarlyStopping: no improvement for 4/10 epoch(s) (best=0.9049, current=0.9027)
+2026-04-02 20:54:46,511 - INFO - [ft_full] E012  train_loss=0.0102  val_loss=0.0201  val_AUROC=0.8996  valid_labels=30/150
+2026-04-02 20:54:46,511 - INFO - EarlyStopping: no improvement for 5/10 epoch(s) (best=0.9049, current=0.8996)
+2026-04-02 20:56:42,234 - INFO - [ft_full] E013  train_loss=0.0098  val_loss=0.0203  val_AUROC=0.8980  valid_labels=30/150
+2026-04-02 20:56:42,234 - INFO - EarlyStopping: no improvement for 6/10 epoch(s) (best=0.9049, current=0.8980)
+2026-04-02 20:58:35,752 - INFO - [ft_full] E014  train_loss=0.0096  val_loss=0.0205  val_AUROC=0.8953  valid_labels=30/150
+2026-04-02 20:58:35,753 - INFO - EarlyStopping: no improvement for 7/10 epoch(s) (best=0.9049, current=0.8953)
+2026-04-02 21:00:29,733 - INFO - [ft_full] E015  train_loss=0.0094  val_loss=0.0207  val_AUROC=0.8953  valid_labels=30/150
+2026-04-02 21:00:29,733 - INFO -   LR: 1.00e-05 → 1.00e-06
+2026-04-02 21:00:29,733 - INFO -   LR floor reached — stopping.
+2026-04-02 21:00:29,733 - INFO - [ft_full] Training done | best val AUROC: 0.9049
+2026-04-02 21:00:30,282 - INFO - [ft_full] Reloaded best checkpoint (epoch 7)
+2026-04-02 21:01:09,672 - INFO - [ft_full_test] Valid: 38/150 | Macro AUROC: 0.8618
+2026-04-02 21:01:11,499 - INFO - [ft_full_test] ROC plot saved: ./res/ablation_ft/ft_full\ft_full_test_roc_curves.png
+2026-04-02 21:01:11,507 - INFO - 
+======================================================================
+2026-04-02 21:01:11,507 - INFO - EXPERIMENT: ft_3000
+2026-04-02 21:01:11,507 - INFO - ======================================================================
+2026-04-02 21:01:11,507 - INFO -   Subsampled training set: 3000 / 6690 records
+2026-04-02 21:01:11,515 - INFO -   Train batches: 94 | Val batches: 24 | Test batches: 61
+2026-04-02 21:01:13,167 - INFO -   Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-04-02 21:01:13,342 - INFO -   Total params    : 30,819,014
+2026-04-02 21:01:13,342 - INFO -   Trainable params: 30,819,014
+2026-04-02 21:02:12,543 - INFO - [ft_3000] E001  train_loss=0.0389  val_loss=0.0274  val_AUROC=0.7798  valid_labels=30/150
+2026-04-02 21:02:13,262 - INFO -   [SAVED] ft_3000_epoch1_auroc0.7798.pth
+2026-04-02 21:03:15,239 - INFO - [ft_3000] E002  train_loss=0.0228  val_loss=0.0241  val_AUROC=0.8206  valid_labels=30/150
+2026-04-02 21:03:15,804 - INFO -   [SAVED] ft_3000_epoch2_auroc0.8206.pth
+2026-04-02 21:04:16,138 - INFO - [ft_3000] E003  train_loss=0.0202  val_loss=0.0230  val_AUROC=0.8498  valid_labels=30/150
+2026-04-02 21:04:16,721 - INFO -   [SAVED] ft_3000_epoch3_auroc0.8498.pth
+2026-04-02 21:05:16,881 - INFO - [ft_3000] E004  train_loss=0.0186  val_loss=0.0223  val_AUROC=0.8637  valid_labels=30/150
+2026-04-02 21:05:17,426 - INFO -   [SAVED] ft_3000_epoch4_auroc0.8637.pth
+2026-04-02 21:06:17,223 - INFO - [ft_3000] E005  train_loss=0.0172  val_loss=0.0217  val_AUROC=0.8832  valid_labels=30/150
+2026-04-02 21:06:17,895 - INFO -   [SAVED] ft_3000_epoch5_auroc0.8832.pth
+2026-04-02 21:07:20,029 - INFO - [ft_3000] E006  train_loss=0.0159  val_loss=0.0215  val_AUROC=0.8850  valid_labels=30/150
+2026-04-02 21:07:20,617 - INFO -   [SAVED] ft_3000_epoch6_auroc0.8850.pth
+2026-04-02 21:08:20,353 - INFO - [ft_3000] E007  train_loss=0.0148  val_loss=0.0216  val_AUROC=0.8880  valid_labels=30/150
+2026-04-02 21:08:20,919 - INFO -   [SAVED] ft_3000_epoch7_auroc0.8880.pth
+2026-04-02 21:09:21,630 - INFO - [ft_3000] E008  train_loss=0.0138  val_loss=0.0217  val_AUROC=0.8905  valid_labels=30/150
+2026-04-02 21:09:22,168 - INFO -   [SAVED] ft_3000_epoch8_auroc0.8905.pth
+2026-04-02 21:10:24,538 - INFO - [ft_3000] E009  train_loss=0.0129  val_loss=0.0218  val_AUROC=0.8857  valid_labels=30/150
+2026-04-02 21:10:24,538 - INFO - EarlyStopping: no improvement for 1/10 epoch(s) (best=0.8905, current=0.8857)
+2026-04-02 21:11:25,661 - INFO - [ft_3000] E010  train_loss=0.0118  val_loss=0.0223  val_AUROC=0.8888  valid_labels=30/150
+2026-04-02 21:11:25,661 - INFO - EarlyStopping: no improvement for 2/10 epoch(s) (best=0.8905, current=0.8888)
+2026-04-02 21:12:27,977 - INFO - [ft_3000] E011  train_loss=0.0108  val_loss=0.0229  val_AUROC=0.8848  valid_labels=30/150
+2026-04-02 21:12:27,978 - INFO - EarlyStopping: no improvement for 3/10 epoch(s) (best=0.8905, current=0.8848)
+2026-04-02 21:13:28,252 - INFO - [ft_3000] E012  train_loss=0.0100  val_loss=0.0239  val_AUROC=0.8708  valid_labels=30/150
+2026-04-02 21:13:28,252 - INFO -   LR: 1.00e-04 → 1.00e-05
+2026-04-02 21:13:28,252 - INFO - EarlyStopping: no improvement for 4/10 epoch(s) (best=0.8905, current=0.8708)
+2026-04-02 21:14:29,067 - INFO - [ft_3000] E013  train_loss=0.0081  val_loss=0.0233  val_AUROC=0.8778  valid_labels=30/150
+2026-04-02 21:14:29,067 - INFO - EarlyStopping: no improvement for 5/10 epoch(s) (best=0.8905, current=0.8778)
+2026-04-02 21:15:29,883 - INFO - [ft_3000] E014  train_loss=0.0077  val_loss=0.0235  val_AUROC=0.8778  valid_labels=30/150
+2026-04-02 21:15:29,883 - INFO - EarlyStopping: no improvement for 6/10 epoch(s) (best=0.8905, current=0.8778)
+2026-04-02 21:16:32,744 - INFO - [ft_3000] E015  train_loss=0.0074  val_loss=0.0237  val_AUROC=0.8787  valid_labels=30/150
+2026-04-02 21:16:32,744 - INFO - EarlyStopping: no improvement for 7/10 epoch(s) (best=0.8905, current=0.8787)
+2026-04-02 21:17:34,974 - INFO - [ft_3000] E016  train_loss=0.0072  val_loss=0.0239  val_AUROC=0.8756  valid_labels=30/150
+2026-04-02 21:17:34,974 - INFO -   LR: 1.00e-05 → 1.00e-06
+2026-04-02 21:17:34,974 - INFO -   LR floor reached — stopping.
+2026-04-02 21:17:34,974 - INFO - [ft_3000] Training done | best val AUROC: 0.8905
+2026-04-02 21:17:35,521 - INFO - [ft_3000] Reloaded best checkpoint (epoch 8)
+2026-04-02 21:18:15,152 - INFO - [ft_3000_test] Valid: 38/150 | Macro AUROC: 0.8309
+2026-04-02 21:18:15,530 - INFO - [ft_3000_test] ROC plot saved: ./res/ablation_ft/ft_3000\ft_3000_test_roc_curves.png
+2026-04-02 21:18:15,538 - INFO - 
+======================================================================
+2026-04-02 21:18:15,538 - INFO - EXPERIMENT: ft_1000
+2026-04-02 21:18:15,538 - INFO - ======================================================================
+2026-04-02 21:18:15,538 - INFO -   Subsampled training set: 1000 / 6690 records
+2026-04-02 21:18:15,538 - INFO -   Train batches: 32 | Val batches: 24 | Test batches: 61
+2026-04-02 21:18:16,720 - INFO -   Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-04-02 21:18:16,937 - INFO -   Total params    : 30,819,014
+2026-04-02 21:18:16,937 - INFO -   Trainable params: 30,819,014
+2026-04-02 21:18:43,959 - INFO - [ft_1000] E001  train_loss=0.0594  val_loss=0.0362  val_AUROC=0.7140  valid_labels=30/150
+2026-04-02 21:18:44,534 - INFO -   [SAVED] ft_1000_epoch1_auroc0.7140.pth
+2026-04-02 21:19:10,706 - INFO - [ft_1000] E002  train_loss=0.0292  val_loss=0.0297  val_AUROC=0.7586  valid_labels=30/150
+2026-04-02 21:19:11,248 - INFO -   [SAVED] ft_1000_epoch2_auroc0.7586.pth
+2026-04-02 21:19:38,718 - INFO - [ft_1000] E003  train_loss=0.0245  val_loss=0.0272  val_AUROC=0.7818  valid_labels=30/150
+2026-04-02 21:19:39,219 - INFO -   [SAVED] ft_1000_epoch3_auroc0.7818.pth
+2026-04-02 21:20:05,802 - INFO - [ft_1000] E004  train_loss=0.0221  val_loss=0.0260  val_AUROC=0.8081  valid_labels=30/150
+2026-04-02 21:20:06,333 - INFO -   [SAVED] ft_1000_epoch4_auroc0.8081.pth
+2026-04-02 21:20:34,386 - INFO - [ft_1000] E005  train_loss=0.0201  val_loss=0.0253  val_AUROC=0.8194  valid_labels=30/150
+2026-04-02 21:20:35,071 - INFO -   [SAVED] ft_1000_epoch5_auroc0.8194.pth
+2026-04-02 21:21:02,436 - INFO - [ft_1000] E006  train_loss=0.0184  val_loss=0.0247  val_AUROC=0.8272  valid_labels=30/150
+2026-04-02 21:21:02,913 - INFO -   [SAVED] ft_1000_epoch6_auroc0.8272.pth
+2026-04-02 21:21:29,301 - INFO - [ft_1000] E007  train_loss=0.0170  val_loss=0.0243  val_AUROC=0.8358  valid_labels=30/150
+2026-04-02 21:21:29,894 - INFO -   [SAVED] ft_1000_epoch7_auroc0.8358.pth
+2026-04-02 21:21:56,775 - INFO - [ft_1000] E008  train_loss=0.0158  val_loss=0.0243  val_AUROC=0.8395  valid_labels=30/150
+2026-04-02 21:21:57,372 - INFO -   [SAVED] ft_1000_epoch8_auroc0.8395.pth
+2026-04-02 21:22:57,301 - INFO - [ft_1000] E009  train_loss=0.0145  val_loss=0.0242  val_AUROC=0.8406  valid_labels=30/150
+2026-04-02 21:22:58,247 - INFO -   [SAVED] ft_1000_epoch9_auroc0.8406.pth
+2026-04-02 21:24:43,684 - INFO - [ft_1000] E010  train_loss=0.0135  val_loss=0.0245  val_AUROC=0.8367  valid_labels=30/150
+2026-04-02 21:24:43,685 - INFO - EarlyStopping: no improvement for 1/10 epoch(s) (best=0.8406, current=0.8367)
+2026-04-02 21:26:29,376 - INFO - [ft_1000] E011  train_loss=0.0122  val_loss=0.0248  val_AUROC=0.8398  valid_labels=30/150
+2026-04-02 21:26:29,376 - INFO - EarlyStopping: no improvement for 2/10 epoch(s) (best=0.8406, current=0.8398)
+2026-04-02 21:28:14,505 - INFO - [ft_1000] E012  train_loss=0.0112  val_loss=0.0246  val_AUROC=0.8436  valid_labels=30/150
+2026-04-02 21:28:15,507 - INFO -   [SAVED] ft_1000_epoch12_auroc0.8436.pth
+2026-04-02 21:30:01,048 - INFO - [ft_1000] E013  train_loss=0.0100  val_loss=0.0250  val_AUROC=0.8416  valid_labels=30/150
+2026-04-02 21:30:01,048 - INFO - EarlyStopping: no improvement for 1/10 epoch(s) (best=0.8436, current=0.8416)
+2026-04-02 21:31:46,422 - INFO - [ft_1000] E014  train_loss=0.0090  val_loss=0.0254  val_AUROC=0.8404  valid_labels=30/150
+2026-04-02 21:31:46,422 - INFO - EarlyStopping: no improvement for 2/10 epoch(s) (best=0.8436, current=0.8404)
+2026-04-02 21:33:31,882 - INFO - [ft_1000] E015  train_loss=0.0078  val_loss=0.0259  val_AUROC=0.8317  valid_labels=30/150
+2026-04-02 21:33:31,882 - INFO - EarlyStopping: no improvement for 3/10 epoch(s) (best=0.8436, current=0.8317)
+2026-04-02 21:35:17,116 - INFO - [ft_1000] E016  train_loss=0.0070  val_loss=0.0271  val_AUROC=0.8381  valid_labels=30/150
+2026-04-02 21:35:17,116 - INFO -   LR: 1.00e-04 → 1.00e-05
+2026-04-02 21:35:17,116 - INFO - EarlyStopping: no improvement for 4/10 epoch(s) (best=0.8436, current=0.8381)
+2026-04-02 21:37:02,787 - INFO - [ft_1000] E017  train_loss=0.0058  val_loss=0.0266  val_AUROC=0.8372  valid_labels=30/150
+2026-04-02 21:37:02,787 - INFO - EarlyStopping: no improvement for 5/10 epoch(s) (best=0.8436, current=0.8372)
+2026-04-02 21:38:48,999 - INFO - [ft_1000] E018  train_loss=0.0054  val_loss=0.0267  val_AUROC=0.8358  valid_labels=30/150
+2026-04-02 21:38:48,999 - INFO - EarlyStopping: no improvement for 6/10 epoch(s) (best=0.8436, current=0.8358)
+2026-04-02 21:40:34,461 - INFO - [ft_1000] E019  train_loss=0.0054  val_loss=0.0269  val_AUROC=0.8348  valid_labels=30/150
+2026-04-02 21:40:34,462 - INFO - EarlyStopping: no improvement for 7/10 epoch(s) (best=0.8436, current=0.8348)
+2026-04-02 21:42:18,864 - INFO - [ft_1000] E020  train_loss=0.0051  val_loss=0.0269  val_AUROC=0.8352  valid_labels=30/150
+2026-04-02 21:42:18,865 - INFO -   LR: 1.00e-05 → 1.00e-06
+2026-04-02 21:42:18,865 - INFO -   LR floor reached — stopping.
+2026-04-02 21:42:18,866 - INFO - [ft_1000] Training done | best val AUROC: 0.8436
+2026-04-02 21:42:19,704 - INFO - [ft_1000] Reloaded best checkpoint (epoch 12)
+2026-04-02 21:43:28,209 - INFO - [ft_1000_test] Valid: 38/150 | Macro AUROC: 0.7950
+2026-04-02 21:43:28,841 - INFO - [ft_1000_test] ROC plot saved: ./res/ablation_ft/ft_1000\ft_1000_test_roc_curves.png
+2026-04-02 21:43:28,850 - INFO - 
+======================================================================
+2026-04-02 21:43:28,850 - INFO - EXPERIMENT: ft_500
+2026-04-02 21:43:28,850 - INFO - ======================================================================
+2026-04-02 21:43:28,858 - INFO -   Subsampled training set: 500 / 6690 records
+2026-04-02 21:43:28,858 - INFO -   Train batches: 16 | Val batches: 24 | Test batches: 61
+2026-04-02 21:43:30,576 - INFO -   Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-04-02 21:43:30,738 - INFO -   Total params    : 30,819,014
+2026-04-02 21:43:30,738 - INFO -   Trainable params: 30,819,014
+2026-04-02 21:44:33,006 - INFO - [ft_500] E001  train_loss=0.0802  val_loss=0.0505  val_AUROC=0.6777  valid_labels=30/150
+2026-04-02 21:44:33,902 - INFO -   [SAVED] ft_500_epoch1_auroc0.6777.pth
+2026-04-02 21:45:36,406 - INFO - [ft_500] E002  train_loss=0.0374  val_loss=0.0369  val_AUROC=0.7086  valid_labels=30/150
+2026-04-02 21:45:37,324 - INFO -   [SAVED] ft_500_epoch2_auroc0.7086.pth
+2026-04-02 21:46:44,340 - INFO - [ft_500] E003  train_loss=0.0291  val_loss=0.0327  val_AUROC=0.7285  valid_labels=30/150
+2026-04-02 21:46:45,316 - INFO -   [SAVED] ft_500_epoch3_auroc0.7285.pth
+2026-04-02 21:48:44,708 - INFO - [ft_500] E004  train_loss=0.0258  val_loss=0.0304  val_AUROC=0.7444  valid_labels=30/150
+2026-04-02 21:48:47,334 - INFO -   [SAVED] ft_500_epoch4_auroc0.7444.pth
+2026-04-02 21:49:54,551 - INFO - [ft_500] E005  train_loss=0.0234  val_loss=0.0290  val_AUROC=0.7561  valid_labels=30/150
+2026-04-02 21:49:56,076 - INFO -   [SAVED] ft_500_epoch5_auroc0.7561.pth
+2026-04-02 21:50:33,997 - INFO - [ft_500] E006  train_loss=0.0214  val_loss=0.0280  val_AUROC=0.7646  valid_labels=30/150
+2026-04-02 21:50:34,644 - INFO -   [SAVED] ft_500_epoch6_auroc0.7646.pth
+2026-04-02 21:51:05,211 - INFO - [ft_500] E007  train_loss=0.0199  val_loss=0.0272  val_AUROC=0.7724  valid_labels=30/150
+2026-04-02 21:51:05,865 - INFO -   [SAVED] ft_500_epoch7_auroc0.7724.pth
+2026-04-02 21:51:33,452 - INFO - [ft_500] E008  train_loss=0.0186  val_loss=0.0268  val_AUROC=0.7755  valid_labels=30/150
+2026-04-02 21:51:33,926 - INFO -   [SAVED] ft_500_epoch8_auroc0.7755.pth
+2026-04-02 21:52:00,937 - INFO - [ft_500] E009  train_loss=0.0176  val_loss=0.0264  val_AUROC=0.7781  valid_labels=30/150
+2026-04-02 21:52:01,451 - INFO -   [SAVED] ft_500_epoch9_auroc0.7781.pth
+2026-04-02 21:52:27,379 - INFO - [ft_500] E010  train_loss=0.0165  val_loss=0.0262  val_AUROC=0.7783  valid_labels=30/150
+2026-04-02 21:52:27,869 - INFO -   [SAVED] ft_500_epoch10_auroc0.7783.pth
+2026-04-02 21:52:54,200 - INFO - [ft_500] E011  train_loss=0.0154  val_loss=0.0259  val_AUROC=0.7829  valid_labels=30/150
+2026-04-02 21:52:54,687 - INFO -   [SAVED] ft_500_epoch11_auroc0.7829.pth
+2026-04-02 21:53:19,215 - INFO - [ft_500] E012  train_loss=0.0144  val_loss=0.0260  val_AUROC=0.7843  valid_labels=30/150
+2026-04-02 21:53:19,834 - INFO -   [SAVED] ft_500_epoch12_auroc0.7843.pth
+2026-04-02 21:53:43,418 - INFO - [ft_500] E013  train_loss=0.0135  val_loss=0.0256  val_AUROC=0.7856  valid_labels=30/150
+2026-04-02 21:53:43,929 - INFO -   [SAVED] ft_500_epoch13_auroc0.7856.pth
+2026-04-02 21:54:07,858 - INFO - [ft_500] E014  train_loss=0.0125  val_loss=0.0257  val_AUROC=0.7841  valid_labels=30/150
+2026-04-02 21:54:07,858 - INFO - EarlyStopping: no improvement for 1/10 epoch(s) (best=0.7856, current=0.7841)
+2026-04-02 21:54:30,095 - INFO - [ft_500] E015  train_loss=0.0116  val_loss=0.0258  val_AUROC=0.7852  valid_labels=30/150
+2026-04-02 21:54:30,096 - INFO - EarlyStopping: no improvement for 2/10 epoch(s) (best=0.7856, current=0.7852)
+2026-04-02 21:54:52,163 - INFO - [ft_500] E016  train_loss=0.0107  val_loss=0.0260  val_AUROC=0.7946  valid_labels=30/150
+2026-04-02 21:54:52,670 - INFO -   [SAVED] ft_500_epoch16_auroc0.7946.pth
+2026-04-02 21:55:14,440 - INFO - [ft_500] E017  train_loss=0.0098  val_loss=0.0261  val_AUROC=0.7872  valid_labels=30/150
+2026-04-02 21:55:14,441 - INFO - EarlyStopping: no improvement for 1/10 epoch(s) (best=0.7946, current=0.7872)
+2026-04-02 21:55:35,733 - INFO - [ft_500] E018  train_loss=0.0090  val_loss=0.0263  val_AUROC=0.7917  valid_labels=30/150
+2026-04-02 21:55:35,733 - INFO - EarlyStopping: no improvement for 2/10 epoch(s) (best=0.7946, current=0.7917)
+2026-04-02 21:55:55,955 - INFO - [ft_500] E019  train_loss=0.0082  val_loss=0.0268  val_AUROC=0.7912  valid_labels=30/150
+2026-04-02 21:55:55,956 - INFO - EarlyStopping: no improvement for 3/10 epoch(s) (best=0.7946, current=0.7912)
+2026-04-02 21:56:17,062 - INFO - [ft_500] E020  train_loss=0.0074  val_loss=0.0270  val_AUROC=0.7937  valid_labels=30/150
+2026-04-02 21:56:17,063 - INFO -   LR: 1.00e-04 → 1.00e-05
+2026-04-02 21:56:17,063 - INFO - EarlyStopping: no improvement for 4/10 epoch(s) (best=0.7946, current=0.7937)
+2026-04-02 21:56:37,645 - INFO - [ft_500] E021  train_loss=0.0066  val_loss=0.0271  val_AUROC=0.7944  valid_labels=30/150
+2026-04-02 21:56:37,646 - INFO - EarlyStopping: no improvement for 5/10 epoch(s) (best=0.7946, current=0.7944)
+2026-04-02 21:56:56,829 - INFO - [ft_500] E022  train_loss=0.0065  val_loss=0.0271  val_AUROC=0.7925  valid_labels=30/150
+2026-04-02 21:56:56,830 - INFO - EarlyStopping: no improvement for 6/10 epoch(s) (best=0.7946, current=0.7925)
+2026-04-02 21:57:16,174 - INFO - [ft_500] E023  train_loss=0.0064  val_loss=0.0272  val_AUROC=0.7917  valid_labels=30/150
+2026-04-02 21:57:16,174 - INFO - EarlyStopping: no improvement for 7/10 epoch(s) (best=0.7946, current=0.7917)
+2026-04-02 21:57:35,153 - INFO - [ft_500] E024  train_loss=0.0063  val_loss=0.0273  val_AUROC=0.7915  valid_labels=30/150
+2026-04-02 21:57:35,154 - INFO -   LR: 1.00e-05 → 1.00e-06
+2026-04-02 21:57:35,154 - INFO -   LR floor reached — stopping.
+2026-04-02 21:57:35,154 - INFO - [ft_500] Training done | best val AUROC: 0.7946
+2026-04-02 21:57:35,759 - INFO - [ft_500] Reloaded best checkpoint (epoch 16)
+2026-04-02 21:58:10,913 - INFO - [ft_500_test] Valid: 38/150 | Macro AUROC: 0.7641
+2026-04-02 21:58:11,348 - INFO - [ft_500_test] ROC plot saved: ./res/ablation_ft/ft_500\ft_500_test_roc_curves.png
+2026-04-02 21:58:11,354 - INFO - 
+FT ablation summary saved: ./res/ablation_ft/ft_ablation_summary.csv
+2026-04-02 21:58:11,356 - INFO - 
+======================================================================
+FT ABLATION RESULTS
+======================================================================
+2026-04-02 21:58:11,359 - INFO - experiment n_train_requested  n_train_actual  total_params  best_val_AUROC  test_macro_AUROC
+   ft_full              full            6690      30819014          0.9049            0.8618
+   ft_3000              3000            3000      30819014          0.8905            0.8309
+   ft_1000              1000            1000      30819014          0.8436            0.7950
+    ft_500               500             500      30819014          0.7946            0.7641
+2026-04-02 21:58:11,377 - INFO - Overlaid ResNet ablation results on comparison plot.
+2026-04-02 21:58:11,507 - INFO - FT ablation comparison plot saved: ./res/ablation_ft/ft_ablation_comparison.png
+2026-04-02 21:58:11,508 - INFO - 
+All FT ablation experiments complete.
+2026-04-14 18:25:42,082 - INFO - Using device: cuda:0
+2026-04-14 18:25:42,082 - INFO - Number of classes: 150
+2026-04-14 18:25:42,577 - INFO - ✓ Patient-level split verified — no leakage detected.
+2026-04-14 18:25:42,577 - INFO -   TRAIN :  6690 samples |  5748 patients
+2026-04-14 18:25:42,581 - INFO -   VAL   :   766 samples |   639 patients
+2026-04-14 18:25:42,581 - INFO -   TEST  :  1941 samples |  1597 patients
+2026-04-14 18:25:42,582 - INFO - 
+======================================================================
+2026-04-14 18:25:42,582 - INFO - ZERO-SHOT BASELINE (ECGFounder, no fine-tuning)
+2026-04-14 18:25:42,582 - INFO - ======================================================================
+2026-04-14 18:25:42,582 - INFO -   [Zero-shot] Running inference with frozen pretrained weights …
+2026-04-14 18:25:44,286 - INFO -   [Zero-shot] Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-04-14 18:26:23,982 - INFO -   [Zero-shot] Predictions cached — gt: (1941, 150)  pred: (1941, 150)
+2026-04-14 18:26:44,386 - INFO - [zeroshot_test] Valid: 38/150 | Macro AUROC: 0.6166
+2026-04-14 18:26:45,282 - INFO - [zeroshot_test] ROC plot saved: ./res/ablation_ft/zeroshot\zeroshot_test_roc_curves.png
+2026-04-14 18:26:45,282 - INFO -   [Zero-shot] Macro AUROC: 0.6166
+2026-04-14 18:26:45,916 - INFO - Zero-shot macro AUROC: 0.6166
+2026-04-14 18:26:45,916 - INFO - 
+======================================================================
+2026-04-14 18:26:45,916 - INFO - EXPERIMENT: ft_full
+2026-04-14 18:26:45,916 - INFO - ======================================================================
+2026-04-14 18:26:45,916 - INFO -   Using full training set: 6690 records
+2026-04-14 18:26:45,916 - INFO -   [SKIP TRAINING] Checkpoint found: ft_full_epoch7_auroc0.9049.pth
+2026-04-14 18:26:47,314 - INFO -   Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-04-14 18:26:48,517 - INFO -   Loaded epoch 7 | val AUROC: 0.9049
+2026-04-14 18:26:48,531 - INFO -   [SKIP TEST EVAL] Cached test predictions found (1941 samples). Re-computing metrics …
+2026-04-14 18:27:10,220 - INFO - [ft_full_test] Valid: 38/150 | Macro AUROC: 0.8618
+2026-04-14 18:27:10,919 - INFO - [ft_full_test] ROC plot saved: ./res/ablation_ft/ft_full\ft_full_test_roc_curves.png
+2026-04-14 18:27:10,919 - INFO - 
+======================================================================
+2026-04-14 18:27:10,925 - INFO - EXPERIMENT: ft_3000
+2026-04-14 18:27:10,925 - INFO - ======================================================================
+2026-04-14 18:27:10,931 - INFO -   Subsampled training set: 3000 / 6690 records
+2026-04-14 18:27:10,932 - INFO -   [SKIP TRAINING] Checkpoint found: ft_3000_epoch8_auroc0.8905.pth
+2026-04-14 18:27:12,658 - INFO -   Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-04-14 18:27:13,715 - INFO -   Loaded epoch 8 | val AUROC: 0.8905
+2026-04-14 18:27:13,727 - INFO -   [SKIP TEST EVAL] Cached test predictions found (1941 samples). Re-computing metrics …
+2026-04-14 18:27:37,352 - INFO - [ft_3000_test] Valid: 38/150 | Macro AUROC: 0.8309
+2026-04-14 18:27:38,029 - INFO - [ft_3000_test] ROC plot saved: ./res/ablation_ft/ft_3000\ft_3000_test_roc_curves.png
+2026-04-14 18:27:38,036 - INFO - 
+======================================================================
+2026-04-14 18:27:38,038 - INFO - EXPERIMENT: ft_1000
+2026-04-14 18:27:38,038 - INFO - ======================================================================
+2026-04-14 18:27:38,040 - INFO -   Subsampled training set: 1000 / 6690 records
+2026-04-14 18:27:38,041 - INFO -   [SKIP TRAINING] Checkpoint found: ft_1000_epoch12_auroc0.8436.pth
+2026-04-14 18:27:39,743 - INFO -   Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-04-14 18:27:40,765 - INFO -   Loaded epoch 12 | val AUROC: 0.8436
+2026-04-14 18:27:40,768 - INFO -   [SKIP TEST EVAL] Cached test predictions found (1941 samples). Re-computing metrics …
+2026-04-14 18:28:00,513 - INFO - [ft_1000_test] Valid: 38/150 | Macro AUROC: 0.7950
+2026-04-14 18:28:01,249 - INFO - [ft_1000_test] ROC plot saved: ./res/ablation_ft/ft_1000\ft_1000_test_roc_curves.png
+2026-04-14 18:28:01,258 - INFO - 
+======================================================================
+2026-04-14 18:28:01,258 - INFO - EXPERIMENT: ft_500
+2026-04-14 18:28:01,258 - INFO - ======================================================================
+2026-04-14 18:28:01,261 - INFO -   Subsampled training set: 500 / 6690 records
+2026-04-14 18:28:01,261 - INFO -   [SKIP TRAINING] Checkpoint found: ft_500_epoch16_auroc0.7946.pth
+2026-04-14 18:28:02,933 - INFO -   Pretrained weights loaded | missing: 0 | unexpected: 0
+2026-04-14 18:28:03,944 - INFO -   Loaded epoch 16 | val AUROC: 0.7946
+2026-04-14 18:28:03,949 - INFO -   [SKIP TEST EVAL] Cached test predictions found (1941 samples). Re-computing metrics …
+2026-04-14 18:28:18,282 - INFO - [ft_500_test] Valid: 38/150 | Macro AUROC: 0.7641
+2026-04-14 18:28:18,877 - INFO - [ft_500_test] ROC plot saved: ./res/ablation_ft/ft_500\ft_500_test_roc_curves.png
+2026-04-14 18:28:18,886 - INFO - 
+FT ablation summary saved: ./res/ablation_ft/ft_ablation_summary.csv
+2026-04-14 18:28:18,886 - INFO - 
+======================================================================
+FT ABLATION RESULTS
+======================================================================
+2026-04-14 18:28:18,898 - INFO - experiment n_train_requested  n_train_actual  total_params  best_val_AUROC  test_macro_AUROC
+   ft_full              full            6690      30819014          0.9049            0.8618
+   ft_3000              3000            3000      30819014          0.8905            0.8309
+   ft_1000              1000            1000      30819014          0.8436            0.7950
+    ft_500               500             500      30819014          0.7946            0.7641
+2026-04-14 18:28:18,898 - INFO - 
+Zero-shot baseline macro AUROC: 0.6166
+2026-04-14 18:28:19,251 - INFO - Comparison plot saved: ./res/ablation_ft/ft_vs_resnet_comparison.png
+2026-04-14 18:28:19,251 - INFO - FT vs ResNet comparison plot generated.
+2026-04-14 18:28:19,597 - INFO - Comparison plot saved: ./res/ablation_ft/ft_vs_net1d_comparison.png
+2026-04-14 18:28:19,597 - INFO - FT vs Net1D comparison plot generated.
+2026-04-14 18:28:19,849 - INFO - FT-only ablation comparison plot saved: ./res/ablation_ft/ft_ablation_comparison.png
+2026-04-14 18:28:19,849 - INFO - 
+All FT ablation experiments complete.

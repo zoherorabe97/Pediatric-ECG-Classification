@@ -1,0 +1,23 @@
+sample rate --> how many samples per second so 500 means 500 samples per second and it measures the ecg signal in 500 different points in one second
+amplitude --> the height of the ecg signal in millivolts
+
+New pipeline = crop/pad to fixed length
+Old pipeline = resample based on sampling rate metadata using linear (interpolation)
+    So if ECG was recorded at:
+        1000 Hz → converted to 5000 points
+        15000 Hz → compressed to 5000 points
+        2500 Hz → stretched to 5000 points
+
+Original Harvard dataset --> each 10 seconds long, acquired at sampling rates of 250 or 500 Hz.
+Pediatric dataset --> The sampling rate is 500 Hz and the record length is 5-120 seconds
+CinC2021 dataset --> sampling frequency of 500 Hz
+
+
+Quick rule at 500 Hz:
+2,500 points = 5 sec
+5,000 points = 10 sec
+10,000 points = 20 sec
+15,000 points = 30 sec
+60,000 points = 120 sec
+
+- The model ECGFounder trained on ECG which is mostly 10s and the pediatric dataset is 5-120s by the majority of the sample were 30s. 
